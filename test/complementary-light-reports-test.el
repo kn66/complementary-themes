@@ -53,10 +53,31 @@
                 records)))
           (should record)
           (should (eq (cdr (assq 'auditable record)) t))
+          (should (equal (cdr (assq 'contrast_role record)) "normal-text"))
           (should (>= (cdr (assq 'ratio record))
                       complementary-light-text-contrast-target))
+          (should (eq (cdr (assq 'review_candidate record)) :json-false))
           (should-not (eq (cdr (assq 'candidate_below_text_minimum record))
                           t)))))))
+
+(ert-deftest complementary-light-effective-face-audit-is-role-aware ()
+  (let ((records
+         (complementary-light-report--effective-face-contrast-records)))
+    (dolist (check '((org-hide "intentional-hidden")
+                     (whitespace-big-indent "decorative")
+                     (ansi-color-red "external-controlled")
+                     (cursor "contextual")))
+      (let ((matching
+             (cl-remove-if-not
+              (lambda (record)
+                (equal (cdr (assq 'face record))
+                       (symbol-name (car check))))
+              records)))
+        (should (= (length matching) 2))
+        (dolist (record matching)
+          (should (equal (cdr (assq 'contrast_role record)) (cadr check)))
+          (should (eq (cdr (assq 'applicable_threshold record)) :json-null))
+          (should (eq (cdr (assq 'review_candidate record)) :json-false)))))))
 
 (ert-deftest complementary-light-themed-effective-contrast-passes-all-pairs ()
   (let ((records
@@ -74,17 +95,15 @@
   (let ((records (complementary-light-report--cursor-contrast-records)))
     (should (= (length records)
                (* 2 132
-                  (+ (length complementary-light-cursor-background-tokens)
-                     2))))
+                  (length complementary-light-cursor-background-tokens))))
     (dolist (record records)
-      (when (equal (cdr (assq 'policy record)) "gated")
-        (should (eq (cdr (assq 'passed record)) t))))
+      (should (equal (cdr (assq 'policy record)) "gated"))
+      (should (eq (cdr (assq 'passed record)) t)))
     (should (= (length
                 (complementary-light-report--cursor-worst-case-records
                  records))
                (* 2
-                  (+ (length complementary-light-cursor-background-tokens)
-                     2))))))
+                  (length complementary-light-cursor-background-tokens))))))
 
 (provide 'complementary-light-reports-test)
 ;;; complementary-light-reports-test.el ends here

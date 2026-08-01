@@ -5,14 +5,14 @@
   "display_color_cells": 0,
   "face_count": 1171,
   "classifications": {
-    "themed": 134,
-    "inherit": 532,
+    "themed": 166,
+    "inherit": 526,
     "alias": 12,
-    "preserve": 454,
+    "preserve": 428,
     "external-semantic": 39,
     "excluded": 0
   },
-  "registered_face_specs": 134,
+  "registered_face_specs": 166,
   "theme_count": 2,
   "accent_count": 12,
   "symmetric_pair_count": 6,
@@ -29,7 +29,17 @@
   "color_vision_reported_worst_case_record_count": 2640,
   "color_vision_preset_minimum_delta_e_2000": 8.009710202983412,
   "effective_face_contrast_record_count": 2342,
-  "effective_face_review_candidate_count": 423,
+  "effective_face_review_candidate_count": 254,
+  "effective_face_raw_below_text_minimum_count": 382,
+  "effective_face_role_counts": {
+    "normal-text": 2158,
+    "non-text-indicator": 16,
+    "intentional-hidden": 6,
+    "decorative": 8,
+    "inactive-control": 10,
+    "external-controlled": 142,
+    "contextual": 2
+  },
   "effective_face_unauditable_count": 82,
   "themed_face_worst_case_failure_count": 0,
   "cursor_surface_record_count": 3432,
@@ -37,5 +47,5 @@
   "minimum_simulated_pair_delta_e_2000": 0.0,
   "minimum_cvd_pair_delta_e_2000": 0.0,
   "minimum_grayscale_pair_delta_e_2000": 0.0,
-  "generated_at": "2026-08-01T19:36:40+0900"
+  "generated_at": "2026-08-01T20:27:03+0900"
 }

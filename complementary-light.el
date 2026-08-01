@@ -3,7 +3,7 @@
 ;; Copyright (C) 2026
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 ;; Version: 0.2.0
-;; Package-Requires: ((emacs "29.1"))
+;; Package-Requires: ((emacs "30.2"))
 ;; Keywords: faces, themes
 
 ;;; Commentary:

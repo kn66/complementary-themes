@@ -1,5 +1,5 @@
 {
-  "policy": "common-surfaces-gated; salient-state-surfaces-diagnostic",
+  "policy": "all-declared-surfaces-gated",
   "gated_target": 3.25,
   "evaluated_record_count": 3432,
   "reported_worst_case_record_count": 26,
@@ -67,15 +67,15 @@
     },
     {
       "theme": "complementary-dark",
-      "primary": "rose",
+      "primary": "green",
       "secondary": "red",
       "surface": "primary-state",
-      "policy": "diagnostic",
+      "policy": "gated",
       "cursor": "#ffffff",
-      "background": "#daa0b5",
-      "ratio": 2.170173260897514,
-      "required": "json-null",
-      "passed": "json-null"
+      "background": "#34773c",
+      "ratio": 5.454556705074815,
+      "required": 3.25,
+      "passed": true
     },
     {
       "theme": "complementary-dark",
@@ -116,14 +116,14 @@
     {
       "theme": "complementary-dark",
       "primary": "red",
-      "secondary": "rose",
+      "secondary": "green",
       "surface": "secondary-state",
-      "policy": "diagnostic",
+      "policy": "gated",
       "cursor": "#ffffff",
-      "background": "#daa0b5",
-      "ratio": 2.170173260897514,
-      "required": "json-null",
-      "passed": "json-null"
+      "background": "#34773c",
+      "ratio": 5.454556705074815,
+      "required": 3.25,
+      "passed": true
     },
     {
       "theme": "complementary-dark",
@@ -226,12 +226,12 @@
       "primary": "orange",
       "secondary": "red",
       "surface": "primary-state",
-      "policy": "diagnostic",
+      "policy": "gated",
       "cursor": "#000000",
       "background": "#946443",
       "ratio": 4.163098048017584,
-      "required": "json-null",
-      "passed": "json-null"
+      "required": 3.25,
+      "passed": true
     },
     {
       "theme": "complementary-light",
@@ -274,12 +274,12 @@
       "primary": "red",
       "secondary": "orange",
       "surface": "secondary-state",
-      "policy": "diagnostic",
+      "policy": "gated",
       "cursor": "#000000",
       "background": "#946443",
       "ratio": 4.163098048017584,
-      "required": "json-null",
-      "passed": "json-null"
+      "required": 3.25,
+      "passed": true
     },
     {
       "theme": "complementary-light",

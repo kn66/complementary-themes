@@ -37,6 +37,17 @@
 This is deliberately nil: all non-color attributes come from the default
 `defface' specifications.")
 
+(defconst complementary-light-color-topology-allowlist
+  '((tab-bar-tab :foreground :background)
+    (tab-bar-tab-inactive :foreground)
+    (tab-line-tab-current :foreground))
+  "Intentional additions to the built-in color topology.
+The active tab faces need an explicit paired foreground and background to make
+selection visible while retaining text contrast.  The inactive tab-bar face
+also needs its neutral foreground stated explicitly because it inherits from
+the active face.  The built-in inheritance otherwise prevents a sufficiently
+distinct active background from remaining readable.")
+
 (defconst complementary-light--declared-themed-rules
   '(
     ;; Foundation and generic UI.
@@ -78,13 +89,11 @@ This is deliberately nil: all non-color attributes come from the default
     (scroll-bar :status themed :foreground border-strong :background surface-sunken)
     (tool-bar :status themed :foreground foreground-secondary :background surface-raised)
     (tab-bar :status themed :foreground foreground-secondary :background surface-sunken)
-    (tab-bar-tab :status themed :foreground primary-on-strong :background primary-strong)
+    (tab-bar-tab :status themed :foreground primary-on-state :background primary-state)
     (tab-bar-tab-inactive :status themed :foreground inactive-foreground :background inactive-background)
     (tab-line :status themed :foreground foreground-secondary :background surface-sunken)
     (tab-line-tab :status themed :foreground primary-text :background surface)
-    ;; Emacs declares only a background on this face.  Its inherited tab-line
-    ;; foreground remains readable on the base surface in both polarities.
-    (tab-line-tab-current :status themed :background surface)
+    (tab-line-tab-current :status themed :foreground primary-on-state :background primary-state)
     (tab-line-tab-inactive :status themed :foreground inactive-foreground :background inactive-background)
     (tab-line-highlight :status themed :background primary-subtle :distant-foreground distant-foreground)
 
@@ -117,9 +126,12 @@ This is deliberately nil: all non-color attributes come from the default
     (font-lock-variable-name-face :status themed :foreground foreground)
     (font-lock-variable-use-face :status themed :foreground foreground)
     (font-lock-warning-face :status themed :foreground secondary-text)
+    (elisp-shorthand-font-lock-face :status themed :foreground primary-text)
 
     ;; Search, completion, navigation and help.
     (isearch :status themed :foreground primary-on-state :background primary-state :distant-foreground distant-foreground)
+    (isearch-group-1 :status themed :foreground primary-on-state :background primary-state)
+    (isearch-group-2 :status themed :foreground secondary-on-state :background secondary-state)
     (isearch-fail :status themed :background primary-medium :distant-foreground distant-foreground)
     (query-replace :status themed :foreground secondary-on-state :background secondary-state :distant-foreground distant-foreground)
     (completions-annotations :status themed :foreground foreground-muted)
@@ -158,6 +170,7 @@ This is deliberately nil: all non-color attributes come from the default
     (hl-line :status themed :background hl-line-background :distant-foreground distant-foreground)
     (show-paren-match :status themed :background secondary-medium :distant-foreground distant-foreground)
     (show-paren-mismatch :status themed :background primary-subtle :distant-foreground distant-foreground)
+    (pulse-highlight-face :status themed :background primary-medium)
     (pulse-highlight-start-face :status themed :background primary-medium :distant-foreground distant-foreground)
     (hi-yellow :status themed :background primary-subtle :distant-foreground distant-foreground)
     (hi-pink :status themed :background secondary-subtle :distant-foreground distant-foreground)
@@ -210,6 +223,11 @@ This is deliberately nil: all non-color attributes come from the default
     (vc-dir-header-value :status themed :foreground secondary-text)
     (vc-dir-status-edited :status themed :foreground primary-text)
     (vc-dir-status-warning :status themed :foreground secondary-text)
+    (smerge-upper :status themed :background primary-subtle)
+    (smerge-lower :status themed :background secondary-subtle)
+    (smerge-base :status themed :background selection-neutral)
+    (smerge-refined-added :status themed :background secondary-medium)
+    (smerge-refined-removed :status themed :background primary-medium)
 
     ;; Ediff keeps its original extend, weight, underline, inverse-video and
     ;; stipple behavior.  Only colors are mapped onto contrast-checked roles.
@@ -252,6 +270,26 @@ This is deliberately nil: all non-color attributes come from the default
     (org-date :status themed :foreground secondary-text)
     (org-todo :status themed :foreground primary-text)
     (org-done :status themed :foreground foreground)
+    (org-agenda-dimmed-todo-face :status themed :foreground foreground-faint)
+    (org-agenda-done :status themed :foreground foreground-muted)
+    (org-ellipsis :status themed :foreground secondary-text)
+    (org-footnote :status themed :foreground secondary-text)
+    (org-formula :status themed :foreground primary-text)
+    (org-headline-done :status themed :foreground foreground-muted)
+    (org-headline-todo :status themed :foreground primary-text)
+    (org-scheduled :status themed :foreground foreground)
+    (org-scheduled-previously :status themed :foreground primary-text)
+    (org-scheduled-today :status themed :foreground foreground)
+    (org-time-grid :status themed :foreground foreground-muted)
+    (org-upcoming-deadline :status themed :foreground primary-text)
+    (org-habit-alert-face :status themed :background primary-medium)
+    (org-habit-alert-future-face :status themed :background primary-subtle)
+    (org-habit-clear-face :status themed :background secondary-medium)
+    (org-habit-clear-future-face :status themed :background secondary-subtle)
+    (org-habit-overdue-face :status themed :background primary-medium)
+    (org-habit-overdue-future-face :status themed :background primary-subtle)
+    (org-habit-ready-face :status themed :background secondary-medium)
+    (org-habit-ready-future-face :status themed :background secondary-subtle)
     (org-checkbox :status themed :foreground primary-text)
     (org-tag :status themed :foreground secondary-text)
     (org-document-title :status themed :foreground primary-text)
@@ -286,6 +324,7 @@ This is deliberately nil: all non-color attributes come from the default
     (message-header-to :status themed :foreground secondary-text)
     (message-header-xheader :status themed :foreground primary-text)
     (erc-direct-msg-face :status themed :foreground primary-text)
+    (erc-current-nick-face :status themed :foreground secondary-text)
     (erc-error-face :status themed :foreground primary-text)
     (erc-fool-face :status themed :foreground foreground-muted)
     (erc-input-face :status themed :foreground foreground)
@@ -298,6 +337,7 @@ This is deliberately nil: all non-color attributes come from the default
     (erc-timestamp-face :status themed :foreground foreground-muted)
     (eww-invalid-certificate :status themed :foreground primary-text)
     (eww-valid-certificate :status themed :foreground foreground)
+    (newsticker-extra-face :status themed :foreground foreground-muted)
 
     ;; Tables, buffers, Customize and package UI.
     (dired-directory :status themed :foreground secondary-text)
@@ -380,12 +420,14 @@ This is deliberately nil: all non-color attributes come from the default
 
 (defun complementary-light--default-declares-color-p
     (face properties attribute)
-  "Return non-nil when FACE's recorded defface declares ATTRIBUTE.
-PROPERTIES is the inventory property list for FACE.  `default' is the
-root of the theme palette and therefore intentionally supplies both of
-its fundamental colors even though its built-in defface is empty."
+  "Return non-nil when FACE may theme ATTRIBUTE.
+PROPERTIES is the inventory property list for FACE.  Normally the recorded
+`defface' must declare ATTRIBUTE.  `default' supplies the root palette, and
+`complementary-light-color-topology-allowlist' records narrow exceptions."
   (or (and (eq face 'default)
            (memq attribute '(:foreground :background)))
+      (memq attribute
+            (cdr (assq face complementary-light-color-topology-allowlist)))
       (complementary-light--tree-contains-symbol-p
        (plist-get properties :default-spec) attribute)))
 
@@ -572,13 +614,17 @@ Replace only embedded line colors with LINE-COLOR, preserving style and width."
     (face color-attributes original-attributes default-attributes)
   "Keep colors used by FACE in the corresponding built-in clause.
 COLOR-ATTRIBUTES is the resolved theme color plist.  The permitted color
-shape comes from ORIGINAL-ATTRIBUTES and DEFAULT-ATTRIBUTES.  `default'
-is the sole exception because it establishes the root palette."
+shape comes from ORIGINAL-ATTRIBUTES and DEFAULT-ATTRIBUTES, plus the
+documented root-palette and active-tab exceptions."
   (let (result)
     (dolist (attribute complementary-light--color-attributes result)
       (when (and (plist-member color-attributes attribute)
                  (or (and (eq face 'default)
                           (memq attribute '(:foreground :background)))
+                     (memq attribute
+                           (cdr (assq
+                                 face
+                                 complementary-light-color-topology-allowlist)))
                      (plist-member original-attributes attribute)
                      (plist-member default-attributes attribute)))
         (setq result

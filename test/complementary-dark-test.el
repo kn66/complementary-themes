@@ -70,6 +70,21 @@
                           primary secondary background-token ratio
                           complementary-light-non-text-contrast-target))))))))))
 
+(ert-deftest complementary-dark-state-tokens-use-cursor-safe-surfaces ()
+  (dolist (primary complementary-light-color-names)
+    (let* ((secondary (complementary-light-paired-accent primary))
+           (state (complementary-dark-token
+                   'primary-state primary secondary))
+           (on-state (complementary-dark-token
+                      'primary-on-state primary secondary)))
+      (should (equal state
+                     (plist-get (complementary-dark-palette primary) :border)))
+      (should (equal on-state
+                     (complementary-dark-token 'cursor primary secondary)))
+      (should
+       (>= (complementary-light-contrast-ratio on-state state)
+           complementary-light-text-contrast-target)))))
+
 (ert-deftest complementary-dark-primary-and-secondary-must-be-distinct ()
   (let ((complementary-dark-primary-color 'yellow)
         (complementary-dark-secondary-color 'purple))

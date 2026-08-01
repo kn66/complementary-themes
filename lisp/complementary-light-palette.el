@@ -117,7 +117,8 @@
 (defconst complementary-light-cursor-background-tokens
   '(background surface-raised surface-sunken region-background
     hl-line-background completion-background match-background
-    primary-medium primary-subtle secondary-medium secondary-subtle)
+    primary-medium primary-subtle secondary-medium secondary-subtle
+    primary-state secondary-state)
   "Surfaces on which the single Emacs cursor color must remain visible.")
 
 (defconst complementary-light-required-accent-tokens
@@ -173,6 +174,7 @@
     (primary-on-strong primary-strong ,complementary-light-text-contrast-target)
     (primary-on-state primary-state ,complementary-light-text-contrast-target)
     (primary-state background ,complementary-light-non-text-contrast-target)
+    (primary-state inactive-background ,complementary-light-non-text-contrast-target)
     (primary-on-medium primary-medium ,complementary-light-text-contrast-target)
     (primary-on-subtle primary-subtle ,complementary-light-text-contrast-target)
     (inactive-foreground inactive-background ,complementary-light-text-contrast-target)
@@ -256,14 +258,27 @@ With STARTUP non-nil, warn and use safe defaults for invalid values."
 (defun complementary-light--accent-state-token (name)
   "Return the salient state surface for accent NAME.
 Light palettes use their dark strong surface.  Dark palettes, detected from
-the dynamically bound neutral background, use their bright text color."
+the dynamically bound neutral background, use the intermediate border color.
+The latter simultaneously contrasts with the dark base, white state text,
+and the single white Emacs cursor."
   (complementary-light--accent-token
    name
    (if (> (complementary-light-relative-luminance
            (cdr (assq 'background complementary-light-neutral-palette)))
           0.5)
        :strong
-     :text)))
+     :border)))
+
+(defun complementary-light--on-state-token ()
+  "Return the foreground used on a salient state surface.
+Both palettes resolve this to white: the light palette's base background or
+the dark palette's cursor neutral.  The branch is semantic rather than a
+literal color dependency."
+  (if (> (complementary-light-relative-luminance
+          (cdr (assq 'background complementary-light-neutral-palette)))
+         0.5)
+      (cdr (assq 'background complementary-light-neutral-palette))
+    (cdr (assq 'cursor complementary-light-neutral-palette))))
 
 (defun complementary-light-token (token primary secondary)
   "Resolve semantic TOKEN using PRIMARY and SECONDARY accent names."
@@ -274,9 +289,7 @@ the dynamically bound neutral background, use their bright text color."
            (complementary-light--accent-state-token
             (if (string-prefix-p "primary-" name) primary secondary)))
           ((or "primary-on-state" "secondary-on-state")
-           ;; The base surface is the most legible foreground on the adaptive
-           ;; state color in both the light and dark palettes.
-           (cdr (assq 'background complementary-light-neutral-palette)))
+           (complementary-light--on-state-token))
           ((rx bos "primary-" (let suffix (+ any)) eos)
            (complementary-light--accent-token
             primary (intern (concat ":" suffix))))

@@ -39,6 +39,18 @@
                'region-background primary secondary)
               (plist-get (complementary-light-palette secondary) :medium))))))
 
+(ert-deftest complementary-light-state-tokens-keep-cursor-contrast ()
+  (dolist (primary complementary-light-color-names)
+    (let ((secondary (complementary-light-paired-accent primary)))
+      (should
+       (equal (complementary-light-token 'primary-state primary secondary)
+              (plist-get (complementary-light-palette primary) :strong)))
+      (should
+       (>= (complementary-light-contrast-ratio
+            (complementary-light-token 'cursor primary secondary)
+            (complementary-light-token 'primary-state primary secondary))
+           complementary-light-non-text-contrast-target)))))
+
 (ert-deftest complementary-light-face-files-contain-no-color-literals ()
   (dolist (file '("lisp/complementary-light-faces.el"
                   "lisp/complementary-light-packages.el"

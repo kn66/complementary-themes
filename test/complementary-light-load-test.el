@@ -24,7 +24,9 @@
     (should (file-readable-p descriptor))
     (with-temp-buffer
       (insert-file-contents descriptor)
-      (should (equal (car (read (current-buffer))) 'define-package)))))
+      (let ((form (read (current-buffer))))
+        (should (equal (car form) 'define-package))
+        (should (equal (cadr (nth 4 form)) '((emacs "30.2"))))))))
 
 (ert-deftest complementary-themes-entry-point-loads-both-configurations ()
   (should (require 'complementary-themes nil t))

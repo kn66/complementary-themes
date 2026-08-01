@@ -2,9 +2,12 @@
   "policy": "diagnostic-only",
   "model": "Machado-Oliveira-Fernandes severities 0.1-1.0 plus linear-sRGB grayscale",
   "metric": "CIEDE2000",
+  "scope": "model-relative ranking; not a universal perceptual threshold",
+  "metric_limit": "CIEDE2000 is primarily validated for small adjacent color differences",
   "preset": {
     "primary": "yellow",
-    "secondary": "cyan"
+    "secondary": "cyan",
+    "selection_basis": "best worst-case pair within this model, role set, and severity sweep"
   },
   "evaluated_record_count": 20460,
   "reported_worst_case_record_count": 2640,
@@ -913,9 +916,9 @@
       "minimum_grayscale_delta_e_2000": 0.0,
       "worst_cvd_context": {
         "theme": "complementary-dark",
-        "role": "subtle",
+        "role": "state",
         "simulation": "deuteranomaly",
-        "severity": 0.8
+        "severity": 0.9
       },
       "preset": false
     },
@@ -1054,12 +1057,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.3,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#8fb1e0",
-      "simulated_secondary": "#cfae46",
-      "delta_e_2000_original": 47.58724633992977,
-      "delta_e_2000_simulated": 43.925574449096004
+      "primary_color": "#3f6d95",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#496a95",
+      "simulated_secondary": "#796835",
+      "delta_e_2000_original": 39.53955967986021,
+      "delta_e_2000_simulated": 37.01252541479428
     },
     {
       "theme": "complementary-dark",
@@ -1068,11 +1071,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#84b5e0",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 47.58724633992977,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 39.53955967986021,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -1081,13 +1084,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.4,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#96b4e1",
-      "simulated_secondary": "#caaa40",
-      "delta_e_2000_original": 47.58724633992977,
-      "delta_e_2000_simulated": 43.63092710259667
+      "severity": 0.3,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#4d6d96",
+      "simulated_secondary": "#776634",
+      "delta_e_2000_original": 39.53955967986021,
+      "delta_e_2000_simulated": 36.21106382958118
     },
     {
       "theme": "complementary-dark",
@@ -1096,12 +1099,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.6,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#79b9d3",
-      "simulated_secondary": "#dea372",
-      "delta_e_2000_original": 47.58724633992977,
-      "delta_e_2000_simulated": 37.208719533272784
+      "primary_color": "#3f6d95",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#31718a",
+      "simulated_secondary": "#806349",
+      "delta_e_2000_original": 39.53955967986021,
+      "delta_e_2000_simulated": 31.22025582345144
     },
     {
       "theme": "complementary-dark",
@@ -1333,13 +1336,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 1.0,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#98acdf",
-      "simulated_secondary": "#9daedb",
-      "delta_e_2000_original": 11.161716699118443,
-      "delta_e_2000_simulated": 1.5967227122737997
+      "severity": 0.4,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#4b6995",
+      "simulated_secondary": "#3e64ba",
+      "delta_e_2000_original": 8.567491079752232,
+      "delta_e_2000_simulated": 4.954110025767677
     },
     {
       "theme": "complementary-dark",
@@ -1348,11 +1351,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#84b5e0",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 11.161716699118443,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 8.567491079752232,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -1361,13 +1364,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#a4b5e2",
-      "simulated_secondary": "#a1b2de",
-      "delta_e_2000_original": 11.161716699118443,
-      "delta_e_2000_simulated": 0.8646101646964088
+      "severity": 0.3,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#4d6d96",
+      "simulated_secondary": "#4667bc",
+      "delta_e_2000_original": 8.567491079752232,
+      "delta_e_2000_simulated": 5.139806797564234
     },
     {
       "theme": "complementary-dark",
@@ -1375,13 +1378,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.2,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#88b5db",
-      "simulated_secondary": "#a3afd7",
-      "delta_e_2000_original": 11.161716699118443,
-      "delta_e_2000_simulated": 10.168442644656409
+      "severity": 1.0,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#00767b",
+      "simulated_secondary": "#107685",
+      "delta_e_2000_original": 8.567491079752232,
+      "delta_e_2000_simulated": 4.617405634936017
     },
     {
       "theme": "complementary-dark",
@@ -1614,12 +1617,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#98acdf",
-      "simulated_secondary": "#adb3c5",
-      "delta_e_2000_original": 31.40173248820604,
-      "delta_e_2000_simulated": 10.024802801456213
+      "primary_color": "#3f6d95",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#516594",
+      "simulated_secondary": "#676f85",
+      "delta_e_2000_original": 34.10959117413251,
+      "delta_e_2000_simulated": 8.524024520845588
     },
     {
       "theme": "complementary-dark",
@@ -1628,11 +1631,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#84b5e0",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 31.40173248820604,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 34.10959117413251,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -1642,12 +1645,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#a4b5e2",
-      "simulated_secondary": "#9fabc9",
-      "delta_e_2000_original": 31.40173248820604,
-      "delta_e_2000_simulated": 4.893355629574125
+      "primary_color": "#3f6d95",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#5c6e97",
+      "simulated_secondary": "#4c5f89",
+      "delta_e_2000_original": 34.10959117413251,
+      "delta_e_2000_simulated": 5.639462854585992
     },
     {
       "theme": "complementary-dark",
@@ -1656,12 +1659,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#88b5db",
-      "simulated_secondary": "#d3a1c3",
-      "delta_e_2000_original": 31.40173248820604,
-      "delta_e_2000_simulated": 30.201192808770458
+      "primary_color": "#3f6d95",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#436d91",
+      "simulated_secondary": "#9d4d82",
+      "delta_e_2000_original": 34.10959117413251,
+      "delta_e_2000_simulated": 32.113113420376635
     },
     {
       "theme": "complementary-dark",
@@ -1893,13 +1896,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 1.0,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#98acdf",
-      "simulated_secondary": "#a1b0da",
-      "delta_e_2000_original": 22.037830275286506,
-      "delta_e_2000_simulated": 2.6830879318548853
+      "severity": 0.7,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#4f6795",
+      "simulated_secondary": "#4e65b6",
+      "delta_e_2000_original": 21.382603400431172,
+      "delta_e_2000_simulated": 4.7810031735501015
     },
     {
       "theme": "complementary-dark",
@@ -1908,11 +1911,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#84b5e0",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 22.037830275286506,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 21.382603400431172,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -1921,13 +1924,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.9,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#a2b5e2",
-      "simulated_secondary": "#9daede",
-      "delta_e_2000_original": 22.037830275286506,
-      "delta_e_2000_simulated": 1.9537868525968216
+      "severity": 0.6,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#556d96",
+      "simulated_secondary": "#4f62ba",
+      "delta_e_2000_original": 21.382603400431172,
+      "delta_e_2000_simulated": 6.398455117656628
     },
     {
       "theme": "complementary-dark",
@@ -1936,12 +1939,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#88b5db",
-      "simulated_secondary": "#bea7d7",
-      "delta_e_2000_original": 22.037830275286506,
-      "delta_e_2000_simulated": 20.93860685728571
+      "primary_color": "#3f6d95",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#436d91",
+      "simulated_secondary": "#7f55b0",
+      "delta_e_2000_original": 21.382603400431172,
+      "delta_e_2000_simulated": 18.481382512215912
     },
     {
       "theme": "complementary-dark",
@@ -2174,12 +2177,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.8,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#96addf",
-      "simulated_secondary": "#b8b1b4",
-      "delta_e_2000_original": 33.2902182545129,
-      "delta_e_2000_simulated": 17.56503024120039
+      "primary_color": "#3f6d95",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#4f6694",
+      "simulated_secondary": "#786c69",
+      "delta_e_2000_original": 37.015937708900005,
+      "delta_e_2000_simulated": 20.659417182453943
     },
     {
       "theme": "complementary-dark",
@@ -2188,11 +2191,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#84b5e0",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 33.2902182545129,
+      "primary_color": "#3f6d95",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 37.015937708900005,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -2202,12 +2205,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#a4b5e2",
-      "simulated_secondary": "#a6aab6",
-      "delta_e_2000_original": 33.2902182545129,
-      "delta_e_2000_simulated": 11.101032740316585
+      "primary_color": "#3f6d95",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#5c6e97",
+      "simulated_secondary": "#585e6c",
+      "delta_e_2000_original": 37.015937708900005,
+      "delta_e_2000_simulated": 10.940513569101666
     },
     {
       "theme": "complementary-dark",
@@ -2216,12 +2219,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#84b5e0",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#88b5db",
-      "simulated_secondary": "#d4a3b4",
-      "delta_e_2000_original": 33.2902182545129,
-      "delta_e_2000_simulated": 31.955511946229375
+      "primary_color": "#3f6d95",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#436d91",
+      "simulated_secondary": "#a24e69",
+      "delta_e_2000_original": 37.015937708900005,
+      "delta_e_2000_simulated": 35.30881742613484
     },
     {
       "theme": "complementary-dark",
@@ -2453,13 +2456,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.1,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#59bbd9",
-      "simulated_secondary": "#d4ab45",
-      "delta_e_2000_original": 43.690525406922355,
-      "delta_e_2000_simulated": 43.89379686218057
+      "severity": 0.2,
+      "primary_color": "#36717c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#486d7c",
+      "simulated_secondary": "#796835",
+      "delta_e_2000_original": 30.445422916588143,
+      "delta_e_2000_simulated": 29.947135743464134
     },
     {
       "theme": "complementary-dark",
@@ -2468,11 +2471,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 43.690525406922355,
+      "primary_color": "#36717c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 30.445422916588143,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -2482,12 +2485,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#acb9da",
-      "simulated_secondary": "#bda939",
-      "delta_e_2000_original": 43.690525406922355,
-      "delta_e_2000_simulated": 41.4484119567719
+      "primary_color": "#36717c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#686d7d",
+      "simulated_secondary": "#706531",
+      "delta_e_2000_original": 30.445422916588143,
+      "delta_e_2000_simulated": 28.194896178451348
     },
     {
       "theme": "complementary-dark",
@@ -2495,13 +2498,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.4,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#46bfd3",
-      "simulated_secondary": "#d7a766",
-      "delta_e_2000_original": 43.690525406922355,
-      "delta_e_2000_simulated": 39.5832239578119
+      "severity": 0.3,
+      "primary_color": "#36717c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#3e707a",
+      "simulated_secondary": "#7b6641",
+      "delta_e_2000_original": 30.445422916588143,
+      "delta_e_2000_simulated": 27.79654338197792
     },
     {
       "theme": "complementary-dark",
@@ -2734,12 +2737,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.9,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#94aad9",
-      "simulated_secondary": "#97acdf",
-      "delta_e_2000_original": 12.930136953781915,
-      "delta_e_2000_simulated": 1.020888358602084
+      "primary_color": "#36717c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#5c667c",
+      "simulated_secondary": "#506694",
+      "delta_e_2000_original": 12.891646070440409,
+      "delta_e_2000_simulated": 7.157324401649555
     },
     {
       "theme": "complementary-dark",
@@ -2748,11 +2751,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 12.930136953781915,
+      "primary_color": "#36717c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 12.891646070440409,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -2761,13 +2764,13 @@
       "secondary": "blue",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.9,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#a8b9da",
-      "simulated_secondary": "#a2b5e2",
-      "delta_e_2000_original": 12.930136953781915,
-      "delta_e_2000_simulated": 3.0617719401722767
+      "severity": 0.7,
+      "primary_color": "#36717c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#606d7d",
+      "simulated_secondary": "#576d96",
+      "delta_e_2000_original": 12.891646070440409,
+      "delta_e_2000_simulated": 8.112679044942762
     },
     {
       "theme": "complementary-dark",
@@ -2776,12 +2779,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#00c9c7",
-      "simulated_secondary": "#62bfc3",
-      "delta_e_2000_original": 12.930136953781915,
-      "delta_e_2000_simulated": 6.0804125102083395
+      "primary_color": "#36717c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#007674",
+      "simulated_secondary": "#00767b",
+      "delta_e_2000_original": 12.891646070440409,
+      "delta_e_2000_simulated": 3.0885267014730324
     },
     {
       "theme": "complementary-dark",
@@ -3013,13 +3016,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 1.0,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#96a9d9",
-      "simulated_secondary": "#9daedb",
-      "delta_e_2000_original": 23.127644352622994,
-      "delta_e_2000_simulated": 1.6986464379263209
+      "severity": 0.5,
+      "primary_color": "#36717c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#546a7c",
+      "simulated_secondary": "#3a64ba",
+      "delta_e_2000_original": 20.805239811848736,
+      "delta_e_2000_simulated": 9.803113164851062
     },
     {
       "theme": "complementary-dark",
@@ -3028,11 +3031,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 23.127644352622994,
+      "primary_color": "#36717c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 20.805239811848736,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -3041,13 +3044,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.9,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#a8b9da",
-      "simulated_secondary": "#a1b2de",
-      "delta_e_2000_original": 23.127644352622994,
-      "delta_e_2000_simulated": 3.269179566311289
+      "severity": 0.5,
+      "primary_color": "#36717c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#5a6e7d",
+      "simulated_secondary": "#4169bd",
+      "delta_e_2000_original": 20.805239811848736,
+      "delta_e_2000_simulated": 10.936880691003852
     },
     {
       "theme": "complementary-dark",
@@ -3056,12 +3059,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#00c9c7",
-      "simulated_secondary": "#96b6bd",
-      "delta_e_2000_original": 23.127644352622994,
-      "delta_e_2000_simulated": 15.806012391426307
+      "primary_color": "#36717c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#007674",
+      "simulated_secondary": "#107685",
+      "delta_e_2000_original": 20.805239811848736,
+      "delta_e_2000_simulated": 7.680664336404998
     },
     {
       "theme": "complementary-dark",
@@ -3294,12 +3297,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#96a9d9",
-      "simulated_secondary": "#adb3c5",
-      "delta_e_2000_original": 47.58989833822619,
-      "delta_e_2000_simulated": 9.627828761850246
+      "primary_color": "#36717c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#5d657c",
+      "simulated_secondary": "#676f85",
+      "delta_e_2000_original": 35.4709911442305,
+      "delta_e_2000_simulated": 3.8302711484386713
     },
     {
       "theme": "complementary-dark",
@@ -3308,11 +3311,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 47.58989833822619,
+      "primary_color": "#36717c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 35.4709911442305,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -3321,13 +3324,13 @@
       "secondary": "magenta",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#acb9da",
-      "simulated_secondary": "#9fabc9",
-      "delta_e_2000_original": 47.58989833822619,
-      "delta_e_2000_simulated": 3.9671225342720353
+      "severity": 0.9,
+      "primary_color": "#36717c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#666d7d",
+      "simulated_secondary": "#555f89",
+      "delta_e_2000_original": 35.4709911442305,
+      "delta_e_2000_simulated": 10.021781918973565
     },
     {
       "theme": "complementary-dark",
@@ -3336,12 +3339,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#54bdd5",
-      "simulated_secondary": "#d3a1c3",
-      "delta_e_2000_original": 47.58989833822619,
-      "delta_e_2000_simulated": 44.052926363273805
+      "primary_color": "#36717c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#3f707a",
+      "simulated_secondary": "#9d4d82",
+      "delta_e_2000_original": 35.4709911442305,
+      "delta_e_2000_simulated": 32.986266605354885
     },
     {
       "theme": "complementary-dark",
@@ -3573,13 +3576,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 1.0,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#96a9d9",
-      "simulated_secondary": "#a1b0da",
-      "delta_e_2000_original": 35.371514328350194,
-      "delta_e_2000_simulated": 2.726192804496512
+      "severity": 0.6,
+      "primary_color": "#36717c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#57697c",
+      "simulated_secondary": "#5464b6",
+      "delta_e_2000_original": 24.4269611112993,
+      "delta_e_2000_simulated": 9.506979465353057
     },
     {
       "theme": "complementary-dark",
@@ -3588,11 +3591,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 35.371514328350194,
+      "primary_color": "#36717c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 24.4269611112993,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -3601,13 +3604,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.9,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#a8b9da",
-      "simulated_secondary": "#9daede",
-      "delta_e_2000_original": 35.371514328350194,
-      "delta_e_2000_simulated": 4.466284761701503
+      "severity": 0.5,
+      "primary_color": "#36717c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#5a6e7d",
+      "simulated_secondary": "#5860b9",
+      "delta_e_2000_original": 24.4269611112993,
+      "delta_e_2000_simulated": 10.349419955598595
     },
     {
       "theme": "complementary-dark",
@@ -3616,12 +3619,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#54bdd5",
-      "simulated_secondary": "#bea7d7",
-      "delta_e_2000_original": 35.371514328350194,
-      "delta_e_2000_simulated": 32.275053960692425
+      "primary_color": "#36717c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#3f707a",
+      "simulated_secondary": "#7f55b0",
+      "delta_e_2000_original": 24.4269611112993,
+      "delta_e_2000_simulated": 21.90157187379678
     },
     {
       "theme": "complementary-dark",
@@ -3854,12 +3857,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.9,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#94aad9",
-      "simulated_secondary": "#b6b3b4",
-      "delta_e_2000_original": 51.72518011819901,
-      "delta_e_2000_simulated": 17.008524448622953
+      "primary_color": "#36717c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#5c667c",
+      "simulated_secondary": "#756e69",
+      "delta_e_2000_original": 42.71635481410603,
+      "delta_e_2000_simulated": 14.32174881200229
     },
     {
       "theme": "complementary-dark",
@@ -3868,11 +3871,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 51.72518011819901,
+      "primary_color": "#36717c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 42.71635481410603,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -3882,12 +3885,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#acb9da",
-      "simulated_secondary": "#a6aab6",
-      "delta_e_2000_original": 51.72518011819901,
-      "delta_e_2000_simulated": 8.509832876022257
+      "primary_color": "#36717c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#686d7d",
+      "simulated_secondary": "#585e6c",
+      "delta_e_2000_original": 42.71635481410603,
+      "delta_e_2000_simulated": 5.866895675686045
     },
     {
       "theme": "complementary-dark",
@@ -3896,12 +3899,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#3bbfd9",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#54bdd5",
-      "simulated_secondary": "#d4a3b4",
-      "delta_e_2000_original": 51.72518011819901,
-      "delta_e_2000_simulated": 47.73275316126374
+      "primary_color": "#36717c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#3f707a",
+      "simulated_secondary": "#a24e69",
+      "delta_e_2000_original": 42.71635481410603,
+      "delta_e_2000_simulated": 39.87092845031827
     },
     {
       "theme": "complementary-dark",
@@ -4133,13 +4136,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.9,
-      "primary_color": "#61c46d",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b6ad72",
-      "simulated_secondary": "#c9b449",
-      "delta_e_2000_original": 31.701721694843524,
-      "delta_e_2000_simulated": 8.715829414791166
+      "severity": 1.0,
+      "primary_color": "#34773c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#706740",
+      "simulated_secondary": "#766b37",
+      "delta_e_2000_original": 23.473005207957687,
+      "delta_e_2000_simulated": 3.5845459972500757
     },
     {
       "theme": "complementary-dark",
@@ -4148,12 +4151,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#61c46d",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 31.701721694843524,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#34773c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 23.473005207957687,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -4161,13 +4164,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#c6b566",
-      "simulated_secondary": "#bda939",
-      "delta_e_2000_original": 31.701721694843524,
-      "delta_e_2000_simulated": 5.863627805219688
+      "severity": 0.9,
+      "primary_color": "#34773c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#766e38",
+      "simulated_secondary": "#716631",
+      "delta_e_2000_original": 23.473005207957687,
+      "delta_e_2000_simulated": 3.0334122997922255
     },
     {
       "theme": "complementary-dark",
@@ -4176,12 +4179,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#61c46d",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#74c07a",
-      "simulated_secondary": "#d4a95a",
-      "delta_e_2000_original": 31.701721694843524,
-      "delta_e_2000_simulated": 29.081553863258957
+      "primary_color": "#34773c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#427545",
+      "simulated_secondary": "#7b663e",
+      "delta_e_2000_original": 23.473005207957687,
+      "delta_e_2000_simulated": 21.76471726208291
     },
     {
       "theme": "complementary-dark",
@@ -4414,12 +4417,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#b9ac73",
-      "simulated_secondary": "#98acdf",
-      "delta_e_2000_original": 41.714154751050536,
-      "delta_e_2000_simulated": 39.231541121411205
+      "primary_color": "#34773c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#706740",
+      "simulated_secondary": "#516594",
+      "delta_e_2000_original": 38.1732033321185,
+      "delta_e_2000_simulated": 35.962834569313664
     },
     {
       "theme": "complementary-dark",
@@ -4428,12 +4431,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#61c46d",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 41.714154751050536,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#34773c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 38.1732033321185,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -4442,12 +4445,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#c6b566",
-      "simulated_secondary": "#a4b5e2",
-      "delta_e_2000_original": 41.714154751050536,
-      "delta_e_2000_simulated": 41.31887629999579
+      "primary_color": "#34773c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#796d37",
+      "simulated_secondary": "#5c6e97",
+      "delta_e_2000_original": 38.1732033321185,
+      "delta_e_2000_simulated": 37.53155231698331
     },
     {
       "theme": "complementary-dark",
@@ -4456,12 +4459,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#50c0af",
-      "simulated_secondary": "#62bfc3",
-      "delta_e_2000_original": 41.714154751050536,
-      "delta_e_2000_simulated": 8.251010776479742
+      "primary_color": "#34773c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#287469",
+      "simulated_secondary": "#00767b",
+      "delta_e_2000_original": 38.1732033321185,
+      "delta_e_2000_simulated": 6.994649189935411
     },
     {
       "theme": "complementary-dark",
@@ -4694,12 +4697,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#61c46d",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#7ac06e",
-      "simulated_secondary": "#59bbd9",
-      "delta_e_2000_original": 34.82007125548915,
-      "delta_e_2000_simulated": 36.82945549565032
+      "primary_color": "#34773c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#46743d",
+      "simulated_secondary": "#416f7c",
+      "delta_e_2000_original": 25.855535515046036,
+      "delta_e_2000_simulated": 26.544394423675822
     },
     {
       "theme": "complementary-dark",
@@ -4708,12 +4711,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#61c46d",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 34.82007125548915,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#34773c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 25.855535515046036,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -4722,12 +4725,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.1,
-      "primary_color": "#61c46d",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#7bc16d",
-      "simulated_secondary": "#5bbdd9",
-      "delta_e_2000_original": 34.82007125548915,
-      "delta_e_2000_simulated": 36.35033202941099
+      "primary_color": "#34773c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#46753c",
+      "simulated_secondary": "#42707c",
+      "delta_e_2000_original": 25.855535515046036,
+      "delta_e_2000_simulated": 26.40710700237282
     },
     {
       "theme": "complementary-dark",
@@ -4736,12 +4739,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#50c0af",
-      "simulated_secondary": "#00c9c7",
-      "delta_e_2000_original": 34.82007125548915,
-      "delta_e_2000_simulated": 6.456731888720021
+      "primary_color": "#34773c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#287469",
+      "simulated_secondary": "#007674",
+      "delta_e_2000_original": 25.855535515046036,
+      "delta_e_2000_simulated": 4.272338529469073
     },
     {
       "theme": "complementary-dark",
@@ -4974,12 +4977,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#b9ac73",
-      "simulated_secondary": "#9daedb",
-      "delta_e_2000_original": 41.55947921824619,
-      "delta_e_2000_simulated": 37.67206433317568
+      "primary_color": "#34773c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#706740",
+      "simulated_secondary": "#2964b9",
+      "delta_e_2000_original": 46.4353951264214,
+      "delta_e_2000_simulated": 43.541226005453
     },
     {
       "theme": "complementary-dark",
@@ -4988,12 +4991,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#61c46d",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 41.55947921824619,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#34773c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 46.4353951264214,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -5002,12 +5005,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#c6b566",
-      "simulated_secondary": "#a1b2de",
-      "delta_e_2000_original": 41.55947921824619,
-      "delta_e_2000_simulated": 41.06125075767979
+      "primary_color": "#34773c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#796d37",
+      "simulated_secondary": "#386ebe",
+      "delta_e_2000_original": 46.4353951264214,
+      "delta_e_2000_simulated": 46.20256438352549
     },
     {
       "theme": "complementary-dark",
@@ -5016,12 +5019,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#50c0af",
-      "simulated_secondary": "#96b6bd",
-      "delta_e_2000_original": 41.55947921824619,
-      "delta_e_2000_simulated": 15.926938709775316
+      "primary_color": "#34773c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#287469",
+      "simulated_secondary": "#107685",
+      "delta_e_2000_original": 46.4353951264214,
+      "delta_e_2000_simulated": 11.253785070639148
     },
     {
       "theme": "complementary-dark",
@@ -5254,12 +5257,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#b9ac73",
-      "simulated_secondary": "#adb3c5",
-      "delta_e_2000_original": 60.81472957709624,
-      "delta_e_2000_simulated": 28.50463018411096
+      "primary_color": "#34773c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#706740",
+      "simulated_secondary": "#676f85",
+      "delta_e_2000_original": 64.7954086951137,
+      "delta_e_2000_simulated": 27.765945930392068
     },
     {
       "theme": "complementary-dark",
@@ -5268,12 +5271,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#61c46d",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 60.81472957709624,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#34773c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 64.7954086951137,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -5282,12 +5285,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#c6b566",
-      "simulated_secondary": "#9fabc9",
-      "delta_e_2000_original": 60.81472957709624,
-      "delta_e_2000_simulated": 36.7375047697696
+      "primary_color": "#34773c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#796d37",
+      "simulated_secondary": "#4c5f89",
+      "delta_e_2000_original": 64.7954086951137,
+      "delta_e_2000_simulated": 38.51004782605205
     },
     {
       "theme": "complementary-dark",
@@ -5296,12 +5299,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#50c0af",
-      "simulated_secondary": "#e09fac",
-      "delta_e_2000_original": 60.81472957709624,
-      "delta_e_2000_simulated": 48.89624320041648
+      "primary_color": "#34773c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#287469",
+      "simulated_secondary": "#ae4760",
+      "delta_e_2000_original": 64.7954086951137,
+      "delta_e_2000_simulated": 51.70065044108196
     },
     {
       "theme": "complementary-dark",
@@ -5534,12 +5537,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#b9ac73",
-      "simulated_secondary": "#a1b0da",
-      "delta_e_2000_original": 43.49105574111374,
-      "delta_e_2000_simulated": 36.86986472615089
+      "primary_color": "#34773c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#706740",
+      "simulated_secondary": "#3c69b5",
+      "delta_e_2000_original": 47.13565496245698,
+      "delta_e_2000_simulated": 41.95057239728725
     },
     {
       "theme": "complementary-dark",
@@ -5548,12 +5551,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#61c46d",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 43.49105574111374,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#34773c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 47.13565496245698,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -5561,13 +5564,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#c6b566",
-      "simulated_secondary": "#9baede",
-      "delta_e_2000_original": 43.49105574111374,
-      "delta_e_2000_simulated": 42.25148061605973
+      "severity": 0.2,
+      "primary_color": "#34773c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#52733c",
+      "simulated_secondary": "#7358b8",
+      "delta_e_2000_original": 47.13565496245698,
+      "delta_e_2000_simulated": 46.36677201071326
     },
     {
       "theme": "complementary-dark",
@@ -5575,13 +5578,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.5,
-      "primary_color": "#61c46d",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#65c189",
-      "simulated_secondary": "#c0a7d0",
-      "delta_e_2000_original": 43.49105574111374,
-      "delta_e_2000_simulated": 37.521469764995295
+      "severity": 0.9,
+      "primary_color": "#34773c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#1f7565",
+      "simulated_secondary": "#835f86",
+      "delta_e_2000_original": 47.13565496245698,
+      "delta_e_2000_simulated": 36.728334246491904
     },
     {
       "theme": "complementary-dark",
@@ -5814,12 +5817,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#b9ac73",
-      "simulated_secondary": "#b4b4b4",
-      "delta_e_2000_original": 55.24572622858717,
-      "delta_e_2000_simulated": 18.57996092590311
+      "primary_color": "#34773c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#706740",
+      "simulated_secondary": "#727069",
+      "delta_e_2000_original": 59.946205331502554,
+      "delta_e_2000_simulated": 12.40273962351497
     },
     {
       "theme": "complementary-dark",
@@ -5828,12 +5831,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#61c46d",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 55.24572622858717,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#34773c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 59.946205331502554,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -5842,12 +5845,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#c6b566",
-      "simulated_secondary": "#a6aab6",
-      "delta_e_2000_original": 55.24572622858717,
-      "delta_e_2000_simulated": 29.230366824188703
+      "primary_color": "#34773c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#796d37",
+      "simulated_secondary": "#585e6c",
+      "delta_e_2000_original": 59.946205331502554,
+      "delta_e_2000_simulated": 27.931933421970413
     },
     {
       "theme": "complementary-dark",
@@ -5856,12 +5859,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.3,
-      "primary_color": "#61c46d",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#74c07f",
-      "simulated_secondary": "#d5a3b3",
-      "delta_e_2000_original": 55.24572622858717,
-      "delta_e_2000_simulated": 47.96047163843287
+      "primary_color": "#34773c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#417448",
+      "simulated_secondary": "#a24e68",
+      "delta_e_2000_original": 59.946205331502554,
+      "delta_e_2000_simulated": 52.061175463562684
     },
     {
       "theme": "complementary-dark",
@@ -6094,12 +6097,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#61c46d",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#7ac06e",
-      "simulated_secondary": "#5fbfb5",
-      "delta_e_2000_original": 19.108297439137367,
-      "delta_e_2000_simulated": 20.07332648974242
+      "primary_color": "#34773c",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#46743d",
+      "simulated_secondary": "#41716c",
+      "delta_e_2000_original": 16.57770414231048,
+      "delta_e_2000_simulated": 16.805235726463298
     },
     {
       "theme": "complementary-dark",
@@ -6108,12 +6111,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#61c46d",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 19.108297439137367,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#34773c",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 16.57770414231048,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -6122,12 +6125,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.1,
-      "primary_color": "#61c46d",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#7bc16d",
-      "simulated_secondary": "#61c0b5",
-      "delta_e_2000_original": 19.108297439137367,
-      "delta_e_2000_simulated": 20.003586815080652
+      "primary_color": "#34773c",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#46753c",
+      "simulated_secondary": "#42726c",
+      "delta_e_2000_original": 16.57770414231048,
+      "delta_e_2000_simulated": 16.740201326718612
     },
     {
       "theme": "complementary-dark",
@@ -6136,12 +6139,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#61c46d",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#50c0af",
-      "simulated_secondary": "#00c7be",
-      "delta_e_2000_original": 19.108297439137367,
-      "delta_e_2000_simulated": 4.534599091442645
+      "primary_color": "#34773c",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#287469",
+      "simulated_secondary": "#057571",
+      "delta_e_2000_original": 16.57770414231048,
+      "delta_e_2000_simulated": 3.459358108844513
     },
     {
       "theme": "complementary-dark",
@@ -6374,12 +6377,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#a3aedc",
-      "simulated_secondary": "#d4ab45",
-      "delta_e_2000_original": 43.417523927074775,
-      "delta_e_2000_simulated": 43.827661091889695
+      "primary_color": "#5162bb",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#4b63bb",
+      "simulated_secondary": "#7b6735",
+      "delta_e_2000_original": 46.14554665720218,
+      "delta_e_2000_simulated": 46.41679252380238
     },
     {
       "theme": "complementary-dark",
@@ -6388,11 +6391,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#a4aedc",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 43.417523927074775,
+      "primary_color": "#5162bb",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 46.14554665720218,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -6402,12 +6405,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.1,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#a3afdc",
-      "simulated_secondary": "#d3aa44",
-      "delta_e_2000_original": 43.417523927074775,
-      "delta_e_2000_simulated": 43.497206311961456
+      "primary_color": "#5162bb",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#4d64bb",
+      "simulated_secondary": "#7a6635",
+      "delta_e_2000_original": 46.14554665720218,
+      "delta_e_2000_simulated": 45.97592274790449
     },
     {
       "theme": "complementary-dark",
@@ -6416,12 +6419,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.7,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#9db3cb",
-      "simulated_secondary": "#e2a07a",
-      "delta_e_2000_original": 43.417523927074775,
-      "delta_e_2000_simulated": 31.480969772467027
+      "primary_color": "#5162bb",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#3b6d9f",
+      "simulated_secondary": "#82624d",
+      "delta_e_2000_original": 46.14554665720218,
+      "delta_e_2000_simulated": 31.84833551403038
     },
     {
       "theme": "complementary-dark",
@@ -6654,12 +6657,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#9daedb",
-      "simulated_secondary": "#adb3c5",
-      "delta_e_2000_original": 18.96148716167528,
-      "delta_e_2000_simulated": 8.520750919096756
+      "primary_color": "#5162bb",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#2964b9",
+      "simulated_secondary": "#676f85",
+      "delta_e_2000_original": 24.736964754322333,
+      "delta_e_2000_simulated": 14.962236954285
     },
     {
       "theme": "complementary-dark",
@@ -6668,11 +6671,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#a4aedc",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 18.96148716167528,
+      "primary_color": "#5162bb",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 24.736964754322333,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -6682,12 +6685,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#a1b2de",
-      "simulated_secondary": "#9fabc9",
-      "delta_e_2000_original": 18.96148716167528,
-      "delta_e_2000_simulated": 4.28523077177862
+      "primary_color": "#5162bb",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#386ebe",
+      "simulated_secondary": "#4c5f89",
+      "delta_e_2000_original": 24.736964754322333,
+      "delta_e_2000_simulated": 9.810286656533444
     },
     {
       "theme": "complementary-dark",
@@ -6696,12 +6699,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.1,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#a4afd9",
-      "simulated_secondary": "#d5a0c5",
-      "delta_e_2000_original": 18.96148716167528,
-      "delta_e_2000_simulated": 18.615538147509945
+      "primary_color": "#5162bb",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#4f64b7",
+      "simulated_secondary": "#a04b85",
+      "delta_e_2000_original": 24.736964754322333,
+      "delta_e_2000_simulated": 24.811380505488298
     },
     {
       "theme": "complementary-dark",
@@ -6934,12 +6937,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#9daedb",
-      "simulated_secondary": "#a1b0da",
-      "delta_e_2000_original": 10.847995843079529,
-      "delta_e_2000_simulated": 1.0948806851566872
+      "primary_color": "#5162bb",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#2964b9",
+      "simulated_secondary": "#3c69b5",
+      "delta_e_2000_original": 13.959324561600022,
+      "delta_e_2000_simulated": 2.2392517581779394
     },
     {
       "theme": "complementary-dark",
@@ -6948,11 +6951,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#a4aedc",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 10.847995843079529,
+      "primary_color": "#5162bb",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 13.959324561600022,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -6962,12 +6965,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.9,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#a1b2de",
-      "simulated_secondary": "#9daede",
-      "delta_e_2000_original": 10.847995843079529,
-      "delta_e_2000_simulated": 1.2997789033253586
+      "primary_color": "#5162bb",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#396dbe",
+      "simulated_secondary": "#3266bb",
+      "delta_e_2000_original": 13.959324561600022,
+      "delta_e_2000_simulated": 2.46912792255092
     },
     {
       "theme": "complementary-dark",
@@ -6975,13 +6978,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.1,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#a4afd9",
-      "simulated_secondary": "#bfa6d9",
-      "delta_e_2000_original": 10.847995843079529,
-      "delta_e_2000_simulated": 10.508262240465411
+      "severity": 0.2,
+      "primary_color": "#5162bb",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#4e65b3",
+      "simulated_secondary": "#7f55b0",
+      "delta_e_2000_original": 13.959324561600022,
+      "delta_e_2000_simulated": 13.550611745683637
     },
     {
       "theme": "complementary-dark",
@@ -7214,12 +7217,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.8,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#9eaedb",
-      "simulated_secondary": "#b8b1b4",
-      "delta_e_2000_original": 21.22234051168613,
-      "delta_e_2000_simulated": 15.908251061456419
+      "primary_color": "#5162bb",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#2f65b9",
+      "simulated_secondary": "#786c69",
+      "delta_e_2000_original": 29.01190116623473,
+      "delta_e_2000_simulated": 26.78782967560453
     },
     {
       "theme": "complementary-dark",
@@ -7228,11 +7231,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#a4aedc",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 21.22234051168613,
+      "primary_color": "#5162bb",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 29.01190116623473,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -7242,12 +7245,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#a1b2de",
-      "simulated_secondary": "#a6aab6",
-      "delta_e_2000_original": 21.22234051168613,
-      "delta_e_2000_simulated": 10.69723875838909
+      "primary_color": "#5162bb",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#386ebe",
+      "simulated_secondary": "#585e6c",
+      "delta_e_2000_original": 29.01190116623473,
+      "delta_e_2000_simulated": 17.351361841451425
     },
     {
       "theme": "complementary-dark",
@@ -7255,13 +7258,13 @@
       "secondary": "rose",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.2,
-      "primary_color": "#a4aedc",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#a3afd7",
-      "simulated_secondary": "#d4a3b4",
-      "delta_e_2000_original": 21.22234051168613,
-      "delta_e_2000_simulated": 20.587597387484006
+      "severity": 0.1,
+      "primary_color": "#5162bb",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#4f64b7",
+      "simulated_secondary": "#a44c6a",
+      "delta_e_2000_original": 29.01190116623473,
+      "delta_e_2000_simulated": 28.964979785373778
     },
     {
       "theme": "complementary-dark",
@@ -7494,12 +7497,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#d99ec7",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#adb3c5",
-      "simulated_secondary": "#c8b549",
-      "delta_e_2000_original": 44.75735229665744,
-      "delta_e_2000_simulated": 35.102074965958735
+      "primary_color": "#a54687",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#676f85",
+      "simulated_secondary": "#766b37",
+      "delta_e_2000_original": 43.264335263568725,
+      "delta_e_2000_simulated": 30.61650741244662
     },
     {
       "theme": "complementary-dark",
@@ -7508,11 +7511,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#d99ec7",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 44.75735229665744,
+      "primary_color": "#a54687",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 43.264335263568725,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -7522,12 +7525,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#d99ec7",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#9fabc9",
-      "simulated_secondary": "#bda939",
-      "delta_e_2000_original": 44.75735229665744,
-      "delta_e_2000_simulated": 40.290853517575705
+      "primary_color": "#a54687",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#4c5f89",
+      "simulated_secondary": "#706531",
+      "delta_e_2000_original": 43.264335263568725,
+      "delta_e_2000_simulated": 37.91891730508692
     },
     {
       "theme": "complementary-dark",
@@ -7536,12 +7539,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#d99ec7",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#e09fac",
-      "simulated_secondary": "#e99a94",
-      "delta_e_2000_original": 44.75735229665744,
-      "delta_e_2000_simulated": 7.93644679309588
+      "primary_color": "#a54687",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#ae4760",
+      "simulated_secondary": "#865e5b",
+      "delta_e_2000_original": 43.264335263568725,
+      "delta_e_2000_simulated": 13.005661867493002
     },
     {
       "theme": "complementary-dark",
@@ -7774,12 +7777,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#d99ec7",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#d1a2c7",
-      "simulated_secondary": "#d3a4b5",
-      "delta_e_2000_original": 5.941457965669952,
-      "delta_e_2000_simulated": 6.262906061727492
+      "primary_color": "#a54687",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#9b4f87",
+      "simulated_secondary": "#9f516a",
+      "delta_e_2000_original": 8.34997069304913,
+      "delta_e_2000_simulated": 9.311620217399865
     },
     {
       "theme": "complementary-dark",
@@ -7788,11 +7791,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#d99ec7",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 5.941457965669952,
+      "primary_color": "#a54687",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 8.34997069304913,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -7802,12 +7805,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.1,
-      "primary_color": "#d99ec7",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#d1a1c7",
-      "simulated_secondary": "#d2a2b5",
-      "delta_e_2000_original": 5.941457965669952,
-      "delta_e_2000_simulated": 5.877759806070657
+      "primary_color": "#a54687",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#9a4d87",
+      "simulated_secondary": "#9f4e6b",
+      "delta_e_2000_original": 8.34997069304913,
+      "delta_e_2000_simulated": 8.789769419954487
     },
     {
       "theme": "complementary-dark",
@@ -7816,12 +7819,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#d99ec7",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#e09fac",
-      "simulated_secondary": "#e39ea7",
-      "delta_e_2000_original": 5.941457965669952,
-      "delta_e_2000_simulated": 1.8032617472167416
+      "primary_color": "#a54687",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#ae4760",
+      "simulated_secondary": "#b64055",
+      "delta_e_2000_original": 8.34997069304913,
+      "delta_e_2000_simulated": 3.6906528431208994
     },
     {
       "theme": "complementary-dark",
@@ -8054,12 +8057,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#c2b578",
-      "simulated_secondary": "#c8b549",
-      "delta_e_2000_original": 13.910338534681964,
-      "delta_e_2000_simulated": 7.70783246420628
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#776d3c",
+      "simulated_secondary": "#766b37",
+      "delta_e_2000_original": 10.574045541265171,
+      "delta_e_2000_simulated": 1.0873343234417319
     },
     {
       "theme": "complementary-dark",
@@ -8068,12 +8071,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 13.910338534681964,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 10.574045541265171,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -8081,13 +8084,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.8,
-      "primary_color": "#dea378",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#baa875",
-      "simulated_secondary": "#c1a93b",
-      "delta_e_2000_original": 13.910338534681964,
-      "delta_e_2000_simulated": 9.810800648555372
+      "severity": 1.0,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#6d6339",
+      "simulated_secondary": "#706531",
+      "delta_e_2000_original": 10.574045541265171,
+      "delta_e_2000_simulated": 2.522450079438209
     },
     {
       "theme": "complementary-dark",
@@ -8096,12 +8099,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#ee9798",
-      "simulated_secondary": "#e99a94",
-      "delta_e_2000_original": 13.910338534681964,
-      "delta_e_2000_simulated": 2.6932689533079603
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#995656",
+      "simulated_secondary": "#865e5b",
+      "delta_e_2000_original": 10.574045541265171,
+      "delta_e_2000_simulated": 6.4647405468465795
     },
     {
       "theme": "complementary-dark",
@@ -8333,13 +8336,13 @@
       "secondary": "blue",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.1,
-      "primary_color": "#dea378",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#d8a678",
-      "simulated_secondary": "#89b4e0",
-      "delta_e_2000_original": 37.00299040659342,
-      "delta_e_2000_simulated": 36.10352868169224
+      "severity": 0.2,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#85643c",
+      "simulated_secondary": "#476b95",
+      "delta_e_2000_original": 35.210341975182786,
+      "delta_e_2000_simulated": 34.58146862964679
     },
     {
       "theme": "complementary-dark",
@@ -8348,12 +8351,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 37.00299040659342,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 35.210341975182786,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -8361,13 +8364,13 @@
       "secondary": "blue",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.4,
-      "primary_color": "#dea378",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#c9a776",
-      "simulated_secondary": "#96b4e1",
-      "delta_e_2000_original": 37.00299040659342,
-      "delta_e_2000_simulated": 35.284941834397024
+      "severity": 0.3,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#80623b",
+      "simulated_secondary": "#4d6d96",
+      "delta_e_2000_original": 35.210341975182786,
+      "delta_e_2000_simulated": 33.85716092837287
     },
     {
       "theme": "complementary-dark",
@@ -8376,12 +8379,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.3,
-      "primary_color": "#dea378",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#daa482",
-      "simulated_secondary": "#87b5d9",
-      "delta_e_2000_original": 37.00299040659342,
-      "delta_e_2000_simulated": 34.64251970465483
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#8a6044",
+      "simulated_secondary": "#426e8f",
+      "delta_e_2000_original": 35.210341975182786,
+      "delta_e_2000_simulated": 32.999366134542925
     },
     {
       "theme": "complementary-dark",
@@ -8613,13 +8616,13 @@
       "secondary": "cyan",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.8,
-      "primary_color": "#dea378",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#c5b278",
-      "simulated_secondary": "#91acd9",
-      "delta_e_2000_original": 40.288870971268224,
-      "delta_e_2000_simulated": 37.29756865686488
+      "severity": 0.4,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#80673c",
+      "simulated_secondary": "#516b7c",
+      "delta_e_2000_original": 33.65998157998015,
+      "delta_e_2000_simulated": 29.260089295662713
     },
     {
       "theme": "complementary-dark",
@@ -8628,12 +8631,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 40.288870971268224,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 33.65998157998015,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -8641,13 +8644,13 @@
       "secondary": "cyan",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#b4a875",
-      "simulated_secondary": "#acb9da",
-      "delta_e_2000_original": 40.288870971268224,
-      "delta_e_2000_simulated": 33.05837432256613
+      "severity": 0.9,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#6f6339",
+      "simulated_secondary": "#666d7d",
+      "delta_e_2000_original": 33.65998157998015,
+      "delta_e_2000_simulated": 25.806107742338718
     },
     {
       "theme": "complementary-dark",
@@ -8655,13 +8658,13 @@
       "secondary": "cyan",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.3,
-      "primary_color": "#dea378",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#daa482",
-      "simulated_secondary": "#51bed4",
-      "delta_e_2000_original": 40.288870971268224,
-      "delta_e_2000_simulated": 37.7974752901444
+      "severity": 0.2,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#8a6043",
+      "simulated_secondary": "#3f707a",
+      "delta_e_2000_original": 33.65998157998015,
+      "delta_e_2000_simulated": 31.905126003211645
     },
     {
       "theme": "complementary-dark",
@@ -8894,12 +8897,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#c2b578",
-      "simulated_secondary": "#b9ac73",
-      "delta_e_2000_original": 39.66900872033572,
-      "delta_e_2000_simulated": 2.5777169877488246
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#776d3c",
+      "simulated_secondary": "#706740",
+      "delta_e_2000_original": 34.42883161796995,
+      "delta_e_2000_simulated": 3.342405057891982
     },
     {
       "theme": "complementary-dark",
@@ -8908,11 +8911,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#afafaf",
-      "delta_e_2000_original": 39.66900872033572,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 34.42883161796995,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -8921,13 +8924,13 @@
       "secondary": "green",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.9,
-      "primary_color": "#dea378",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#b7a875",
-      "simulated_secondary": "#c2b667",
-      "delta_e_2000_original": 39.66900872033572,
-      "delta_e_2000_simulated": 6.623630061634067
+      "severity": 1.0,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#6d6339",
+      "simulated_secondary": "#796d37",
+      "delta_e_2000_original": 34.42883161796995,
+      "delta_e_2000_simulated": 4.698857886723133
     },
     {
       "theme": "complementary-dark",
@@ -8936,12 +8939,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#dea378",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#daa47f",
-      "simulated_secondary": "#74c07a",
-      "delta_e_2000_original": 39.66900872033572,
-      "delta_e_2000_simulated": 36.05977677966916
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#8a6043",
+      "simulated_secondary": "#427545",
+      "delta_e_2000_original": 34.42883161796995,
+      "delta_e_2000_simulated": 31.70701456263897
     },
     {
       "theme": "complementary-dark",
@@ -9174,12 +9177,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#dea378",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#d8a678",
-      "simulated_secondary": "#a3aedc",
-      "delta_e_2000_original": 33.92590315256242,
-      "delta_e_2000_simulated": 34.40755950506208
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#89623c",
+      "simulated_secondary": "#4b63bb",
+      "delta_e_2000_original": 40.19557773752778,
+      "delta_e_2000_simulated": 41.257018319501526
     },
     {
       "theme": "complementary-dark",
@@ -9188,12 +9191,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 33.92590315256242,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 40.19557773752778,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -9202,12 +9205,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.1,
-      "primary_color": "#dea378",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#d8a577",
-      "simulated_secondary": "#a3afdc",
-      "delta_e_2000_original": 33.92590315256242,
-      "delta_e_2000_simulated": 34.26655829230618
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#88603b",
+      "simulated_secondary": "#4d64bb",
+      "delta_e_2000_original": 40.19557773752778,
+      "delta_e_2000_simulated": 40.79340939544996
     },
     {
       "theme": "complementary-dark",
@@ -9215,13 +9218,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.5,
-      "primary_color": "#dea378",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#e0a185",
-      "simulated_secondary": "#a1b1d1",
-      "delta_e_2000_original": 33.92590315256242,
-      "delta_e_2000_simulated": 29.603533645440574
+      "severity": 0.6,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#925b49",
+      "simulated_secondary": "#436ba5",
+      "delta_e_2000_original": 40.19557773752778,
+      "delta_e_2000_simulated": 34.08979449640408
     },
     {
       "theme": "complementary-dark",
@@ -9454,12 +9457,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#c2b578",
-      "simulated_secondary": "#adb3c5",
-      "delta_e_2000_original": 30.057536562309004,
-      "delta_e_2000_simulated": 29.116796663399505
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#776d3c",
+      "simulated_secondary": "#676f85",
+      "delta_e_2000_original": 33.601097080509916,
+      "delta_e_2000_simulated": 29.973098139293782
     },
     {
       "theme": "complementary-dark",
@@ -9468,12 +9471,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 30.057536562309004,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 33.601097080509916,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -9482,12 +9485,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.1,
-      "primary_color": "#dea378",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#d8a577",
-      "simulated_secondary": "#d1a1c7",
-      "delta_e_2000_original": 30.057536562309004,
-      "delta_e_2000_simulated": 31.0336273582644
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#88603b",
+      "simulated_secondary": "#9a4d87",
+      "delta_e_2000_original": 33.601097080509916,
+      "delta_e_2000_simulated": 34.39697177426662
     },
     {
       "theme": "complementary-dark",
@@ -9496,12 +9499,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#ee9798",
-      "simulated_secondary": "#e09fac",
-      "delta_e_2000_original": 30.057536562309004,
-      "delta_e_2000_simulated": 6.667566120959895
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#995656",
+      "simulated_secondary": "#ae4760",
+      "delta_e_2000_original": 33.601097080509916,
+      "delta_e_2000_simulated": 8.151073162705895
     },
     {
       "theme": "complementary-dark",
@@ -9734,12 +9737,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#dea378",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#d8a678",
-      "simulated_secondary": "#bca6dc",
-      "delta_e_2000_original": 34.24100295589752,
-      "delta_e_2000_simulated": 35.2675548762935
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#89623c",
+      "simulated_secondary": "#7c54b8",
+      "delta_e_2000_original": 40.66775645505637,
+      "delta_e_2000_simulated": 42.078230878162515
     },
     {
       "theme": "complementary-dark",
@@ -9748,12 +9751,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 34.24100295589752,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 40.66775645505637,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -9762,12 +9765,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.1,
-      "primary_color": "#dea378",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#d8a577",
-      "simulated_secondary": "#bca6dc",
-      "delta_e_2000_original": 34.24100295589752,
-      "delta_e_2000_simulated": 35.22529142786078
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#88603b",
+      "simulated_secondary": "#7c53b8",
+      "delta_e_2000_original": 40.66775645505637,
+      "delta_e_2000_simulated": 41.720616048312486
     },
     {
       "theme": "complementary-dark",
@@ -9776,12 +9779,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#ee9798",
-      "simulated_secondary": "#bfabb8",
-      "delta_e_2000_original": 34.24100295589752,
-      "delta_e_2000_simulated": 16.391837574071783
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#995656",
+      "simulated_secondary": "#7f627b",
+      "delta_e_2000_original": 40.66775645505637,
+      "delta_e_2000_simulated": 15.050840620269916
     },
     {
       "theme": "complementary-dark",
@@ -10014,12 +10017,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#c2b578",
-      "simulated_secondary": "#b4b4b4",
-      "delta_e_2000_original": 24.056444806785223,
-      "delta_e_2000_simulated": 19.044524752263705
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#776d3c",
+      "simulated_secondary": "#727069",
+      "delta_e_2000_original": 26.64169675370844,
+      "delta_e_2000_simulated": 14.235950259429613
     },
     {
       "theme": "complementary-dark",
@@ -10028,12 +10031,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 24.056444806785223,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 26.64169675370844,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -10042,12 +10045,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#b4a875",
-      "simulated_secondary": "#a6aab6",
-      "delta_e_2000_original": 24.056444806785223,
-      "delta_e_2000_simulated": 24.504726014399633
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#6d6339",
+      "simulated_secondary": "#585e6c",
+      "delta_e_2000_original": 26.64169675370844,
+      "delta_e_2000_simulated": 24.922317509697617
     },
     {
       "theme": "complementary-dark",
@@ -10056,12 +10059,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#ee9798",
-      "simulated_secondary": "#e39ea7",
-      "delta_e_2000_original": 24.056444806785223,
-      "delta_e_2000_simulated": 4.8951603949236615
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#995656",
+      "simulated_secondary": "#b64055",
+      "delta_e_2000_original": 26.64169675370844,
+      "delta_e_2000_simulated": 8.200356957617432
     },
     {
       "theme": "complementary-dark",
@@ -10293,13 +10296,13 @@
       "secondary": "teal",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.7,
-      "primary_color": "#dea378",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#c6b178",
-      "simulated_secondary": "#9cafb6",
-      "delta_e_2000_original": 40.12226240752448,
-      "delta_e_2000_simulated": 24.89335583345934
+      "severity": 0.6,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#7c6a3c",
+      "simulated_secondary": "#5c696d",
+      "delta_e_2000_original": 33.983044733268784,
+      "delta_e_2000_simulated": 21.95240204146005
     },
     {
       "theme": "complementary-dark",
@@ -10308,12 +10311,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 40.12226240752448,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 33.983044733268784,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -10322,12 +10325,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#b4a875",
-      "simulated_secondary": "#b9b8b5",
-      "delta_e_2000_original": 40.12226240752448,
-      "delta_e_2000_simulated": 16.57765423075381
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#6d6339",
+      "simulated_secondary": "#6e6d6c",
+      "delta_e_2000_original": 33.983044733268784,
+      "delta_e_2000_simulated": 16.1501846036335
     },
     {
       "theme": "complementary-dark",
@@ -10336,12 +10339,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#dea378",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#daa47f",
-      "simulated_secondary": "#58c0b6",
-      "delta_e_2000_original": 40.12226240752448,
-      "delta_e_2000_simulated": 37.41599032184234
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#8a6043",
+      "simulated_secondary": "#3e726c",
+      "delta_e_2000_original": 33.983044733268784,
+      "delta_e_2000_simulated": 32.635469163223675
     },
     {
       "theme": "complementary-dark",
@@ -10574,12 +10577,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#cbad4b",
-      "simulated_primary": "#c2b578",
-      "simulated_secondary": "#c6b34f",
-      "delta_e_2000_original": 16.67604520101166,
-      "delta_e_2000_simulated": 6.757914450251912
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#796834",
+      "simulated_primary": "#776d3c",
+      "simulated_secondary": "#766b36",
+      "delta_e_2000_original": 12.79160502315771,
+      "delta_e_2000_simulated": 1.2531430007840036
     },
     {
       "theme": "complementary-dark",
@@ -10588,11 +10591,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dea378",
-      "secondary_color": "#cbad4b",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#afafaf",
-      "delta_e_2000_original": 16.67604520101166,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#796834",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 12.79160502315771,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -10601,13 +10604,13 @@
       "secondary": "yellow",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.8,
-      "primary_color": "#dea378",
-      "secondary_color": "#cbad4b",
-      "simulated_primary": "#baa875",
-      "simulated_secondary": "#c0ab42",
-      "delta_e_2000_original": 16.67604520101166,
-      "delta_e_2000_simulated": 9.263108568291466
+      "severity": 1.0,
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#796834",
+      "simulated_primary": "#6d6339",
+      "simulated_secondary": "#72662f",
+      "delta_e_2000_original": 12.79160502315771,
+      "delta_e_2000_simulated": 3.2997188837020834
     },
     {
       "theme": "complementary-dark",
@@ -10616,12 +10619,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dea378",
-      "secondary_color": "#cbad4b",
-      "simulated_primary": "#ee9798",
-      "simulated_secondary": "#dba098",
-      "delta_e_2000_original": 16.67604520101166,
-      "delta_e_2000_simulated": 5.992475604167558
+      "primary_color": "#8d5f3c",
+      "secondary_color": "#796834",
+      "simulated_primary": "#995656",
+      "simulated_secondary": "#82615c",
+      "delta_e_2000_original": 12.79160502315771,
+      "delta_e_2000_simulated": 8.758447968228174
     },
     {
       "theme": "complementary-dark",
@@ -10853,13 +10856,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.9,
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#a2b0da",
-      "simulated_secondary": "#c9b449",
-      "delta_e_2000_original": 47.56201053658241,
-      "delta_e_2000_simulated": 43.95841845588146
+      "severity": 1.0,
+      "primary_color": "#874eb8",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#3c69b5",
+      "simulated_secondary": "#766b37",
+      "delta_e_2000_original": 49.458806473255954,
+      "delta_e_2000_simulated": 45.36365862179701
     },
     {
       "theme": "complementary-dark",
@@ -10868,11 +10871,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 47.56201053658241,
+      "primary_color": "#874eb8",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 49.458806473255954,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -10881,13 +10884,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.9,
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#9daede",
-      "simulated_secondary": "#bfa93a",
-      "delta_e_2000_original": 47.56201053658241,
-      "delta_e_2000_simulated": 46.004592918328385
+      "severity": 1.0,
+      "primary_color": "#874eb8",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#2567bb",
+      "simulated_secondary": "#706531",
+      "delta_e_2000_original": 49.458806473255954,
+      "delta_e_2000_simulated": 46.714225276780226
     },
     {
       "theme": "complementary-dark",
@@ -10896,12 +10899,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#bfabb8",
-      "simulated_secondary": "#e99a94",
-      "delta_e_2000_original": 47.56201053658241,
-      "delta_e_2000_simulated": 16.209624673924697
+      "primary_color": "#874eb8",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#7f627b",
+      "simulated_secondary": "#865e5b",
+      "delta_e_2000_original": 49.458806473255954,
+      "delta_e_2000_simulated": 12.12628500015991
     },
     {
       "theme": "complementary-dark",
@@ -11134,12 +11137,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#a1b0da",
-      "simulated_secondary": "#adb3c5",
-      "delta_e_2000_original": 8.925390368958592,
-      "delta_e_2000_simulated": 7.6497810130768285
+      "primary_color": "#874eb8",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#3c69b5",
+      "simulated_secondary": "#676f85",
+      "delta_e_2000_original": 13.612987044531847,
+      "delta_e_2000_simulated": 13.36291438265388
     },
     {
       "theme": "complementary-dark",
@@ -11148,11 +11151,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 8.925390368958592,
+      "primary_color": "#874eb8",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 13.612987044531847,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -11162,12 +11165,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#9baede",
-      "simulated_secondary": "#9fabc9",
-      "delta_e_2000_original": 8.925390368958592,
-      "delta_e_2000_simulated": 4.844954807443306
+      "primary_color": "#874eb8",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#2567bb",
+      "simulated_secondary": "#4c5f89",
+      "delta_e_2000_original": 13.612987044531847,
+      "delta_e_2000_simulated": 9.206639861624522
     },
     {
       "theme": "complementary-dark",
@@ -11175,13 +11178,13 @@
       "secondary": "magenta",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.3,
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#bea7d5",
-      "simulated_secondary": "#d3a1c2",
-      "delta_e_2000_original": 8.925390368958592,
-      "delta_e_2000_simulated": 8.61282153935168
+      "severity": 0.1,
+      "primary_color": "#874eb8",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#8253b4",
+      "simulated_secondary": "#a04b85",
+      "delta_e_2000_original": 13.612987044531847,
+      "delta_e_2000_simulated": 13.821840722210775
     },
     {
       "theme": "complementary-dark",
@@ -11414,12 +11417,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#bca6dc",
-      "simulated_secondary": "#d3a4b5",
-      "delta_e_2000_original": 13.44401186859852,
-      "delta_e_2000_simulated": 13.806203798043576
+      "primary_color": "#874eb8",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#7c54b8",
+      "simulated_secondary": "#9f516a",
+      "delta_e_2000_original": 20.674531836389754,
+      "delta_e_2000_simulated": 21.98390657253868
     },
     {
       "theme": "complementary-dark",
@@ -11428,11 +11431,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 13.44401186859852,
+      "primary_color": "#874eb8",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 20.674531836389754,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -11442,12 +11445,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#9baede",
-      "simulated_secondary": "#a6aab6",
-      "delta_e_2000_original": 13.44401186859852,
-      "delta_e_2000_simulated": 11.50175580685432
+      "primary_color": "#874eb8",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#2567bb",
+      "simulated_secondary": "#585e6c",
+      "delta_e_2000_original": 20.674531836389754,
+      "delta_e_2000_simulated": 17.18052610196398
     },
     {
       "theme": "complementary-dark",
@@ -11455,13 +11458,13 @@
       "secondary": "rose",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.6,
-      "primary_color": "#c2a4dc",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#c2a7cc",
-      "simulated_secondary": "#de9faf",
-      "delta_e_2000_original": 13.44401186859852,
-      "delta_e_2000_simulated": 12.012726475041251
+      "severity": 1.0,
+      "primary_color": "#874eb8",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#7f627b",
+      "simulated_secondary": "#b64055",
+      "delta_e_2000_original": 20.674531836389754,
+      "delta_e_2000_simulated": 18.754509121176163
     },
     {
       "theme": "complementary-dark",
@@ -11694,12 +11697,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b7b4a9",
-      "simulated_secondary": "#c8b549",
-      "delta_e_2000_original": 33.80334492418519,
-      "delta_e_2000_simulated": 20.88822115459821
+      "primary_color": "#aa495b",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#767059",
+      "simulated_secondary": "#766b37",
+      "delta_e_2000_original": 32.150577720654525,
+      "delta_e_2000_simulated": 8.674035413844894
     },
     {
       "theme": "complementary-dark",
@@ -11708,12 +11711,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 33.80334492418519,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#aa495b",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 32.150577720654525,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -11722,12 +11725,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#a9a9aa",
-      "simulated_secondary": "#bda939",
-      "delta_e_2000_original": 33.80334492418519,
-      "delta_e_2000_simulated": 25.941086433040688
+      "primary_color": "#aa495b",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#5d5d5b",
+      "simulated_secondary": "#706531",
+      "delta_e_2000_original": 32.150577720654525,
+      "delta_e_2000_simulated": 17.53956781624208
     },
     {
       "theme": "complementary-dark",
@@ -11736,12 +11739,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#e69ca3",
-      "simulated_secondary": "#e99a94",
-      "delta_e_2000_original": 33.80334492418519,
-      "delta_e_2000_simulated": 5.024280255040905
+      "primary_color": "#aa495b",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#b83d50",
+      "simulated_secondary": "#865e5b",
+      "delta_e_2000_original": 32.150577720654525,
+      "delta_e_2000_simulated": 14.14433066125882
     },
     {
       "theme": "complementary-dark",
@@ -11973,13 +11976,13 @@
       "secondary": "blue",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.7,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#bcb0a9",
-      "simulated_secondary": "#95aedf",
-      "delta_e_2000_original": 33.85579115036253,
-      "delta_e_2000_simulated": 21.68277002674526
+      "severity": 0.6,
+      "primary_color": "#aa495b",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#836759",
+      "simulated_secondary": "#4e6895",
+      "delta_e_2000_original": 37.81543795451664,
+      "delta_e_2000_simulated": 26.886008281252376
     },
     {
       "theme": "complementary-dark",
@@ -11988,12 +11991,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 33.85579115036253,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#aa495b",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 37.81543795451664,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -12001,13 +12004,13 @@
       "secondary": "blue",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#a9a9aa",
-      "simulated_secondary": "#a4b5e2",
-      "delta_e_2000_original": 33.85579115036253,
-      "delta_e_2000_simulated": 16.035269918871087
+      "severity": 0.9,
+      "primary_color": "#aa495b",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#645c5b",
+      "simulated_secondary": "#5a6e97",
+      "delta_e_2000_original": 37.81543795451664,
+      "delta_e_2000_simulated": 18.802064211366865
     },
     {
       "theme": "complementary-dark",
@@ -12016,12 +12019,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#d6a2aa",
-      "simulated_secondary": "#88b5db",
-      "delta_e_2000_original": 33.85579115036253,
-      "delta_e_2000_simulated": 32.756270186390296
+      "primary_color": "#aa495b",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#a34f5b",
+      "simulated_secondary": "#436d91",
+      "delta_e_2000_original": 37.81543795451664,
+      "delta_e_2000_simulated": 36.06170547866232
     },
     {
       "theme": "complementary-dark",
@@ -12254,12 +12257,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.8,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#bab1a9",
-      "simulated_secondary": "#91acd9",
-      "delta_e_2000_original": 52.445940326942065,
-      "delta_e_2000_simulated": 21.27866302186189
+      "primary_color": "#aa495b",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#7c6c59",
+      "simulated_secondary": "#5b677c",
+      "delta_e_2000_original": 45.56467690658627,
+      "delta_e_2000_simulated": 20.779963785440493
     },
     {
       "theme": "complementary-dark",
@@ -12268,12 +12271,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 52.445940326942065,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#aa495b",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 45.56467690658627,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -12282,12 +12285,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#a9a9aa",
-      "simulated_secondary": "#acb9da",
-      "delta_e_2000_original": 52.445940326942065,
-      "delta_e_2000_simulated": 13.30958378104933
+      "primary_color": "#aa495b",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#5d5d5b",
+      "simulated_secondary": "#686d7d",
+      "delta_e_2000_original": 45.56467690658627,
+      "delta_e_2000_simulated": 11.256652411140319
     },
     {
       "theme": "complementary-dark",
@@ -12296,12 +12299,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#d6a2aa",
-      "simulated_secondary": "#54bdd5",
-      "delta_e_2000_original": 52.445940326942065,
-      "delta_e_2000_simulated": 48.672607161072534
+      "primary_color": "#aa495b",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#a34f5b",
+      "simulated_secondary": "#3f707a",
+      "delta_e_2000_original": 45.56467690658627,
+      "delta_e_2000_simulated": 42.29992521761162
     },
     {
       "theme": "complementary-dark",
@@ -12534,12 +12537,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#b7b4a9",
-      "simulated_secondary": "#b9ac73",
-      "delta_e_2000_original": 52.460156113646036,
-      "delta_e_2000_simulated": 13.93300428672657
+      "primary_color": "#aa495b",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#767059",
+      "simulated_secondary": "#706740",
+      "delta_e_2000_original": 57.0433876233338,
+      "delta_e_2000_simulated": 6.3168309439359485
     },
     {
       "theme": "complementary-dark",
@@ -12548,11 +12551,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#afafaf",
-      "delta_e_2000_original": 52.460156113646036,
+      "primary_color": "#aa495b",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 57.0433876233338,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -12562,12 +12565,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#a9a9aa",
-      "simulated_secondary": "#c6b566",
-      "delta_e_2000_original": 52.460156113646036,
-      "delta_e_2000_simulated": 22.771606803250098
+      "primary_color": "#aa495b",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#5d5d5b",
+      "simulated_secondary": "#796d37",
+      "delta_e_2000_original": 57.0433876233338,
+      "delta_e_2000_simulated": 18.59961741509202
     },
     {
       "theme": "complementary-dark",
@@ -12576,12 +12579,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.3,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#d6a2a9",
-      "simulated_secondary": "#74c07f",
-      "delta_e_2000_original": 52.460156113646036,
-      "delta_e_2000_simulated": 46.02925658063607
+      "primary_color": "#aa495b",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#a44e5a",
+      "simulated_secondary": "#417448",
+      "delta_e_2000_original": 57.0433876233338,
+      "delta_e_2000_simulated": 49.98607244307682
     },
     {
       "theme": "complementary-dark",
@@ -12813,13 +12816,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.5,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#c2ada9",
-      "simulated_secondary": "#a0aedb",
-      "delta_e_2000_original": 22.956274808144133,
-      "delta_e_2000_simulated": 20.118983946484736
+      "severity": 0.3,
+      "primary_color": "#aa495b",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#925d5a",
+      "simulated_secondary": "#4264ba",
+      "delta_e_2000_original": 31.721939803802737,
+      "delta_e_2000_simulated": 31.58885323918088
     },
     {
       "theme": "complementary-dark",
@@ -12828,12 +12831,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 22.956274808144133,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#aa495b",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 31.721939803802737,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -12841,13 +12844,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#a9a9aa",
-      "simulated_secondary": "#a1b2de",
-      "delta_e_2000_original": 22.956274808144133,
-      "delta_e_2000_simulated": 15.678264265831835
+      "severity": 0.9,
+      "primary_color": "#aa495b",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#645c5b",
+      "simulated_secondary": "#396dbe",
+      "delta_e_2000_original": 31.721939803802737,
+      "delta_e_2000_simulated": 25.66901454391146
     },
     {
       "theme": "complementary-dark",
@@ -12855,13 +12858,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.1,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#d7a2aa",
-      "simulated_secondary": "#a4afd9",
-      "delta_e_2000_original": 22.956274808144133,
-      "delta_e_2000_simulated": 22.293397085009246
+      "severity": 0.2,
+      "primary_color": "#aa495b",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#a34f5b",
+      "simulated_secondary": "#4e65b3",
+      "delta_e_2000_original": 31.721939803802737,
+      "delta_e_2000_simulated": 31.38626895824855
     },
     {
       "theme": "complementary-dark",
@@ -13094,12 +13097,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#d4a4aa",
-      "simulated_secondary": "#d1a2c7",
-      "delta_e_2000_original": 9.737989929463808,
-      "delta_e_2000_simulated": 10.228888345745862
+      "primary_color": "#aa495b",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#a1525a",
+      "simulated_secondary": "#9b4f87",
+      "delta_e_2000_original": 13.697019628301495,
+      "delta_e_2000_simulated": 15.279936987820651
     },
     {
       "theme": "complementary-dark",
@@ -13108,12 +13111,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 9.737989929463808,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#aa495b",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 13.697019628301495,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -13122,12 +13125,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.1,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#d4a2aa",
-      "simulated_secondary": "#d1a1c7",
-      "delta_e_2000_original": 9.737989929463808,
-      "delta_e_2000_simulated": 9.83166944878445
+      "primary_color": "#aa495b",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#a04e5b",
+      "simulated_secondary": "#9a4d87",
+      "delta_e_2000_original": 13.697019628301495,
+      "delta_e_2000_simulated": 14.24601775273395
     },
     {
       "theme": "complementary-dark",
@@ -13136,12 +13139,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#e69ca3",
-      "simulated_secondary": "#e09fac",
-      "delta_e_2000_original": 9.737989929463808,
-      "delta_e_2000_simulated": 3.1236765969375284
+      "primary_color": "#aa495b",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#b83d50",
+      "simulated_secondary": "#ae4760",
+      "delta_e_2000_original": 13.697019628301495,
+      "delta_e_2000_simulated": 5.114205979949539
     },
     {
       "theme": "complementary-dark",
@@ -13374,12 +13377,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#dea378",
-      "simulated_primary": "#b7b4a9",
-      "simulated_secondary": "#c2b578",
-      "delta_e_2000_original": 19.99340532582893,
-      "delta_e_2000_simulated": 14.404957829465769
+      "primary_color": "#aa495b",
+      "secondary_color": "#8d5f3c",
+      "simulated_primary": "#767059",
+      "simulated_secondary": "#776d3c",
+      "delta_e_2000_original": 21.956811088301116,
+      "delta_e_2000_simulated": 7.812841071983847
     },
     {
       "theme": "complementary-dark",
@@ -13388,11 +13391,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#dea378",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#afafaf",
-      "delta_e_2000_original": 19.99340532582893,
+      "primary_color": "#aa495b",
+      "secondary_color": "#8d5f3c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 21.956811088301116,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -13402,12 +13405,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#dea378",
-      "simulated_primary": "#a9a9aa",
-      "simulated_secondary": "#b4a875",
-      "delta_e_2000_original": 19.99340532582893,
-      "delta_e_2000_simulated": 18.09334834131242
+      "primary_color": "#aa495b",
+      "secondary_color": "#8d5f3c",
+      "simulated_primary": "#5d5d5b",
+      "simulated_secondary": "#6d6339",
+      "delta_e_2000_original": 21.956811088301116,
+      "delta_e_2000_simulated": 15.351624385016677
     },
     {
       "theme": "complementary-dark",
@@ -13416,12 +13419,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#dea378",
-      "simulated_primary": "#e69ca3",
-      "simulated_secondary": "#ee9798",
-      "delta_e_2000_original": 19.99340532582893,
-      "delta_e_2000_simulated": 3.545090987857629
+      "primary_color": "#aa495b",
+      "secondary_color": "#8d5f3c",
+      "simulated_primary": "#b83d50",
+      "simulated_secondary": "#995656",
+      "delta_e_2000_original": 21.956811088301116,
+      "delta_e_2000_simulated": 8.442971376639958
     },
     {
       "theme": "complementary-dark",
@@ -13654,12 +13657,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#d4a4aa",
-      "simulated_secondary": "#bca6dc",
-      "delta_e_2000_original": 16.657413258038,
-      "delta_e_2000_simulated": 17.171420206297388
+      "primary_color": "#aa495b",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#a1525a",
+      "simulated_secondary": "#7c54b8",
+      "delta_e_2000_original": 25.029105752145306,
+      "delta_e_2000_simulated": 26.72148580077165
     },
     {
       "theme": "complementary-dark",
@@ -13668,12 +13671,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 16.657413258038,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#aa495b",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 25.029105752145306,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -13681,13 +13684,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#a9a9aa",
-      "simulated_secondary": "#9baede",
-      "delta_e_2000_original": 16.657413258038,
-      "delta_e_2000_simulated": 16.49643719811273
+      "severity": 0.9,
+      "primary_color": "#aa495b",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#645c5b",
+      "simulated_secondary": "#3266bb",
+      "delta_e_2000_original": 25.029105752145306,
+      "delta_e_2000_simulated": 25.68007161502501
     },
     {
       "theme": "complementary-dark",
@@ -13695,13 +13698,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.9,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#e79ba4",
-      "simulated_secondary": "#c1aabd",
-      "delta_e_2000_original": 16.657413258038,
-      "delta_e_2000_simulated": 13.593823898961395
+      "severity": 1.0,
+      "primary_color": "#aa495b",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#b83d50",
+      "simulated_secondary": "#7f627b",
+      "delta_e_2000_original": 25.029105752145306,
+      "delta_e_2000_simulated": 19.82023852849425
     },
     {
       "theme": "complementary-dark",
@@ -13933,13 +13936,13 @@
       "secondary": "rose",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.2,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#cea7aa",
-      "simulated_secondary": "#cda7b4",
-      "delta_e_2000_original": 3.8318557532692785,
-      "delta_e_2000_simulated": 3.8763458400537956
+      "severity": 0.1,
+      "primary_color": "#aa495b",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#a1525a",
+      "simulated_secondary": "#9f516a",
+      "delta_e_2000_original": 5.535322821661342,
+      "delta_e_2000_simulated": 6.204421019555279
     },
     {
       "theme": "complementary-dark",
@@ -13948,12 +13951,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 3.8318557532692785,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#aa495b",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 5.535322821661342,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -13962,12 +13965,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.1,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#d4a2aa",
-      "simulated_secondary": "#d2a2b5",
-      "delta_e_2000_original": 3.8318557532692785,
-      "delta_e_2000_simulated": 3.991931392238526
+      "primary_color": "#aa495b",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#a04e5b",
+      "simulated_secondary": "#9f4e6b",
+      "delta_e_2000_original": 5.535322821661342,
+      "delta_e_2000_simulated": 5.685227393048552
     },
     {
       "theme": "complementary-dark",
@@ -13976,12 +13979,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#e69ca3",
-      "simulated_secondary": "#e39ea7",
-      "delta_e_2000_original": 3.8318557532692785,
-      "delta_e_2000_simulated": 1.3578138464112712
+      "primary_color": "#aa495b",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#b83d50",
+      "simulated_secondary": "#b64055",
+      "delta_e_2000_original": 5.535322821661342,
+      "delta_e_2000_simulated": 1.446245031764108
     },
     {
       "theme": "complementary-dark",
@@ -14214,12 +14217,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.9,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#b8b2a9",
-      "simulated_secondary": "#a3abb6",
-      "delta_e_2000_original": 48.083509945339486,
-      "delta_e_2000_simulated": 10.949315642504134
+      "primary_color": "#aa495b",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#796e59",
+      "simulated_secondary": "#62666d",
+      "delta_e_2000_original": 47.747328448277365,
+      "delta_e_2000_simulated": 14.963435298861356
     },
     {
       "theme": "complementary-dark",
@@ -14228,12 +14231,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 48.083509945339486,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#aa495b",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 47.747328448277365,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -14242,12 +14245,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#a9a9aa",
-      "simulated_secondary": "#b9b8b5",
-      "delta_e_2000_original": 48.083509945339486,
-      "delta_e_2000_simulated": 4.7049364462516445
+      "primary_color": "#aa495b",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#5d5d5b",
+      "simulated_secondary": "#6e6d6c",
+      "delta_e_2000_original": 47.747328448277365,
+      "delta_e_2000_simulated": 6.175400139542421
     },
     {
       "theme": "complementary-dark",
@@ -14255,13 +14258,13 @@
       "secondary": "teal",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.3,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#d6a2a9",
-      "simulated_secondary": "#56c0b6",
-      "delta_e_2000_original": 48.083509945339486,
-      "delta_e_2000_simulated": 44.39175340600491
+      "severity": 0.2,
+      "primary_color": "#aa495b",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#a34f5b",
+      "simulated_secondary": "#3e726c",
+      "delta_e_2000_original": 47.747328448277365,
+      "delta_e_2000_simulated": 44.044595475258994
     },
     {
       "theme": "complementary-dark",
@@ -14494,12 +14497,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#cbad4b",
-      "simulated_primary": "#b7b4a9",
-      "simulated_secondary": "#c6b34f",
-      "delta_e_2000_original": 35.519985673431954,
-      "delta_e_2000_simulated": 20.09582901781995
+      "primary_color": "#aa495b",
+      "secondary_color": "#796834",
+      "simulated_primary": "#767059",
+      "simulated_secondary": "#766b36",
+      "delta_e_2000_original": 34.35451547288951,
+      "delta_e_2000_simulated": 8.885522128047871
     },
     {
       "theme": "complementary-dark",
@@ -14508,11 +14511,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#dba0aa",
-      "secondary_color": "#cbad4b",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#afafaf",
-      "delta_e_2000_original": 35.519985673431954,
+      "primary_color": "#aa495b",
+      "secondary_color": "#796834",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 34.35451547288951,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -14522,12 +14525,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#cbad4b",
-      "simulated_primary": "#a9a9aa",
-      "simulated_secondary": "#beaa40",
-      "delta_e_2000_original": 35.519985673431954,
-      "delta_e_2000_simulated": 25.467457819990514
+      "primary_color": "#aa495b",
+      "secondary_color": "#796834",
+      "simulated_primary": "#5d5d5b",
+      "simulated_secondary": "#72662f",
+      "delta_e_2000_original": 34.35451547288951,
+      "delta_e_2000_simulated": 18.175567965338537
     },
     {
       "theme": "complementary-dark",
@@ -14536,12 +14539,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#dba0aa",
-      "secondary_color": "#cbad4b",
-      "simulated_primary": "#e69ca3",
-      "simulated_secondary": "#dba098",
-      "delta_e_2000_original": 35.519985673431954,
-      "delta_e_2000_simulated": 6.185706180827477
+      "primary_color": "#aa495b",
+      "secondary_color": "#796834",
+      "simulated_primary": "#b83d50",
+      "simulated_secondary": "#82615c",
+      "delta_e_2000_original": 34.35451547288951,
+      "delta_e_2000_simulated": 16.0827266221044
     },
     {
       "theme": "complementary-dark",
@@ -14774,12 +14777,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#daa0b5",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b4b4b4",
-      "simulated_secondary": "#c8b549",
-      "delta_e_2000_original": 38.14661130131196,
-      "delta_e_2000_simulated": 24.82085139386806
+      "primary_color": "#a9486b",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#727069",
+      "simulated_secondary": "#766b37",
+      "delta_e_2000_original": 36.518069262210815,
+      "delta_e_2000_simulated": 14.98081354411639
     },
     {
       "theme": "complementary-dark",
@@ -14788,11 +14791,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#daa0b5",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 38.14661130131196,
+      "primary_color": "#a9486b",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 36.518069262210815,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -14802,12 +14805,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#daa0b5",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#a6aab6",
-      "simulated_secondary": "#bda939",
-      "delta_e_2000_original": 38.14661130131196,
-      "delta_e_2000_simulated": 32.539882685117846
+      "primary_color": "#a9486b",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#585e6c",
+      "simulated_secondary": "#706531",
+      "delta_e_2000_original": 36.518069262210815,
+      "delta_e_2000_simulated": 27.18086435245562
     },
     {
       "theme": "complementary-dark",
@@ -14816,12 +14819,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#daa0b5",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#e39ea7",
-      "simulated_secondary": "#e99a94",
-      "delta_e_2000_original": 38.14661130131196,
-      "delta_e_2000_simulated": 6.159152820912582
+      "primary_color": "#a9486b",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#b64055",
+      "simulated_secondary": "#865e5b",
+      "delta_e_2000_original": 36.518069262210815,
+      "delta_e_2000_simulated": 13.801141017179695
     },
     {
       "theme": "complementary-dark",
@@ -15053,13 +15056,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.6,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#97b1b6",
-      "simulated_secondary": "#cbb147",
-      "delta_e_2000_original": 37.85640964693303,
-      "delta_e_2000_simulated": 30.893915565415888
+      "severity": 0.5,
+      "primary_color": "#33736c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#596a6d",
+      "simulated_secondary": "#776936",
+      "delta_e_2000_original": 27.35407795836421,
+      "delta_e_2000_simulated": 22.448379154211622
     },
     {
       "theme": "complementary-dark",
@@ -15068,11 +15071,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 37.85640964693303,
+      "primary_color": "#33736c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 27.35407795836421,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -15082,12 +15085,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#b9b8b5",
-      "simulated_secondary": "#bda939",
-      "delta_e_2000_original": 37.85640964693303,
-      "delta_e_2000_simulated": 24.436567605030035
+      "primary_color": "#33736c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#6e6d6c",
+      "simulated_secondary": "#706531",
+      "delta_e_2000_original": 27.35407795836421,
+      "delta_e_2000_simulated": 18.045657504814052
     },
     {
       "theme": "complementary-dark",
@@ -15096,12 +15099,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#58c0b6",
-      "simulated_secondary": "#d4a95a",
-      "delta_e_2000_original": 37.85640964693303,
-      "delta_e_2000_simulated": 35.15899842832666
+      "primary_color": "#33736c",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#3e726c",
+      "simulated_secondary": "#7b663e",
+      "delta_e_2000_original": 27.35407795836421,
+      "delta_e_2000_simulated": 25.739600701882413
     },
     {
       "theme": "complementary-dark",
@@ -15334,12 +15337,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.9,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#a3abb6",
-      "simulated_secondary": "#97acdf",
-      "delta_e_2000_original": 23.515424249402958,
-      "delta_e_2000_simulated": 11.973677044681944
+      "primary_color": "#33736c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#62666d",
+      "simulated_secondary": "#506694",
+      "delta_e_2000_original": 20.564556932832595,
+      "delta_e_2000_simulated": 13.547580771571658
     },
     {
       "theme": "complementary-dark",
@@ -15348,11 +15351,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 23.515424249402958,
+      "primary_color": "#33736c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 20.564556932832595,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -15362,12 +15365,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 0.9,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#b5b8b5",
-      "simulated_secondary": "#a2b5e2",
-      "delta_e_2000_original": 23.515424249402958,
-      "delta_e_2000_simulated": 17.922968263271247
+      "primary_color": "#33736c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#6b6d6c",
+      "simulated_secondary": "#5a6e97",
+      "delta_e_2000_original": 20.564556932832595,
+      "delta_e_2000_simulated": 16.732484575821207
     },
     {
       "theme": "complementary-dark",
@@ -15376,12 +15379,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#00c7be",
-      "simulated_secondary": "#62bfc3",
-      "delta_e_2000_original": 23.515424249402958,
-      "delta_e_2000_simulated": 7.457135332120165
+      "primary_color": "#33736c",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#057571",
+      "simulated_secondary": "#00767b",
+      "delta_e_2000_original": 20.564556932832595,
+      "delta_e_2000_simulated": 3.9549210575048184
     },
     {
       "theme": "complementary-dark",
@@ -15614,12 +15617,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.9,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#a3abb6",
-      "simulated_secondary": "#94aad9",
-      "delta_e_2000_original": 14.397709529353422,
-      "delta_e_2000_simulated": 11.252290313214376
+      "primary_color": "#33736c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#62666d",
+      "simulated_secondary": "#5c667c",
+      "delta_e_2000_original": 8.666239939675807,
+      "delta_e_2000_simulated": 6.644703133101215
     },
     {
       "theme": "complementary-dark",
@@ -15628,11 +15631,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 14.397709529353422,
+      "primary_color": "#33736c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 8.666239939675807,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -15641,13 +15644,13 @@
       "secondary": "cyan",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.1,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#61c0b5",
-      "simulated_secondary": "#5bbdd9",
-      "delta_e_2000_original": 14.397709529353422,
-      "delta_e_2000_simulated": 14.441555061688993
+      "severity": 0.8,
+      "primary_color": "#33736c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#686d6c",
+      "simulated_secondary": "#636d7d",
+      "delta_e_2000_original": 8.666239939675807,
+      "delta_e_2000_simulated": 8.668239946053774
     },
     {
       "theme": "complementary-dark",
@@ -15656,12 +15659,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#00c7be",
-      "simulated_secondary": "#00c9c7",
-      "delta_e_2000_original": 14.397709529353422,
-      "delta_e_2000_simulated": 2.5163843283825003
+      "primary_color": "#33736c",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#057571",
+      "simulated_secondary": "#007674",
+      "delta_e_2000_original": 8.666239939675807,
+      "delta_e_2000_simulated": 0.9345685216820963
     },
     {
       "theme": "complementary-dark",
@@ -15893,13 +15896,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#a6aab6",
-      "simulated_secondary": "#9daedb",
-      "delta_e_2000_original": 28.937495256079345,
-      "delta_e_2000_simulated": 10.783036413692978
+      "severity": 0.8,
+      "primary_color": "#33736c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#60676d",
+      "simulated_secondary": "#2f65b9",
+      "delta_e_2000_original": 30.241097107740543,
+      "delta_e_2000_simulated": 16.946907919411117
     },
     {
       "theme": "complementary-dark",
@@ -15908,11 +15911,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 28.937495256079345,
+      "primary_color": "#33736c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 30.241097107740543,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -15921,13 +15924,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.9,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#b5b8b5",
-      "simulated_secondary": "#a1b2de",
-      "delta_e_2000_original": 28.937495256079345,
-      "delta_e_2000_simulated": 17.783892427385286
+      "severity": 0.8,
+      "primary_color": "#33736c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#686d6c",
+      "simulated_secondary": "#3b6cbe",
+      "delta_e_2000_original": 30.241097107740543,
+      "delta_e_2000_simulated": 23.664924590449736
     },
     {
       "theme": "complementary-dark",
@@ -15936,12 +15939,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#00c7be",
-      "simulated_secondary": "#96b6bd",
-      "delta_e_2000_original": 28.937495256079345,
-      "delta_e_2000_simulated": 16.63607703764229
+      "primary_color": "#33736c",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#057571",
+      "simulated_secondary": "#107685",
+      "delta_e_2000_original": 30.241097107740543,
+      "delta_e_2000_simulated": 8.519726041421867
     },
     {
       "theme": "complementary-dark",
@@ -16174,12 +16177,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#a6aab6",
-      "simulated_secondary": "#adb3c5",
-      "delta_e_2000_original": 46.7310307455406,
-      "delta_e_2000_simulated": 3.502917982682747
+      "primary_color": "#33736c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#63666d",
+      "simulated_secondary": "#676f85",
+      "delta_e_2000_original": 36.6143262553654,
+      "delta_e_2000_simulated": 7.430087285456609
     },
     {
       "theme": "complementary-dark",
@@ -16188,11 +16191,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 46.7310307455406,
+      "primary_color": "#33736c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 36.6143262553654,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -16201,13 +16204,13 @@
       "secondary": "magenta",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#b9b8b5",
-      "simulated_secondary": "#9fabc9",
-      "delta_e_2000_original": 46.7310307455406,
-      "delta_e_2000_simulated": 14.636478948090476
+      "severity": 0.9,
+      "primary_color": "#33736c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#6b6d6c",
+      "simulated_secondary": "#555f89",
+      "delta_e_2000_original": 36.6143262553654,
+      "delta_e_2000_simulated": 18.007973652747097
     },
     {
       "theme": "complementary-dark",
@@ -16216,12 +16219,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#58c0b6",
-      "simulated_secondary": "#d3a1c3",
-      "delta_e_2000_original": 46.7310307455406,
-      "delta_e_2000_simulated": 43.27976765975205
+      "primary_color": "#33736c",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#3e726c",
+      "simulated_secondary": "#9d4d82",
+      "delta_e_2000_original": 36.6143262553654,
+      "delta_e_2000_simulated": 33.902406053277005
     },
     {
       "theme": "complementary-dark",
@@ -16453,13 +16456,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#a6aab6",
-      "simulated_secondary": "#a1b0da",
-      "delta_e_2000_original": 37.677421878188305,
-      "delta_e_2000_simulated": 10.100558146325698
+      "severity": 0.7,
+      "primary_color": "#33736c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#5e686d",
+      "simulated_secondary": "#4e65b6",
+      "delta_e_2000_original": 33.598313632348145,
+      "delta_e_2000_simulated": 16.17233335872717
     },
     {
       "theme": "complementary-dark",
@@ -16468,11 +16471,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 37.677421878188305,
+      "primary_color": "#33736c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 33.598313632348145,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -16481,13 +16484,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.9,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#b5b8b5",
-      "simulated_secondary": "#9daede",
-      "delta_e_2000_original": 37.677421878188305,
-      "delta_e_2000_simulated": 18.84581428354298
+      "severity": 0.8,
+      "primary_color": "#33736c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#686d6c",
+      "simulated_secondary": "#3c65bb",
+      "delta_e_2000_original": 33.598313632348145,
+      "delta_e_2000_simulated": 24.179064372581617
     },
     {
       "theme": "complementary-dark",
@@ -16495,13 +16498,13 @@
       "secondary": "purple",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.2,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#58c0b6",
-      "simulated_secondary": "#bea7d7",
-      "delta_e_2000_original": 37.677421878188305,
-      "delta_e_2000_simulated": 34.23725459908858
+      "severity": 0.3,
+      "primary_color": "#33736c",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#3d726d",
+      "simulated_secondary": "#7f56ad",
+      "delta_e_2000_original": 33.598313632348145,
+      "delta_e_2000_simulated": 30.391086289088328
     },
     {
       "theme": "complementary-dark",
@@ -16733,13 +16736,13 @@
       "secondary": "rose",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#a6aab6",
-      "simulated_secondary": "#b4b4b4",
-      "delta_e_2000_original": 52.30393412856582,
-      "delta_e_2000_simulated": 6.519731011567697
+      "severity": 0.9,
+      "primary_color": "#33736c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#62666d",
+      "simulated_secondary": "#756e69",
+      "delta_e_2000_original": 41.86510828539109,
+      "delta_e_2000_simulated": 8.677087845766613
     },
     {
       "theme": "complementary-dark",
@@ -16748,11 +16751,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#b0b0b0",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 52.30393412856582,
+      "primary_color": "#33736c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 41.86510828539109,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -16762,12 +16765,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#b9b8b5",
-      "simulated_secondary": "#a6aab6",
-      "delta_e_2000_original": 52.30393412856582,
-      "delta_e_2000_simulated": 8.55051817471532
+      "primary_color": "#33736c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#6e6d6c",
+      "simulated_secondary": "#585e6c",
+      "delta_e_2000_original": 41.86510828539109,
+      "delta_e_2000_simulated": 9.87335043472967
     },
     {
       "theme": "complementary-dark",
@@ -16776,12 +16779,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#3bc3b5",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#58c0b6",
-      "simulated_secondary": "#d4a3b4",
-      "delta_e_2000_original": 52.30393412856582,
-      "delta_e_2000_simulated": 48.39384822836167
+      "primary_color": "#33736c",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#3e726c",
+      "simulated_secondary": "#a24e69",
+      "delta_e_2000_original": 41.86510828539109,
+      "delta_e_2000_simulated": 38.92037601807279
     },
     {
       "theme": "complementary-dark",
@@ -17013,13 +17016,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.8,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#c6b24e",
-      "simulated_secondary": "#c9b348",
-      "delta_e_2000_original": 4.623744936083781,
-      "delta_e_2000_simulated": 1.0904952953301723
+      "severity": 0.9,
+      "primary_color": "#796834",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#766b36",
+      "simulated_secondary": "#766b36",
+      "delta_e_2000_original": 2.2058627665019808,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -17028,12 +17031,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#cbad4b",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 4.623744936083781,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#796834",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 2.2058627665019808,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -17041,13 +17044,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#beaa40",
-      "simulated_secondary": "#bda939",
-      "delta_e_2000_original": 4.623744936083781,
-      "delta_e_2000_simulated": 0.7656071142821134
+      "severity": 0.9,
+      "primary_color": "#796834",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#726730",
+      "simulated_secondary": "#716631",
+      "delta_e_2000_original": 2.2058627665019808,
+      "delta_e_2000_simulated": 0.551325885036332
     },
     {
       "theme": "complementary-dark",
@@ -17055,13 +17058,13 @@
       "secondary": "amber",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.2,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#d7a945",
-      "simulated_primary": "#caac5f",
-      "simulated_secondary": "#d4a95a",
-      "delta_e_2000_original": 4.623744936083781,
-      "delta_e_2000_simulated": 3.847207796207351
+      "severity": 0.3,
+      "primary_color": "#796834",
+      "secondary_color": "#7c6635",
+      "simulated_primary": "#796740",
+      "simulated_secondary": "#7b6641",
+      "delta_e_2000_original": 2.2058627665019808,
+      "delta_e_2000_simulated": 1.5870370507078018
     },
     {
       "theme": "complementary-dark",
@@ -17293,13 +17296,13 @@
       "secondary": "blue",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.7,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#c6b24e",
-      "simulated_secondary": "#95aedf",
-      "delta_e_2000_original": 47.3696542540746,
-      "delta_e_2000_simulated": 44.88906961084088
+      "severity": 0.5,
+      "primary_color": "#796834",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#776a35",
+      "simulated_secondary": "#4d6895",
+      "delta_e_2000_original": 40.15544810240925,
+      "delta_e_2000_simulated": 38.35450775030766
     },
     {
       "theme": "complementary-dark",
@@ -17308,12 +17311,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#cbad4b",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 47.3696542540746,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#796834",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 40.15544810240925,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -17321,13 +17324,13 @@
       "secondary": "blue",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.7,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#c1ac43",
-      "simulated_secondary": "#9eb5e2",
-      "delta_e_2000_original": 47.3696542540746,
-      "delta_e_2000_simulated": 44.179127811732386
+      "severity": 0.5,
+      "primary_color": "#796834",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#756732",
+      "simulated_secondary": "#526d96",
+      "delta_e_2000_original": 40.15544810240925,
+      "delta_e_2000_simulated": 37.02479504458562
     },
     {
       "theme": "complementary-dark",
@@ -17335,13 +17338,13 @@
       "secondary": "blue",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.7,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#84b5e0",
-      "simulated_primary": "#d4a67e",
-      "simulated_secondary": "#70bbd0",
-      "delta_e_2000_original": 47.3696542540746,
-      "delta_e_2000_simulated": 34.84551784543297
+      "severity": 0.6,
+      "primary_color": "#796834",
+      "secondary_color": "#3f6d95",
+      "simulated_primary": "#7c654a",
+      "simulated_secondary": "#31718a",
+      "delta_e_2000_original": 40.15544810240925,
+      "delta_e_2000_simulated": 30.28519113210829
     },
     {
       "theme": "complementary-dark",
@@ -17574,12 +17577,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.1,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#caae4b",
-      "simulated_secondary": "#59bbd9",
-      "delta_e_2000_original": 42.39245923876634,
-      "delta_e_2000_simulated": 43.038369888391266
+      "primary_color": "#796834",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#786934",
+      "simulated_secondary": "#416f7c",
+      "delta_e_2000_original": 30.055232325407996,
+      "delta_e_2000_simulated": 29.82123854679531
     },
     {
       "theme": "complementary-dark",
@@ -17588,12 +17591,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#cbad4b",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 42.39245923876634,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#796834",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 30.055232325407996,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -17602,12 +17605,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#beaa40",
-      "simulated_secondary": "#acb9da",
-      "delta_e_2000_original": 42.39245923876634,
-      "delta_e_2000_simulated": 40.89249032800724
+      "primary_color": "#796834",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#72662f",
+      "simulated_secondary": "#686d7d",
+      "delta_e_2000_original": 30.055232325407996,
+      "delta_e_2000_simulated": 28.686066071459035
     },
     {
       "theme": "complementary-dark",
@@ -17615,13 +17618,13 @@
       "secondary": "cyan",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.5,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#3bbfd9",
-      "simulated_primary": "#ceaa6f",
-      "simulated_secondary": "#2ec1d2",
-      "delta_e_2000_original": 42.39245923876634,
-      "delta_e_2000_simulated": 37.6083137171832
+      "severity": 0.4,
+      "primary_color": "#796834",
+      "secondary_color": "#36717c",
+      "simulated_primary": "#796743",
+      "simulated_secondary": "#3a7179",
+      "delta_e_2000_original": 30.055232325407996,
+      "delta_e_2000_simulated": 27.011880092913966
     },
     {
       "theme": "complementary-dark",
@@ -17853,13 +17856,13 @@
       "secondary": "green",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.9,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#c6b34f",
-      "simulated_secondary": "#b6ad72",
-      "delta_e_2000_original": 26.924308184571753,
-      "delta_e_2000_simulated": 7.665451387165234
+      "severity": 1.0,
+      "primary_color": "#796834",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#766b36",
+      "simulated_secondary": "#706740",
+      "delta_e_2000_original": 21.390552275703563,
+      "delta_e_2000_simulated": 3.7807678060243846
     },
     {
       "theme": "complementary-dark",
@@ -17868,11 +17871,11 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#cbad4b",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#afafaf",
-      "delta_e_2000_original": 26.924308184571753,
+      "primary_color": "#796834",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 21.390552275703563,
       "delta_e_2000_simulated": 0.0
     },
     {
@@ -17882,12 +17885,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#beaa40",
-      "simulated_secondary": "#c6b566",
-      "delta_e_2000_original": 26.924308184571753,
-      "delta_e_2000_simulated": 5.126242371773191
+      "primary_color": "#796834",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#72662f",
+      "simulated_secondary": "#796d37",
+      "delta_e_2000_original": 21.390552275703563,
+      "delta_e_2000_simulated": 2.677913262871847
     },
     {
       "theme": "complementary-dark",
@@ -17896,12 +17899,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.2,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#61c46d",
-      "simulated_primary": "#caac5f",
-      "simulated_secondary": "#74c07a",
-      "delta_e_2000_original": 26.924308184571753,
-      "delta_e_2000_simulated": 25.018764784035568
+      "primary_color": "#796834",
+      "secondary_color": "#34773c",
+      "simulated_primary": "#78683d",
+      "simulated_secondary": "#427545",
+      "delta_e_2000_original": 21.390552275703563,
+      "delta_e_2000_simulated": 19.4953544399471
     },
     {
       "theme": "complementary-dark",
@@ -18133,13 +18136,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "deuteranomaly",
-      "severity": 0.6,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#c6b14e",
-      "simulated_secondary": "#9faedb",
-      "delta_e_2000_original": 43.98137246135553,
-      "delta_e_2000_simulated": 44.02751033520957
+      "severity": 0.9,
+      "primary_color": "#796834",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#766b36",
+      "simulated_secondary": "#2c65b9",
+      "delta_e_2000_original": 47.66094811054163,
+      "delta_e_2000_simulated": 47.12810920663892
     },
     {
       "theme": "complementary-dark",
@@ -18148,12 +18151,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#cbad4b",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 43.98137246135553,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#796834",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 47.66094811054163,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -18161,13 +18164,13 @@
       "secondary": "indigo",
       "role": "state",
       "simulation": "protanomaly",
-      "severity": 0.1,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#c9ad4a",
-      "simulated_secondary": "#a3afdc",
-      "delta_e_2000_original": 43.98137246135553,
-      "delta_e_2000_simulated": 43.796803105234545
+      "severity": 1.0,
+      "primary_color": "#796834",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#72662f",
+      "simulated_secondary": "#386ebe",
+      "delta_e_2000_original": 47.66094811054163,
+      "delta_e_2000_simulated": 46.587188283866745
     },
     {
       "theme": "complementary-dark",
@@ -18176,12 +18179,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 0.7,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#a4aedc",
-      "simulated_primary": "#d4a67e",
-      "simulated_secondary": "#9db3cb",
-      "delta_e_2000_original": 43.98137246135553,
-      "delta_e_2000_simulated": 29.50435763109869
+      "primary_color": "#796834",
+      "secondary_color": "#5162bb",
+      "simulated_primary": "#7e644e",
+      "simulated_secondary": "#3b6d9f",
+      "delta_e_2000_original": 47.66094811054163,
+      "delta_e_2000_simulated": 31.32813985896442
     },
     {
       "theme": "complementary-dark",
@@ -18414,12 +18417,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#c6b34f",
-      "simulated_secondary": "#adb3c5",
-      "delta_e_2000_original": 46.4418643211932,
-      "delta_e_2000_simulated": 34.344795300717855
+      "primary_color": "#796834",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#766b36",
+      "simulated_secondary": "#676f85",
+      "delta_e_2000_original": 45.373328175067954,
+      "delta_e_2000_simulated": 30.82368633893366
     },
     {
       "theme": "complementary-dark",
@@ -18428,12 +18431,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#cbad4b",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 46.4418643211932,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#796834",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 45.373328175067954,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -18442,12 +18445,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#beaa40",
-      "simulated_secondary": "#9fabc9",
-      "delta_e_2000_original": 46.4418643211932,
-      "delta_e_2000_simulated": 39.76698285952345
+      "primary_color": "#796834",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#72662f",
+      "simulated_secondary": "#4c5f89",
+      "delta_e_2000_original": 45.373328175067954,
+      "delta_e_2000_simulated": 38.50698462891682
     },
     {
       "theme": "complementary-dark",
@@ -18456,12 +18459,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#d99ec7",
-      "simulated_primary": "#dba098",
-      "simulated_secondary": "#e09fac",
-      "delta_e_2000_original": 46.4418643211932,
-      "delta_e_2000_simulated": 7.916288043353138
+      "primary_color": "#796834",
+      "secondary_color": "#a54687",
+      "simulated_primary": "#82615c",
+      "simulated_secondary": "#ae4760",
+      "delta_e_2000_original": 45.373328175067954,
+      "delta_e_2000_simulated": 15.096976256967666
     },
     {
       "theme": "complementary-dark",
@@ -18694,12 +18697,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#c6b34f",
-      "simulated_secondary": "#a1b0da",
-      "delta_e_2000_original": 48.998012757404055,
-      "delta_e_2000_simulated": 43.25310625482073
+      "primary_color": "#796834",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#766b36",
+      "simulated_secondary": "#3c69b5",
+      "delta_e_2000_original": 51.50087528817104,
+      "delta_e_2000_simulated": 45.61057803656818
     },
     {
       "theme": "complementary-dark",
@@ -18708,12 +18711,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#cbad4b",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 48.998012757404055,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#796834",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 51.50087528817104,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -18722,12 +18725,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#beaa40",
-      "simulated_secondary": "#9baede",
-      "delta_e_2000_original": 48.998012757404055,
-      "delta_e_2000_simulated": 45.52485067398991
+      "primary_color": "#796834",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#72662f",
+      "simulated_secondary": "#2567bb",
+      "delta_e_2000_original": 51.50087528817104,
+      "delta_e_2000_simulated": 47.311471956106175
     },
     {
       "theme": "complementary-dark",
@@ -18736,12 +18739,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#c2a4dc",
-      "simulated_primary": "#dba098",
-      "simulated_secondary": "#bfabb8",
-      "delta_e_2000_original": 48.998012757404055,
-      "delta_e_2000_simulated": 13.485852839765291
+      "primary_color": "#796834",
+      "secondary_color": "#874eb8",
+      "simulated_primary": "#82615c",
+      "simulated_secondary": "#7f627b",
+      "delta_e_2000_original": 51.50087528817104,
+      "delta_e_2000_simulated": 12.578105350814925
     },
     {
       "theme": "complementary-dark",
@@ -18974,12 +18977,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#c6b34f",
-      "simulated_secondary": "#b4b4b4",
-      "delta_e_2000_original": 39.75927360794352,
-      "delta_e_2000_simulated": 24.120662738921656
+      "primary_color": "#796834",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#766b36",
+      "simulated_secondary": "#727069",
+      "delta_e_2000_original": 38.653996658282814,
+      "delta_e_2000_simulated": 15.179083723313187
     },
     {
       "theme": "complementary-dark",
@@ -18988,12 +18991,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#cbad4b",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 39.75927360794352,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#796834",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 38.653996658282814,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -19002,12 +19005,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#beaa40",
-      "simulated_secondary": "#a6aab6",
-      "delta_e_2000_original": 39.75927360794352,
-      "delta_e_2000_simulated": 32.04885328103706
+      "primary_color": "#796834",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#72662f",
+      "simulated_secondary": "#585e6c",
+      "delta_e_2000_original": 38.653996658282814,
+      "delta_e_2000_simulated": 27.7685710924983
     },
     {
       "theme": "complementary-dark",
@@ -19016,12 +19019,12 @@
       "role": "state",
       "simulation": "tritanomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#daa0b5",
-      "simulated_primary": "#dba098",
-      "simulated_secondary": "#e39ea7",
-      "delta_e_2000_original": 39.75927360794352,
-      "delta_e_2000_simulated": 6.617479068162414
+      "primary_color": "#796834",
+      "secondary_color": "#a9486b",
+      "simulated_primary": "#82615c",
+      "simulated_secondary": "#b64055",
+      "delta_e_2000_original": 38.653996658282814,
+      "delta_e_2000_simulated": 15.797269276301067
     },
     {
       "theme": "complementary-dark",
@@ -19254,12 +19257,12 @@
       "role": "state",
       "simulation": "deuteranomaly",
       "severity": 0.6,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#c6b14e",
-      "simulated_secondary": "#97b1b6",
-      "delta_e_2000_original": 34.88682671922664,
-      "delta_e_2000_simulated": 30.001000920021603
+      "primary_color": "#796834",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#776a35",
+      "simulated_secondary": "#5c696d",
+      "delta_e_2000_original": 26.229261429484964,
+      "delta_e_2000_simulated": 22.632735307224486
     },
     {
       "theme": "complementary-dark",
@@ -19268,12 +19271,12 @@
       "role": "state",
       "simulation": "grayscale",
       "severity": "json-null",
-      "primary_color": "#cbad4b",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#afafaf",
-      "simulated_secondary": "#b0b0b0",
-      "delta_e_2000_original": 34.88682671922664,
-      "delta_e_2000_simulated": 0.28070394631760415
+      "primary_color": "#796834",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#696969",
+      "simulated_secondary": "#696969",
+      "delta_e_2000_original": 26.229261429484964,
+      "delta_e_2000_simulated": 0.0
     },
     {
       "theme": "complementary-dark",
@@ -19282,12 +19285,12 @@
       "role": "state",
       "simulation": "protanomaly",
       "severity": 1.0,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#beaa40",
-      "simulated_secondary": "#b9b8b5",
-      "delta_e_2000_original": 34.88682671922664,
-      "delta_e_2000_simulated": 23.895872737822554
+      "primary_color": "#796834",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#72662f",
+      "simulated_secondary": "#6e6d6c",
+      "delta_e_2000_original": 26.229261429484964,
+      "delta_e_2000_simulated": 18.51726989664096
     },
     {
       "theme": "complementary-dark",
@@ -19295,13 +19298,13 @@
       "secondary": "teal",
       "role": "state",
       "simulation": "tritanomaly",
-      "severity": 0.3,
-      "primary_color": "#cbad4b",
-      "secondary_color": "#3bc3b5",
-      "simulated_primary": "#caac65",
-      "simulated_secondary": "#56c0b6",
-      "delta_e_2000_original": 34.88682671922664,
-      "delta_e_2000_simulated": 32.25868058842367
+      "severity": 0.2,
+      "primary_color": "#796834",
+      "secondary_color": "#33736c",
+      "simulated_primary": "#78683d",
+      "simulated_secondary": "#3e726c",
+      "delta_e_2000_original": 26.229261429484964,
+      "delta_e_2000_simulated": 24.33359801452513
     },
     {
       "theme": "complementary-dark",

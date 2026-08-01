@@ -471,11 +471,59 @@ color pair, and SEEN prevents inheritance cycles."
            (and (not unresolved)
                 (or (not inherited) (nth 2 inherited)))))))))
 
+(defconst complementary-light-report--non-text-faces
+  '(vertical-border window-divider window-divider-first-pixel
+    window-divider-last-pixel internal-border child-frame-border
+    fill-column-indicator scroll-bar)
+  "Theme faces whose color contrast represents a non-text graphic.")
+
+(defconst complementary-light-report--intentional-hidden-faces
+  '(org-hide org-indent transient-key-noop)
+  "Faces whose purpose is to conceal layout or implementation text.")
+
+(defconst complementary-light-report--decorative-faces
+  '(ruler-mode-margins ruler-mode-pad whitespace-big-indent whitespace-hspace)
+  "Faces whose foreground/background pair does not represent readable text.")
+
+(defconst complementary-light-report--inactive-control-faces
+  '(breakpoint-disabled mode-line-inactive tab-bar-tab-inactive
+    tab-line-tab-inactive package-status-disabled)
+  "Inactive controls which WCAG excludes from ordinary text contrast.")
+
+(defun complementary-light-report--external-controlled-face-p (face rule)
+  "Return non-nil when FACE or RULE obtains color from an external protocol."
+  (or (eq (plist-get rule :status) 'external-semantic)
+      (string-match-p
+       (rx bos (or "fg:erc-color-face" "bg:erc-color-face"))
+       (symbol-name face))))
+
+(defun complementary-light-report--inventory-contrast-role (face rule)
+  "Return the full-inventory contrast role for FACE described by RULE."
+  (cond ((eq face 'cursor) 'contextual)
+        ((complementary-light-report--external-controlled-face-p face rule)
+         'external-controlled)
+        ((memq face complementary-light-report--intentional-hidden-faces)
+         'intentional-hidden)
+        ((memq face complementary-light-report--decorative-faces)
+         'decorative)
+        ((memq face complementary-light-report--inactive-control-faces)
+         'inactive-control)
+        ((memq face complementary-light-report--non-text-faces)
+         'non-text-indicator)
+        (t 'normal-text)))
+
+(defun complementary-light-report--inventory-role-threshold (role)
+  "Return the WCAG review threshold for full-inventory ROLE, or nil."
+  (pcase role
+    ('normal-text complementary-light-wcag-text-contrast)
+    ('non-text-indicator complementary-light-wcag-non-text-contrast)
+    (_ nil)))
+
 (defun complementary-light-report--effective-face-contrast-records ()
   "Return conservative effective contrast records for every inventoried face.
-The audit resolves the selected true-color clause and literal inheritance for
-the default yellow/purple pairing.  Its 4.5:1 flag is a review candidate, not a
-claim that every face is normal-sized text."
+  The audit resolves the selected true-color clause and literal inheritance for
+the default yellow/purple pairing.  Role-specific review gates exclude faces
+which are hidden, decorative, inactive, contextual, or externally controlled."
   (let (records)
     (dolist (configuration
              `((complementary-light light ,#'complementary-light-token)
@@ -505,27 +553,41 @@ claim that every face is normal-sized text."
                  (auditable (nth 2 colors))
                  (ratio (and auditable
                              (complementary-light-contrast-ratio
-                              foreground background))))
+                              foreground background)))
+                 (role
+                  (complementary-light-report--inventory-contrast-role
+                   face rule))
+                 (required
+                  (complementary-light-report--inventory-role-threshold role))
+                 (review-candidate
+                  (and ratio required (< ratio required)))
+                 (raw-below-text
+                  (and ratio
+                       (< ratio complementary-light-wcag-text-contrast))))
             (push
              `((theme . ,(symbol-name theme))
                (face . ,(symbol-name face))
                (classification . ,(symbol-name (plist-get rule :status)))
+               (contrast_role . ,(symbol-name role))
                (auditable . ,(if auditable t :json-false))
                (foreground . ,(if auditable foreground :json-null))
                (background . ,(if auditable background :json-null))
                (ratio . ,(or ratio :json-null))
+               (applicable_threshold . ,(or required :json-null))
+               (passed
+                . ,(if (and ratio required)
+                       (if review-candidate :json-false t)
+                     :json-null))
+               (review_candidate
+                . ,(if review-candidate t :json-false))
+               (raw_below_text_minimum
+                . ,(if raw-below-text t :json-false))
+               ;; Retained for report consumers from version 0.2.0.  New code
+               ;; should use `review_candidate', which is role-aware.
                (candidate_below_text_minimum
-                . ,(if (and ratio
-                            (< ratio complementary-light-wcag-text-contrast))
-                       t :json-false)))
+                . ,(if raw-below-text t :json-false)))
              records)))))
     (nreverse records)))
-
-(defconst complementary-light-report--non-text-faces
-  '(vertical-border window-divider window-divider-first-pixel
-    window-divider-last-pixel internal-border child-frame-border
-    fill-column-indicator scroll-bar)
-  "Theme faces whose color contrast represents a non-text graphic.")
 
 (defun complementary-light-report--effective-face-role (face)
   "Return the contrast audit role for FACE."
@@ -612,10 +674,7 @@ its declared surface set instead of treating the glyph beneath it as text."
                   (string< left-theme right-theme))))))))
 
 (defun complementary-light-report--cursor-contrast-records ()
-  "Return cursor contrast on common and salient-state surfaces.
-Common surfaces are gated at the theme's non-text target.  Salient state
-surfaces remain diagnostic because Emacs exposes only one cursor background
-while those surfaces intentionally reverse polarity in the dark theme."
+  "Return gated cursor contrast on every declared cursor surface."
   (let (records)
     (dolist (configuration
              `((complementary-light ,#'complementary-light-token)
@@ -628,11 +687,8 @@ while those surfaces intentionally reverse polarity in the dark theme."
               (let ((cursor
                      (funcall token-function 'cursor primary secondary)))
                 (dolist (entry
-                         (append
-                          (mapcar (lambda (token) (cons token 'gated))
-                                  complementary-light-cursor-background-tokens)
-                          '((primary-state . diagnostic)
-                            (secondary-state . diagnostic))))
+                         (mapcar (lambda (token) (cons token 'gated))
+                                 complementary-light-cursor-background-tokens))
                   (let* ((background-token (car entry))
                          (policy (cdr entry))
                          (background
@@ -723,6 +779,29 @@ while those surfaces intentionally reverse polarity in the dark theme."
                                     :key (lambda (rule)
                                            (plist-get (cdr rule) :status)))))
                   statuses))
+         (inventory-roles
+          '(normal-text non-text-indicator intentional-hidden decorative
+            inactive-control external-controlled contextual))
+         (effective-role-counts
+          (mapcar
+           (lambda (role)
+             (cons
+              (symbol-name role)
+              (cl-count (symbol-name role) effective-face-records
+                        :test #'equal
+                        :key (lambda (record)
+                               (cdr (assq 'contrast_role record))))))
+           inventory-roles))
+         (effective-review-candidate-count
+          (cl-count-if
+           (lambda (record)
+             (eq (cdr (assq 'review_candidate record)) t))
+           effective-face-records))
+         (effective-raw-below-text-count
+          (cl-count-if
+           (lambda (record)
+             (eq (cdr (assq 'raw_below_text_minimum record)) t))
+           effective-face-records))
          (metadata (plist-get complementary-light-generated-inventory :metadata)))
     (complementary-light-report--write
      (expand-file-name "palette-contrast.json" directory) records)
@@ -734,10 +813,14 @@ while those surfaces intentionally reverse polarity in the dark theme."
      `((policy . "diagnostic-only")
        (model . "Machado-Oliveira-Fernandes severities 0.1-1.0 plus linear-sRGB grayscale")
        (metric . "CIEDE2000")
+       (scope . "model-relative ranking; not a universal perceptual threshold")
+       (metric_limit . "CIEDE2000 is primarily validated for small adjacent color differences")
        (preset . ((primary . ,(symbol-name
                                 (car complementary-light-color-vision-preset)))
                   (secondary . ,(symbol-name
-                                  (cdr complementary-light-color-vision-preset)))))
+                                  (cdr complementary-light-color-vision-preset)))
+                  (selection_basis
+                   . "best worst-case pair within this model, role set, and severity sweep")))
        (evaluated_record_count . ,(length color-vision-records))
        (reported_worst_case_record_count
         . ,(length color-vision-worst-case-records))
@@ -745,16 +828,15 @@ while those surfaces intentionally reverse polarity in the dark theme."
        (worst_case_records . ,color-vision-worst-case-records)))
     (complementary-light-report--write
      (expand-file-name "effective-face-contrast.json" directory)
-     `((policy . "conservative-static-audit")
+     `((policy . "role-aware-conservative-static-audit")
        (display . "true-color pgtk simulation")
        (pair . ((primary . "yellow") (secondary . "purple")))
-       (review_threshold . ,complementary-light-wcag-text-contrast)
-       (caveat . "A flagged face is a review candidate; not every face is normal-sized text.")
-       (candidate_count
-        . ,(cl-count-if
-            (lambda (record)
-              (eq (cdr (assq 'candidate_below_text_minimum record)) t))
-            effective-face-records))
+       (text_review_threshold . ,complementary-light-wcag-text-contrast)
+       (non_text_review_threshold . ,complementary-light-wcag-non-text-contrast)
+       (caveat . "Review candidates are role-gated; real GUI rendering and contextual overlaps still require visual validation.")
+       (role_counts . ,effective-role-counts)
+       (candidate_count . ,effective-review-candidate-count)
+       (raw_below_text_minimum_count . ,effective-raw-below-text-count)
        (unauditable_count
         . ,(cl-count-if
             (lambda (record)
@@ -773,7 +855,7 @@ while those surfaces intentionally reverse polarity in the dark theme."
            (records . ,themed-face-worst-case-records)))))
     (complementary-light-report--write
      (expand-file-name "cursor-surface-contrast.json" directory)
-     `((policy . "common-surfaces-gated; salient-state-surfaces-diagnostic")
+     `((policy . "all-declared-surfaces-gated")
        (gated_target . ,complementary-light-non-text-contrast-target)
        (evaluated_record_count . ,(length cursor-records))
        (reported_worst_case_record_count
@@ -840,10 +922,10 @@ while those surfaces intentionally reverse polarity in the dark theme."
        (effective_face_contrast_record_count
         . ,(length effective-face-records))
        (effective_face_review_candidate_count
-        . ,(cl-count-if
-            (lambda (record)
-              (eq (cdr (assq 'candidate_below_text_minimum record)) t))
-            effective-face-records))
+        . ,effective-review-candidate-count)
+       (effective_face_raw_below_text_minimum_count
+        . ,effective-raw-below-text-count)
+       (effective_face_role_counts . ,effective-role-counts)
        (effective_face_unauditable_count
         . ,(cl-count-if
             (lambda (record)

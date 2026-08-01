@@ -26,7 +26,7 @@
     (border-strong . "#6d6d6d")
     (divider . "#696969")
     (selection-neutral . "#30302f")
-    (inactive-background . "#202020")
+    (inactive-background . "#171717")
     (inactive-foreground . "#8f8f8f")
     (cursor . "#ffffff")
     (distant-foreground . "#b0b0b0"))

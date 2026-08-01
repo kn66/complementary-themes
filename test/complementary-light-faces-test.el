@@ -88,6 +88,13 @@
              (complementary-light--default-declares-color-p
               face properties attribute))))))))
 
+(ert-deftest complementary-light-color-topology-exceptions-are-tab-selection-only ()
+  (should
+   (equal complementary-light-color-topology-allowlist
+          '((tab-bar-tab :foreground :background)
+            (tab-bar-tab-inactive :foreground)
+            (tab-line-tab-current :foreground)))))
+
 (ert-deftest complementary-light-org-block-keeps-built-in-color-topology ()
   (dolist (face '(org-block org-block-begin-line org-block-end-line))
     (let ((rule (cdr (complementary-light-face-rule face))))
@@ -104,6 +111,7 @@
   (dolist (check '((match primary-medium)
                     (lazy-highlight secondary-medium)
                     (isearch-fail primary-medium)
+                    (pulse-highlight-face primary-medium)
                     (pulse-highlight-start-face primary-medium)
                     (show-paren-match secondary-medium)))
     (let ((rule (cdr (complementary-light-face-rule (car check)))))
@@ -119,20 +127,47 @@
                     'compilation-mode-line-exit)))
         (fail (cdr (complementary-light-face-rule
                     'compilation-mode-line-fail)))
-        (tab (cdr (complementary-light-face-rule 'tab-line-tab-current))))
+        (tab-bar (cdr (complementary-light-face-rule 'tab-bar-tab)))
+        (tab-line (cdr (complementary-light-face-rule
+                        'tab-line-tab-current))))
     (should (eq (plist-get success :foreground) 'foreground))
     (should (eq (plist-get exit :foreground) 'foreground))
     (should-not (plist-member exit :background))
     (should (eq (plist-get fail :foreground) 'primary-text))
     (should-not (plist-member fail :background))
-    (should-not (plist-member tab :foreground))
-    (should (eq (plist-get tab :background) 'surface))))
+    (dolist (tab (list tab-bar tab-line))
+      (should (eq (plist-get tab :foreground) 'primary-on-state))
+      (should (eq (plist-get tab :background) 'primary-state)))))
+
+(ert-deftest complementary-light-active-tab-specs-emit-paired-state-colors ()
+  (let* ((primary 'yellow)
+         (secondary 'purple)
+         (foreground
+          (complementary-light-token 'primary-on-state primary secondary))
+         (background
+          (complementary-light-token 'primary-state primary secondary))
+         (specs (complementary-light-build-face-specs primary secondary)))
+    (dolist (face '(tab-bar-tab tab-line-tab-current))
+      (let ((clauses (cadr (assq face specs))))
+        (should
+         (cl-some
+          (lambda (clause)
+            (let ((display (car clause))
+                  (attributes (cadr clause)))
+              (and (member '(min-colors 257) display)
+                   (equal (plist-get attributes :foreground) foreground)
+                   (equal (plist-get attributes :background) background))))
+          clauses))))))
 
 (ert-deftest complementary-light-common-bundled-modes-use-semantic-colors ()
   (dolist (check '((message-header-name foreground-muted nil)
                     (erc-error-face primary-text nil)
+                    (erc-current-nick-face secondary-text nil)
                     (erc-prompt-face primary-on-strong primary-strong)
                     (eww-valid-certificate foreground nil)
+                    (elisp-shorthand-font-lock-face primary-text nil)
+                    (org-time-grid foreground-muted nil)
+                    (org-ellipsis secondary-text nil)
                     (ediff-current-diff-A primary-text primary-subtle)
                     (ediff-fine-diff-B secondary-on-medium secondary-medium)))
     (let ((rule (cdr (complementary-light-face-rule (nth 0 check)))))
@@ -141,6 +176,22 @@
       (if (nth 2 check)
           (should (eq (plist-get rule :background) (nth 2 check)))
         (should-not (plist-member rule :background))))))
+
+(ert-deftest complementary-light-bundled-background-states-use-safe-surfaces ()
+  (dolist (check '((isearch-group-1 primary-on-state primary-state)
+                    (isearch-group-2 secondary-on-state secondary-state)
+                    (smerge-upper nil primary-subtle)
+                    (smerge-lower nil secondary-subtle)
+                    (smerge-refined-added nil secondary-medium)
+                    (smerge-refined-removed nil primary-medium)
+                    (org-habit-overdue-face nil primary-medium)
+                    (org-habit-ready-face nil secondary-medium)))
+    (let ((rule (cdr (complementary-light-face-rule (car check)))))
+      (should (eq (plist-get rule :status) 'themed))
+      (if (nth 1 check)
+          (should (eq (plist-get rule :foreground) (nth 1 check)))
+        (should-not (plist-member rule :foreground)))
+      (should (eq (plist-get rule :background) (nth 2 check))))))
 
 (provide 'complementary-light-faces-test)
 ;;; complementary-light-faces-test.el ends here
