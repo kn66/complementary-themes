@@ -16,21 +16,37 @@
   "theme_count": 2,
   "accent_count": 12,
   "symmetric_pair_count": 6,
-  "truecolor_text_contrast_target": 5.0,
-  "truecolor_non_text_contrast_target": 3.25,
+  "truecolor_contrast_targets": {
+    "complementary-light": {
+      "neutral_text": 5.0,
+      "comment_text_minimum": 3.5,
+      "comment_text_maximum": 4.0,
+      "accent_text": 3.0,
+      "neutral_non_text": 3.25,
+      "accent_non_text": 2.5
+    },
+    "complementary-dark": {
+      "neutral_text": 5.0,
+      "comment_text_minimum": 5.0,
+      "comment_text_maximum": "json-null",
+      "accent_text": 5.0,
+      "neutral_non_text": 3.25,
+      "accent_non_text": 3.25
+    }
+  },
   "terminal_text_contrast_minimum": 4.5,
-  "minimum_measured_contrast": 3.2500683894710627,
+  "minimum_measured_contrast": 2.5000369343503723,
   "minimum_measured_contrast_by_theme": {
-    "complementary-light": 3.250857827557027,
+    "complementary-light": 2.5000369343503723,
     "complementary-dark": 3.2500683894710627
   },
   "color_vision_policy": "diagnostic-only",
   "color_vision_record_count": 20460,
   "color_vision_reported_worst_case_record_count": 2640,
-  "color_vision_preset_minimum_delta_e_2000": 8.009710202983412,
+  "color_vision_preset_minimum_delta_e_2000": 5.834587337808262,
   "effective_face_contrast_record_count": 2342,
-  "effective_face_review_candidate_count": 254,
-  "effective_face_raw_below_text_minimum_count": 382,
+  "effective_face_review_candidate_count": 530,
+  "effective_face_raw_below_text_minimum_count": 659,
   "effective_face_role_counts": {
     "normal-text": 2158,
     "non-text-indicator": 16,
@@ -47,5 +63,5 @@
   "minimum_simulated_pair_delta_e_2000": 0.0,
   "minimum_cvd_pair_delta_e_2000": 0.0,
   "minimum_grayscale_pair_delta_e_2000": 0.0,
-  "generated_at": "2026-08-01T20:27:03+0900"
+  "generated_at": "2026-08-01T23:56:22+0900"
 }

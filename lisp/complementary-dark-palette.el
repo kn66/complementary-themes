@@ -22,6 +22,7 @@
     (foreground-secondary . "#929292")
     (foreground-muted . "#b0b0b0")
     (foreground-faint . "#888888")
+    (comment-foreground . "#888888")
     (border . "#696969")
     (border-strong . "#6d6d6d")
     (divider . "#696969")
@@ -106,6 +107,32 @@
      :border "#7c6635" :focus "#78673f"
      :distant-foreground "#c8ad70"))
   "Contrast-checked accent palettes for a dark background.")
+
+(defun complementary-dark--restore-contrast-requirement (pair)
+  "Return dark-theme PAIR with the original stricter contrast requirement."
+  (pcase-let ((`(,foreground ,background ,required) pair))
+    (list foreground background
+          (cond
+           ((= required complementary-light-accent-text-contrast-target)
+            complementary-light-text-contrast-target)
+           ((= required complementary-light-comment-text-contrast-target)
+            complementary-light-text-contrast-target)
+           ((= required complementary-light-accent-non-text-contrast-target)
+            complementary-light-non-text-contrast-target)
+           (t required)))))
+
+(defconst complementary-dark-contrast-pairs
+  (mapcar #'complementary-dark--restore-contrast-requirement
+          complementary-light-contrast-pairs)
+  "Dark palette pairs using the original high-contrast requirements.")
+
+(defconst complementary-dark-overlap-scenarios
+  (mapcar
+   (lambda (scenario)
+     (cons (car scenario)
+           (complementary-dark--restore-contrast-requirement (cdr scenario))))
+   complementary-light-overlap-scenarios)
+  "Dark overlap scenarios using the original high-contrast requirements.")
 
 (defmacro complementary-dark--with-palette (&rest body)
   "Evaluate BODY using the dark neutral and accent palettes."

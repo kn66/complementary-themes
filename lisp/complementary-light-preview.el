@@ -92,8 +92,8 @@
 
     (insert (propertize "Text and default non-color attributes\n" 'face 'outline-2))
     (dolist (sample '(("normal" default) ("secondary text" shadow)
-                      ("muted text" font-lock-comment-face)
-                      ("faint text" line-number) ("bold" bold)
+                      ("muted text" line-number)
+                      ("comment text" font-lock-comment-face) ("bold" bold)
                       ("italic" italic) ("underlined" underline)
                       ("link" link) ("visited link" link-visited)
                       ("error / default attributes" error)

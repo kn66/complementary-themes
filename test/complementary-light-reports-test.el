@@ -54,11 +54,18 @@
           (should record)
           (should (eq (cdr (assq 'auditable record)) t))
           (should (equal (cdr (assq 'contrast_role record)) "normal-text"))
-          (should (>= (cdr (assq 'ratio record))
-                      complementary-light-text-contrast-target))
-          (should (eq (cdr (assq 'review_candidate record)) :json-false))
-          (should-not (eq (cdr (assq 'candidate_below_text_minimum record))
-                          t)))))))
+          (should
+           (>= (cdr (assq 'ratio record))
+               (if (equal theme "complementary-light")
+                   complementary-light-accent-text-contrast-target
+                 complementary-light-text-contrast-target)))
+          (let ((below-wcag
+                 (< (cdr (assq 'ratio record))
+                    complementary-light-wcag-text-contrast)))
+            (should (eq (cdr (assq 'review_candidate record))
+                        (if below-wcag t :json-false)))
+            (should (eq (cdr (assq 'candidate_below_text_minimum record))
+                        (if below-wcag t :json-false)))))))))
 
 (ert-deftest complementary-light-effective-face-audit-is-role-aware ()
   (let ((records

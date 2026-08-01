@@ -159,6 +159,12 @@
                    (equal (plist-get attributes :background) background))))
           clauses))))))
 
+(ert-deftest complementary-light-comments-use-dedicated-low-emphasis-text ()
+  (let ((rule (cdr (complementary-light-face-rule
+                    'font-lock-comment-face))))
+    (should (eq (plist-get rule :status) 'themed))
+    (should (eq (plist-get rule :foreground) 'comment-foreground))))
+
 (ert-deftest complementary-light-common-bundled-modes-use-semantic-colors ()
   (dolist (check '((message-header-name foreground-muted nil)
                     (erc-error-face primary-text nil)

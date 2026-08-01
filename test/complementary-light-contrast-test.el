@@ -56,7 +56,7 @@
                               (plist-get palette :on-strong) distant))
               (bg (plist-get palette background)))
           (should (>= (complementary-light-contrast-ratio foreground bg)
-                      complementary-light-text-contrast-target)))))))
+                      complementary-light-accent-text-contrast-target)))))))
 
 (defun complementary-light-test--check-minimum
     (label foreground backgrounds required)
@@ -73,7 +73,7 @@
                           "required>=%.2f")
                   label foreground ratio required))))))
 
-(ert-deftest complementary-light-owned-colors-meet-aa-thresholds ()
+(ert-deftest complementary-light-owned-colors-meet-declared-thresholds ()
   (let* ((neutral (lambda (token)
                     (complementary-light-token token 'yellow 'purple)))
          (background (funcall neutral 'background))
@@ -93,6 +93,7 @@
                (distant-foreground ,accent-surfaces ,complementary-light-text-contrast-target)
                (foreground-secondary (,surface-raised ,surface-sunken) ,complementary-light-text-contrast-target)
                (foreground-faint (,background) ,complementary-light-text-contrast-target)
+               (comment-foreground (,background) ,complementary-light-comment-text-contrast-target)
                (inactive-foreground
                 (,(funcall neutral 'inactive-background)) ,complementary-light-text-contrast-target)
                (border (,background) ,complementary-light-non-text-contrast-target)
@@ -122,12 +123,12 @@
                               (plist-get background-palette :subtle)))))))
       (complementary-light-test--check-minimum
        (format "%s/text" name) (plist-get palette :text)
-       text-backgrounds complementary-light-text-contrast-target)
-      (dolist (entry `((:on-strong :strong ,complementary-light-text-contrast-target)
-                       (:on-medium :medium ,complementary-light-text-contrast-target)
-                       (:on-subtle :subtle ,complementary-light-text-contrast-target)
-                       (:border nil ,complementary-light-non-text-contrast-target)
-                       (:focus nil ,complementary-light-non-text-contrast-target)))
+       text-backgrounds complementary-light-accent-text-contrast-target)
+      (dolist (entry `((:on-strong :strong ,complementary-light-accent-text-contrast-target)
+                       (:on-medium :medium ,complementary-light-accent-text-contrast-target)
+                       (:on-subtle :subtle ,complementary-light-accent-text-contrast-target)
+                       (:border nil ,complementary-light-accent-non-text-contrast-target)
+                       (:focus nil ,complementary-light-accent-non-text-contrast-target)))
         (complementary-light-test--check-minimum
          (format "%s/%s" name (car entry))
          (plist-get palette (car entry))
@@ -140,7 +141,7 @@
        (plist-get palette :distant-foreground)
        (list (plist-get palette :medium)
              (plist-get palette :subtle))
-       complementary-light-text-contrast-target))))
+       complementary-light-accent-text-contrast-target))))
 
 (provide 'complementary-light-contrast-test)
 ;;; complementary-light-contrast-test.el ends here

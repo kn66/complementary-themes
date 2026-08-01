@@ -45,9 +45,9 @@
 (ert-deftest complementary-dark-all-palette-contrast-pairs-pass ()
   (dolist (primary complementary-light-color-names)
     (dolist (secondary complementary-light-color-names)
-      (dolist (pair complementary-light-contrast-pairs)
+      (dolist (pair complementary-dark-contrast-pairs)
         (complementary-dark-test--check-pair primary secondary pair))
-      (dolist (scenario complementary-light-overlap-scenarios)
+      (dolist (scenario complementary-dark-overlap-scenarios)
         (complementary-dark-test--check-pair
          primary secondary (cdr scenario))))))
 
@@ -95,7 +95,7 @@
     (should-error (complementary-dark-set-secondary-color 'yellow)
                   :type 'user-error)))
 
-(ert-deftest complementary-dark-owned-colors-meet-aa-thresholds ()
+(ert-deftest complementary-dark-owned-colors-meet-original-thresholds ()
   (let* ((neutral (lambda (token)
                     (complementary-dark-token token 'yellow 'purple)))
          (background (funcall neutral 'background))
@@ -115,6 +115,7 @@
                (distant-foreground ,accent-surfaces ,complementary-light-text-contrast-target)
                (foreground-secondary (,surface-raised ,surface-sunken) ,complementary-light-text-contrast-target)
                (foreground-faint (,background) ,complementary-light-text-contrast-target)
+               (comment-foreground (,background) ,complementary-light-text-contrast-target)
                (inactive-foreground
                 (,(funcall neutral 'inactive-background)) ,complementary-light-text-contrast-target)
                (border (,background) ,complementary-light-non-text-contrast-target)

@@ -7,6 +7,30 @@
   (should (= (length complementary-light-color-names)
              (length complementary-light-palettes))))
 
+(ert-deftest complementary-light-accent-contrast-is-softer-than-neutral ()
+  (should (< complementary-light-accent-text-contrast-target
+             complementary-light-wcag-text-contrast))
+  (should (< complementary-light-accent-non-text-contrast-target
+             complementary-light-wcag-non-text-contrast))
+  (should (< complementary-light-accent-text-contrast-target
+             complementary-light-text-contrast-target))
+  (should (< complementary-light-accent-non-text-contrast-target
+             complementary-light-non-text-contrast-target)))
+
+(ert-deftest complementary-light-comment-contrast-is-visibly-subordinate ()
+  (let* ((background (complementary-light-token 'background 'yellow 'purple))
+         (comment (complementary-light-token
+                   'comment-foreground 'yellow 'purple))
+         (foreground (complementary-light-token 'foreground 'yellow 'purple))
+         (comment-ratio
+          (complementary-light-contrast-ratio comment background)))
+    (should (>= comment-ratio
+                complementary-light-comment-text-contrast-target))
+    (should (<= comment-ratio
+                complementary-light-comment-text-contrast-maximum))
+    (should (< comment-ratio
+               (complementary-light-contrast-ratio foreground background)))))
+
 (ert-deftest complementary-light-pairs-are-symmetric-and-distinct ()
   (dolist (name complementary-light-color-names)
     (let ((paired (complementary-light-paired-accent name)))

@@ -24,14 +24,14 @@
       (insert "\n"))))
 
 (defun complementary-light-report--contrast-records-for-theme
-    (theme token-function)
-  "Return contrast records for THEME using TOKEN-FUNCTION."
+    (theme token-function contrast-pairs overlap-scenarios)
+  "Return contrast records for THEME using TOKEN-FUNCTION and its gates."
   (let (records)
     (dolist (primary complementary-light-color-names)
       (let ((secondary (complementary-light-paired-accent primary)))
-        (dolist (pair (append complementary-light-contrast-pairs
+        (dolist (pair (append contrast-pairs
                               (mapcar #'cdr
-                                      complementary-light-overlap-scenarios)))
+                                      overlap-scenarios)))
           (let* ((fg-token (nth 0 pair)) (bg-token (nth 1 pair))
                  (required (nth 2 pair))
                  (fg (funcall token-function fg-token primary secondary))
@@ -51,9 +51,11 @@
   "Return contrast records for both themes and all declared pairs."
   (append
    (complementary-light-report--contrast-records-for-theme
-    'complementary-light #'complementary-light-token)
+    'complementary-light #'complementary-light-token
+    complementary-light-contrast-pairs complementary-light-overlap-scenarios)
    (complementary-light-report--contrast-records-for-theme
-    'complementary-dark #'complementary-dark-token)))
+    'complementary-dark #'complementary-dark-token
+    complementary-dark-contrast-pairs complementary-dark-overlap-scenarios)))
 
 (defun complementary-light-report--coverage-records ()
   "Return face coverage records joined to inventory provenance."
@@ -604,9 +606,17 @@ its declared surface set instead of treating the glyph beneath it as text."
     (dolist (configuration
              `((complementary-light light ,#'complementary-light-token)
                (complementary-dark dark ,#'complementary-dark-token)))
-      (let ((theme (nth 0 configuration))
-            (background-mode (nth 1 configuration))
-            (token-function (nth 2 configuration)))
+      (let* ((theme (nth 0 configuration))
+             (background-mode (nth 1 configuration))
+             (token-function (nth 2 configuration))
+            (text-target
+             (if (eq theme 'complementary-light)
+                 complementary-light-accent-text-contrast-target
+               complementary-light-text-contrast-target))
+            (non-text-target
+             (if (eq theme 'complementary-light)
+                 complementary-light-accent-non-text-contrast-target
+               complementary-light-non-text-contrast-target)))
         (dolist (primary complementary-light-color-names)
           (dolist (secondary complementary-light-color-names)
             (unless (eq primary secondary)
@@ -637,9 +647,8 @@ its declared surface set instead of treating the glyph beneath it as text."
                                   (car colors) (cadr colors))))
                            (required
                             (pcase role
-                              ('text complementary-light-text-contrast-target)
-                              ('non-text
-                               complementary-light-non-text-contrast-target)
+                              ('text text-target)
+                              ('non-text non-text-target)
                               (_ nil)))
                            (key (list theme face))
                            (existing (gethash key worst)))
@@ -845,8 +854,13 @@ its declared surface set instead of treating the glyph beneath it as text."
        (records . ,effective-face-records)
        (themed_worst_case
         . ((pair_scope . "all 132 ordered pairs of distinct accents")
-           (text_target . ,complementary-light-text-contrast-target)
-           (non_text_target . ,complementary-light-non-text-contrast-target)
+           (targets
+            . ((complementary-light
+                . ((text . ,complementary-light-accent-text-contrast-target)
+                   (non_text . ,complementary-light-accent-non-text-contrast-target)))
+               (complementary-dark
+                . ((text . ,complementary-light-text-contrast-target)
+                   (non_text . ,complementary-light-non-text-contrast-target)))))
            (failure_count
             . ,(cl-count-if
                 (lambda (record)
@@ -904,10 +918,21 @@ its declared surface set instead of treating the glyph beneath it as text."
        (theme_count . 2)
        (accent_count . ,(length complementary-light-color-names))
        (symmetric_pair_count . ,(/ (length complementary-light-accent-pairs) 2))
-       (truecolor_text_contrast_target
-        . ,complementary-light-text-contrast-target)
-       (truecolor_non_text_contrast_target
-        . ,complementary-light-non-text-contrast-target)
+       (truecolor_contrast_targets
+        . ((complementary-light
+            . ((neutral_text . ,complementary-light-text-contrast-target)
+               (comment_text_minimum . ,complementary-light-comment-text-contrast-target)
+               (comment_text_maximum . ,complementary-light-comment-text-contrast-maximum)
+               (accent_text . ,complementary-light-accent-text-contrast-target)
+               (neutral_non_text . ,complementary-light-non-text-contrast-target)
+               (accent_non_text . ,complementary-light-accent-non-text-contrast-target)))
+           (complementary-dark
+            . ((neutral_text . ,complementary-light-text-contrast-target)
+               (comment_text_minimum . ,complementary-light-text-contrast-target)
+               (comment_text_maximum . :json-null)
+               (accent_text . ,complementary-light-text-contrast-target)
+               (neutral_non_text . ,complementary-light-non-text-contrast-target)
+               (accent_non_text . ,complementary-light-non-text-contrast-target)))))
        (terminal_text_contrast_minimum
         . ,complementary-light-wcag-text-contrast)
        (minimum_measured_contrast . ,(apply #'min ratios))

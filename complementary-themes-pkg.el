@@ -2,7 +2,7 @@
 
 (define-package
   "complementary-themes" "0.2.0"
-  "WCAG AA-calibrated light and dark themes with paired accents"
+  "Light and dark themes with independently calibrated paired accents"
   '((emacs "30.2"))
   :keywords '("faces" "themes"))
 

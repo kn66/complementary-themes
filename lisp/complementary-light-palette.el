@@ -26,6 +26,7 @@
     (foreground-secondary . "#646464")
     (foreground-muted . "#626261")
     (foreground-faint . "#6f6f6e")
+    (comment-foreground . "#888888")
     (border . "#8e8e8d")
     (border-strong . "#828281")
     (divider . "#8e8e8d")
@@ -38,65 +39,65 @@
 
 (defconst complementary-light-palettes
   '((red
-     :text "#a54053" :strong "#a65767" :on-strong "#ffffff"
-     :medium "#f7e7e9" :on-medium "#90505e"
-     :subtle "#fcf3f4" :on-subtle "#965764"
-     :border "#c37a87" :focus "#bb7d8a" :distant-foreground "#89545f")
+     :text "#c26f7f" :strong "#b66878" :on-strong "#eddbde"
+     :medium "#f9edef" :on-medium "#b27c87"
+     :subtle "#fdf6f7" :on-subtle "#b6828d"
+     :border "#d3929e" :focus "#cc95a1" :distant-foreground "#ab7f89")
     (orange
-     :text "#925224" :strong "#946443" :on-strong "#ffffff"
-     :medium "#f7eadf" :on-medium "#845b3e"
-     :subtle "#fcf4ed" :on-subtle "#886145"
-     :border "#b5845d" :focus "#ad876c" :distant-foreground "#7e5d45")
+     :text "#b27c56" :strong "#a47553" :on-strong "#e9ddd4"
+     :medium "#f9eee6" :on-medium "#a78369"
+     :subtle "#fdf7f3" :on-subtle "#aa8a71"
+     :border "#c79b79" :focus "#bf9d86" :distant-foreground "#a18571")
     (yellow
-     :text "#756020" :strong "#7f6e3c" :on-strong "#ffffff"
-     :medium "#f4edcf" :on-medium "#706436"
-     :subtle "#faf6e5" :on-subtle "#76693d"
-     :border "#9e8d58" :focus "#9b8e67" :distant-foreground "#6f643d")
+     :text "#988750" :strong "#8e7e4c" :on-strong "#e3dfd2"
+     :medium "#f6f0d8" :on-medium "#968a60"
+     :subtle "#fbf8ec" :on-subtle "#9b8f69"
+     :border "#b2a374" :focus "#afa380" :distant-foreground "#958a6a")
     (green
-     :text "#326e39" :strong "#4a7a51" :on-strong "#ffffff"
-     :medium "#e2f1e4" :on-medium "#456e4b"
-     :subtle "#eff8f0" :on-subtle "#4b7351"
-     :border "#6a9970" :focus "#719877" :distant-foreground "#4a6c50")
+     :text "#619367" :strong "#5a8a61" :on-strong "#d6e2d8"
+     :medium "#e7f3e9" :on-medium "#709376"
+     :subtle "#f3faf4" :on-subtle "#77987c"
+     :border "#84ae89" :focus "#8aac90" :distant-foreground "#75917a")
     (teal
-     :text "#136e66" :strong "#367a74" :on-strong "#ffffff"
-     :medium "#dff1ee" :on-medium "#346e68"
-     :subtle "#edf8f6" :on-subtle "#3a736e"
-     :border "#549a94" :focus "#629894" :distant-foreground "#3b6d68")
+     :text "#48948e" :strong "#468a84" :on-strong "#d2e2e1"
+     :medium "#e4f3f1" :on-medium "#60948e"
+     :subtle "#f2faf8" :on-subtle "#699995"
+     :border "#70afa9" :focus "#7cada8" :distant-foreground "#68928e")
     (cyan
-     :text "#146b7d" :strong "#377886" :on-strong "#ffffff"
-     :medium "#dff0f3" :on-medium "#356c79"
-     :subtle "#edf7f8" :on-subtle "#3b717e"
-     :border "#5598a5" :focus "#6396a1" :distant-foreground "#3c6b76")
+     :text "#4a92a1" :strong "#478896" :on-strong "#d1e2e5"
+     :medium "#e4f2f5" :on-medium "#62919d"
+     :subtle "#f3f9fa" :on-subtle "#6b97a2"
+     :border "#72adb9" :focus "#7dabb5" :distant-foreground "#69909a")
     (blue
-     :text "#27659f" :strong "#4373a0" :on-strong "#ffffff"
-     :medium "#e1edf7" :on-medium "#3b678f"
-     :subtle "#eff6fb" :on-subtle "#436d93"
-     :border "#6393bf" :focus "#6c92b5" :distant-foreground "#416789")
+     :text "#598cbc" :strong "#5483af" :on-strong "#d5e1eb"
+     :medium "#e8f1f9" :on-medium "#6a8eb1"
+     :subtle "#f4f9fc" :on-subtle "#7194b4"
+     :border "#7ea8cf" :focus "#85a7c6" :distant-foreground "#6f8eaa")
     (indigo
-     :text "#515e9f" :strong "#636c9f" :on-strong "#ffffff"
-     :medium "#e7eaf7" :on-medium "#57618d"
-     :subtle "#f2f3fb" :on-subtle "#5e6692"
-     :border "#838cbe" :focus "#858cb4" :distant-foreground "#5a6188")
+     :text "#7a85bc" :strong "#737caf" :on-strong "#dcdfeb"
+     :medium "#edeff9" :on-medium "#8188af"
+     :subtle "#f7f8fd" :on-subtle "#888eb3"
+     :border "#99a1ce" :focus "#9ca2c6" :distant-foreground "#8388a9")
     (purple
-     :text "#79519b" :strong "#81639c" :on-strong "#ffffff"
-     :medium "#eee7f5" :on-medium "#73578b"
-     :subtle "#f7f2fa" :on-subtle "#795d90"
-     :border "#a182bb" :focus "#9e85b3" :distant-foreground "#715984")
+     :text "#9c7ab8" :strong "#9172ac" :on-strong "#e3dcea"
+     :medium "#f3eef8" :on-medium "#9a81ae"
+     :subtle "#faf7fc" :on-subtle "#9e87b2"
+     :border "#b599cc" :focus "#b19bc4" :distant-foreground "#9783a7")
     (magenta
-     :text "#8f4b7a" :strong "#945e83" :on-strong "#ffffff"
-     :medium "#f5e6ef" :on-medium "#825475"
-     :subtle "#fbf2f7" :on-subtle "#885b7a"
-     :border "#b37ea3" :focus "#ac829f" :distant-foreground "#7e5771")
+     :text "#b0759e" :strong "#a46e93" :on-strong "#e9dbe4"
+     :medium "#f8edf4" :on-medium "#a77e9b"
+     :subtle "#fcf6fa" :on-subtle "#ab849f"
+     :border "#c595b6" :focus "#be99b3" :distant-foreground "#a28198")
     (rose
-     :text "#9a4765" :strong "#9a5d72" :on-strong "#ffffff"
-     :medium "#f6e5eb" :on-medium "#8a5165"
-     :subtle "#fcf2f5" :on-subtle "#8e5a6c"
-     :border "#bb7c93" :focus "#b28192" :distant-foreground "#835566")
+     :text "#b8738d" :strong "#ab6d83" :on-strong "#ebdbe1"
+     :medium "#f9edf1" :on-medium "#ae7d8f"
+     :subtle "#fdf6f8" :on-subtle "#b08493"
+     :border "#cc94a8" :focus "#c498a7" :distant-foreground "#a6808e")
     (amber
-     :text "#7c5d1b" :strong "#846c3a" :on-strong "#ffffff"
-     :medium "#f4ecd6" :on-medium "#756234"
-     :subtle "#faf5e8" :on-subtle "#79683a"
-     :border "#a48c54" :focus "#9f8c64" :distant-foreground "#72623c"))
+     :text "#9f844d" :strong "#947c4b" :on-strong "#e4dfd2"
+     :medium "#f6efde" :on-medium "#99895f"
+     :subtle "#fbf8ef" :on-subtle "#9e8f69"
+     :border "#b7a16f" :focus "#b3a27f" :distant-foreground "#968969"))
   "Contrast-checked accent palettes for a light background.")
 
 (defconst complementary-light-accent-pairs
@@ -110,9 +111,9 @@
 
 (defconst complementary-light-required-neutral-tokens
   '(background surface surface-raised surface-sunken foreground
-    foreground-secondary foreground-muted foreground-faint border
-    border-strong divider selection-neutral inactive-background
-    inactive-foreground cursor distant-foreground))
+    foreground-secondary foreground-muted foreground-faint
+    comment-foreground border border-strong divider selection-neutral
+    inactive-background inactive-foreground cursor distant-foreground))
 
 (defconst complementary-light-cursor-background-tokens
   '(background surface-raised surface-sunken region-background
@@ -132,75 +133,89 @@
   "WCAG minimum contrast ratio for meaningful non-text graphics.")
 
 (defconst complementary-light-text-contrast-target 5.0
-  "Theme design target for text contrast, including a safety margin.")
+  "Theme design target for neutral text contrast, including a safety margin.")
 
 (defconst complementary-light-non-text-contrast-target 3.25
-  "Theme design target for non-text contrast, including a safety margin.")
+  "Theme design target for neutral non-text contrast, including a safety margin.")
+
+(defconst complementary-light-accent-text-contrast-target 3.0
+  "Low-emphasis contrast target for primary and secondary accent text.")
+
+(defconst complementary-light-accent-non-text-contrast-target 2.5
+  "Low-emphasis target for primary and secondary non-text colors.")
+
+(defconst complementary-light-comment-text-contrast-target 3.5
+  "Minimum contrast target for low-emphasis light-theme comments.")
+
+(defconst complementary-light-comment-text-contrast-maximum 4.0
+  "Maximum contrast for comments against the light base background.
+This upper bound preserves a visible hierarchy between comments and body text.")
 
 (defconst complementary-light-contrast-pairs
   `((foreground background ,complementary-light-text-contrast-target)
     (foreground-secondary surface-raised ,complementary-light-text-contrast-target)
     (foreground-secondary surface-sunken ,complementary-light-text-contrast-target)
     (foreground-faint background ,complementary-light-text-contrast-target)
+    (comment-foreground background ,complementary-light-comment-text-contrast-target)
     (foreground-muted surface-sunken ,complementary-light-text-contrast-target)
     (foreground region-background ,complementary-light-text-contrast-target)
-    (primary-text background ,complementary-light-text-contrast-target)
-    (secondary-text background ,complementary-light-text-contrast-target)
-    (primary-text surface-raised ,complementary-light-text-contrast-target)
-    (secondary-text surface-raised ,complementary-light-text-contrast-target)
-    (primary-text surface-sunken ,complementary-light-text-contrast-target)
-    (secondary-text surface-sunken ,complementary-light-text-contrast-target)
+    (primary-text background ,complementary-light-accent-text-contrast-target)
+    (secondary-text background ,complementary-light-accent-text-contrast-target)
+    (primary-text surface-raised ,complementary-light-accent-text-contrast-target)
+    (secondary-text surface-raised ,complementary-light-accent-text-contrast-target)
+    (primary-text surface-sunken ,complementary-light-accent-text-contrast-target)
+    (secondary-text surface-sunken ,complementary-light-accent-text-contrast-target)
     (foreground-muted background ,complementary-light-text-contrast-target)
     (foreground primary-subtle ,complementary-light-text-contrast-target)
-    (primary-text primary-subtle ,complementary-light-text-contrast-target)
-    (secondary-text primary-subtle ,complementary-light-text-contrast-target)
+    (primary-text primary-subtle ,complementary-light-accent-text-contrast-target)
+    (secondary-text primary-subtle ,complementary-light-accent-text-contrast-target)
     (foreground secondary-subtle ,complementary-light-text-contrast-target)
-    (primary-text secondary-subtle ,complementary-light-text-contrast-target)
-    (secondary-text secondary-subtle ,complementary-light-text-contrast-target)
+    (primary-text secondary-subtle ,complementary-light-accent-text-contrast-target)
+    (secondary-text secondary-subtle ,complementary-light-accent-text-contrast-target)
     (foreground secondary-medium ,complementary-light-text-contrast-target)
-    (primary-text secondary-medium ,complementary-light-text-contrast-target)
-    (secondary-text secondary-medium ,complementary-light-text-contrast-target)
+    (primary-text secondary-medium ,complementary-light-accent-text-contrast-target)
+    (secondary-text secondary-medium ,complementary-light-accent-text-contrast-target)
     (foreground-muted secondary-medium ,complementary-light-text-contrast-target)
     (foreground primary-medium ,complementary-light-text-contrast-target)
-    (primary-text primary-medium ,complementary-light-text-contrast-target)
-    (secondary-text primary-medium ,complementary-light-text-contrast-target)
+    (primary-text primary-medium ,complementary-light-accent-text-contrast-target)
+    (secondary-text primary-medium ,complementary-light-accent-text-contrast-target)
     (foreground-muted primary-medium ,complementary-light-text-contrast-target)
     (foreground hl-line-background ,complementary-light-text-contrast-target)
-    (primary-text hl-line-background ,complementary-light-text-contrast-target)
-    (secondary-text hl-line-background ,complementary-light-text-contrast-target)
+    (primary-text hl-line-background ,complementary-light-accent-text-contrast-target)
+    (secondary-text hl-line-background ,complementary-light-accent-text-contrast-target)
     (foreground-muted hl-line-background ,complementary-light-text-contrast-target)
     (foreground completion-background ,complementary-light-text-contrast-target)
     (foreground match-background ,complementary-light-text-contrast-target)
-    (primary-on-strong primary-strong ,complementary-light-text-contrast-target)
-    (primary-on-state primary-state ,complementary-light-text-contrast-target)
-    (primary-state background ,complementary-light-non-text-contrast-target)
-    (primary-state inactive-background ,complementary-light-non-text-contrast-target)
-    (primary-on-medium primary-medium ,complementary-light-text-contrast-target)
-    (primary-on-subtle primary-subtle ,complementary-light-text-contrast-target)
+    (primary-on-strong primary-strong ,complementary-light-accent-text-contrast-target)
+    (primary-on-state primary-state ,complementary-light-accent-text-contrast-target)
+    (primary-state background ,complementary-light-accent-non-text-contrast-target)
+    (primary-state inactive-background ,complementary-light-accent-non-text-contrast-target)
+    (primary-on-medium primary-medium ,complementary-light-accent-text-contrast-target)
+    (primary-on-subtle primary-subtle ,complementary-light-accent-text-contrast-target)
     (inactive-foreground inactive-background ,complementary-light-text-contrast-target)
-    (secondary-on-strong secondary-strong ,complementary-light-text-contrast-target)
-    (secondary-on-state secondary-state ,complementary-light-text-contrast-target)
-    (secondary-state background ,complementary-light-non-text-contrast-target)
-    (secondary-on-medium secondary-medium ,complementary-light-text-contrast-target)
-    (secondary-on-subtle secondary-subtle ,complementary-light-text-contrast-target)
+    (secondary-on-strong secondary-strong ,complementary-light-accent-text-contrast-target)
+    (secondary-on-state secondary-state ,complementary-light-accent-text-contrast-target)
+    (secondary-state background ,complementary-light-accent-non-text-contrast-target)
+    (secondary-on-medium secondary-medium ,complementary-light-accent-text-contrast-target)
+    (secondary-on-subtle secondary-subtle ,complementary-light-accent-text-contrast-target)
     (border background ,complementary-light-non-text-contrast-target)
     (border-strong surface-sunken ,complementary-light-non-text-contrast-target)
     (divider background ,complementary-light-non-text-contrast-target)
-    (primary-border background ,complementary-light-non-text-contrast-target)
-    (primary-focus background ,complementary-light-non-text-contrast-target)
-    (secondary-border background ,complementary-light-non-text-contrast-target))
+    (primary-border background ,complementary-light-accent-non-text-contrast-target)
+    (primary-focus background ,complementary-light-accent-non-text-contrast-target)
+    (secondary-border background ,complementary-light-accent-non-text-contrast-target))
   "Declared foreground/background pairs tested for every accent combination.")
 
 (defconst complementary-light-overlap-scenarios
-  `((region+isearch primary-on-state primary-state ,complementary-light-text-contrast-target)
+  `((region+isearch primary-on-state primary-state ,complementary-light-accent-text-contrast-target)
     (region+lazy-highlight foreground secondary-subtle ,complementary-light-text-contrast-target)
     (region+match foreground primary-subtle ,complementary-light-text-contrast-target)
     (hl-line+region foreground region-background ,complementary-light-text-contrast-target)
     (diff+region foreground region-background ,complementary-light-text-contrast-target)
     (completion+match foreground primary-subtle ,complementary-light-text-contrast-target)
     (show-paren+region foreground region-background ,complementary-light-text-contrast-target)
-    (primary-syntax+region primary-text region-background ,complementary-light-text-contrast-target)
-    (secondary-syntax+region secondary-text region-background ,complementary-light-text-contrast-target)
+    (primary-syntax+region primary-text region-background ,complementary-light-accent-text-contrast-target)
+    (secondary-syntax+region secondary-text region-background ,complementary-light-accent-text-contrast-target)
     (muted+region foreground-muted region-background ,complementary-light-text-contrast-target))
   "Declared effective pairs for common overlapping face scenarios.")
 

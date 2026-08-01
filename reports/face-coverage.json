@@ -4054,7 +4054,7 @@
     "line": 1938,
     "classification": "themed",
     "target": "json-null",
-    "foreground_token": "foreground-muted",
+    "foreground_token": "comment-foreground",
     "background_token": "json-null",
     "reason": "json-null"
   },
