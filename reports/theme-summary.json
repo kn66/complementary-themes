@@ -1,0 +1,25 @@
+{
+  "emacs_version": "30.2",
+  "system_type": "gnu/linux",
+  "window_system": "nil",
+  "display_color_cells": 0,
+  "face_count": 1171,
+  "classifications": {
+    "themed": 94,
+    "inherit": 532,
+    "alias": 12,
+    "preserve": 494,
+    "external-semantic": 39,
+    "excluded": 0
+  },
+  "registered_face_specs": 94,
+  "theme_count": 2,
+  "accent_count": 12,
+  "symmetric_pair_count": 6,
+  "minimum_measured_contrast": 3.000057188020789,
+  "minimum_measured_contrast_by_theme": {
+    "complementary-light": 3.0004844633618406,
+    "complementary-dark": 3.000057188020789
+  },
+  "generated_at": "2026-08-01T11:43:40+0900"
+}

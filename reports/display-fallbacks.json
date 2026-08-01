@@ -1,0 +1,15 @@
+{
+  "truecolor": {
+    "selector": "class=color,min-colors=257",
+    "colors": "8-bit sRGB literals"
+  },
+  "terminal_256": {
+    "selector": "class=color,min-colors=16",
+    "colors": "terminal-quantized sRGB",
+    "non_color_attributes": "preserved from default defface specs"
+  },
+  "monochrome": {
+    "selector": "class=mono",
+    "priority": "original defface non-color attributes"
+  }
+}

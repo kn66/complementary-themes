@@ -1,0 +1,111 @@
+;;; complementary-light-faces-test.el --- Inventory and gamut tests  -*- lexical-binding: t; -*-
+
+(require 'complementary-light-test-helper)
+(require 'complementary-light-generate-faces)
+
+(ert-deftest complementary-light-recorded-inventory-is-fully-classified ()
+  (let ((valid '(themed inherit alias preserve external-semantic excluded unavailable))
+        missing)
+    (dolist (entry (plist-get complementary-light-generated-inventory :faces))
+      (let ((rule (complementary-light-face-rule (car entry))))
+        (unless (and rule (memq (plist-get (cdr rule) :status) valid))
+          (push (car entry) missing))
+        (when (eq (plist-get (cdr rule) :status) 'preserve)
+          (should (stringp (plist-get (cdr rule) :reason)))))
+    (should (null missing)))))
+
+(ert-deftest complementary-light-current-emacs-has-no-new-unclassified-faces ()
+  (let* ((stored (mapcar #'car
+                         (plist-get complementary-light-generated-inventory :faces)))
+         (fresh (mapcar #'car (complementary-light-inventory-discover)))
+         (new (cl-set-difference fresh stored)))
+    (should (or (null new)
+                (ert-fail (format "Unclassified built-in faces: %S" new))))))
+
+(ert-deftest complementary-light-aliases-retain-their-target ()
+  (dolist (entry (plist-get complementary-light-generated-inventory :faces))
+    (when-let ((target (or (plist-get (cdr entry) :alias-of)
+                           (plist-get (cdr entry) :obsolete-alias-of))))
+      (let ((rule (complementary-light-face-rule (car entry))))
+        (should (eq (plist-get (cdr rule) :status) 'alias))
+        (should (eq (plist-get (cdr rule) :target) target))))))
+
+(ert-deftest complementary-light-theme-colors-belong-to-selected-gamut ()
+  (let* ((primary 'yellow) (secondary 'purple)
+         (allowed (append (mapcar #'cdr complementary-light-neutral-palette)
+                          (cl-loop for (_ value) on (complementary-light-palette primary)
+                                   by #'cddr collect value)
+                          (cl-loop for (_ value) on (complementary-light-palette secondary)
+                                   by #'cddr collect value))))
+    (cl-labels ((check (value)
+                  (cond ((and (stringp value)
+                              (string-match-p
+                               "\\`#[[:xdigit:]]\\{6\\}\\'" value))
+                         (should (member value allowed)))
+                        ((consp value)
+                         (check (car value))
+                         (check (cdr value))))))
+      (dolist (spec (complementary-light-build-face-specs primary secondary))
+        (dolist (display (cadr spec))
+          (check (cadr display)))))))
+
+(ert-deftest complementary-light-mode-line-buffer-id-keeps-context-foreground ()
+  (let ((rule (cdr (complementary-light-face-rule 'mode-line-buffer-id))))
+    (should (eq (plist-get rule :status) 'preserve))
+    (should-not (plist-member rule :foreground))))
+
+(ert-deftest complementary-light-active-mode-line-uses-dark-on-light-colors ()
+  (let ((rule (cdr (complementary-light-face-rule 'mode-line))))
+    (should (eq (plist-get rule :foreground) 'foreground))
+    (should (eq (plist-get rule :background) 'surface-raised)))
+  (let ((rule (cdr (complementary-light-face-rule 'mode-line-active))))
+    (should (eq (plist-get rule :status) 'inherit))
+    (should (eq (plist-get rule :target) 'mode-line))))
+
+(ert-deftest complementary-light-rules-declare-colors-only ()
+  (dolist (rule complementary-light-face-rules)
+    (dolist (attribute complementary-light-non-color-attributes)
+      (should-not (plist-member (cdr rule) attribute))))
+  (should-not complementary-light-non-color-attribute-allowlist))
+
+(ert-deftest complementary-light-rules-respect-built-in-color-topology ()
+  (dolist (rule complementary-light-face-rules)
+    (when (eq (plist-get (cdr rule) :status) 'themed)
+      (let* ((face (car rule))
+             (entry (assq face
+                          (plist-get complementary-light-generated-inventory
+                                     :faces)))
+             (properties (cdr entry)))
+        (dolist (attribute complementary-light--color-attributes)
+          (when (plist-member (cdr rule) attribute)
+            (should
+             (complementary-light--default-declares-color-p
+              face properties attribute))))))))
+
+(ert-deftest complementary-light-org-block-keeps-built-in-color-topology ()
+  (dolist (face '(org-block org-block-begin-line org-block-end-line))
+    (let ((rule (cdr (complementary-light-face-rule face))))
+      (should (eq (plist-get rule :status) 'inherit))
+      (should-not (plist-member rule :foreground))
+      (should-not (plist-member rule :background))
+      (should-not (assq face
+                        (complementary-light-build-face-specs
+                         'yellow 'purple))))))
+
+(ert-deftest complementary-light-local-highlights-use-stronger-surfaces ()
+  (let ((rule (cdr (complementary-light-face-rule 'highlight))))
+    (should (eq (plist-get rule :background) 'primary-medium)))
+  (dolist (check '((match primary-medium)
+                    (lazy-highlight secondary-medium)
+                    (isearch-fail primary-medium)
+                    (pulse-highlight-start-face primary-medium)
+                    (show-paren-match secondary-medium)))
+    (let ((rule (cdr (complementary-light-face-rule (car check)))))
+      (should (eq (plist-get rule :status) 'themed))
+      (should (eq (plist-get rule :background) (cadr check)))))
+  (let ((rule (cdr (complementary-light-face-rule 'isearch))))
+    (should (eq (plist-get rule :foreground) 'primary-on-medium))
+    (should (eq (plist-get rule :background) 'primary-medium))))
+
+(provide 'complementary-light-faces-test)
+;;; complementary-light-faces-test.el ends here

@@ -1,0 +1,14 @@
+# Emacs build output
+*.elc
+
+# Packaged release archives
+/dist/
+
+# Editor backup and auto-save files
+*~
+\#*\#
+.\#*
+
+# Codex workspace metadata
+/.agents/
+/.codex/
