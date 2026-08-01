@@ -117,9 +117,9 @@ This is deliberately nil: all non-color attributes come from the default
     (font-lock-warning-face :status themed :foreground secondary-text)
 
     ;; Search, completion, navigation and help.
-    (isearch :status themed :foreground primary-on-medium :background primary-medium :distant-foreground distant-foreground)
+    (isearch :status themed :foreground primary-on-state :background primary-state :distant-foreground distant-foreground)
     (isearch-fail :status themed :background primary-medium :distant-foreground distant-foreground)
-    (query-replace :status themed :foreground secondary-on-medium :background secondary-medium :distant-foreground distant-foreground)
+    (query-replace :status themed :foreground secondary-on-state :background secondary-state :distant-foreground distant-foreground)
     (completions-annotations :status themed :foreground foreground-muted)
     (completions-common-part :status themed :foreground primary-text)
     (completions-first-difference :status themed :foreground secondary-text)
@@ -608,6 +608,14 @@ Emacs accepts both (DISPLAY :key value) and (DISPLAY (:key value))."
             clauses))
     (nreverse clauses)))
 
+(defun complementary-light--terminal-256-clauses (clauses)
+  "Make every explicit text pair in xterm-256 display CLAUSES contrast-safe."
+  (mapcar
+   (lambda (clause)
+     (list (car clause)
+           (complementary-light-terminal-adjust-attributes (cadr clause))))
+   clauses))
+
 (defun complementary-light-build-face-specs (primary secondary)
   "Build Custom Theme specs for the themed PRIMARY/SECONDARY pair."
   (let (specs)
@@ -616,7 +624,6 @@ Emacs accepts both (DISPLAY :key value) and (DISPLAY (:key value))."
         (let* ((face (car rule))
                (truecolor (complementary-light--rule-attributes
                            (cdr rule) primary secondary))
-               (terminal (copy-tree truecolor))
                ;; Monochrome receives no theme-owned non-color attributes.
                (mono nil)
                (line-token (or (plist-get (cdr rule) :foreground)
@@ -627,8 +634,11 @@ Emacs accepts both (DISPLAY :key value) and (DISPLAY (:key value))."
                 (append
                  (complementary-light--display-clauses
                   face '((class color) (min-colors 257)) truecolor line-color)
+                 (complementary-light--terminal-256-clauses
+                  (complementary-light--display-clauses
+                   face '((class color) (min-colors 256)) truecolor line-color))
                  (complementary-light--display-clauses
-                  face '((class color) (min-colors 16)) terminal line-color)
+                  face '((class color) (min-colors 16)) truecolor line-color)
                  (complementary-light--display-clauses
                   face '((class mono)) mono line-color))))
           (push (list face clauses)

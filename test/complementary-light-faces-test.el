@@ -36,18 +36,24 @@
                           (cl-loop for (_ value) on (complementary-light-palette primary)
                                    by #'cddr collect value)
                           (cl-loop for (_ value) on (complementary-light-palette secondary)
-                                   by #'cddr collect value))))
-    (cl-labels ((check (value)
+                                   by #'cddr collect value)))
+         (terminal-allowed
+          (mapcar #'complementary-light--rgb-hex
+                  (nthcdr 16 complementary-light--xterm-256-colors))))
+    (cl-labels ((check (value permitted)
                   (cond ((and (stringp value)
                               (string-match-p
                                "\\`#[[:xdigit:]]\\{6\\}\\'" value))
-                         (should (member value allowed)))
+                         (should (member value permitted)))
                         ((consp value)
-                         (check (car value))
-                         (check (cdr value))))))
+                         (check (car value) permitted)
+                         (check (cdr value) permitted)))))
       (dolist (spec (complementary-light-build-face-specs primary secondary))
         (dolist (display (cadr spec))
-          (check (cadr display)))))))
+          (check (cadr display)
+                 (if (member '(min-colors 256) (car display))
+                     (append allowed terminal-allowed)
+                   allowed)))))))
 
 (ert-deftest complementary-light-mode-line-buffer-id-keeps-context-foreground ()
   (let ((rule (cdr (complementary-light-face-rule 'mode-line-buffer-id))))
@@ -104,8 +110,8 @@
       (should (eq (plist-get rule :status) 'themed))
       (should (eq (plist-get rule :background) (cadr check)))))
   (let ((rule (cdr (complementary-light-face-rule 'isearch))))
-    (should (eq (plist-get rule :foreground) 'primary-on-medium))
-    (should (eq (plist-get rule :background) 'primary-medium))))
+    (should (eq (plist-get rule :foreground) 'primary-on-state))
+    (should (eq (plist-get rule :background) 'primary-state))))
 
 (provide 'complementary-light-faces-test)
 ;;; complementary-light-faces-test.el ends here

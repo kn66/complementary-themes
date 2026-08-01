@@ -5,10 +5,11 @@
 
 ;;; Commentary:
 
-;; Color-only rules for packages installed by the companion init.org.  Faces
-;; which already inherit a themed Emacs face need no entry here: retaining that
-;; inheritance also retains package-owned weight, slant, box, and other state.
-;; This module only replaces independent package colors with palette tokens.
+;; Color-only rules for a curated set of external packages, including those
+;; installed by the companion init.org.  Faces which already inherit a themed
+;; Emacs face need no entry here: retaining that inheritance also retains
+;; package-owned weight, slant, box, and other state.  This module only replaces
+;; independent package colors with palette tokens.
 
 ;;; Code:
 
@@ -23,9 +24,10 @@
                   "complementary-light-faces")
 
 (defconst complementary-light-supported-packages
-  '(avy bbdb cognitive-complexity consult corfu ddskk denote diff-hl eglot
-    embark emmet-mode magit magit-section marginalia relint tempel transient
-    treesit-fold vundo wgrep which-key)
+  '(avy bbdb cognitive-complexity company consult corfu ddskk denote diff-hl
+    eglot embark emmet-mode flycheck gptel helm ivy magit magit-section
+    marginalia markdown-mode relint tempel transient treesit-fold vertico
+    vundo wgrep which-key)
   "External packages whose visible faces follow complementary-light.
 Packages without explicit rules here use the already-themed faces they inherit.")
 
@@ -44,6 +46,16 @@ Packages without explicit rules here use the already-themed faces they inherit."
     (cognitive-complexity-high :package cognitive-complexity :foreground secondary-text)
     (cognitive-complexity-extreme :package cognitive-complexity :foreground primary-text)
 
+    ;; Company completion popup and template fields.
+    (company-tooltip :package company :foreground foreground :background surface-raised)
+    (company-tooltip-selection :package company :background primary-medium)
+    (company-tooltip-common :package company :foreground primary-text)
+    (company-tooltip-annotation :package company :foreground secondary-text)
+    (company-tooltip-scrollbar-thumb :package company :background border-strong)
+    (company-tooltip-scrollbar-track :package company :background surface-sunken)
+    (company-echo-common :package company :foreground primary-text)
+    (company-template-field :package company :foreground primary-on-medium :background primary-medium)
+
     ;; Corfu and its bundled extensions.
     (corfu-default :package corfu :foreground foreground :background surface-raised)
     (corfu-current :package corfu :foreground primary-on-medium :background primary-medium)
@@ -61,6 +73,107 @@ Packages without explicit rules here use the already-themed faces they inherit."
     (diff-hl-insert :package diff-hl :foreground secondary-text :background secondary-subtle)
     (diff-hl-delete :package diff-hl :foreground primary-text :background primary-subtle)
     (diff-hl-change :package diff-hl :foreground primary-text :background secondary-subtle)
+
+    ;; Flycheck diagnostics.  Foreground tokens also replace embedded wave
+    ;; underline colors without adding a foreground where none was declared.
+    (flycheck-error :package flycheck :foreground primary-text)
+    (flycheck-warning :package flycheck :foreground secondary-text)
+    (flycheck-info :package flycheck :foreground secondary-text)
+    (flycheck-annotate-error-background :package flycheck :background primary-subtle)
+    (flycheck-annotate-warning-background :package flycheck :background secondary-subtle)
+    (flycheck-annotate-info-background :package flycheck :background secondary-subtle)
+
+    ;; Gptel response, context, and rewrite overlays.
+    (gptel-context-highlight-face :package gptel :background surface-sunken)
+    (gptel-context-deletion-face :package gptel :foreground primary-text :background primary-subtle)
+    (gptel-response-highlight :package gptel :background surface-raised)
+    (gptel-rewrite-highlight-face :package gptel :background secondary-subtle)
+
+    ;; Helm core selection, prompt, and source UI.
+    (helm-candidate-number :package helm :foreground secondary-on-strong :background secondary-strong)
+    (helm-dim-prompt :package helm :foreground foreground-faint)
+    (helm-header-line-left-margin :package helm :foreground primary-on-medium :background primary-medium)
+    (helm-match :package helm :foreground primary-text)
+    (helm-prefarg :package helm :foreground secondary-text)
+    (helm-selection :package helm :background primary-medium :distant-foreground primary-distant-foreground)
+    (helm-selection-line :package helm :distant-foreground distant-foreground)
+    (helm-separator :package helm :foreground primary-text)
+    (helm-source-header :package helm :foreground primary-on-strong :background primary-strong)
+    (helm-tooltip :package helm :foreground foreground :background surface-raised)
+    (helm-visible-mark :package helm :foreground secondary-on-medium :background secondary-medium)
+
+    ;; Helm commands, bookmarks, buffers, and Lisp completion.
+    (helm-M-x-key :package helm :foreground secondary-text)
+    (helm-M-x-short-doc :package helm :foreground foreground-muted)
+    (helm-bookmark-addressbook :package helm :foreground primary-text)
+    (helm-bookmark-file :package helm :foreground secondary-text)
+    (helm-bookmark-file-not-found :package helm :foreground foreground-muted)
+    (helm-bookmark-gnus :package helm :foreground primary-text)
+    (helm-bookmark-info :package helm :foreground secondary-text)
+    (helm-bookmark-man :package helm :foreground primary-text)
+    (helm-bookmark-w3m :package helm :foreground secondary-text)
+    (helm-buffer-archive :package helm :foreground secondary-text)
+    (helm-buffer-directory :package helm :foreground secondary-text :background surface-raised)
+    (helm-buffer-not-saved :package helm :foreground primary-text)
+    (helm-buffer-process :package helm :foreground secondary-text)
+    (helm-buffer-saved-out :package helm :foreground primary-on-strong :background primary-strong)
+    (helm-buffer-size :package helm :foreground foreground-muted)
+    (helm-indirect-buffer :package helm :foreground foreground-muted :background surface-sunken)
+    (helm-no-file-buffer-modified :package helm :foreground primary-on-strong :background primary-strong)
+    (helm-lisp-completion-info :package helm :foreground primary-text)
+    (helm-lisp-show-completion :package helm :background primary-subtle)
+    (helm-mode-prefix :package helm :foreground primary-on-strong :background primary-strong)
+
+    ;; Helm file navigation and asynchronous progress.
+    (helm-delete-async-message :package helm :foreground secondary-text)
+    (helm-fd-finish :package helm :foreground secondary-text)
+    (helm-ff-backup-file :package helm :foreground foreground-faint)
+    (helm-ff-denied :package helm :foreground primary-on-strong :background primary-strong)
+    (helm-ff-directory :package helm :foreground secondary-text :background surface-raised)
+    (helm-ff-dotted-directory :package helm :foreground foreground-secondary :background surface-sunken)
+    (helm-ff-dotted-symlink-directory :package helm :foreground primary-text :background surface-sunken)
+    (helm-ff-executable :package helm :foreground secondary-text)
+    (helm-ff-file-extension :package helm :foreground primary-text)
+    (helm-ff-invalid-symlink :package helm :foreground primary-on-strong :background primary-strong)
+    (helm-ff-pipe :package helm :foreground secondary-on-strong :background secondary-strong)
+    (helm-ff-prefix :package helm :foreground primary-on-medium :background primary-medium)
+    (helm-ff-rsync-progress-1 :package helm :foreground primary-on-strong :background primary-strong)
+    (helm-ff-rsync-progress-2 :package helm :background secondary-medium)
+    (helm-ff-rsync-progress-3 :package helm :background surface-raised)
+    (helm-ff-rsync-progress-svg :package helm :foreground secondary-on-strong :background secondary-strong)
+    (helm-ff-socket :package helm :foreground primary-text)
+    (helm-ff-suid :package helm :foreground primary-on-strong :background primary-strong)
+    (helm-history-remote :package helm :foreground primary-text)
+
+    ;; Helm grep, occur, tags, shell, and miscellaneous sources.
+    (helm-eshell-prompts-buffer-name :package helm :foreground secondary-text)
+    (helm-eshell-prompts-promptidx :package helm :foreground primary-text)
+    (helm-etags-file :package helm :foreground secondary-text)
+    (helm-grep-file :package helm :foreground secondary-text)
+    (helm-grep-finish :package helm :foreground secondary-text)
+    (helm-grep-lineno :package helm :foreground foreground-muted)
+    (helm-grep-match :package helm :foreground primary-text)
+    (helm-locate-finish :package helm :foreground secondary-text)
+    (helm-moccur-buffer :package helm :foreground secondary-text)
+    (helm-resume-need-update :package helm :background primary-medium)
+    (helm-time-zone-current :package helm :foreground secondary-text)
+    (helm-time-zone-home :package helm :foreground primary-text)
+    (helm-ucs-char :package helm :foreground secondary-text)
+
+    ;; Ivy candidate selection, matching, and prompt states.
+    (ivy-cursor :package ivy :foreground primary-on-strong :background primary-strong)
+    (ivy-current-match :package ivy :foreground primary-on-strong :background primary-strong)
+    (ivy-minibuffer-match-face-1 :package ivy :background selection-neutral)
+    (ivy-minibuffer-match-face-2 :package ivy :background primary-subtle)
+    (ivy-minibuffer-match-face-3 :package ivy :background secondary-subtle)
+    (ivy-minibuffer-match-face-4 :package ivy :background primary-medium)
+    (ivy-confirm-face :package ivy :foreground secondary-text)
+    (ivy-match-required-face :package ivy :foreground primary-text)
+    (ivy-remote :package ivy :foreground secondary-text)
+
+    ;; Markdown's transient text-highlighting face.  Other Markdown faces
+    ;; inherit Font Lock, link, shadow, and typography-only faces.
+    (markdown-highlighting-face :package markdown-mode :foreground primary-on-medium :background primary-medium)
 
     ;; Magit references, state, and navigation.
     (magit-bisect-good :package magit :foreground secondary-text)
@@ -169,6 +282,11 @@ Packages without explicit rules here use the already-themed faces they inherit."
     (transient-key-stack :package transient :foreground secondary-text)
     (transient-key-exit :package transient :foreground primary-text)
 
+    ;; Vertico itself inherits highlight, shadow, and Font Lock faces.  Its
+    ;; quick-jump extension supplies two independent colored key faces.
+    (vertico-quick1 :package vertico :foreground primary-on-strong :background primary-strong)
+    (vertico-quick2 :package vertico :foreground secondary-on-strong :background secondary-strong)
+
     ;; Folding, undo visualization, and editable grep buffers.
     (treesit-fold-replacement-face :package treesit-fold :foreground foreground-muted)
     (treesit-fold-replacement-mouse-face :package treesit-fold :foreground foreground-secondary)
@@ -212,6 +330,9 @@ Packages without explicit rules here use the already-themed faces they inherit."
          (append
           (complementary-light--display-clauses
            face '((class color) (min-colors 257)) colors line-color)
+          (complementary-light--terminal-256-clauses
+           (complementary-light--display-clauses
+            face '((class color) (min-colors 256)) colors line-color))
           (complementary-light--display-clauses
            face '((class color) (min-colors 16)) colors line-color)
           (complementary-light--display-clauses
@@ -220,6 +341,8 @@ Packages without explicit rules here use the already-themed faces they inherit."
        ;; defface is folded in by `complementary-light--package-after-load'.
        (list
         (list '((class color) (min-colors 257)) colors)
+        (list '((class color) (min-colors 256))
+              (complementary-light-terminal-adjust-attributes colors))
         (list '((class color) (min-colors 16)) colors)
         (list '((class mono)) nil))))))
 

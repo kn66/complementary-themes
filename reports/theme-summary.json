@@ -21,5 +21,8 @@
     "complementary-light": 3.0004844633618406,
     "complementary-dark": 3.000057188020789
   },
-  "generated_at": "2026-08-01T11:43:40+0900"
+  "color_vision_policy": "diagnostic-only",
+  "color_vision_record_count": 180,
+  "minimum_simulated_pair_delta_e_2000": 0.6310092611745788,
+  "generated_at": "2026-08-01T15:18:33+0900"
 }

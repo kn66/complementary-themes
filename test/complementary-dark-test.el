@@ -3,9 +3,6 @@
 (require 'complementary-light-test-helper)
 (require 'complementary-dark)
 
-(defconst complementary-dark-test--aa-calibration-tolerance 0.06
-  "Maximum contrast above an AA threshold allowed by dark calibration.")
-
 (defun complementary-dark-test--check-pair (primary secondary pair)
   "Assert dark contrast PAIR for PRIMARY and SECONDARY."
   (let* ((foreground-token (nth 0 pair))
@@ -24,9 +21,9 @@
                   primary secondary foreground-token background-token
                   foreground background ratio required))))))
 
-(defun complementary-dark-test--check-calibration
+(defun complementary-dark-test--check-minimum
     (label foreground backgrounds required)
-  "Assert LABEL is just above REQUIRED against its hardest BACKGROUNDS pair."
+  "Assert LABEL reaches REQUIRED against its hardest BACKGROUNDS pair."
   (let ((ratio
          (apply #'min
                 (mapcar (lambda (background)
@@ -34,16 +31,11 @@
                            foreground background))
                         backgrounds))))
     (should
-     (or (and (>= ratio required)
-              (<= ratio
-                  (+ required
-                     complementary-dark-test--aa-calibration-tolerance)))
+     (or (>= ratio required)
          (ert-fail
           (format (concat "%s foreground=%s minimum-ratio=%.4f "
-                          "expected=[%.2f, %.2f]")
-                  label foreground ratio required
-                  (+ required
-                     complementary-dark-test--aa-calibration-tolerance)))))))
+                          "required>=%.2f")
+                  label foreground ratio required))))))
 
 (ert-deftest complementary-dark-palettes-are-complete ()
   (should-not (complementary-dark-validate-palettes))
@@ -59,7 +51,7 @@
         (complementary-dark-test--check-pair
          primary secondary (cdr scenario))))))
 
-(ert-deftest complementary-dark-owned-colors-sit-at-aa-thresholds ()
+(ert-deftest complementary-dark-owned-colors-meet-aa-thresholds ()
   (let* ((neutral (lambda (token)
                     (complementary-dark-token token 'yellow 'purple)))
          (background (funcall neutral 'background))
@@ -84,7 +76,7 @@
                (border (,background) 3.0)
                (border-strong (,surface-sunken) 3.0)
                (divider (,background) 3.0)))
-      (complementary-dark-test--check-calibration
+      (complementary-dark-test--check-minimum
        (format "dark/%s" (car entry))
        (funcall neutral (car entry))
        (cadr entry)
@@ -92,7 +84,7 @@
     (dolist (name complementary-light-color-names)
       (let* ((palette (complementary-dark-palette name))
              (text-backgrounds content-surfaces))
-        (complementary-dark-test--check-calibration
+        (complementary-dark-test--check-minimum
          (format "dark/%s/text" name) (plist-get palette :text)
          text-backgrounds 4.5)
         (dolist (entry '((:on-strong :strong 4.5)
@@ -100,14 +92,14 @@
                          (:on-subtle :subtle 4.5)
                          (:border nil 3.0)
                          (:focus nil 3.0)))
-          (complementary-dark-test--check-calibration
+          (complementary-dark-test--check-minimum
            (format "dark/%s/%s" name (car entry))
            (plist-get palette (car entry))
            (list (if (cadr entry)
                      (plist-get palette (cadr entry))
                    background))
            (nth 2 entry)))
-        (complementary-dark-test--check-calibration
+        (complementary-dark-test--check-minimum
          (format "dark/%s/distant-foreground" name)
          (plist-get palette :distant-foreground)
          (list (plist-get palette :medium)

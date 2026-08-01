@@ -21,6 +21,7 @@ TESTS = test/complementary-light-load-test.el \
 	test/complementary-light-attributes-test.el \
 	test/complementary-light-refresh-test.el \
 	test/complementary-light-terminal-test.el \
+	test/complementary-light-reports-test.el \
 	test/complementary-dark-test.el
 
 .PHONY: test test-package test-load test-palette test-contrast test-faces test-attributes test-refresh test-terminal test-dark compile package inventory reports clean

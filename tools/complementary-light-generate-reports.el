@@ -10,6 +10,7 @@
 ;;; Code:
 
 (require 'cl-lib)
+(require 'color)
 (require 'json)
 (require 'complementary-light)
 (require 'complementary-dark)
@@ -74,10 +75,117 @@
          (reason . ,(or (plist-get rule :reason) :json-null)))))
    (plist-get complementary-light-generated-inventory :faces)))
 
+(defconst complementary-light-report--color-vision-matrices
+  '((protanopia
+     (0.152286 1.052583 -0.204868)
+     (0.114503 0.786281 0.099216)
+     (-0.003882 -0.048116 1.051998))
+    (deuteranopia
+     (0.367322 0.860646 -0.227968)
+     (0.280085 0.672501 0.047413)
+     (-0.011820 0.042940 0.968881))
+    (tritanopia
+     (1.255528 -0.076749 -0.178779)
+     (-0.078411 0.930809 0.147602)
+     (0.004733 0.691367 0.303900)))
+  "Machado, Oliveira, and Fernandes severity-1.0 simulation matrices.")
+
+(defun complementary-light-report--linear-to-srgb (channel)
+  "Encode a linear RGB CHANNEL as sRGB, clamped to the display gamut."
+  (let ((value (max 0.0 (min 1.0 channel))))
+    (if (<= value 0.0031308)
+        (* 12.92 value)
+      (- (* 1.055 (expt value (/ 1.0 2.4))) 0.055))))
+
+(defun complementary-light-report--simulate-color (hex matrix)
+  "Return HEX simulated through a linear-RGB color-vision MATRIX."
+  (let* ((rgb (complementary-light--hex-rgb hex))
+         (linear (mapcar #'complementary-light--srgb-channel rgb))
+         (simulated
+          (mapcar
+           (lambda (row)
+             (cl-loop for coefficient in row
+                      for channel in linear
+                      sum (* coefficient channel)))
+           matrix)))
+    (complementary-light--rgb-hex
+     (mapcar (lambda (channel)
+               (round (* 255.0
+                         (complementary-light-report--linear-to-srgb
+                          channel))))
+             simulated))))
+
+(defun complementary-light-report--cie-de2000 (first second)
+  "Return CIEDE2000 distance between six-digit sRGB FIRST and SECOND."
+  (color-cie-de2000
+   (apply #'color-srgb-to-lab
+          (mapcar (lambda (channel) (/ channel 255.0))
+                  (complementary-light--hex-rgb first)))
+   (apply #'color-srgb-to-lab
+          (mapcar (lambda (channel) (/ channel 255.0))
+                  (complementary-light--hex-rgb second)))))
+
+(defun complementary-light-report--canonical-accent-pairs ()
+  "Return each symmetric registered accent pair exactly once."
+  (cl-loop for (primary . secondary) in complementary-light-accent-pairs
+           when (< (cl-position primary complementary-light-color-names)
+                   (cl-position secondary complementary-light-color-names))
+           collect (cons primary secondary)))
+
+(defun complementary-light-report--color-vision-records ()
+  "Return diagnostic color-vision records for both themes.
+No universal CIEDE2000 accessibility threshold is assumed; these measurements
+are intentionally audit data rather than a pass/fail gate."
+  (let (records)
+    (dolist (theme `((complementary-light . ,#'complementary-light-token)
+                     (complementary-dark . ,#'complementary-dark-token)))
+      (dolist (pair (complementary-light-report--canonical-accent-pairs))
+        (dolist (role '(text state medium subtle focus))
+          (let* ((primary (car pair))
+                 (secondary (cdr pair))
+                 (token-function (cdr theme))
+                 (primary-color
+                  (funcall token-function
+                           (intern (format "primary-%s" role))
+                           primary secondary))
+                 (secondary-color
+                  (funcall token-function
+                           (intern (format "secondary-%s" role))
+                           primary secondary))
+                 (original-distance
+                  (complementary-light-report--cie-de2000
+                   primary-color secondary-color)))
+            (dolist (simulation complementary-light-report--color-vision-matrices)
+              (let* ((matrix (cdr simulation))
+                     (simulated-primary
+                      (complementary-light-report--simulate-color
+                       primary-color matrix))
+                     (simulated-secondary
+                      (complementary-light-report--simulate-color
+                       secondary-color matrix)))
+                (push
+                 `((theme . ,(symbol-name (car theme)))
+                   (primary . ,(symbol-name primary))
+                   (secondary . ,(symbol-name secondary))
+                   (role . ,(symbol-name role))
+                   (simulation . ,(symbol-name (car simulation)))
+                   (primary_color . ,primary-color)
+                   (secondary_color . ,secondary-color)
+                   (simulated_primary . ,simulated-primary)
+                   (simulated_secondary . ,simulated-secondary)
+                   (delta_e_2000_original . ,original-distance)
+                   (delta_e_2000_simulated
+                    . ,(complementary-light-report--cie-de2000
+                        simulated-primary simulated-secondary)))
+                 records)))))))
+    (nreverse records)))
+
 (defun complementary-light-report-generate (directory)
   "Generate all JSON reports below DIRECTORY."
   (interactive "DReport directory: ")
   (let* ((records (complementary-light-report--contrast-records))
+         (color-vision-records
+          (complementary-light-report--color-vision-records))
          (ratios (mapcar (lambda (record) (cdr (assq 'ratio record))) records))
          (minimum-by-theme
           (mapcar
@@ -106,6 +214,12 @@
      (expand-file-name "face-coverage.json" directory)
      (complementary-light-report--coverage-records))
     (complementary-light-report--write
+     (expand-file-name "color-vision.json" directory)
+     `((policy . "diagnostic-only")
+       (model . "Machado-Oliveira-Fernandes severity 1.0")
+       (metric . "CIEDE2000")
+       (records . ,color-vision-records)))
+    (complementary-light-report--write
      (expand-file-name "non-color-attribute-diff.json" directory)
      `((environment . ((window_system . ,(format "%s" window-system))
                        (color_cells . ,(display-color-cells))))
@@ -120,9 +234,12 @@
      (expand-file-name "display-fallbacks.json" directory)
      `((truecolor . ((selector . "class=color,min-colors=257")
                      (colors . "8-bit sRGB literals")))
-       (terminal_256 . ((selector . "class=color,min-colors=16")
-                        (colors . "terminal-quantized sRGB")
+       (terminal_256 . ((selector . "class=color,min-colors=256")
+                        (colors . "xterm-256 post-quantization contrast correction")
                         (non_color_attributes . "preserved from default defface specs")))
+       (terminal_low_color . ((selector . "class=color,min-colors=16")
+                              (colors . "terminal-quantized sRGB")
+                              (non_color_attributes . "preserved from default defface specs")))
        (monochrome . ((selector . "class=mono")
                       (priority . "original defface non-color attributes")))))
     (complementary-light-report--write
@@ -141,6 +258,14 @@
        (symmetric_pair_count . ,(/ (length complementary-light-accent-pairs) 2))
        (minimum_measured_contrast . ,(apply #'min ratios))
        (minimum_measured_contrast_by_theme . ,minimum-by-theme)
+       (color_vision_policy . "diagnostic-only")
+       (color_vision_record_count . ,(length color-vision-records))
+       (minimum_simulated_pair_delta_e_2000
+        . ,(apply #'min
+                  (mapcar
+                   (lambda (record)
+                     (cdr (assq 'delta_e_2000_simulated record)))
+                   color-vision-records)))
        (generated_at . ,(format-time-string "%Y-%m-%dT%H:%M:%S%z"))))))
 
 (provide 'complementary-light-generate-reports)

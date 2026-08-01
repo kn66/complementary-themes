@@ -4,6 +4,11 @@
     "colors": "8-bit sRGB literals"
   },
   "terminal_256": {
+    "selector": "class=color,min-colors=256",
+    "colors": "xterm-256 post-quantization contrast correction",
+    "non_color_attributes": "preserved from default defface specs"
+  },
+  "terminal_low_color": {
     "selector": "class=color,min-colors=16",
     "colors": "terminal-quantized sRGB",
     "non_color_attributes": "preserved from default defface specs"

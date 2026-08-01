@@ -152,10 +152,14 @@
     (foreground completion-background 4.5)
     (foreground match-background 4.5)
     (primary-on-strong primary-strong 4.5)
+    (primary-on-state primary-state 4.5)
+    (primary-state background 3.0)
     (primary-on-medium primary-medium 4.5)
     (primary-on-subtle primary-subtle 4.5)
     (inactive-foreground inactive-background 4.5)
     (secondary-on-strong secondary-strong 4.5)
+    (secondary-on-state secondary-state 4.5)
+    (secondary-state background 3.0)
     (secondary-on-medium secondary-medium 4.5)
     (secondary-on-subtle secondary-subtle 4.5)
     (border background 3.0)
@@ -167,7 +171,7 @@
   "Declared foreground/background pairs tested for every accent combination.")
 
 (defconst complementary-light-overlap-scenarios
-  '((region+isearch primary-on-medium primary-medium 4.5)
+  '((region+isearch primary-on-state primary-state 4.5)
     (region+lazy-highlight foreground secondary-subtle 4.5)
     (region+match foreground primary-subtle 4.5)
     (hl-line+region foreground region-background 4.5)
@@ -218,23 +222,43 @@ With STARTUP non-nil, warn and use safe defaults for invalid values."
   (or (plist-get (complementary-light-palette name) token)
       (error "Palette %S has no token %S" name token)))
 
+(defun complementary-light--accent-state-token (name)
+  "Return the salient state surface for accent NAME.
+Light palettes use their dark strong surface.  Dark palettes, detected from
+the dynamically bound neutral background, use their bright text color."
+  (complementary-light--accent-token
+   name
+   (if (> (complementary-light-relative-luminance
+           (cdr (assq 'background complementary-light-neutral-palette)))
+          0.5)
+       :strong
+     :text)))
+
 (defun complementary-light-token (token primary secondary)
   "Resolve semantic TOKEN using PRIMARY and SECONDARY accent names."
   (or (cdr (assq token complementary-light-neutral-palette))
-      (pcase (symbol-name token)
-        ((rx bos "primary-" (let suffix (+ any)) eos)
-         (complementary-light--accent-token
-          primary (intern (concat ":" suffix))))
-        ((rx bos "secondary-" (let suffix (+ any)) eos)
-         (complementary-light--accent-token
-          secondary (intern (concat ":" suffix))))
-        ;; Highlight aliases deliberately share very pale surfaces so that
-        ;; arbitrary syntax foregrounds remain readable when faces overlap.
-        ("region-background" (complementary-light--accent-token secondary :medium))
-        ("hl-line-background" (cdr (assq 'surface-raised complementary-light-neutral-palette)))
-        ("completion-background" (complementary-light--accent-token secondary :subtle))
-        ("match-background" (complementary-light--accent-token primary :subtle))
-        (_ (error "Unknown complementary-light token: %S" token)))))
+      (let ((name (symbol-name token)))
+        (pcase name
+          ((or "primary-state" "secondary-state")
+           (complementary-light--accent-state-token
+            (if (string-prefix-p "primary-" name) primary secondary)))
+          ((or "primary-on-state" "secondary-on-state")
+           ;; The base surface is the most legible foreground on the adaptive
+           ;; state color in both the light and dark palettes.
+           (cdr (assq 'background complementary-light-neutral-palette)))
+          ((rx bos "primary-" (let suffix (+ any)) eos)
+           (complementary-light--accent-token
+            primary (intern (concat ":" suffix))))
+          ((rx bos "secondary-" (let suffix (+ any)) eos)
+           (complementary-light--accent-token
+            secondary (intern (concat ":" suffix))))
+          ;; Highlight aliases deliberately share very pale surfaces so that
+          ;; arbitrary syntax foregrounds remain readable when faces overlap.
+          ("region-background" (complementary-light--accent-token secondary :medium))
+          ("hl-line-background" (cdr (assq 'surface-raised complementary-light-neutral-palette)))
+          ("completion-background" (complementary-light--accent-token secondary :subtle))
+          ("match-background" (complementary-light--accent-token primary :subtle))
+          (_ (error "Unknown complementary-light token: %S" token))))))
 
 (defun complementary-light-valid-hex-p (value)
   "Return non-nil when VALUE is a six-digit sRGB hex string."
@@ -266,6 +290,142 @@ With STARTUP non-nil, warn and use safe defaults for invalid values."
          (lighter (max a b))
          (darker (min a b)))
     (/ (+ lighter 0.05) (+ darker 0.05))))
+
+(defconst complementary-light--xterm-256-colors
+  (let* ((base '((0 0 0) (205 0 0) (0 205 0) (205 205 0)
+                 (0 0 238) (205 0 205) (0 205 205) (229 229 229)
+                 (127 127 127) (255 0 0) (0 255 0) (255 255 0)
+                 (92 92 255) (255 0 255) (0 255 255) (255 255 255)))
+         (levels '(0 95 135 175 215 255))
+         (cube (cl-loop for red in levels append
+                        (cl-loop for green in levels append
+                                 (cl-loop for blue in levels
+                                          collect (list red green blue)))))
+         (grays (cl-loop for value from 8 to 238 by 10
+                         collect (list value value value))))
+    (append base cube grays))
+  "The standard xterm-256 palette in the order registered by Emacs.")
+
+(defvar complementary-light--xterm-256-color-cache
+  (make-hash-table :test #'equal)
+  "Memoized xterm-256 approximations for theme-owned sRGB colors.")
+
+(defvar complementary-light--xterm-256-foreground-cache
+  (make-hash-table :test #'equal)
+  "Memoized contrast-safe xterm-256 foreground choices.")
+
+(defun complementary-light--hex-rgb (hex)
+  "Return the three 8-bit channels in six-digit sRGB HEX."
+  (unless (complementary-light-valid-hex-p hex)
+    (error "Invalid six-digit sRGB color: %S" hex))
+  (list (string-to-number (substring hex 1 3) 16)
+        (string-to-number (substring hex 3 5) 16)
+        (string-to-number (substring hex 5 7) 16)))
+
+(defun complementary-light--rgb-hex (rgb)
+  "Return an sRGB hex string for three 8-bit channels in RGB."
+  (apply #'format "#%02x%02x%02x" rgb))
+
+(defun complementary-light--rgb-distance (first second)
+  "Return squared Euclidean RGB distance between FIRST and SECOND."
+  (cl-loop for a in first for b in second sum (expt (- a b) 2)))
+
+(defun complementary-light--off-gray-angle (rgb)
+  "Return RGB's angle from the gray diagonal, as used by Emacs TTY colors."
+  (pcase-let ((`(,red ,green ,blue) rgb))
+    (let ((magnitude
+           (sqrt (* 3.0 (+ (* red red) (* green green) (* blue blue))))))
+      (if (< magnitude 1.0)
+          0.0
+        (acos (max -1.0 (min 1.0 (/ (+ red green blue) magnitude))))))))
+
+(defun complementary-light-xterm-256-color (hex)
+  "Return the standard xterm-256 color to which Emacs maps sRGB HEX.
+This mirrors `tty-color-approximate', including its preference for non-gray
+colors when the requested color is sufficiently far from the gray diagonal."
+  (or (gethash hex complementary-light--xterm-256-color-cache)
+      (let* ((rgb (complementary-light--hex-rgb hex))
+             (favor-non-gray
+              (>= (complementary-light--off-gray-angle rgb) 0.065))
+             (best-distance most-positive-fixnum)
+             best)
+        (dolist (candidate complementary-light--xterm-256-colors)
+          (when (or (not favor-non-gray)
+                    (not (= (nth 0 candidate)
+                            (nth 1 candidate)
+                            (nth 2 candidate))))
+            (let ((distance
+                   (complementary-light--rgb-distance rgb candidate)))
+              (when (< distance best-distance)
+                (setq best-distance distance
+                      best candidate)))))
+        (puthash hex (complementary-light--rgb-hex best)
+                 complementary-light--xterm-256-color-cache))))
+
+(defun complementary-light--xterm-256-safe-foreground
+    (foreground background required)
+  "Return an xterm-256-safe FOREGROUND for BACKGROUND and REQUIRED contrast.
+Keep FOREGROUND when its quantized value passes.  Otherwise choose the closest
+hue-preserving color from the standardized 240-color xterm extension; this
+avoids depending on user-configurable ANSI base colors."
+  (let ((key (list foreground background required)))
+    (or (gethash key complementary-light--xterm-256-foreground-cache)
+        (let* ((foreground-rgb (complementary-light--hex-rgb foreground))
+               (quantized-foreground
+                (complementary-light-xterm-256-color foreground))
+               (quantized-background
+                (complementary-light-xterm-256-color background))
+               (result
+                (if (>= (complementary-light-contrast-ratio
+                         quantized-foreground quantized-background)
+                        required)
+                    foreground
+                  (let ((favor-non-gray
+                         (>= (complementary-light--off-gray-angle
+                              foreground-rgb)
+                             0.065))
+                        (best-distance most-positive-fixnum)
+                        best)
+                    (dolist (candidate
+                             (nthcdr 16 complementary-light--xterm-256-colors))
+                      (when (and
+                             (or (not favor-non-gray)
+                                 (not (= (nth 0 candidate)
+                                         (nth 1 candidate)
+                                         (nth 2 candidate))))
+                             (>= (complementary-light-contrast-ratio
+                                  (complementary-light--rgb-hex candidate)
+                                  quantized-background)
+                                 required))
+                        (let ((distance
+                               (complementary-light--rgb-distance
+                                foreground-rgb candidate)))
+                          (when (< distance best-distance)
+                            (setq best-distance distance
+                                  best candidate)))))
+                    (unless best
+                      (error "No xterm-256 foreground reaches %.1f:1 for %s"
+                             required background))
+                    (complementary-light--rgb-hex best)))))
+          (puthash key result
+                   complementary-light--xterm-256-foreground-cache)))))
+
+(defun complementary-light-terminal-adjust-attributes
+    (attributes &optional required)
+  "Return ATTRIBUTES with an xterm-256-safe explicit text pair.
+Only an explicit foreground/background pair is changed.  REQUIRED defaults to
+4.5, while attributes with only one color retain their original face topology."
+  (let ((foreground (plist-get attributes :foreground))
+        (background (plist-get attributes :background))
+        (result (copy-tree attributes)))
+    (when (and (complementary-light-valid-hex-p foreground)
+               (complementary-light-valid-hex-p background))
+      (setq result
+            (plist-put
+             result :foreground
+             (complementary-light--xterm-256-safe-foreground
+              foreground background (or required 4.5)))))
+    result))
 
 (defun complementary-light-validate-palettes ()
   "Return nil or signal an error describing the first palette defect."

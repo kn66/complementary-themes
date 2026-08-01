@@ -89,15 +89,15 @@ Perfect visual composition with multiple themes is not guaranteed. Using `comple
 
 ## Palette and contrast
 
-All theme-owned color literals are centralized in [complementary-light-palette.el](lisp/complementary-light-palette.el) and [complementary-dark-palette.el](lisp/complementary-dark-palette.el). Face declarations refer only to semantic tokens such as `background`, `foreground-muted`, `primary-text`, and `secondary-subtle`. Every accent palette provides `text`, `strong`, `on-strong`, `medium`, `on-medium`, `subtle`, `on-subtle`, `border`, `focus`, and `distant-foreground` tokens.
+All theme-owned color literals are centralized in [complementary-light-palette.el](lisp/complementary-light-palette.el) and [complementary-dark-palette.el](lisp/complementary-dark-palette.el). Face declarations refer only to semantic tokens such as `background`, `foreground-muted`, `primary-text`, and `secondary-subtle`. Every accent palette provides `text`, `strong`, `on-strong`, `medium`, `on-medium`, `subtle`, `on-subtle`, `border`, `focus`, and `distant-foreground` tokens. Adaptive `state` and `on-state` tokens select a dark strong surface in the light theme and a bright accent surface in the dark theme, giving active search and query-replace matches a distinct high-salience treatment.
 
-The theme uses WCAG 2.2 and WCAG2ICT as design references. Ordinary text targets 4.5:1 and important non-text boundaries target 3:1. Every foreground, border, focus, and distant-foreground role is calibrated to the lightest hue-preserving 8-bit sRGB candidate that stays within 0.06 of its applicable threshold in its most demanding declared pairing. Other valid pairings may have a higher ratio because one color is reused over several surfaces. This does not claim complete WCAG conformance across Emacs, fonts, terminals, operating systems, and every possible face overlap.
+The theme uses [WCAG 2.2](https://www.w3.org/TR/WCAG22/) and [WCAG2ICT](https://www.w3.org/TR/wcag2ict-22/) as design references. Ordinary text targets 4.5:1 and important non-text boundaries target 3:1. Palette generation used the lightest hue-preserving 8-bit sRGB candidate within 0.06 of its applicable threshold in its most demanding declared pairing. That narrow calibration range is an optimization record, not a conformance ceiling: tests reject values below the lower bound but allow higher contrast. Other valid pairings may have a higher ratio because one color is reused over several surfaces. This does not claim complete WCAG conformance across Emacs, fonts, terminals, operating systems, and every possible face overlap.
 
 Relative luminance uses normalized 8-bit sRGB channels. For `c <= 0.04045`, the linear value is `c / 12.92`; otherwise it is `((c + 0.055) / 1.055) ^ 2.4`. Luminance coefficients are 0.2126, 0.7152, and 0.0722. Contrast is `(Llighter + 0.05) / (Ldarker + 0.05)`.
 
-Tests validate body, secondary, muted, and faint text; accent text; strong/medium/subtle surfaces; neutral and accent borders; focus indicators; and `:distant-foreground` across all 144 primary/secondary combinations for both themes. They enforce both the AA lower bounds and the 0.06 calibration ceiling for each color role. Declared overlap scenarios cover region, hl-line, isearch, lazy-highlight, match, diff, completion, and show-paren faces. The light theme's lowest measured ratios are `4.5002:1` for text and `3.0005:1` for non-text; the dark theme's are `4.5009:1` and `3.0001:1`, respectively.
+Tests validate body, secondary, muted, and faint text; accent text; strong/medium/subtle and salient state surfaces; neutral and accent borders; focus indicators; and `:distant-foreground` across all 144 primary/secondary combinations for both themes. They enforce the AA-inspired lower bounds without imposing an upper contrast cap. Declared overlap scenarios cover region, hl-line, isearch, lazy-highlight, match, diff, completion, and show-paren faces. The light theme's lowest measured ratios are `4.5002:1` for text and `3.0005:1` for non-text; the dark theme's are `4.5009:1` and `3.0001:1`, respectively.
 
-`:distant-foreground` is used on pale background-highlight faces such as region, search, completion, match, and hl-line. It provides a fallback when terminal color quantization makes the ordinary foreground too close to the background; it is not intended as an unconditional foreground override.
+`:distant-foreground` is used on background-highlight faces such as region, search, completion, match, and hl-line. It remains an Emacs fallback rather than an unconditional foreground override. On 256-color terminals, explicit foreground/background text pairs receive an additional deterministic post-quantization contrast check.
 
 ### Built-in color topology
 
@@ -172,7 +172,7 @@ To update for a new Emacs version:
 
 A face absent from the reviewed baseline causes `test-faces` to fail with the face name. New faces are not automatically assigned to `default` or silently painted neutral.
 
-Org, Transient, use-package, and similar libraries are included in the built-in inventory only when they are bundled with the target Emacs. External-package faces remain outside that inventory count, but `lisp/complementary-light-packages.el` supplies color-only rules for the packages used by the companion `init.org`. Packages such as Consult, Marginalia, Embark, Eglot, and which-key already inherit the themed Emacs faces. The separate module replaces independent colors in Avy, Corfu, Denote, diff-hl, Magit/Transient, DDSKK, Tempel, treesit-fold, vundo, wgrep, and cognitive-complexity while preserving package-owned non-color attributes.
+Org, Transient, use-package, and similar libraries are included in the built-in inventory only when they are bundled with the target Emacs. External-package faces remain outside that inventory count, but `lisp/complementary-light-packages.el` supplies color-only rules for a curated set of packages, including those used by the companion `init.org`. Packages such as BBDB, Consult, Marginalia, Embark, Eglot, Emmet, relint, and which-key already inherit the themed Emacs faces. The separate module replaces independent colors in Avy, Company, Corfu, Denote, diff-hl, Flycheck, Gptel, Helm, Ivy, Magit/Transient, Markdown mode, DDSKK, Tempel, treesit-fold, Vertico, vundo, wgrep, and cognitive-complexity while preserving package-owned non-color attributes.
 
 ## ANSI and external colors
 
@@ -188,13 +188,14 @@ Inside the preview, `n` and `p` cycle local paired-accent samples without changi
 
 ## Display environments
 
-Face specs provide three levels:
+Face specs provide four levels:
 
 - GUI true color: `class color`, `min-colors 257`; precise sRGB HEX colors are the primary target.
-- Color terminals: `class color`, `min-colors 16`; Emacs and the terminal quantize colors to the nearest available values while retaining default non-color attributes.
+- 256-color terminals: `class color`, `min-colors 256`; colors are modeled with Emacs's xterm-256 nearest-color rule. If an explicit text pair would fall below 4.5:1 after quantization, its foreground is moved to the nearest hue-preserving standardized xterm extension color that passes.
+- Lower-color terminals: `class color`, `min-colors 16`; Emacs and the terminal quantize colors to the available palette while retaining default non-color attributes.
 - Monochrome: `class mono`; original inheritance, bold, italic, underline, box, inverse video, and other default attributes take precedence over color reproduction.
 
-The inventory environment used Emacs 30.2 build 1 on `gnu/linux` with a pgtk build. Its batch baseline had `window-system=nil` and `display-color-cells=0`; the host exposed Wayland/X display variables and `TERM=xterm-256color`. Each theme in the current build registers the same built-in face settings plus package-specific settings; named-daemon loading, refresh, and disable were tested. A real TTY could not be measured because the execution container could not open `/dev/tty`, and the GUI launch probe timed out. Use `complementary-light` for light backgrounds and `complementary-dark` for dark backgrounds.
+The inventory environment used Emacs 30.2 build 1 on `gnu/linux` with a pgtk build. Its batch baseline had `window-system=nil` and `display-color-cells=0`; the host exposed Wayland/X display variables and `TERM=xterm-256color`. Each theme in the current build registers the same built-in face settings plus package-specific settings; named-daemon loading, refresh, disable, and an xterm-256 pseudo-TTY color probe were tested. Use `complementary-light` for light backgrounds and `complementary-dark` for dark backgrounds.
 
 In daemon mode, Custom Theme settings become new-frame defaults and therefore apply to frames created later. When GUI and TTY frames coexist, each frame selects its own display clause. The theme does not reload Customize data or call `custom-set-faces` when a new frame is created.
 
@@ -225,6 +226,7 @@ Tests use `emacs -Q --batch` wherever possible. `make compile` byte-compiles the
 `make reports` generates:
 
 - `reports/palette-contrast.json`: every palette, overlap scenario, measured ratio, and requirement
+- `reports/color-vision.json`: diagnostic CIEDE2000 distances for paired accents under protanopia, deuteranopia, and tritanopia simulation
 - `reports/face-coverage.json`: face, provenance, classification, target, token, and reason
 - `reports/non-color-attribute-diff.json`: display environment, allowlist, and unexpected differences
 - `reports/display-fallbacks.json`: true-color, terminal, and monochrome policy
@@ -233,8 +235,8 @@ Tests use `emacs -Q --batch` wherever possible. `make compile` byte-compiles the
 ## Known limitations
 
 - The measured inventory and attribute baseline are from Emacs 30.2. The code structure targets Emacs 29 and later, but an Emacs 29-specific inventory has not been generated or tested in this environment.
-- Automated image comparison for protanopia, deuteranopia, tritanopia, low saturation, and grayscale is not used as a pass/fail criterion. The theme instead combines contrast and terminal-fallback tests with the distinctions already present in the default faces.
-- Actual terminal quantization depends on the terminal emulator, `TERM`, and terminfo. The 16-color selector syntax and safe non-color fallback are tested, but rendered colors cannot be guaranteed for every terminal.
+- The color-vision report uses the full-severity matrices from [Machado, Oliveira, and Fernandes](https://doi.org/10.1109/TVCG.2009.113) with CIEDE2000. Because no universal Delta-E value establishes UI accessibility, it is diagnostic and deliberately has no pass/fail threshold. Low saturation, grayscale, and automated image comparison are not tested.
+- Actual terminal quantization depends on the terminal emulator, `TERM`, terminfo, and configurable ANSI base colors. The standard xterm-256 extension and safe non-color fallbacks are tested, but rendered colors cannot be guaranteed for every terminal.
 - Unlisted external-package faces, anonymous faces, images, SVG content, and direct ANSI colors remain outside the duotone restriction.
 - Complete visual composition with other themes, arbitrary user face overrides, and font-specific line rendering is outside the guarantee.
 
@@ -247,7 +249,7 @@ Tests use `emacs -Q --batch` wherever possible. `make compile` byte-compiles the
 - `lisp/complementary-light-palette.el`: light neutrals, accents, paired accents, and sRGB contrast calculations
 - `lisp/complementary-dark-palette.el`: independently calibrated dark neutrals and accents
 - `lisp/complementary-light-faces.el`: complete classification, per-face rules, attribute preservation, and display spec generation
-- `lisp/complementary-light-packages.el`: color-only support for package faces used by `init.org`
+- `lisp/complementary-light-packages.el`: color-only support for curated external-package faces
 - `lisp/complementary-light-preview.el`: preview buffer
 - `tools/complementary-light-generate-faces.el`: reader-based built-in face inventory
 - `tools/complementary-light-generate-reports.el`: JSON audit reports

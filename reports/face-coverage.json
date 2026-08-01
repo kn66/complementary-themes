@@ -5902,8 +5902,8 @@
     "line": 315,
     "classification": "themed",
     "target": "json-null",
-    "foreground_token": "primary-on-medium",
-    "background_token": "primary-medium",
+    "foreground_token": "primary-on-state",
+    "background_token": "primary-state",
     "reason": "json-null"
   },
   {

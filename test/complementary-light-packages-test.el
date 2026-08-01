@@ -7,6 +7,24 @@
                      magit marginalia tempel treesit-fold vundo wgrep which-key))
     (should (memq package complementary-light-supported-packages))))
 
+(ert-deftest complementary-light-expanded-packages-are-declared-supported ()
+  (dolist (package '(company flycheck gptel helm ivy markdown-mode vertico))
+    (should (memq package complementary-light-supported-packages))))
+
+(ert-deftest complementary-light-expanded-package-rule-counts-match-audit ()
+  (dolist (entry '((company . 8)
+                   (flycheck . 6)
+                   (gptel . 4)
+                   (helm . 63)
+                   (ivy . 9)
+                   (markdown-mode . 1)
+                   (vertico . 2)))
+    (should
+     (= (cdr entry)
+        (cl-count (car entry) complementary-light-package-face-rules
+                  :key (lambda (rule)
+                         (plist-get (cdr rule) :package)))))))
+
 (ert-deftest complementary-light-package-rules-are-color-only-and-unique ()
   (let (seen)
     (dolist (rule complementary-light-package-face-rules)
@@ -32,6 +50,7 @@
                  'yellow 'purple))
     (let ((displays (mapcar #'car (cadr spec))))
       (dolist (selector '(((class color) (min-colors 257))
+                           ((class color) (min-colors 256))
                            ((class color) (min-colors 16))
                            ((class mono))))
         (should (cl-find-if
@@ -53,13 +72,29 @@
                      clauses))))
 
 (ert-deftest complementary-light-critical-package-faces-are-themed ()
-  (dolist (face '(avy-lead-face corfu-current diff-hl-insert
-                  magit-section-heading magit-diff-added
-                  skk-henkan-face-default tempel-field
-                  transient-enabled-suffix vundo-highlight wgrep-face))
+  (dolist (face '(avy-lead-face company-tooltip corfu-current diff-hl-insert
+                  flycheck-error gptel-response-highlight helm-selection
+                  ivy-current-match magit-section-heading magit-diff-added
+                  markdown-highlighting-face skk-henkan-face-default
+                  tempel-field transient-enabled-suffix vertico-quick1
+                  vundo-highlight wgrep-face))
     (should (complementary-light-package-face-rule face))
     (should (assq face (complementary-light-build-package-face-specs
                         'yellow 'purple)))))
+
+(ert-deftest complementary-light-expanded-package-semantics-are-stable ()
+  (dolist (expectation
+           '((company-tooltip :background surface-raised)
+             (flycheck-annotate-error-background :background primary-subtle)
+             (gptel-rewrite-highlight-face :background secondary-subtle)
+             (helm-selection :background primary-medium)
+             (ivy-confirm-face :foreground secondary-text)
+             (markdown-highlighting-face :background primary-medium)
+             (vertico-quick2 :background secondary-strong)))
+    (let ((rule (complementary-light-package-face-rule (car expectation))))
+      (should rule)
+      (should (eq (plist-get (cdr rule) (nth 1 expectation))
+                  (nth 2 expectation))))))
 
 (provide 'complementary-light-packages-test)
 ;;; complementary-light-packages-test.el ends here
