@@ -35,6 +35,22 @@
   (should (member (file-name-as-directory complementary-themes--root-directory)
                   custom-theme-load-path)))
 
+(ert-deftest complementary-themes-declare-color-scheme-metadata ()
+  (unwind-protect
+      (progn
+        (load-theme 'complementary-light t)
+        (load-theme 'complementary-dark t)
+        (dolist (check '((complementary-light light)
+                         (complementary-dark dark)))
+          (let ((properties (get (car check) 'theme-properties)))
+            (should (eq (plist-get properties :family) 'complementary))
+            (should (eq (plist-get properties :kind) 'color-scheme))
+            (should (eq (plist-get properties :background-mode)
+                        (cadr check))))))
+    (dolist (theme '(complementary-dark complementary-light))
+      (when (custom-theme-enabled-p theme)
+        (disable-theme theme)))))
+
 (ert-deftest complementary-light-preview-builds-in-batch ()
   (load (expand-file-name "lisp/complementary-light-preview.el"
                           complementary-light-test-root) nil nil t)

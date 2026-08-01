@@ -18,6 +18,19 @@
   (should-error (complementary-light-resolve-secondary
                  'yellow 'ultraviolet nil) :type 'user-error))
 
+(ert-deftest complementary-light-primary-and-secondary-must-be-distinct ()
+  (should-error (complementary-light-resolve-secondary
+                 'yellow 'yellow nil) :type 'user-error)
+  (should (eq (complementary-light-resolve-secondary
+               'yellow 'yellow t)
+              'purple))
+  (let ((complementary-light-primary-color 'yellow)
+        (complementary-light-secondary-color 'purple))
+    (should-error (complementary-light-set-primary-color 'purple)
+                  :type 'user-error)
+    (should-error (complementary-light-set-secondary-color 'yellow)
+                  :type 'user-error)))
+
 (ert-deftest complementary-light-region-uses-secondary-medium-surface ()
   (dolist (primary complementary-light-color-names)
     (let ((secondary (complementary-light-paired-accent primary)))

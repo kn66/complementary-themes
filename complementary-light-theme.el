@@ -11,7 +11,10 @@
 
 ;;;###theme-autoload
 (deftheme complementary-light
-  "A minimal WCAG AA-calibrated light theme using two registered accents.")
+  "A minimal WCAG AA-calibrated light theme using two registered accents."
+  :family 'complementary
+  :kind 'color-scheme
+  :background-mode 'light)
 
 (declare-function complementary-light--register-theme "complementary-light")
 

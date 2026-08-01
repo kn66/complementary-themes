@@ -1,6 +1,7 @@
 ;;; complementary-light-refresh-test.el --- Refresh isolation tests  -*- lexical-binding: t; -*-
 
 (require 'complementary-light-test-helper)
+(require 'complementary-dark)
 
 (deftheme complementary-light-test-neighbor "Test-only neighboring theme.")
 (custom-theme-set-faces
@@ -64,6 +65,28 @@
           (get 'complementary-light 'theme-settings))))
     (when (custom-theme-enabled-p 'complementary-light)
       (disable-theme 'complementary-light))))
+
+(ert-deftest complementary-themes-color-vision-preset-is-independent ()
+  (let ((light-primary complementary-light-primary-color)
+        (light-secondary complementary-light-secondary-color)
+        (dark-primary complementary-dark-primary-color)
+        (dark-secondary complementary-dark-secondary-color))
+    (unwind-protect
+        (progn
+          (complementary-light-use-color-vision-preset)
+          (should (equal (cons complementary-light-primary-color
+                               complementary-light-secondary-color)
+                         complementary-light-color-vision-preset))
+          (should (eq complementary-dark-primary-color dark-primary))
+          (should (eq complementary-dark-secondary-color dark-secondary))
+          (complementary-dark-use-color-vision-preset)
+          (should (equal (cons complementary-dark-primary-color
+                               complementary-dark-secondary-color)
+                         complementary-light-color-vision-preset)))
+      (setq complementary-light-primary-color light-primary
+            complementary-light-secondary-color light-secondary
+            complementary-dark-primary-color dark-primary
+            complementary-dark-secondary-color dark-secondary))))
 
 (provide 'complementary-light-refresh-test)
 ;;; complementary-light-refresh-test.el ends here

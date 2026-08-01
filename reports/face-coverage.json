@@ -1117,7 +1117,7 @@
     "line": 1028,
     "classification": "themed",
     "target": "json-null",
-    "foreground_token": "secondary-on-strong",
+    "foreground_token": "foreground",
     "background_token": "json-null",
     "reason": "json-null"
   },
@@ -1128,7 +1128,7 @@
     "line": 1012,
     "classification": "themed",
     "target": "json-null",
-    "foreground_token": "primary-on-strong",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
     "reason": "json-null"
   },
@@ -1393,7 +1393,7 @@
     "classification": "themed",
     "target": "json-null",
     "foreground_token": "json-null",
-    "background_token": "primary-focus",
+    "background_token": "cursor",
     "reason": "json-null"
   },
   {
@@ -1601,7 +1601,7 @@
     "line": 2039,
     "classification": "themed",
     "target": "json-null",
-    "foreground_token": "secondary-text",
+    "foreground_token": "foreground",
     "background_token": "json-null",
     "reason": "json-null"
   },
@@ -2347,176 +2347,176 @@
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 774,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "primary-text",
+    "background_token": "primary-subtle",
+    "reason": "json-null"
   },
   {
     "face": "ediff-current-diff-Ancestor",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 835,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "foreground-secondary",
+    "background_token": "surface-raised",
+    "reason": "json-null"
   },
   {
     "face": "ediff-current-diff-B",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 794,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "secondary-text",
+    "background_token": "secondary-subtle",
+    "reason": "json-null"
   },
   {
     "face": "ediff-current-diff-C",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 815,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "foreground",
+    "background_token": "selection-neutral",
+    "reason": "json-null"
   },
   {
     "face": "ediff-even-diff-A",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 951,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "primary-text",
+    "background_token": "surface-raised",
+    "reason": "json-null"
   },
   {
     "face": "ediff-even-diff-Ancestor",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 1017,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "foreground-secondary",
+    "background_token": "surface-raised",
+    "reason": "json-null"
   },
   {
     "face": "ediff-even-diff-B",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 974,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "secondary-text",
+    "background_token": "surface-raised",
+    "reason": "json-null"
   },
   {
     "face": "ediff-even-diff-C",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 994,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "foreground",
+    "background_token": "surface-raised",
+    "reason": "json-null"
   },
   {
     "face": "ediff-fine-diff-A",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 857,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "primary-on-medium",
+    "background_token": "primary-medium",
+    "reason": "json-null"
   },
   {
     "face": "ediff-fine-diff-Ancestor",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 920,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "foreground-secondary",
+    "background_token": "surface-raised",
+    "reason": "json-null"
   },
   {
     "face": "ediff-fine-diff-B",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 877,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "secondary-on-medium",
+    "background_token": "secondary-medium",
+    "reason": "json-null"
   },
   {
     "face": "ediff-fine-diff-C",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 897,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "foreground",
+    "background_token": "selection-neutral",
+    "reason": "json-null"
   },
   {
     "face": "ediff-odd-diff-A",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 1047,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "primary-text",
+    "background_token": "surface-sunken",
+    "reason": "json-null"
   },
   {
     "face": "ediff-odd-diff-Ancestor",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 1113,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "foreground-secondary",
+    "background_token": "surface-sunken",
+    "reason": "json-null"
   },
   {
     "face": "ediff-odd-diff-B",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 1069,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "secondary-text",
+    "background_token": "surface-sunken",
+    "reason": "json-null"
   },
   {
     "face": "ediff-odd-diff-C",
     "library": "ediff-init",
     "source_file": "/usr/share/emacs/30.2/lisp/vc/ediff-init.el.gz",
     "line": 1091,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "foreground",
+    "background_token": "surface-sunken",
+    "reason": "json-null"
   },
   {
     "face": "edmacro-label",
@@ -2996,22 +2996,22 @@
     "library": "erc",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc.el.gz",
     "line": 1529,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-error-face",
     "library": "erc",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc.el.gz",
     "line": 1565,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-fill-wrap-merge-indicator-face",
@@ -3029,11 +3029,11 @@
     "library": "erc-match",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc-match.el.gz",
     "line": 298,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-header-line",
@@ -3062,11 +3062,11 @@
     "library": "erc",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc.el.gz",
     "line": 1540,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-inverse-face",
@@ -3117,22 +3117,22 @@
     "library": "erc-match",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc-match.el.gz",
     "line": 303,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-my-nick-face",
     "library": "erc",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc.el.gz",
     "line": 1573,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-my-nick-prefix-face",
@@ -3161,11 +3161,11 @@
     "library": "erc",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc.el.gz",
     "line": 1583,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-nick-prefix-face",
@@ -3183,33 +3183,33 @@
     "library": "erc",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc.el.gz",
     "line": 1549,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-secondary",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-pal-face",
     "library": "erc-match",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc-match.el.gz",
     "line": 293,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-prompt-face",
     "library": "erc",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc.el.gz",
     "line": 1544,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "primary-on-strong",
+    "background_token": "primary-strong",
+    "reason": "json-null"
   },
   {
     "face": "erc-spoiler-face",
@@ -3227,11 +3227,11 @@
     "library": "erc-stamp",
     "source_file": "/usr/share/emacs/30.2/lisp/erc/erc-stamp.el.gz",
     "line": 170,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "erc-underline-face",
@@ -3579,22 +3579,22 @@
     "library": "eww",
     "source_file": "/usr/share/emacs/30.2/lisp/net/eww.el.gz",
     "line": 347,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "eww-valid-certificate",
     "library": "eww",
     "source_file": "/usr/share/emacs/30.2/lisp/net/eww.el.gz",
     "line": 354,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "excerpt",
@@ -6307,121 +6307,121 @@
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1616,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-cited-text-2",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1628,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-cited-text-3",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1640,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-cited-text-4",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1652,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-secondary",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-header-cc",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1532,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-header-name",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1580,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-header-newsgroups",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1556,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-header-other",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1568,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-secondary",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-header-subject",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1544,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-header-to",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1520,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-header-xheader",
     "library": "message",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/message.el.gz",
     "line": 1592,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "message-mml",
@@ -8113,7 +8113,7 @@
     "line": 250,
     "classification": "themed",
     "target": "json-null",
-    "foreground_token": "secondary-text",
+    "foreground_token": "foreground",
     "background_token": "json-null",
     "reason": "json-null"
   },
@@ -10687,7 +10687,7 @@
     "line": 3061,
     "classification": "themed",
     "target": "json-null",
-    "foreground_token": "secondary-text",
+    "foreground_token": "foreground",
     "background_token": "json-null",
     "reason": "json-null"
   },
@@ -10820,7 +10820,7 @@
     "classification": "themed",
     "target": "json-null",
     "foreground_token": "json-null",
-    "background_token": "primary-strong",
+    "background_token": "surface",
     "reason": "json-null"
   },
   {

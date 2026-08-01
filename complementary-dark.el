@@ -72,8 +72,20 @@ non-nil."
   (cond
    ((eq complementary-dark-secondary-color 'auto)
     (complementary-light-paired-accent primary))
-   ((memq complementary-dark-secondary-color complementary-light-color-names)
+   ((and (memq complementary-dark-secondary-color
+               complementary-light-color-names)
+         (not (eq complementary-dark-secondary-color primary)))
     complementary-dark-secondary-color)
+   ((eq complementary-dark-secondary-color primary)
+    (if startup
+        (progn
+          (display-warning
+           'complementary-dark
+           (format "Secondary %S matches primary; using paired accent"
+                   complementary-dark-secondary-color))
+          (complementary-light-paired-accent primary))
+      (user-error "Primary and secondary accents must be distinct: %S"
+                  primary)))
    (startup
     (display-warning
      'complementary-dark
@@ -148,6 +160,8 @@ When AUTO is non-nil, include the symbol `auto'."
   (interactive (list (complementary-dark--read-color "Primary accent: ")))
   (unless (memq color complementary-light-color-names)
     (user-error "Unknown complementary-dark color: %S" color))
+  (when (eq color complementary-dark-secondary-color)
+    (user-error "Primary and secondary accents must be distinct: %S" color))
   (setq complementary-dark-primary-color color)
   (when (custom-theme-enabled-p 'complementary-dark)
     (complementary-dark-refresh))
@@ -159,10 +173,28 @@ When AUTO is non-nil, include the symbol `auto'."
   (interactive (list (complementary-dark--read-color "Secondary accent: " t)))
   (unless (memq color (cons 'auto complementary-light-color-names))
     (user-error "Unknown complementary-dark color: %S" color))
+  (when (eq color complementary-dark-primary-color)
+    (user-error "Primary and secondary accents must be distinct: %S" color))
   (setq complementary-dark-secondary-color color)
   (when (custom-theme-enabled-p 'complementary-dark)
     (complementary-dark-refresh))
   color)
+
+;;;###autoload
+(defun complementary-dark-use-color-vision-preset ()
+  "Select the audited color-vision preset and refresh if enabled."
+  (interactive)
+  (setq complementary-dark-primary-color
+        (car complementary-light-color-vision-preset)
+        complementary-dark-secondary-color
+        (cdr complementary-light-color-vision-preset))
+  (when (custom-theme-enabled-p 'complementary-dark)
+    (complementary-dark-refresh))
+  (when (called-interactively-p 'interactive)
+    (message "complementary-dark CVD preset: %s + %s"
+             complementary-dark-primary-color
+             complementary-dark-secondary-color))
+  complementary-light-color-vision-preset)
 
 (provide 'complementary-dark)
 ;;; complementary-dark.el ends here

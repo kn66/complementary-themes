@@ -41,7 +41,7 @@ This is deliberately nil: all non-color attributes come from the default
   '(
     ;; Foundation and generic UI.
     (default :status themed :foreground foreground :background background)
-    (cursor :status themed :background primary-focus)
+    (cursor :status themed :background cursor)
     (shadow :status themed :foreground foreground-muted)
     (link :status themed :foreground primary-text)
     (link-visited :status themed :foreground secondary-text)
@@ -52,7 +52,7 @@ This is deliberately nil: all non-color attributes come from the default
     (lazy-highlight :status themed :background secondary-medium :distant-foreground distant-foreground)
     (error :status themed :foreground primary-text)
     (warning :status themed :foreground secondary-text)
-    (success :status themed :foreground secondary-text)
+    (success :status themed :foreground foreground)
     (escape-glyph :status themed :foreground primary-text)
     (homoglyph :status themed :foreground primary-text)
     (nobreak-space :status themed :foreground primary-text)
@@ -82,7 +82,9 @@ This is deliberately nil: all non-color attributes come from the default
     (tab-bar-tab-inactive :status themed :foreground inactive-foreground :background inactive-background)
     (tab-line :status themed :foreground foreground-secondary :background surface-sunken)
     (tab-line-tab :status themed :foreground primary-text :background surface)
-    (tab-line-tab-current :status themed :foreground primary-on-strong :background primary-strong)
+    ;; Emacs declares only a background on this face.  Its inherited tab-line
+    ;; foreground remains readable on the base surface in both polarities.
+    (tab-line-tab-current :status themed :background surface)
     (tab-line-tab-inactive :status themed :foreground inactive-foreground :background inactive-background)
     (tab-line-highlight :status themed :background primary-subtle :distant-foreground distant-foreground)
 
@@ -195,8 +197,10 @@ This is deliberately nil: all non-color attributes come from the default
     (compilation-info :status themed :foreground foreground-secondary)
     (compilation-line-number :status themed :foreground secondary-text)
     (compilation-column-number :status themed :foreground foreground-muted)
-    (compilation-mode-line-exit :status themed :foreground secondary-on-strong :background secondary-strong)
-    (compilation-mode-line-fail :status themed :foreground primary-on-strong :background primary-strong)
+    ;; These built-in faces declare foreground only, so do not pair an
+    ;; on-strong foreground with a background that topology filtering removes.
+    (compilation-mode-line-exit :status themed :foreground foreground)
+    (compilation-mode-line-fail :status themed :foreground primary-text)
     (compilation-mode-line-run :status themed :foreground primary-text)
     (grep-context-face :status themed :foreground foreground-muted)
     (grep-error-face :status themed :foreground primary-text)
@@ -206,6 +210,25 @@ This is deliberately nil: all non-color attributes come from the default
     (vc-dir-header-value :status themed :foreground secondary-text)
     (vc-dir-status-edited :status themed :foreground primary-text)
     (vc-dir-status-warning :status themed :foreground secondary-text)
+
+    ;; Ediff keeps its original extend, weight, underline, inverse-video and
+    ;; stipple behavior.  Only colors are mapped onto contrast-checked roles.
+    (ediff-current-diff-A :status themed :foreground primary-text :background primary-subtle)
+    (ediff-current-diff-B :status themed :foreground secondary-text :background secondary-subtle)
+    (ediff-current-diff-C :status themed :foreground foreground :background selection-neutral)
+    (ediff-current-diff-Ancestor :status themed :foreground foreground-secondary :background surface-raised)
+    (ediff-fine-diff-A :status themed :foreground primary-on-medium :background primary-medium)
+    (ediff-fine-diff-B :status themed :foreground secondary-on-medium :background secondary-medium)
+    (ediff-fine-diff-C :status themed :foreground foreground :background selection-neutral)
+    (ediff-fine-diff-Ancestor :status themed :foreground foreground-secondary :background surface-raised)
+    (ediff-even-diff-A :status themed :foreground primary-text :background surface-raised :distant-foreground distant-foreground)
+    (ediff-even-diff-B :status themed :foreground secondary-text :background surface-raised :distant-foreground distant-foreground)
+    (ediff-even-diff-C :status themed :foreground foreground :background surface-raised :distant-foreground distant-foreground)
+    (ediff-even-diff-Ancestor :status themed :foreground foreground-secondary :background surface-raised :distant-foreground distant-foreground)
+    (ediff-odd-diff-A :status themed :foreground primary-text :background surface-sunken :distant-foreground distant-foreground)
+    (ediff-odd-diff-B :status themed :foreground secondary-text :background surface-sunken :distant-foreground distant-foreground)
+    (ediff-odd-diff-C :status themed :foreground foreground :background surface-sunken :distant-foreground distant-foreground)
+    (ediff-odd-diff-Ancestor :status themed :foreground foreground-secondary :background surface-sunken :distant-foreground distant-foreground)
 
     ;; Structured text and common bundled modes.
     (outline-1 :status themed :foreground primary-text)
@@ -228,7 +251,7 @@ This is deliberately nil: all non-color attributes come from the default
     (org-link :status themed :foreground primary-text)
     (org-date :status themed :foreground secondary-text)
     (org-todo :status themed :foreground primary-text)
-    (org-done :status themed :foreground secondary-text)
+    (org-done :status themed :foreground foreground)
     (org-checkbox :status themed :foreground primary-text)
     (org-tag :status themed :foreground secondary-text)
     (org-document-title :status themed :foreground primary-text)
@@ -250,6 +273,32 @@ This is deliberately nil: all non-color attributes come from the default
     (comint-highlight-prompt :status themed :foreground primary-text)
     (comint-highlight-input :status themed :foreground secondary-text)
 
+    ;; Mail, chat and web-security indicators bundled with Emacs.
+    (message-cited-text-1 :status themed :foreground primary-text)
+    (message-cited-text-2 :status themed :foreground secondary-text)
+    (message-cited-text-3 :status themed :foreground foreground-muted)
+    (message-cited-text-4 :status themed :foreground foreground-secondary)
+    (message-header-cc :status themed :foreground secondary-text)
+    (message-header-name :status themed :foreground foreground-muted)
+    (message-header-newsgroups :status themed :foreground primary-text)
+    (message-header-other :status themed :foreground foreground-secondary)
+    (message-header-subject :status themed :foreground primary-text)
+    (message-header-to :status themed :foreground secondary-text)
+    (message-header-xheader :status themed :foreground primary-text)
+    (erc-direct-msg-face :status themed :foreground primary-text)
+    (erc-error-face :status themed :foreground primary-text)
+    (erc-fool-face :status themed :foreground foreground-muted)
+    (erc-input-face :status themed :foreground foreground)
+    (erc-keyword-face :status themed :foreground primary-text)
+    (erc-my-nick-face :status themed :foreground secondary-text)
+    (erc-nick-msg-face :status themed :foreground primary-text)
+    (erc-notice-face :status themed :foreground foreground-secondary)
+    (erc-pal-face :status themed :foreground secondary-text)
+    (erc-prompt-face :status themed :foreground primary-on-strong :background primary-strong)
+    (erc-timestamp-face :status themed :foreground foreground-muted)
+    (eww-invalid-certificate :status themed :foreground primary-text)
+    (eww-valid-certificate :status themed :foreground foreground)
+
     ;; Tables, buffers, Customize and package UI.
     (dired-directory :status themed :foreground secondary-text)
     (dired-symlink :status themed :foreground primary-text)
@@ -270,10 +319,10 @@ This is deliberately nil: all non-color attributes come from the default
     (custom-state :status themed :foreground secondary-text)
     (custom-invalid :status themed :foreground primary-text)
     (custom-modified :status themed :foreground primary-text :background primary-subtle)
-    (custom-set :status themed :foreground secondary-text)
+    (custom-set :status themed :foreground foreground)
     (package-name :status themed :foreground primary-text)
     (package-description :status themed :foreground foreground-secondary)
-    (package-status-installed :status themed :foreground secondary-text)
+    (package-status-installed :status themed :foreground foreground)
     (package-status-available :status themed :foreground primary-text)
     (package-status-dependency :status themed :foreground foreground-muted)
     (package-status-disabled :status themed :foreground foreground-muted)

@@ -51,6 +51,35 @@
         (complementary-dark-test--check-pair
          primary secondary (cdr scenario))))))
 
+(ert-deftest complementary-dark-cursor-remains-visible-on-common-surfaces ()
+  (dolist (primary complementary-light-color-names)
+    (dolist (secondary complementary-light-color-names)
+      (let ((cursor (complementary-dark-token 'cursor primary secondary)))
+        (dolist (background-token
+                 complementary-light-cursor-background-tokens)
+          (let* ((background
+                  (complementary-dark-token
+                   background-token primary secondary))
+                 (ratio
+                  (complementary-light-contrast-ratio cursor background)))
+            (should
+             (or (>= ratio complementary-light-non-text-contrast-target)
+                 (ert-fail
+                  (format (concat "dark cursor=%s/%s surface=%s ratio=%.4f "
+                                  "required>=%.2f")
+                          primary secondary background-token ratio
+                          complementary-light-non-text-contrast-target))))))))))
+
+(ert-deftest complementary-dark-primary-and-secondary-must-be-distinct ()
+  (let ((complementary-dark-primary-color 'yellow)
+        (complementary-dark-secondary-color 'purple))
+    (should-error (complementary-dark--valid-secondary 'purple nil)
+                  :type 'user-error)
+    (should-error (complementary-dark-set-primary-color 'purple)
+                  :type 'user-error)
+    (should-error (complementary-dark-set-secondary-color 'yellow)
+                  :type 'user-error)))
+
 (ert-deftest complementary-dark-owned-colors-meet-aa-thresholds ()
   (let* ((neutral (lambda (token)
                     (complementary-dark-token token 'yellow 'purple)))
@@ -66,16 +95,16 @@
           (append (list background surface-raised surface-sunken)
                   accent-surfaces)))
     (dolist (entry
-             `((foreground ,content-surfaces 4.5)
-               (foreground-muted ,content-surfaces 4.5)
-               (distant-foreground ,accent-surfaces 4.5)
-               (foreground-secondary (,surface-raised ,surface-sunken) 4.5)
-               (foreground-faint (,background) 4.5)
+             `((foreground ,content-surfaces ,complementary-light-text-contrast-target)
+               (foreground-muted ,content-surfaces ,complementary-light-text-contrast-target)
+               (distant-foreground ,accent-surfaces ,complementary-light-text-contrast-target)
+               (foreground-secondary (,surface-raised ,surface-sunken) ,complementary-light-text-contrast-target)
+               (foreground-faint (,background) ,complementary-light-text-contrast-target)
                (inactive-foreground
-                (,(funcall neutral 'inactive-background)) 4.5)
-               (border (,background) 3.0)
-               (border-strong (,surface-sunken) 3.0)
-               (divider (,background) 3.0)))
+                (,(funcall neutral 'inactive-background)) ,complementary-light-text-contrast-target)
+               (border (,background) ,complementary-light-non-text-contrast-target)
+               (border-strong (,surface-sunken) ,complementary-light-non-text-contrast-target)
+               (divider (,background) ,complementary-light-non-text-contrast-target)))
       (complementary-dark-test--check-minimum
        (format "dark/%s" (car entry))
        (funcall neutral (car entry))
@@ -86,12 +115,12 @@
              (text-backgrounds content-surfaces))
         (complementary-dark-test--check-minimum
          (format "dark/%s/text" name) (plist-get palette :text)
-         text-backgrounds 4.5)
-        (dolist (entry '((:on-strong :strong 4.5)
-                         (:on-medium :medium 4.5)
-                         (:on-subtle :subtle 4.5)
-                         (:border nil 3.0)
-                         (:focus nil 3.0)))
+         text-backgrounds complementary-light-text-contrast-target)
+        (dolist (entry `((:on-strong :strong ,complementary-light-text-contrast-target)
+                         (:on-medium :medium ,complementary-light-text-contrast-target)
+                         (:on-subtle :subtle ,complementary-light-text-contrast-target)
+                         (:border nil ,complementary-light-non-text-contrast-target)
+                         (:focus nil ,complementary-light-non-text-contrast-target)))
           (complementary-dark-test--check-minimum
            (format "dark/%s/%s" name (car entry))
            (plist-get palette (car entry))
@@ -104,7 +133,7 @@
          (plist-get palette :distant-foreground)
          (list (plist-get palette :medium)
                (plist-get palette :subtle))
-         4.5)))))
+         complementary-light-text-contrast-target)))))
 
 (ert-deftest complementary-dark-load-refresh-disable-repeat ()
   (unwind-protect

@@ -11,7 +11,10 @@
 
 ;;;###theme-autoload
 (deftheme complementary-dark
-  "A minimal WCAG AA-calibrated dark theme using two registered accents.")
+  "A minimal WCAG AA-calibrated dark theme using two registered accents."
+  :family 'complementary
+  :kind 'color-scheme
+  :background-mode 'dark)
 
 (declare-function complementary-dark--register-theme "complementary-dark")
 

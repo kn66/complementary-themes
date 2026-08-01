@@ -70,6 +70,12 @@ When this value is `auto', use the registered paired accent for
           (const purple) (const magenta) (const rose) (const amber))
   :group 'complementary-light)
 
+(defconst complementary-light-color-vision-preset '(yellow . cyan)
+  "Primary and secondary pair chosen for robust CVD separation.
+The generated color-vision report records the ranking and worst case.  Color
+is never the theme's sole state cue, so this remains a preference rather than
+an accessibility guarantee.")
+
 (defvar complementary-light--resolved-primary nil
   "Primary color used by the most recent theme registration.")
 
@@ -172,6 +178,8 @@ When AUTO is non-nil, include the symbol `auto'."
   (interactive (list (complementary-light--read-color "Primary accent: ")))
   (unless (memq color complementary-light-color-names)
     (user-error "Unknown complementary-light color: %S" color))
+  (when (eq color complementary-light-secondary-color)
+    (user-error "Primary and secondary accents must be distinct: %S" color))
   (setq complementary-light-primary-color color)
   (when (custom-theme-enabled-p 'complementary-light)
     (complementary-light-refresh))
@@ -183,10 +191,28 @@ When AUTO is non-nil, include the symbol `auto'."
   (interactive (list (complementary-light--read-color "Secondary accent: " t)))
   (unless (memq color (cons 'auto complementary-light-color-names))
     (user-error "Unknown complementary-light color: %S" color))
+  (when (eq color complementary-light-primary-color)
+    (user-error "Primary and secondary accents must be distinct: %S" color))
   (setq complementary-light-secondary-color color)
   (when (custom-theme-enabled-p 'complementary-light)
     (complementary-light-refresh))
   color)
+
+;;;###autoload
+(defun complementary-light-use-color-vision-preset ()
+  "Select the audited color-vision preset and refresh if enabled."
+  (interactive)
+  (setq complementary-light-primary-color
+        (car complementary-light-color-vision-preset)
+        complementary-light-secondary-color
+        (cdr complementary-light-color-vision-preset))
+  (when (custom-theme-enabled-p 'complementary-light)
+    (complementary-light-refresh))
+  (when (called-interactively-p 'interactive)
+    (message "complementary-light CVD preset: %s + %s"
+             complementary-light-primary-color
+             complementary-light-secondary-color))
+  complementary-light-color-vision-preset)
 
 ;;;###autoload
 (defun complementary-light-preview ()

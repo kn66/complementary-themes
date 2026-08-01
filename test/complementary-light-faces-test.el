@@ -113,5 +113,34 @@
     (should (eq (plist-get rule :foreground) 'primary-on-state))
     (should (eq (plist-get rule :background) 'primary-state))))
 
+(ert-deftest complementary-light-state-faces-match-their-effective-topology ()
+  (let ((success (cdr (complementary-light-face-rule 'success)))
+        (exit (cdr (complementary-light-face-rule
+                    'compilation-mode-line-exit)))
+        (fail (cdr (complementary-light-face-rule
+                    'compilation-mode-line-fail)))
+        (tab (cdr (complementary-light-face-rule 'tab-line-tab-current))))
+    (should (eq (plist-get success :foreground) 'foreground))
+    (should (eq (plist-get exit :foreground) 'foreground))
+    (should-not (plist-member exit :background))
+    (should (eq (plist-get fail :foreground) 'primary-text))
+    (should-not (plist-member fail :background))
+    (should-not (plist-member tab :foreground))
+    (should (eq (plist-get tab :background) 'surface))))
+
+(ert-deftest complementary-light-common-bundled-modes-use-semantic-colors ()
+  (dolist (check '((message-header-name foreground-muted nil)
+                    (erc-error-face primary-text nil)
+                    (erc-prompt-face primary-on-strong primary-strong)
+                    (eww-valid-certificate foreground nil)
+                    (ediff-current-diff-A primary-text primary-subtle)
+                    (ediff-fine-diff-B secondary-on-medium secondary-medium)))
+    (let ((rule (cdr (complementary-light-face-rule (nth 0 check)))))
+      (should (eq (plist-get rule :status) 'themed))
+      (should (eq (plist-get rule :foreground) (nth 1 check)))
+      (if (nth 2 check)
+          (should (eq (plist-get rule :background) (nth 2 check)))
+        (should-not (plist-member rule :background))))))
+
 (provide 'complementary-light-faces-test)
 ;;; complementary-light-faces-test.el ends here

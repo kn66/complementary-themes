@@ -18,92 +18,93 @@
     (surface . "#171717")
     (surface-raised . "#232323")
     (surface-sunken . "#1d1d1d")
-    (foreground . "#a7a7a7")
-    (foreground-secondary . "#8a8a8a")
-    (foreground-muted . "#a7a7a7")
-    (foreground-faint . "#808080")
-    (border . "#646464")
-    (border-strong . "#686868")
-    (divider . "#646464")
+    (foreground . "#b0b0b0")
+    (foreground-secondary . "#929292")
+    (foreground-muted . "#b0b0b0")
+    (foreground-faint . "#888888")
+    (border . "#696969")
+    (border-strong . "#6d6d6d")
+    (divider . "#696969")
     (selection-neutral . "#30302f")
     (inactive-background . "#202020")
-    (inactive-foreground . "#878787")
-    (distant-foreground . "#a7a7a7"))
+    (inactive-foreground . "#8f8f8f")
+    (cursor . "#ffffff")
+    (distant-foreground . "#b0b0b0"))
   "Neutral colors used by `complementary-dark'.")
 
 (defconst complementary-dark-palettes
   '((red
-     :text "#d795a1" :strong "#9b3649" :on-strong "#e1cbcf"
-     :medium "#642934" :on-medium "#d694a0"
-     :subtle "#442228" :on-subtle "#cb7c8a"
-     :border "#a74154" :focus "#994c5a"
-     :distant-foreground "#cd98a2")
+     :text "#dba0aa" :strong "#9b3649" :on-strong "#e8d7da"
+     :medium "#642934" :on-medium "#daa0aa"
+     :subtle "#442228" :on-subtle "#cf8793"
+     :border "#aa495b" :focus "#9d5260"
+     :distant-foreground "#d2a3ab")
     (orange
-     :text "#da9867" :strong "#7d4f2c" :on-strong "#ddcec2"
-     :medium "#523621" :on-medium "#da9765"
-     :subtle "#39291c" :on-subtle "#d17f42"
-     :border "#895935" :focus "#815c40"
-     :distant-foreground "#ca9d7b")
+     :text "#dea378" :strong "#7d4f2c" :on-strong "#e5d9cf"
+     :medium "#523621" :on-medium "#dea376"
+     :subtle "#39291c" :on-subtle "#d58a52"
+     :border "#8d5f3c" :focus "#856246"
+     :distant-foreground "#d0a789")
     (yellow
-     :text "#c5a336" :strong "#685824" :on-strong "#d7d0b8"
-     :medium "#453c1c" :on-medium "#c5a336"
-     :subtle "#322c18" :on-subtle "#ae902f"
-     :border "#74622d" :focus "#706337"
-     :distant-foreground "#bba55f")
+     :text "#cbad4b" :strong "#685824" :on-strong "#e0dbc8"
+     :medium "#453c1c" :on-medium "#cbad4b"
+     :subtle "#322c18" :on-subtle "#b4993f"
+     :border "#796834" :focus "#75693e"
+     :distant-foreground "#c2ae70")
     (green
-     :text "#4dbc5b" :strong "#24662c" :on-strong "#b9d8bd"
-     :medium "#1c4521" :on-medium "#4dbc5b"
-     :subtle "#18321b" :on-subtle "#47a653"
-     :border "#2c7134" :focus "#37703e"
-     :distant-foreground "#6bb874")
+     :text "#61c46d" :strong "#24662c" :on-strong "#c8e1cb"
+     :medium "#1c4521" :on-medium "#61c46d"
+     :subtle "#18321b" :on-subtle "#57ae61"
+     :border "#34773c" :focus "#3d7544"
+     :distant-foreground "#7bbf83")
     (teal
-     :text "#1fbaab" :strong "#23635d" :on-strong "#b7d6d3"
-     :medium "#1b433f" :on-medium "#1fbaab"
-     :subtle "#18302e" :on-subtle "#1ca497"
-     :border "#2b6e67" :focus "#356d67"
-     :distant-foreground "#3eb8ac")
+     :text "#3bc3b5" :strong "#23635d" :on-strong "#c8e0dd"
+     :medium "#1b433f" :on-medium "#3bc3b5"
+     :subtle "#18302e" :on-subtle "#2faca0"
+     :border "#33736c" :focus "#3b726c"
+     :distant-foreground "#55c1b6")
     (cyan
-     :text "#21b6d4" :strong "#26616c" :on-strong "#bcd4d9"
-     :medium "#1d4148" :on-medium "#21b5d2"
-     :subtle "#1a2f34" :on-subtle "#1da0ba"
-     :border "#2f6c78" :focus "#396b74"
-     :distant-foreground "#50b3c6")
+     :text "#3bbfd9" :strong "#26616c" :on-strong "#cbdee1"
+     :medium "#1d4148" :on-medium "#3bbed7"
+     :subtle "#1a2f34" :on-subtle "#31a9c0"
+     :border "#36717c" :focus "#407079"
+     :distant-foreground "#63bbcc")
     (blue
-     :text "#76acdd" :strong "#2f5d86" :on-strong "#c5d2de"
-     :medium "#243e57" :on-medium "#74abdd"
-     :subtle "#1e2e3c" :on-subtle "#5598d5"
-     :border "#386791" :focus "#436788"
-     :distant-foreground "#83aacd")
+     :text "#84b5e0" :strong "#2f5d86" :on-strong "#d3dde6"
+     :medium "#243e57" :on-medium "#82b4e0"
+     :subtle "#1e2e3c" :on-subtle "#63a1d8"
+     :border "#3f6d95" :focus "#496c8c"
+     :distant-foreground "#8fb3d2")
     (indigo
-     :text "#99a4d8" :strong "#3e51af" :on-strong "#cbcfe2"
-     :medium "#2d386e" :on-medium "#98a3d8"
-     :subtle "#242a49" :on-subtle "#848fca"
-     :border "#4a5cb8" :focus "#515fa3"
-     :distant-foreground "#9ba4cf")
+     :text "#a4aedc" :strong "#3e51af" :on-strong "#d6dae8"
+     :medium "#2d386e" :on-medium "#a3addc"
+     :subtle "#242a49" :on-subtle "#8d98ce"
+     :border "#5162bb" :focus "#5765a6"
+     :distant-foreground "#a5add4")
     (purple
-     :text "#bb99d8" :strong "#773ca9" :on-strong "#d7cbe1"
-     :medium "#4e2c6c" :on-medium "#ba98d8"
-     :subtle "#372448" :on-subtle "#aa84ca"
-     :border "#8247b5" :focus "#7c50a1"
-     :distant-foreground "#b79bcf")
+     :text "#c2a4dc" :strong "#773ca9" :on-strong "#e0d7e8"
+     :medium "#4e2c6c" :on-medium "#c1a3dc"
+     :subtle "#372448" :on-subtle "#b08dce"
+     :border "#874eb8" :focus "#8157a4"
+     :distant-foreground "#bea5d4")
     (magenta
-     :text "#d592c0" :strong "#943476" :on-strong "#e1c9d9"
-     :medium "#60274f" :on-medium "#d590bf"
-     :subtle "#422138" :on-subtle "#c67aae"
-     :border "#a13e82" :focus "#95497d"
-     :distant-foreground "#cc95bb")
+     :text "#d99ec7" :strong "#943476" :on-strong "#e8d6e2"
+     :medium "#60274f" :on-medium "#d99cc6"
+     :subtle "#422138" :on-subtle "#cb85b4"
+     :border "#a54687" :focus "#995082"
+     :distant-foreground "#d1a0c2")
     (rose
-     :text "#d694ac" :strong "#983659" :on-strong "#e1cad2"
-     :medium "#63283d" :on-medium "#d692ab"
-     :subtle "#44212e" :on-subtle "#c77c98"
-     :border "#a54065" :focus "#974b66"
-     :distant-foreground "#cd97aa")
+     :text "#daa0b5" :strong "#983659" :on-strong "#e8d6dc"
+     :medium "#63283d" :on-medium "#da9eb4"
+     :subtle "#44212e" :on-subtle "#cc87a0"
+     :border "#a9486b" :focus "#9b526c"
+     :distant-foreground "#d2a2b3")
     (amber
-     :text "#d29e2e" :strong "#6d5626" :on-strong "#d8cfba"
-     :medium "#483b1d" :on-medium "#d19e2e"
-     :subtle "#332b19" :on-subtle "#b88b28"
-     :border "#78612f" :focus "#746239"
-     :distant-foreground "#c2a35f"))
+     :text "#d7a945" :strong "#6d5626" :on-strong "#e1dac9"
+     :medium "#483b1d" :on-medium "#d6a945"
+     :subtle "#332b19" :on-subtle "#be953a"
+     :border "#7c6635" :focus "#78673f"
+     :distant-foreground "#c8ad70"))
   "Contrast-checked accent palettes for a dark background.")
 
 (defmacro complementary-dark--with-palette (&rest body)

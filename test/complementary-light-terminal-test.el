@@ -37,7 +37,7 @@
                  (ratio (complementary-light-contrast-ratio
                          terminal-foreground terminal-background)))
             (should
-             (or (>= ratio 4.5)
+             (or (>= ratio complementary-light-wcag-text-contrast)
                  (ert-fail
                   (format (concat "%s face=%s foreground=%s->%s "
                                   "background=%s->%s ratio=%.3f")
