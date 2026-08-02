@@ -4,6 +4,17 @@ This package provides GNU Emacs themes with independently calibrated neutral and
 
 The secondary color is not intended to be a mathematically exact complementary color. It is a UI-adjusted paired accent chosen for legibility, distinction, and visual harmony on each background.
 
+* Screenshots
+
+These representative screenshots show the same Emacs Lisp, Diff, and Org specimen with automatic and explicitly selected accent pairs.
+
+| Light: yellow + purple (automatic) | Dark: yellow + purple (automatic) |
+| [[file:Screenshots/01_light-yellow.png]] | [[file:Screenshots/01_dark-yellow.png]] |
+| Light: blue + green (explicit) | Dark: blue + green (explicit) |
+| [[file:Screenshots/02_light-blue-green.png]] | [[file:Screenshots/02_dark-blue-green.png]] |
+
+See [[file:Screenshots/README.org][the complete screenshot gallery]] for all 28 light and dark variants.
+
 * Installation and usage
 
 The supported distribution is a normal multi-file ~package.el~ archive. Build it and install the resulting versioned tar file:
@@ -211,6 +222,24 @@ Inside the preview, ~n~ and ~p~ cycle local paired-accent samples without changi
 
 Before a release, inspect the preview in actual GUI frames for both themes at the normal and a scaled font size, and exercise Isearch, tab selection, Org agenda/habits, Smerge, completion, and diff views. Record the Emacs build, display backend, font, scale, and terminal emulator with the release notes. The batch reports deliberately do not substitute for rendered visual validation.
 
+** Regenerating screenshots
+
+The screenshot specimen can be regenerated in one graphical Emacs session:
+
+#+begin_src sh
+make screenshots
+#+end_src
+
+This starts ~emacs -Q~, constructs the same Emacs Lisp, Diff, and Org window layout from the files in ~docs/~, and uses Emacs's built-in ~x-export-frames~ function to write PNG files below ~Screenshots/~. It generates the twelve automatic primary-accent combinations for each theme and the explicit ~yellow~ + ~red~ and ~blue~ + ~green~ examples, for 28 images in total; they are indexed in [[file:Screenshots/README.org][the complete screenshot gallery]]. Existing files with those names are replaced atomically; unrelated files are not removed. Window-manager decorations and other desktop content are intentionally excluded.
+
+A graphical display and an Emacs build with Cairo PNG export support are required. The default frame is maximized and uses ~Monospace-12~. Both can be overridden when a fixed local setup is preferable:
+
+#+begin_src sh
+make screenshots SCREENSHOT_GEOMETRY=1600x900 SCREENSHOT_FONT="DejaVu Sans Mono-12"
+#+end_src
+
+The requested pixel geometry is subject to window-manager constraints. Every image in one run is exported from the same frame, so its actual dimensions remain consistent. Run ~make test-screenshots~ for the non-graphical manifest and option-validation tests.
+
 * Display environments
 
 Face specs provide four levels:
@@ -238,12 +267,14 @@ make test-attributes
 make test-refresh
 make test-terminal
 make test-dark
+make test-screenshots
 make test-package
 make compile
 make package
 make inventory
 make reports
 make palettes
+make screenshots
 make clean
 #+end_src
 

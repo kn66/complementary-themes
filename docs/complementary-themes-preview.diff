@@ -1,0 +1,32 @@
+diff --git a/lisp/project-status.el b/lisp/project-status.el
+index 9ef6a2c..a03dc81 100644
+--- a/lisp/project-status.el
++++ b/lisp/project-status.el
+@@ -1,14 +1,21 @@
+ ;;; project-status.el --- Small status renderer  -*- lexical-binding: t; -*-
+ 
+ ;;; Code:
+ 
+-(defun project-status-label (ready)
+-  "Return a label for READY."
+-  (if ready "ready" "waiting"))
++(defconst project-status-symbols
++  '((ready . "OK") (active . "RUN") (waiting . "WAIT"))
++  "Display symbols used for project states.")
+ 
+-(defun project-status-message (name ready)
+-  "Build a status message for NAME and READY."
+-  (format "%s: %s" name (project-status-label ready)))
++(defun project-status-label (state)
++  "Return a display label for STATE."
++  (or (alist-get state project-status-symbols)
++      "UNKNOWN"))
++
++(defun project-status-message (project)
++  "Build a status message for PROJECT."
++  (let ((name (plist-get project :name))
++        (state (plist-get project :state)))
++    (format "%s: %s" name (project-status-label state))))
+ 
+ (provide 'project-status)
+ ;;; project-status.el ends here

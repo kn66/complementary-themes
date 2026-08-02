@@ -65,29 +65,29 @@ supplies focus indicators.  Text on STRONG uses the neutral base color."
 (defconst complementary-light-palettes
   (list
    (cons 'red (complementary-light--make-accent-palette
-               "#c26f7f" "#b66878" "#f9edef" "#fdf6f7" "#d3929e"))
+               "#c26f7f" "#b66878" "#ffe7eb" "#fdf6f7" "#d3929e"))
    (cons 'orange (complementary-light--make-accent-palette
-                  "#b27c56" "#a47553" "#f9eee6" "#fdf7f3" "#c79b79"))
+                  "#b27c56" "#a47553" "#ffe9d8" "#fdf7f3" "#c79b79"))
    (cons 'yellow (complementary-light--make-accent-palette
-                  "#988750" "#8e7e4c" "#f6f0d8" "#fbf8ec" "#b2a374"))
+                  "#988750" "#8e7e4c" "#ffeda3" "#fbf8ec" "#b2a374"))
    (cons 'green (complementary-light--make-accent-palette
-                 "#619367" "#5a8a61" "#e7f3e9" "#f3faf4" "#84ae89"))
+                 "#619367" "#5a8a61" "#b0ffbd" "#f3faf4" "#84ae89"))
    (cons 'teal (complementary-light--make-accent-palette
-                "#48948e" "#468a84" "#e4f3f1" "#f2faf8" "#70afa9"))
+                "#48948e" "#468a84" "#99fff1" "#f2faf8" "#70afa9"))
    (cons 'cyan (complementary-light--make-accent-palette
-                "#4a92a1" "#478896" "#e4f2f5" "#f3f9fa" "#72adb9"))
+                "#4a92a1" "#478896" "#c5f5ff" "#f3f9fa" "#72adb9"))
    (cons 'blue (complementary-light--make-accent-palette
-                "#598cbc" "#5483af" "#e8f1f9" "#f4f9fc" "#7ea8cf"))
+                "#598cbc" "#5483af" "#deefff" "#f4f9fc" "#7ea8cf"))
    (cons 'indigo (complementary-light--make-accent-palette
-                  "#7a85bc" "#737caf" "#edeff9" "#f7f8fd" "#99a1ce"))
+                  "#7a85bc" "#737caf" "#e8ecff" "#f7f8fd" "#99a1ce"))
    (cons 'purple (complementary-light--make-accent-palette
-                  "#9c7ab8" "#9172ac" "#f3eef8" "#faf7fc" "#b599cc"))
+                  "#9c7ab8" "#9172ac" "#f4e9ff" "#faf7fc" "#b599cc"))
    (cons 'magenta (complementary-light--make-accent-palette
-                   "#b0759e" "#a46e93" "#f8edf4" "#fcf6fa" "#c595b6"))
+                   "#b0759e" "#a46e93" "#ffe6f6" "#fcf6fa" "#c595b6"))
    (cons 'rose (complementary-light--make-accent-palette
-                "#b8738d" "#ab6d83" "#f9edf1" "#fdf6f8" "#cc94a8"))
+                "#b8738d" "#ab6d83" "#ffe7ef" "#fdf6f8" "#cc94a8"))
    (cons 'amber (complementary-light--make-accent-palette
-                 "#9f844d" "#947c4b" "#f6efde" "#fbf8ef" "#b7a16f")))
+                 "#9f844d" "#947c4b" "#ffecbc" "#fbf8ef" "#b7a16f")))
   "Contrast-checked accent palettes for a light background.")
 
 (defconst complementary-light-accent-pairs

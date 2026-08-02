@@ -216,8 +216,8 @@
       "surface": "primary-medium",
       "policy": "gated",
       "cursor": "#000000",
-      "background": "#edeff9",
-      "ratio": 18.315416400670134,
+      "background": "#e8ecff",
+      "ratio": 17.873342063549202,
       "required": 3.25,
       "passed": true
     },
@@ -252,8 +252,8 @@
       "surface": "region-background",
       "policy": "gated",
       "cursor": "#000000",
-      "background": "#edeff9",
-      "ratio": 18.315416400670134,
+      "background": "#e8ecff",
+      "ratio": 17.873342063549202,
       "required": 3.25,
       "passed": true
     },
@@ -264,8 +264,8 @@
       "surface": "secondary-medium",
       "policy": "gated",
       "cursor": "#000000",
-      "background": "#edeff9",
-      "ratio": 18.315416400670134,
+      "background": "#e8ecff",
+      "ratio": 17.873342063549202,
       "required": 3.25,
       "passed": true
     },

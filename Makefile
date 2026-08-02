@@ -25,9 +25,14 @@ TESTS = test/complementary-light-load-test.el \
 	test/complementary-light-refresh-test.el \
 	test/complementary-light-terminal-test.el \
 	test/complementary-light-reports-test.el \
-	test/complementary-dark-test.el
+	test/complementary-dark-test.el \
+	test/complementary-themes-screenshot-test.el
 
-.PHONY: test test-package test-load test-palette test-contrast test-faces test-attributes test-refresh test-terminal test-dark compile package inventory reports palettes clean
+SCREENSHOT_DIR ?= Screenshots
+SCREENSHOT_GEOMETRY ?= maximized
+SCREENSHOT_FONT ?= Monospace-12
+
+.PHONY: test test-package test-load test-palette test-contrast test-faces test-attributes test-refresh test-terminal test-dark test-screenshots screenshots compile package inventory reports palettes clean
 
 test: package
 	$(EMACS) $(ELFLAGS) $(HELPER) $(addprefix -l ,$(TESTS)) -f ert-run-tests-batch-and-exit
@@ -60,8 +65,19 @@ test-terminal:
 test-dark:
 	$(EMACS) $(ELFLAGS) $(HELPER) -l test/complementary-dark-test.el -f ert-run-tests-batch-and-exit
 
+test-screenshots:
+	$(EMACS) $(ELFLAGS) -l test/complementary-themes-screenshot-test.el -f ert-run-tests-batch-and-exit
+
+screenshots:
+	COMPLEMENTARY_THEMES_SCREENSHOT_DIR="$(abspath $(SCREENSHOT_DIR))" \
+	COMPLEMENTARY_THEMES_SCREENSHOT_GEOMETRY="$(SCREENSHOT_GEOMETRY)" \
+	COMPLEMENTARY_THEMES_SCREENSHOT_FONT="$(SCREENSHOT_FONT)" \
+	$(EMACS) -Q --no-splash -L . -L lisp -L tools \
+	-l tools/complementary-themes-capture-screenshots.el \
+	-f complementary-themes-capture-screenshots-cli
+
 compile:
-	$(EMACS) $(ELFLAGS) -f batch-byte-compile complementary-light.el complementary-themes.el lisp/complementary-light-palette.el lisp/complementary-dark-palette.el lisp/complementary-light-faces.el lisp/complementary-light-packages.el lisp/complementary-light-preview.el tools/complementary-light-generate-faces.el tools/complementary-light-generate-reports.el tools/complementary-themes-generate-palettes.el
+	$(EMACS) $(ELFLAGS) -f batch-byte-compile complementary-light.el complementary-themes.el lisp/complementary-light-palette.el lisp/complementary-dark-palette.el lisp/complementary-light-faces.el lisp/complementary-light-packages.el lisp/complementary-light-preview.el tools/complementary-light-generate-faces.el tools/complementary-light-generate-reports.el tools/complementary-themes-generate-palettes.el tools/complementary-themes-capture-screenshots.el
 	$(EMACS) $(ELFLAGS) -f batch-byte-compile complementary-light-theme.el complementary-dark.el complementary-dark-theme.el
 
 package:

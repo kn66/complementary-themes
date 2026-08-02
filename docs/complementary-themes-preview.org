@@ -1,0 +1,50 @@
+#+title: Complementary Themes
+#+subtitle: Neutral foundations with paired accents
+#+author: Theme Preview
+#+startup: showall
+
+* Overview
+
+Complementary Themes keeps ordinary text quiet while using two accents for
+structure and state. Installation details are available in the
+[[file:../README.org][project README]].
+
+- *Bold text* preserves the default weight.
+- /Italic text/ and _underlined text_ retain their original attributes.
+- Inline ~code~ and =verbatim text= remain easy to distinguish.
+
+* TODO Review the release candidate                             :release:
+DEADLINE: <2026-08-08 Sat>
+
+:PROPERTIES:
+:OWNER:    maintainers
+:STATUS:   visual-review
+:END:
+
+** Palette roles
+
+| Role      | Purpose                         | Example   |
+|-----------+---------------------------------+-----------|
+| Neutral   | Ordinary text and quiet UI      | Body text |
+| Primary   | Declarations and reserved forms | Keywords  |
+| Secondary | Names, types, and strings       | Values    |
+
+** Emacs Lisp example
+
+#+begin_src emacs-lisp
+(defun complementary-preview-greeting (name)
+  "Return a short greeting for NAME."
+  (let ((message-text (format "Welcome, %s" name)))
+    (message "%s" message-text)))
+#+end_src
+
+#+begin_quote
+Color supports the interface; it does not replace structure or text.
+#+end_quote
+
+* DONE Check light and dark variants                            :testing:
+CLOSED: [2026-08-02 Sun]
+
+1. Inspect the normal font size.
+2. Repeat with a scaled font.
+3. Verify selection, search, completion, and diff states.
