@@ -13,6 +13,7 @@
 
 (require 'cl-lib)
 (require 'complementary-light-palette)
+(require 'org-faces)
 
 (defvar complementary-light--resolved-primary)
 (defvar complementary-light--resolved-secondary)
@@ -123,6 +124,20 @@
                       ("completion selection" completions-highlight)
                       ("diff added" diff-added) ("diff removed" diff-removed)
                       ("diff changed" diff-changed) ("ediff current" ediff-current-diff-A)))
+      (complementary-light-preview--insert-face (car sample) (cadr sample)))
+
+    (insert "\n" (propertize "Org faces\n" 'face 'outline-2))
+    (dolist (sample '(("table" org-table)
+                      ("table header" org-table-header)
+                      ("drawer" org-drawer)
+                      ("agenda structure" org-agenda-structure)
+                      ("selected date" org-date-selected)
+                      ("clock overlay" org-clock-overlay)
+                      ("dispatcher highlight" org-dispatcher-highlight)
+                      ("column" org-column)
+                      ("column title" org-column-title)
+                      ("LaTeX data" org-latex-and-related)
+                      ("clock overrun" org-mode-line-clock-overrun)))
       (complementary-light-preview--insert-face (car sample) (cadr sample)))
 
     (insert "\n" (propertize "Font Lock inventory\n" 'face 'outline-2))

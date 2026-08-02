@@ -7836,22 +7836,22 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 626,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
     "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "background_token": "surface-sunken",
+    "reason": "json-null"
   },
   {
     "face": "org-agenda-structure",
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 507,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "org-agenda-structure-filter",
@@ -7990,11 +7990,11 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 492,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "foreground",
+    "background_token": "selection-neutral",
+    "reason": "json-null"
   },
   {
     "face": "org-code",
@@ -8012,22 +8012,22 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 115,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
     "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "background_token": "surface-raised",
+    "reason": "json-null"
   },
   {
     "face": "org-column-title",
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 150,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
     "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "background_token": "surface-raised",
+    "reason": "json-null"
   },
   {
     "face": "org-date",
@@ -8045,11 +8045,11 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 213,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "org-default",
@@ -8067,11 +8067,11 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 51,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "primary-on-state",
+    "background_token": "primary-state",
+    "reason": "json-null"
   },
   {
     "face": "org-document-info",
@@ -8122,11 +8122,11 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 101,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "org-ellipsis",
@@ -8331,11 +8331,11 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 700,
-    "classification": "inherit",
-    "target": "custom-face-attributes",
-    "foreground_token": "json-null",
+    "classification": "themed",
+    "target": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Use the color behavior of the recorded defface inheritance chain."
+    "reason": "json-null"
   },
   {
     "face": "org-level-1",
@@ -8485,11 +8485,11 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 734,
-    "classification": "inherit",
-    "target": "mode-line",
+    "classification": "themed",
+    "target": "json-null",
     "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Use the color behavior of the recorded defface inheritance chain."
+    "background_token": "primary-medium",
+    "reason": "json-null"
   },
   {
     "face": "org-priority",
@@ -8562,11 +8562,11 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 224,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "org-special-keyword",
@@ -8584,22 +8584,22 @@
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 382,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "org-table-header",
     "library": "org-faces",
     "source_file": "/usr/share/emacs/30.2/lisp/org/org-faces.el.gz",
     "line": 396,
-    "classification": "inherit",
-    "target": "org-table",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Use the color behavior of the recorded defface inheritance chain."
+    "classification": "themed",
+    "target": "json-null",
+    "foreground_token": "foreground",
+    "background_token": "surface-raised",
+    "reason": "json-null"
   },
   {
     "face": "org-table-row",

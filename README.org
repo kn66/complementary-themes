@@ -163,7 +163,7 @@ Complete coverage does not mean assigning colors to every face. It means recordi
 - ~excluded~: excluded for a documented reason
 - ~unavailable~: exists in another supported Emacs version but not the current environment
 
-The reviewed Emacs 30.2/GNU/Linux baseline is [[file:inventory/emacs-30.el][emacs-30.el]], while [[file:inventory/current-generated.el][current-generated.el]] contains the most recent generated inventory. The current baseline contains 1,171 faces: 166 ~themed~, 526 ~inherit~, 12 ~alias~, 428 ~preserve~, 39 ~external-semantic~, 0 ~excluded~, and 0 unclassified. The 166 themed faces are maintained as searchable, face-specific declarations rather than being painted by a single blanket rule. The expanded mappings include independently colored Org agenda and habit states, Isearch groups, Pulse, Smerge, ERC current nick, Elisp shorthands, and Newsticker secondary text.
+The reviewed Emacs 30.2/GNU/Linux baseline is [[file:inventory/emacs-30.el][emacs-30.el]], while [[file:inventory/current-generated.el][current-generated.el]] contains the most recent generated inventory. The current baseline contains 1,171 faces: 179 ~themed~, 523 ~inherit~, 12 ~alias~, 418 ~preserve~, 39 ~external-semantic~, 0 ~excluded~, and 0 unclassified. The 179 themed faces are maintained as searchable, face-specific declarations rather than being painted by a single blanket rule. The expanded mappings include independently colored Org tables, drawers, columns, agenda and habit states, Isearch groups, Pulse, Smerge, ERC current nick, Elisp shorthands, and Newsticker secondary text.
 
 ** How the inventory is collected
 

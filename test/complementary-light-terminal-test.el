@@ -75,16 +75,17 @@
                   clauses))))))
 
 (ert-deftest complementary-light-backquoted-defface-specs-are-normalized ()
-  (let ((normalized (complementary-light--default-face-spec 'org-block)))
-    (dolist (clause normalized)
-      (let ((display (car clause)))
-        (should (or (eq display t)
-                    (and (listp display)
-                         (cl-every #'consp display))))))
-    ;; This is the same selection path that failed on a graphical frame.
-    (should (condition-case nil
-                (progn (face-spec-choose normalized nil) t)
-              (error nil)))))
+  (dolist (face '(org-block org-latex-and-related))
+    (let ((normalized (complementary-light--default-face-spec face)))
+      (dolist (clause normalized)
+        (let ((display (car clause)))
+          (should (or (eq display t)
+                      (and (listp display)
+                           (cl-every #'consp display))))))
+      ;; This is the same selection path that failed on a graphical frame.
+      (should (condition-case nil
+                  (progn (face-spec-choose normalized nil) t)
+                (error nil))))))
 
 (ert-deftest complementary-light-display-clauses-keep-color-topology ()
   (let* ((specs (complementary-light-build-face-specs 'yellow 'purple))

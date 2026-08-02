@@ -105,6 +105,39 @@
                         (complementary-light-build-face-specs
                          'yellow 'purple))))))
 
+(ert-deftest complementary-light-org-default-colors-use-theme-tokens ()
+  (dolist (check '((org-agenda-restriction-lock nil surface-sunken)
+                    (org-agenda-structure secondary-text nil)
+                    (org-clock-overlay foreground selection-neutral)
+                    (org-column nil surface-raised)
+                    (org-column-title nil surface-raised)
+                    (org-date-selected primary-text nil)
+                    (org-dispatcher-highlight primary-on-state primary-state)
+                    (org-drawer secondary-text nil)
+                    (org-latex-and-related secondary-text nil)
+                    (org-mode-line-clock-overrun nil primary-medium)
+                    (org-sexp-date secondary-text nil)
+                    (org-table secondary-text nil)
+                    (org-table-header foreground surface-raised)))
+    (let ((rule (cdr (complementary-light-face-rule (car check)))))
+      (should (eq (plist-get rule :status) 'themed))
+      (should (eq (plist-get rule :foreground) (nth 1 check)))
+      (should (eq (plist-get rule :background) (nth 2 check)))))
+  ;; `org-hide' deliberately matches the frame background so markup can be
+  ;; visually hidden.  Every other Org face that declares a color is themed.
+  (dolist (entry (plist-get complementary-light-generated-inventory :faces))
+    (let* ((face (car entry))
+           (properties (cdr entry))
+           (spec (plist-get properties :default-spec)))
+      (when (and (equal (plist-get properties :library) "org-faces")
+                 (or (complementary-light--tree-contains-symbol-p
+                      spec :foreground)
+                     (complementary-light--tree-contains-symbol-p
+                      spec :background)))
+        (if (eq face 'org-hide)
+            (should (eq (complementary-light-face-status face) 'preserve))
+          (should (eq (complementary-light-face-status face) 'themed)))))))
+
 (ert-deftest complementary-light-local-highlights-use-stronger-surfaces ()
   (let ((rule (cdr (complementary-light-face-rule 'highlight))))
     (should (eq (plist-get rule :background) 'primary-medium)))
