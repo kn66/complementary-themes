@@ -4,7 +4,7 @@ PACKAGE_TAR = dist/complementary-themes-$(PACKAGE_VERSION).tar
 PACKAGE_FILES = complementary-themes-pkg.el complementary-themes.el \
 	complementary-light-theme.el \
 	complementary-light.el complementary-dark-theme.el complementary-dark.el \
-	README.md \
+	README.org \
 	docs/palettes/accent-pairs.svg \
 	docs/palettes/complementary-light.svg \
 	docs/palettes/complementary-dark.svg \
