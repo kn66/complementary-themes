@@ -93,6 +93,20 @@ Perfect visual composition with multiple themes is not guaranteed. Using `comple
 
 ## Palette and contrast
 
+### Palette reference
+
+The six fixed `auto` pairings are shown below in both theme variants. Select the diagram to open the original SVG.
+
+[![The six automatic accent pairs in the light and dark themes](docs/palettes/accent-pairs.svg)](docs/palettes/accent-pairs.svg)
+
+The complete references include the neutral palette and all ten semantic roles for each of the twelve accents. Select either preview to inspect its labels and HEX values at full size.
+
+| Light palette | Dark palette |
+|---|---|
+| [![Complete complementary-light palette](docs/palettes/complementary-light.svg)](docs/palettes/complementary-light.svg) | [![Complete complementary-dark palette](docs/palettes/complementary-dark.svg)](docs/palettes/complementary-dark.svg) |
+
+These SVGs are generated directly from the palette definitions with `make palettes`.
+
 All theme-owned color literals are centralized in [complementary-light-palette.el](lisp/complementary-light-palette.el) and [complementary-dark-palette.el](lisp/complementary-dark-palette.el). Face declarations refer only to semantic tokens such as `background`, `foreground-muted`, `comment-foreground`, `cursor`, `primary-text`, and `secondary-subtle`. Every accent palette provides `text`, `strong`, `on-strong`, `medium`, `on-medium`, `subtle`, `on-subtle`, `border`, `focus`, and `distant-foreground` tokens. Adaptive `state` and `on-state` tokens select a dark strong surface in the light theme and an intermediate accent border surface in the dark theme. The dark state surface is deliberately constrained between its near-black base and white state text, so the single white Emacs cursor also remains visible. The cursor uses a polarity-safe neutral—black in the light theme and white in the dark theme—instead of consuming an accent role.
 
 The theme uses [WCAG 2.2](https://www.w3.org/TR/WCAG22/) and [WCAG2ICT](https://www.w3.org/TR/wcag2ict-22/) as measurement references. Core neutral colors retain engineering targets of 5.0:1 for text and 3.25:1 for meaningful non-text boundaries. To keep the light theme's primary and secondary roles deliberately subdued, its accents instead target 3.0:1 and 2.5:1; accent text measures 3.55–3.58:1 against the light base, close to the standard [Solarized](https://github.com/bbatsov/solarized-emacs) blue/yellow range. Light comments use a dedicated low-emphasis neutral constrained to 3.5–4.0:1, while dark comments retain the 5.0:1 target. The dark theme otherwise retains its original higher-contrast palette and uses the core neutral targets for accents as well; its accent text measures 8.21–8.26:1 against the dark base. The light accent and comment targets are below the WCAG text reference of 4.5:1, so the package does not claim blanket WCAG AA conformance. Tests reject values below the applicable per-theme design target; only the light comment role also has an upper bound, preserving its visual separation from body text.
@@ -226,6 +240,7 @@ make compile
 make package
 make inventory
 make reports
+make palettes
 make clean
 ```
 
@@ -267,6 +282,8 @@ Tests use `emacs -Q --batch` wherever possible. `make compile` byte-compiles the
 - `lisp/complementary-light-preview.el`: preview buffer
 - `tools/complementary-light-generate-faces.el`: reader-based built-in face inventory
 - `tools/complementary-light-generate-reports.el`: JSON audit reports
+- `tools/complementary-themes-generate-palettes.el`: deterministic SVG palette references
+- `docs/palettes/`: generated light, dark, and automatic-pair SVG references
 - `inventory/`: reviewed version baseline and latest generated inventory
 - `test/`: ERT suites for lifecycle, palette, contrast, coverage, attributes, refresh, and terminal fallback
 

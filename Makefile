@@ -5,6 +5,9 @@ PACKAGE_FILES = complementary-themes-pkg.el complementary-themes.el \
 	complementary-light-theme.el \
 	complementary-light.el complementary-dark-theme.el complementary-dark.el \
 	README.md \
+	docs/palettes/accent-pairs.svg \
+	docs/palettes/complementary-light.svg \
+	docs/palettes/complementary-dark.svg \
 	lisp/complementary-light-palette.el \
 	lisp/complementary-dark-palette.el \
 	lisp/complementary-light-faces.el \
@@ -24,7 +27,7 @@ TESTS = test/complementary-light-load-test.el \
 	test/complementary-light-reports-test.el \
 	test/complementary-dark-test.el
 
-.PHONY: test test-package test-load test-palette test-contrast test-faces test-attributes test-refresh test-terminal test-dark compile package inventory reports clean
+.PHONY: test test-package test-load test-palette test-contrast test-faces test-attributes test-refresh test-terminal test-dark compile package inventory reports palettes clean
 
 test: package
 	$(EMACS) $(ELFLAGS) $(HELPER) $(addprefix -l ,$(TESTS)) -f ert-run-tests-batch-and-exit
@@ -58,7 +61,7 @@ test-dark:
 	$(EMACS) $(ELFLAGS) $(HELPER) -l test/complementary-dark-test.el -f ert-run-tests-batch-and-exit
 
 compile:
-	$(EMACS) $(ELFLAGS) -f batch-byte-compile complementary-light.el complementary-themes.el lisp/complementary-light-palette.el lisp/complementary-dark-palette.el lisp/complementary-light-faces.el lisp/complementary-light-packages.el lisp/complementary-light-preview.el tools/complementary-light-generate-faces.el tools/complementary-light-generate-reports.el
+	$(EMACS) $(ELFLAGS) -f batch-byte-compile complementary-light.el complementary-themes.el lisp/complementary-light-palette.el lisp/complementary-dark-palette.el lisp/complementary-light-faces.el lisp/complementary-light-packages.el lisp/complementary-light-preview.el tools/complementary-light-generate-faces.el tools/complementary-light-generate-reports.el tools/complementary-themes-generate-palettes.el
 	$(EMACS) $(ELFLAGS) -f batch-byte-compile complementary-light-theme.el complementary-dark.el complementary-dark-theme.el
 
 package:
@@ -71,6 +74,9 @@ inventory:
 
 reports:
 	$(EMACS) $(ELFLAGS) -l tools/complementary-light-generate-reports.el --eval '(complementary-light-report-generate (expand-file-name "reports" default-directory))'
+
+palettes:
+	$(EMACS) $(ELFLAGS) -l tools/complementary-themes-generate-palettes.el --eval '(complementary-themes-generate-palette-svgs (expand-file-name "docs/palettes" default-directory))'
 
 clean:
 	find . -name '*.elc' -type f -delete

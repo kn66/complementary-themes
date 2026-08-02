@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="700" viewBox="0 0 1440 700" role="img" aria-labelledby="title desc">
+  <title id="title">Complementary accent pairs</title>
+  <desc id="desc">The six symmetric, UI-adjusted automatic accent pairings, shown with text, strong, medium, and subtle roles in both themes.</desc>
+  <rect width="1440" height="700" fill="#f7f7f5"/>
+  <text x="64" y="70" fill="#404040" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="32" font-weight="700" text-anchor="start">AUTOMATIC ACCENT PAIRS</text>
+  <text x="64" y="103" fill="#686868" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="16" font-weight="400" text-anchor="start">Six symmetric UI-adjusted pairings · secondary = auto</text>
+  <rect x="40" y="132" width="1360" height="244" rx="16" fill="#ffffff" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="64" y="172" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="start">LIGHT</text>
+  <text x="1336" y="171" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="400" text-anchor="end">text · strong · medium · subtle</text>
+  <rect x="64" y="196" width="208" height="154" rx="12" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="120" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">yellow</text>
+  <rect x="82" y="239" width="76" height="22" rx="6" fill="#988750"/>
+  <rect x="82" y="261" width="76" height="22" rx="0" fill="#8e7e4c"/>
+  <rect x="82" y="283" width="76" height="22" rx="0" fill="#f6f0d8"/>
+  <rect x="82" y="305" width="76" height="22" rx="6" fill="#fbf8ec"/>
+  <text x="168" y="284" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="216" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">purple</text>
+  <rect x="178" y="239" width="76" height="22" rx="6" fill="#9c7ab8"/>
+  <rect x="178" y="261" width="76" height="22" rx="0" fill="#9172ac"/>
+  <rect x="178" y="283" width="76" height="22" rx="0" fill="#f3eef8"/>
+  <rect x="178" y="305" width="76" height="22" rx="6" fill="#faf7fc"/>
+  <rect x="282" y="196" width="208" height="154" rx="12" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="338" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">orange</text>
+  <rect x="300" y="239" width="76" height="22" rx="6" fill="#b27c56"/>
+  <rect x="300" y="261" width="76" height="22" rx="0" fill="#a47553"/>
+  <rect x="300" y="283" width="76" height="22" rx="0" fill="#f9eee6"/>
+  <rect x="300" y="305" width="76" height="22" rx="6" fill="#fdf7f3"/>
+  <text x="386" y="284" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="434" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">blue</text>
+  <rect x="396" y="239" width="76" height="22" rx="6" fill="#598cbc"/>
+  <rect x="396" y="261" width="76" height="22" rx="0" fill="#5483af"/>
+  <rect x="396" y="283" width="76" height="22" rx="0" fill="#e8f1f9"/>
+  <rect x="396" y="305" width="76" height="22" rx="6" fill="#f4f9fc"/>
+  <rect x="500" y="196" width="208" height="154" rx="12" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="556" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">red</text>
+  <rect x="518" y="239" width="76" height="22" rx="6" fill="#c26f7f"/>
+  <rect x="518" y="261" width="76" height="22" rx="0" fill="#b66878"/>
+  <rect x="518" y="283" width="76" height="22" rx="0" fill="#f9edef"/>
+  <rect x="518" y="305" width="76" height="22" rx="6" fill="#fdf6f7"/>
+  <text x="604" y="284" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="652" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">cyan</text>
+  <rect x="614" y="239" width="76" height="22" rx="6" fill="#4a92a1"/>
+  <rect x="614" y="261" width="76" height="22" rx="0" fill="#478896"/>
+  <rect x="614" y="283" width="76" height="22" rx="0" fill="#e4f2f5"/>
+  <rect x="614" y="305" width="76" height="22" rx="6" fill="#f3f9fa"/>
+  <rect x="718" y="196" width="208" height="154" rx="12" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="774" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">green</text>
+  <rect x="736" y="239" width="76" height="22" rx="6" fill="#619367"/>
+  <rect x="736" y="261" width="76" height="22" rx="0" fill="#5a8a61"/>
+  <rect x="736" y="283" width="76" height="22" rx="0" fill="#e7f3e9"/>
+  <rect x="736" y="305" width="76" height="22" rx="6" fill="#f3faf4"/>
+  <text x="822" y="284" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="870" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">magenta</text>
+  <rect x="832" y="239" width="76" height="22" rx="6" fill="#b0759e"/>
+  <rect x="832" y="261" width="76" height="22" rx="0" fill="#a46e93"/>
+  <rect x="832" y="283" width="76" height="22" rx="0" fill="#f8edf4"/>
+  <rect x="832" y="305" width="76" height="22" rx="6" fill="#fcf6fa"/>
+  <rect x="936" y="196" width="208" height="154" rx="12" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="992" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">teal</text>
+  <rect x="954" y="239" width="76" height="22" rx="6" fill="#48948e"/>
+  <rect x="954" y="261" width="76" height="22" rx="0" fill="#468a84"/>
+  <rect x="954" y="283" width="76" height="22" rx="0" fill="#e4f3f1"/>
+  <rect x="954" y="305" width="76" height="22" rx="6" fill="#f2faf8"/>
+  <text x="1040" y="284" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="1088" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">rose</text>
+  <rect x="1050" y="239" width="76" height="22" rx="6" fill="#b8738d"/>
+  <rect x="1050" y="261" width="76" height="22" rx="0" fill="#ab6d83"/>
+  <rect x="1050" y="283" width="76" height="22" rx="0" fill="#f9edf1"/>
+  <rect x="1050" y="305" width="76" height="22" rx="6" fill="#fdf6f8"/>
+  <rect x="1154" y="196" width="208" height="154" rx="12" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="1210" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">indigo</text>
+  <rect x="1172" y="239" width="76" height="22" rx="6" fill="#7a85bc"/>
+  <rect x="1172" y="261" width="76" height="22" rx="0" fill="#737caf"/>
+  <rect x="1172" y="283" width="76" height="22" rx="0" fill="#edeff9"/>
+  <rect x="1172" y="305" width="76" height="22" rx="6" fill="#f7f8fd"/>
+  <text x="1258" y="284" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="1306" y="227" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">amber</text>
+  <rect x="1268" y="239" width="76" height="22" rx="6" fill="#9f844d"/>
+  <rect x="1268" y="261" width="76" height="22" rx="0" fill="#947c4b"/>
+  <rect x="1268" y="283" width="76" height="22" rx="0" fill="#f6efde"/>
+  <rect x="1268" y="305" width="76" height="22" rx="6" fill="#fbf8ef"/>
+  <rect x="40" y="396" width="1360" height="244" rx="16" fill="#171717" stroke="#696969" stroke-width="1"/>
+  <text x="64" y="436" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="start">DARK</text>
+  <text x="1336" y="435" fill="#888888" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="400" text-anchor="end">text · strong · medium · subtle</text>
+  <rect x="64" y="460" width="208" height="154" rx="12" fill="#232323" stroke="#696969" stroke-width="1"/>
+  <text x="120" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">yellow</text>
+  <rect x="82" y="503" width="76" height="22" rx="6" fill="#cbad4b"/>
+  <rect x="82" y="525" width="76" height="22" rx="0" fill="#685824"/>
+  <rect x="82" y="547" width="76" height="22" rx="0" fill="#453c1c"/>
+  <rect x="82" y="569" width="76" height="22" rx="6" fill="#322c18"/>
+  <text x="168" y="548" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="216" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">purple</text>
+  <rect x="178" y="503" width="76" height="22" rx="6" fill="#c2a4dc"/>
+  <rect x="178" y="525" width="76" height="22" rx="0" fill="#773ca9"/>
+  <rect x="178" y="547" width="76" height="22" rx="0" fill="#4e2c6c"/>
+  <rect x="178" y="569" width="76" height="22" rx="6" fill="#372448"/>
+  <rect x="282" y="460" width="208" height="154" rx="12" fill="#232323" stroke="#696969" stroke-width="1"/>
+  <text x="338" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">orange</text>
+  <rect x="300" y="503" width="76" height="22" rx="6" fill="#dea378"/>
+  <rect x="300" y="525" width="76" height="22" rx="0" fill="#7d4f2c"/>
+  <rect x="300" y="547" width="76" height="22" rx="0" fill="#523621"/>
+  <rect x="300" y="569" width="76" height="22" rx="6" fill="#39291c"/>
+  <text x="386" y="548" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="434" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">blue</text>
+  <rect x="396" y="503" width="76" height="22" rx="6" fill="#84b5e0"/>
+  <rect x="396" y="525" width="76" height="22" rx="0" fill="#2f5d86"/>
+  <rect x="396" y="547" width="76" height="22" rx="0" fill="#243e57"/>
+  <rect x="396" y="569" width="76" height="22" rx="6" fill="#1e2e3c"/>
+  <rect x="500" y="460" width="208" height="154" rx="12" fill="#232323" stroke="#696969" stroke-width="1"/>
+  <text x="556" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">red</text>
+  <rect x="518" y="503" width="76" height="22" rx="6" fill="#dba0aa"/>
+  <rect x="518" y="525" width="76" height="22" rx="0" fill="#9b3649"/>
+  <rect x="518" y="547" width="76" height="22" rx="0" fill="#642934"/>
+  <rect x="518" y="569" width="76" height="22" rx="6" fill="#442228"/>
+  <text x="604" y="548" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="652" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">cyan</text>
+  <rect x="614" y="503" width="76" height="22" rx="6" fill="#3bbfd9"/>
+  <rect x="614" y="525" width="76" height="22" rx="0" fill="#26616c"/>
+  <rect x="614" y="547" width="76" height="22" rx="0" fill="#1d4148"/>
+  <rect x="614" y="569" width="76" height="22" rx="6" fill="#1a2f34"/>
+  <rect x="718" y="460" width="208" height="154" rx="12" fill="#232323" stroke="#696969" stroke-width="1"/>
+  <text x="774" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">green</text>
+  <rect x="736" y="503" width="76" height="22" rx="6" fill="#61c46d"/>
+  <rect x="736" y="525" width="76" height="22" rx="0" fill="#24662c"/>
+  <rect x="736" y="547" width="76" height="22" rx="0" fill="#1c4521"/>
+  <rect x="736" y="569" width="76" height="22" rx="6" fill="#18321b"/>
+  <text x="822" y="548" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="870" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">magenta</text>
+  <rect x="832" y="503" width="76" height="22" rx="6" fill="#d99ec7"/>
+  <rect x="832" y="525" width="76" height="22" rx="0" fill="#943476"/>
+  <rect x="832" y="547" width="76" height="22" rx="0" fill="#60274f"/>
+  <rect x="832" y="569" width="76" height="22" rx="6" fill="#422138"/>
+  <rect x="936" y="460" width="208" height="154" rx="12" fill="#232323" stroke="#696969" stroke-width="1"/>
+  <text x="992" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">teal</text>
+  <rect x="954" y="503" width="76" height="22" rx="6" fill="#3bc3b5"/>
+  <rect x="954" y="525" width="76" height="22" rx="0" fill="#23635d"/>
+  <rect x="954" y="547" width="76" height="22" rx="0" fill="#1b433f"/>
+  <rect x="954" y="569" width="76" height="22" rx="6" fill="#18302e"/>
+  <text x="1040" y="548" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="1088" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">rose</text>
+  <rect x="1050" y="503" width="76" height="22" rx="6" fill="#daa0b5"/>
+  <rect x="1050" y="525" width="76" height="22" rx="0" fill="#983659"/>
+  <rect x="1050" y="547" width="76" height="22" rx="0" fill="#63283d"/>
+  <rect x="1050" y="569" width="76" height="22" rx="6" fill="#44212e"/>
+  <rect x="1154" y="460" width="208" height="154" rx="12" fill="#232323" stroke="#696969" stroke-width="1"/>
+  <text x="1210" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">indigo</text>
+  <rect x="1172" y="503" width="76" height="22" rx="6" fill="#a4aedc"/>
+  <rect x="1172" y="525" width="76" height="22" rx="0" fill="#3e51af"/>
+  <rect x="1172" y="547" width="76" height="22" rx="0" fill="#2d386e"/>
+  <rect x="1172" y="569" width="76" height="22" rx="6" fill="#242a49"/>
+  <text x="1258" y="548" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <text x="1306" y="491" fill="#b0b0b0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">amber</text>
+  <rect x="1268" y="503" width="76" height="22" rx="6" fill="#d7a945"/>
+  <rect x="1268" y="525" width="76" height="22" rx="0" fill="#6d5626"/>
+  <rect x="1268" y="547" width="76" height="22" rx="0" fill="#483b1d"/>
+  <rect x="1268" y="569" width="76" height="22" rx="6" fill="#332b19"/>
+  <text x="64" y="675" fill="#686868" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="400" text-anchor="start">Pairs are symmetric: either color may be primary.</text>
+</svg>

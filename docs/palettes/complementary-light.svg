@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2048" viewBox="0 0 1440 2048" role="img" aria-labelledby="title desc">
+  <title id="title">Complementary Light palette</title>
+  <desc id="desc">The neutral palette and all twelve light-theme accent palettes, including their semantic text, surface, border, focus, and distant foreground roles.</desc>
+  <rect width="1440" height="2048" fill="#ffffff"/>
+  <text x="64" y="76" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="34" font-weight="700" text-anchor="start">COMPLEMENTARY LIGHT</text>
+  <text x="64" y="110" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="16" font-weight="400" text-anchor="start">12 accents · 10 semantic roles each · 8-bit sRGB</text>
+  <text x="64" y="158" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="15" font-weight="700" text-anchor="start">NEUTRAL PALETTE</text>
+  <rect x="64" y="180" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="76" y="192" width="48" height="48" rx="7" fill="#ffffff" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="136" y="210" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">background</text>
+  <text x="136" y="232" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#ffffff</text>
+  <rect x="285" y="180" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="297" y="192" width="48" height="48" rx="7" fill="#ffffff" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="357" y="210" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">surface</text>
+  <text x="357" y="232" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#ffffff</text>
+  <rect x="506" y="180" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="518" y="192" width="48" height="48" rx="7" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="578" y="210" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">surface-raised</text>
+  <text x="578" y="232" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#f4f4f1</text>
+  <rect x="727" y="180" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="739" y="192" width="48" height="48" rx="7" fill="#ececea" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="799" y="210" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">surface-sunken</text>
+  <text x="799" y="232" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#ececea</text>
+  <rect x="948" y="180" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="960" y="192" width="48" height="48" rx="7" fill="#626262" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="1020" y="210" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">foreground</text>
+  <text x="1020" y="232" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#626262</text>
+  <rect x="1169" y="180" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="1181" y="192" width="48" height="48" rx="7" fill="#646464" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="1241" y="210" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">foreground-secondary</text>
+  <text x="1241" y="232" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#646464</text>
+  <rect x="64" y="264" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="76" y="276" width="48" height="48" rx="7" fill="#626261" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="136" y="294" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">foreground-muted</text>
+  <text x="136" y="316" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#626261</text>
+  <rect x="285" y="264" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="297" y="276" width="48" height="48" rx="7" fill="#6f6f6e" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="357" y="294" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">foreground-faint</text>
+  <text x="357" y="316" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#6f6f6e</text>
+  <rect x="506" y="264" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="518" y="276" width="48" height="48" rx="7" fill="#888888" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="578" y="294" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">comment-foreground</text>
+  <text x="578" y="316" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#888888</text>
+  <rect x="727" y="264" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="739" y="276" width="48" height="48" rx="7" fill="#8e8e8d" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="799" y="294" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="799" y="316" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#8e8e8d</text>
+  <rect x="948" y="264" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="960" y="276" width="48" height="48" rx="7" fill="#828281" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="1020" y="294" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border-strong</text>
+  <text x="1020" y="316" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#828281</text>
+  <rect x="1169" y="264" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="1181" y="276" width="48" height="48" rx="7" fill="#8e8e8d" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="1241" y="294" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">divider</text>
+  <text x="1241" y="316" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#8e8e8d</text>
+  <rect x="64" y="348" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="76" y="360" width="48" height="48" rx="7" fill="#ececea" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="136" y="378" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">selection-neutral</text>
+  <text x="136" y="400" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#ececea</text>
+  <rect x="285" y="348" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="297" y="360" width="48" height="48" rx="7" fill="#eeeeeb" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="357" y="378" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">inactive-background</text>
+  <text x="357" y="400" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#eeeeeb</text>
+  <rect x="506" y="348" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="518" y="360" width="48" height="48" rx="7" fill="#656564" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="578" y="378" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">inactive-foreground</text>
+  <text x="578" y="400" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#656564</text>
+  <rect x="727" y="348" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="739" y="360" width="48" height="48" rx="7" fill="#000000" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="799" y="378" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">cursor</text>
+  <text x="799" y="400" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#000000</text>
+  <rect x="948" y="348" width="208" height="72" rx="10" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <rect x="960" y="360" width="48" height="48" rx="7" fill="#626262" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="1020" y="378" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant-foreground</text>
+  <text x="1020" y="400" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="start">#626262</text>
+  <text x="64" y="456" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="15" font-weight="700" text-anchor="start">ACCENT PALETTES</text>
+  <rect x="64" y="480" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="82" y="513" fill="#c26f7f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">red</text>
+  <text x="470" y="512" fill="#c26f7f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #c26f7f</text>
+  <rect x="80" y="532" width="392" height="55" rx="7" fill="#b66878"/>
+  <text x="94" y="566" fill="#eddbde" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="458" y="566" fill="#eddbde" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#b66878 / #eddbde</text>
+  <rect x="80" y="595" width="392" height="55" rx="7" fill="#f9edef"/>
+  <text x="94" y="629" fill="#b27c87" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="458" y="629" fill="#b27c87" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f9edef / #b27c87</text>
+  <rect x="80" y="658" width="392" height="55" rx="7" fill="#fdf6f7"/>
+  <text x="94" y="692" fill="#b6828d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="458" y="692" fill="#b6828d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#fdf6f7 / #b6828d</text>
+  <rect x="80" y="735" width="114" height="6" rx="3" fill="#d3929e"/>
+  <text x="80" y="760" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="80" y="777" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#d3929e</text>
+  <rect x="210" y="735" width="114" height="6" rx="3" fill="#cc95a1"/>
+  <text x="210" y="760" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="210" y="777" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#cc95a1</text>
+  <rect x="340" y="735" width="132" height="6" rx="3" fill="#ab7f89"/>
+  <text x="340" y="760" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="340" y="777" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#ab7f89</text>
+  <rect x="508" y="480" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="526" y="513" fill="#b27c56" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">orange</text>
+  <text x="914" y="512" fill="#b27c56" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #b27c56</text>
+  <rect x="524" y="532" width="392" height="55" rx="7" fill="#a47553"/>
+  <text x="538" y="566" fill="#e9ddd4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="902" y="566" fill="#e9ddd4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#a47553 / #e9ddd4</text>
+  <rect x="524" y="595" width="392" height="55" rx="7" fill="#f9eee6"/>
+  <text x="538" y="629" fill="#a78369" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="902" y="629" fill="#a78369" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f9eee6 / #a78369</text>
+  <rect x="524" y="658" width="392" height="55" rx="7" fill="#fdf7f3"/>
+  <text x="538" y="692" fill="#aa8a71" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="902" y="692" fill="#aa8a71" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#fdf7f3 / #aa8a71</text>
+  <rect x="524" y="735" width="114" height="6" rx="3" fill="#c79b79"/>
+  <text x="524" y="760" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="524" y="777" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#c79b79</text>
+  <rect x="654" y="735" width="114" height="6" rx="3" fill="#bf9d86"/>
+  <text x="654" y="760" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="654" y="777" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#bf9d86</text>
+  <rect x="784" y="735" width="132" height="6" rx="3" fill="#a18571"/>
+  <text x="784" y="760" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="784" y="777" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#a18571</text>
+  <rect x="952" y="480" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="970" y="513" fill="#988750" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">yellow</text>
+  <text x="1358" y="512" fill="#988750" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #988750</text>
+  <rect x="968" y="532" width="392" height="55" rx="7" fill="#8e7e4c"/>
+  <text x="982" y="566" fill="#e3dfd2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="1346" y="566" fill="#e3dfd2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#8e7e4c / #e3dfd2</text>
+  <rect x="968" y="595" width="392" height="55" rx="7" fill="#f6f0d8"/>
+  <text x="982" y="629" fill="#968a60" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="1346" y="629" fill="#968a60" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f6f0d8 / #968a60</text>
+  <rect x="968" y="658" width="392" height="55" rx="7" fill="#fbf8ec"/>
+  <text x="982" y="692" fill="#9b8f69" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="1346" y="692" fill="#9b8f69" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#fbf8ec / #9b8f69</text>
+  <rect x="968" y="735" width="114" height="6" rx="3" fill="#b2a374"/>
+  <text x="968" y="760" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="968" y="777" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#b2a374</text>
+  <rect x="1098" y="735" width="114" height="6" rx="3" fill="#afa380"/>
+  <text x="1098" y="760" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="1098" y="777" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#afa380</text>
+  <rect x="1228" y="735" width="132" height="6" rx="3" fill="#958a6a"/>
+  <text x="1228" y="760" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="1228" y="777" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#958a6a</text>
+  <rect x="64" y="850" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="82" y="883" fill="#619367" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">green</text>
+  <text x="470" y="882" fill="#619367" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #619367</text>
+  <rect x="80" y="902" width="392" height="55" rx="7" fill="#5a8a61"/>
+  <text x="94" y="936" fill="#d6e2d8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="458" y="936" fill="#d6e2d8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#5a8a61 / #d6e2d8</text>
+  <rect x="80" y="965" width="392" height="55" rx="7" fill="#e7f3e9"/>
+  <text x="94" y="999" fill="#709376" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="458" y="999" fill="#709376" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#e7f3e9 / #709376</text>
+  <rect x="80" y="1028" width="392" height="55" rx="7" fill="#f3faf4"/>
+  <text x="94" y="1062" fill="#77987c" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="458" y="1062" fill="#77987c" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f3faf4 / #77987c</text>
+  <rect x="80" y="1105" width="114" height="6" rx="3" fill="#84ae89"/>
+  <text x="80" y="1130" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="80" y="1147" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#84ae89</text>
+  <rect x="210" y="1105" width="114" height="6" rx="3" fill="#8aac90"/>
+  <text x="210" y="1130" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="210" y="1147" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#8aac90</text>
+  <rect x="340" y="1105" width="132" height="6" rx="3" fill="#75917a"/>
+  <text x="340" y="1130" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="340" y="1147" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#75917a</text>
+  <rect x="508" y="850" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="526" y="883" fill="#48948e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">teal</text>
+  <text x="914" y="882" fill="#48948e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #48948e</text>
+  <rect x="524" y="902" width="392" height="55" rx="7" fill="#468a84"/>
+  <text x="538" y="936" fill="#d2e2e1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="902" y="936" fill="#d2e2e1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#468a84 / #d2e2e1</text>
+  <rect x="524" y="965" width="392" height="55" rx="7" fill="#e4f3f1"/>
+  <text x="538" y="999" fill="#60948e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="902" y="999" fill="#60948e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#e4f3f1 / #60948e</text>
+  <rect x="524" y="1028" width="392" height="55" rx="7" fill="#f2faf8"/>
+  <text x="538" y="1062" fill="#699995" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="902" y="1062" fill="#699995" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f2faf8 / #699995</text>
+  <rect x="524" y="1105" width="114" height="6" rx="3" fill="#70afa9"/>
+  <text x="524" y="1130" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="524" y="1147" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#70afa9</text>
+  <rect x="654" y="1105" width="114" height="6" rx="3" fill="#7cada8"/>
+  <text x="654" y="1130" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="654" y="1147" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#7cada8</text>
+  <rect x="784" y="1105" width="132" height="6" rx="3" fill="#68928e"/>
+  <text x="784" y="1130" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="784" y="1147" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#68928e</text>
+  <rect x="952" y="850" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="970" y="883" fill="#4a92a1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">cyan</text>
+  <text x="1358" y="882" fill="#4a92a1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #4a92a1</text>
+  <rect x="968" y="902" width="392" height="55" rx="7" fill="#478896"/>
+  <text x="982" y="936" fill="#d1e2e5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="1346" y="936" fill="#d1e2e5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#478896 / #d1e2e5</text>
+  <rect x="968" y="965" width="392" height="55" rx="7" fill="#e4f2f5"/>
+  <text x="982" y="999" fill="#62919d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="1346" y="999" fill="#62919d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#e4f2f5 / #62919d</text>
+  <rect x="968" y="1028" width="392" height="55" rx="7" fill="#f3f9fa"/>
+  <text x="982" y="1062" fill="#6b97a2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="1346" y="1062" fill="#6b97a2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f3f9fa / #6b97a2</text>
+  <rect x="968" y="1105" width="114" height="6" rx="3" fill="#72adb9"/>
+  <text x="968" y="1130" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="968" y="1147" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#72adb9</text>
+  <rect x="1098" y="1105" width="114" height="6" rx="3" fill="#7dabb5"/>
+  <text x="1098" y="1130" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="1098" y="1147" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#7dabb5</text>
+  <rect x="1228" y="1105" width="132" height="6" rx="3" fill="#69909a"/>
+  <text x="1228" y="1130" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="1228" y="1147" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#69909a</text>
+  <rect x="64" y="1220" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="82" y="1253" fill="#598cbc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">blue</text>
+  <text x="470" y="1252" fill="#598cbc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #598cbc</text>
+  <rect x="80" y="1272" width="392" height="55" rx="7" fill="#5483af"/>
+  <text x="94" y="1306" fill="#d5e1eb" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="458" y="1306" fill="#d5e1eb" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#5483af / #d5e1eb</text>
+  <rect x="80" y="1335" width="392" height="55" rx="7" fill="#e8f1f9"/>
+  <text x="94" y="1369" fill="#6a8eb1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="458" y="1369" fill="#6a8eb1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#e8f1f9 / #6a8eb1</text>
+  <rect x="80" y="1398" width="392" height="55" rx="7" fill="#f4f9fc"/>
+  <text x="94" y="1432" fill="#7194b4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="458" y="1432" fill="#7194b4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f4f9fc / #7194b4</text>
+  <rect x="80" y="1475" width="114" height="6" rx="3" fill="#7ea8cf"/>
+  <text x="80" y="1500" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="80" y="1517" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#7ea8cf</text>
+  <rect x="210" y="1475" width="114" height="6" rx="3" fill="#85a7c6"/>
+  <text x="210" y="1500" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="210" y="1517" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#85a7c6</text>
+  <rect x="340" y="1475" width="132" height="6" rx="3" fill="#6f8eaa"/>
+  <text x="340" y="1500" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="340" y="1517" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#6f8eaa</text>
+  <rect x="508" y="1220" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="526" y="1253" fill="#7a85bc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">indigo</text>
+  <text x="914" y="1252" fill="#7a85bc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #7a85bc</text>
+  <rect x="524" y="1272" width="392" height="55" rx="7" fill="#737caf"/>
+  <text x="538" y="1306" fill="#dcdfeb" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="902" y="1306" fill="#dcdfeb" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#737caf / #dcdfeb</text>
+  <rect x="524" y="1335" width="392" height="55" rx="7" fill="#edeff9"/>
+  <text x="538" y="1369" fill="#8188af" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="902" y="1369" fill="#8188af" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#edeff9 / #8188af</text>
+  <rect x="524" y="1398" width="392" height="55" rx="7" fill="#f7f8fd"/>
+  <text x="538" y="1432" fill="#888eb3" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="902" y="1432" fill="#888eb3" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f7f8fd / #888eb3</text>
+  <rect x="524" y="1475" width="114" height="6" rx="3" fill="#99a1ce"/>
+  <text x="524" y="1500" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="524" y="1517" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#99a1ce</text>
+  <rect x="654" y="1475" width="114" height="6" rx="3" fill="#9ca2c6"/>
+  <text x="654" y="1500" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="654" y="1517" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#9ca2c6</text>
+  <rect x="784" y="1475" width="132" height="6" rx="3" fill="#8388a9"/>
+  <text x="784" y="1500" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="784" y="1517" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#8388a9</text>
+  <rect x="952" y="1220" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="970" y="1253" fill="#9c7ab8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">purple</text>
+  <text x="1358" y="1252" fill="#9c7ab8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #9c7ab8</text>
+  <rect x="968" y="1272" width="392" height="55" rx="7" fill="#9172ac"/>
+  <text x="982" y="1306" fill="#e3dcea" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="1346" y="1306" fill="#e3dcea" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#9172ac / #e3dcea</text>
+  <rect x="968" y="1335" width="392" height="55" rx="7" fill="#f3eef8"/>
+  <text x="982" y="1369" fill="#9a81ae" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="1346" y="1369" fill="#9a81ae" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f3eef8 / #9a81ae</text>
+  <rect x="968" y="1398" width="392" height="55" rx="7" fill="#faf7fc"/>
+  <text x="982" y="1432" fill="#9e87b2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="1346" y="1432" fill="#9e87b2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#faf7fc / #9e87b2</text>
+  <rect x="968" y="1475" width="114" height="6" rx="3" fill="#b599cc"/>
+  <text x="968" y="1500" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="968" y="1517" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#b599cc</text>
+  <rect x="1098" y="1475" width="114" height="6" rx="3" fill="#b19bc4"/>
+  <text x="1098" y="1500" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="1098" y="1517" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#b19bc4</text>
+  <rect x="1228" y="1475" width="132" height="6" rx="3" fill="#9783a7"/>
+  <text x="1228" y="1500" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="1228" y="1517" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#9783a7</text>
+  <rect x="64" y="1590" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="82" y="1623" fill="#b0759e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">magenta</text>
+  <text x="470" y="1622" fill="#b0759e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #b0759e</text>
+  <rect x="80" y="1642" width="392" height="55" rx="7" fill="#a46e93"/>
+  <text x="94" y="1676" fill="#e9dbe4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="458" y="1676" fill="#e9dbe4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#a46e93 / #e9dbe4</text>
+  <rect x="80" y="1705" width="392" height="55" rx="7" fill="#f8edf4"/>
+  <text x="94" y="1739" fill="#a77e9b" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="458" y="1739" fill="#a77e9b" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f8edf4 / #a77e9b</text>
+  <rect x="80" y="1768" width="392" height="55" rx="7" fill="#fcf6fa"/>
+  <text x="94" y="1802" fill="#ab849f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="458" y="1802" fill="#ab849f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#fcf6fa / #ab849f</text>
+  <rect x="80" y="1845" width="114" height="6" rx="3" fill="#c595b6"/>
+  <text x="80" y="1870" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="80" y="1887" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#c595b6</text>
+  <rect x="210" y="1845" width="114" height="6" rx="3" fill="#be99b3"/>
+  <text x="210" y="1870" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="210" y="1887" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#be99b3</text>
+  <rect x="340" y="1845" width="132" height="6" rx="3" fill="#a28198"/>
+  <text x="340" y="1870" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="340" y="1887" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#a28198</text>
+  <rect x="508" y="1590" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="526" y="1623" fill="#b8738d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">rose</text>
+  <text x="914" y="1622" fill="#b8738d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #b8738d</text>
+  <rect x="524" y="1642" width="392" height="55" rx="7" fill="#ab6d83"/>
+  <text x="538" y="1676" fill="#ebdbe1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="902" y="1676" fill="#ebdbe1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#ab6d83 / #ebdbe1</text>
+  <rect x="524" y="1705" width="392" height="55" rx="7" fill="#f9edf1"/>
+  <text x="538" y="1739" fill="#ae7d8f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="902" y="1739" fill="#ae7d8f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f9edf1 / #ae7d8f</text>
+  <rect x="524" y="1768" width="392" height="55" rx="7" fill="#fdf6f8"/>
+  <text x="538" y="1802" fill="#b08493" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="902" y="1802" fill="#b08493" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#fdf6f8 / #b08493</text>
+  <rect x="524" y="1845" width="114" height="6" rx="3" fill="#cc94a8"/>
+  <text x="524" y="1870" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="524" y="1887" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#cc94a8</text>
+  <rect x="654" y="1845" width="114" height="6" rx="3" fill="#c498a7"/>
+  <text x="654" y="1870" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="654" y="1887" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#c498a7</text>
+  <rect x="784" y="1845" width="132" height="6" rx="3" fill="#a6808e"/>
+  <text x="784" y="1870" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="784" y="1887" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#a6808e</text>
+  <rect x="952" y="1590" width="424" height="350" rx="14" fill="#f4f4f1" stroke="#8e8e8d" stroke-width="1"/>
+  <text x="970" y="1623" fill="#9f844d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="20" font-weight="700" text-anchor="start">amber</text>
+  <text x="1358" y="1622" fill="#9f844d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="600" text-anchor="end">text  #9f844d</text>
+  <rect x="968" y="1642" width="392" height="55" rx="7" fill="#947c4b"/>
+  <text x="982" y="1676" fill="#e4dfd2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">strong / on-strong</text>
+  <text x="1346" y="1676" fill="#e4dfd2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#947c4b / #e4dfd2</text>
+  <rect x="968" y="1705" width="392" height="55" rx="7" fill="#f6efde"/>
+  <text x="982" y="1739" fill="#99895f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">medium / on-medium</text>
+  <text x="1346" y="1739" fill="#99895f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#f6efde / #99895f</text>
+  <rect x="968" y="1768" width="392" height="55" rx="7" fill="#fbf8ef"/>
+  <text x="982" y="1802" fill="#9e8f69" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="14" font-weight="600" text-anchor="start">subtle / on-subtle</text>
+  <text x="1346" y="1802" fill="#9e8f69" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="12" font-weight="400" text-anchor="end">#fbf8ef / #9e8f69</text>
+  <rect x="968" y="1845" width="114" height="6" rx="3" fill="#b7a16f"/>
+  <text x="968" y="1870" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">border</text>
+  <text x="968" y="1887" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#b7a16f</text>
+  <rect x="1098" y="1845" width="114" height="6" rx="3" fill="#b3a27f"/>
+  <text x="1098" y="1870" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">focus</text>
+  <text x="1098" y="1887" fill="#626262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#b3a27f</text>
+  <rect x="1228" y="1845" width="132" height="6" rx="3" fill="#968969"/>
+  <text x="1228" y="1870" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="600" text-anchor="start">distant</text>
+  <text x="1228" y="1887" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="11" font-weight="400" text-anchor="start">#968969</text>
+  <text x="64" y="2010" fill="#6f6f6e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace" font-size="13" font-weight="400" text-anchor="start">Generated from lisp/complementary-light-palette.el and complementary-dark-palette.el</text>
+</svg>
