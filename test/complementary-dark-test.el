@@ -59,6 +59,19 @@
       (should (equal (plist-get palette :focus)
                      (plist-get palette :border))))))
 
+(ert-deftest complementary-dark-medium-surfaces-match-light-saturation-policy ()
+  (dolist (name complementary-light-color-names)
+    (let ((light-channels
+           (complementary-light--hex-rgb
+            (plist-get (complementary-light-palette name) :medium)))
+          (dark-channels
+           (complementary-light--hex-rgb
+            (plist-get (complementary-dark-palette name) :medium))))
+      ;; At these polarity-specific lightnesses, full HSL saturation means
+      ;; touching white in the light palette and black in the dark palette.
+      (should (= 255 (apply #'max light-channels)))
+      (should (= 0 (apply #'min dark-channels))))))
+
 (ert-deftest complementary-dark-all-palette-contrast-pairs-pass ()
   (dolist (primary complementary-light-color-names)
     (dolist (secondary complementary-light-color-names)

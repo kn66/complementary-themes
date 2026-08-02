@@ -61,29 +61,29 @@ supplies focus indicators.  Text on STRONG uses the neutral cursor color."
 (defconst complementary-dark-palettes
   (list
    (cons 'red (complementary-dark--make-accent-palette
-               "#dba0aa" "#9b3649" "#642934" "#442228" "#aa495b"))
+               "#dba0aa" "#9b3649" "#7f0018" "#442228" "#aa495b"))
    (cons 'orange (complementary-dark--make-accent-palette
-                  "#dea378" "#7d4f2c" "#523621" "#39291c" "#8d5f3c"))
+                  "#dea378" "#7d4f2c" "#652b00" "#39291c" "#8d5f3c"))
    (cons 'yellow (complementary-dark--make-accent-palette
-                  "#cbad4b" "#685824" "#453c1c" "#322c18" "#796834"))
+                  "#cbad4b" "#685824" "#4b3a00" "#322c18" "#796834"))
    (cons 'green (complementary-dark--make-accent-palette
-                 "#61c46d" "#24662c" "#1c4521" "#18321b" "#34773c"))
+                 "#61c46d" "#24662c" "#004709" "#18321b" "#34773c"))
    (cons 'teal (complementary-dark--make-accent-palette
-                "#3bc3b5" "#23635d" "#1b433f" "#18302e" "#33736c"))
+                "#3bc3b5" "#23635d" "#00453f" "#18302e" "#33736c"))
    (cons 'cyan (complementary-dark--make-accent-palette
-                "#3bbfd9" "#26616c" "#1d4148" "#1a2f34" "#36717c"))
+                "#3bbfd9" "#26616c" "#004351" "#1a2f34" "#36717c"))
    (cons 'blue (complementary-dark--make-accent-palette
-                "#84b5e0" "#2f5d86" "#243e57" "#1e2e3c" "#3f6d95"))
+                "#84b5e0" "#2f5d86" "#003c77" "#1e2e3c" "#3f6d95"))
    (cons 'indigo (complementary-dark--make-accent-palette
-                  "#a4aedc" "#3e51af" "#2d386e" "#242a49" "#5162bb"))
+                  "#a4aedc" "#3e51af" "#0020ba" "#242a49" "#5162bb"))
    (cons 'purple (complementary-dark--make-accent-palette
-                  "#c2a4dc" "#773ca9" "#4e2c6c" "#372448" "#874eb8"))
+                  "#c2a4dc" "#773ca9" "#5600a2" "#372448" "#874eb8"))
    (cons 'magenta (complementary-dark--make-accent-palette
-                   "#d99ec7" "#943476" "#60274f" "#422138" "#a54687"))
+                   "#d99ec7" "#943476" "#770054" "#422138" "#a54687"))
    (cons 'rose (complementary-dark--make-accent-palette
-                "#daa0b5" "#983659" "#63283d" "#44212e" "#a9486b"))
+                "#daa0b5" "#983659" "#7d002d" "#44212e" "#a9486b"))
    (cons 'amber (complementary-dark--make-accent-palette
-                 "#d7a945" "#6d5626" "#483b1d" "#332b19" "#7c6635")))
+                 "#d7a945" "#6d5626" "#513800" "#332b19" "#7c6635")))
   "Contrast-checked accent palettes for a dark background.")
 
 (defun complementary-dark--restore-contrast-requirement (pair)
