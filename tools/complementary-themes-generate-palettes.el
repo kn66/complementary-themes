@@ -17,9 +17,9 @@
 (require 'complementary-light-palette)
 (require 'complementary-dark-palette)
 
-(defconst complementary-themes-palette-svg-width 1440)
+(defconst complementary-themes-palette-svg-width 1600)
 
-(defconst complementary-themes-palette-svg-height 2048)
+(defconst complementary-themes-palette-svg-height 3120)
 
 (defconst complementary-themes-palette-svg-font-family
   "ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace")
@@ -71,13 +71,13 @@ STROKE, RADIUS, and STROKE-WIDTH are optional."
 SURFACE, BORDER, FOREGROUND, and MUTED supply the card colors."
   (concat
    (complementary-themes-palette-svg--rect
-    x y 208 72 surface border 10 1)
+    x y 352 82 surface border 12 1)
    (complementary-themes-palette-svg--rect
-    (+ x 12) (+ y 12) 48 48 color border 7 1)
+    (+ x 14) (+ y 12) 58 58 color border 8 1)
    (complementary-themes-palette-svg--text
-    (+ x 72) (+ y 30) (symbol-name name) foreground 11 "600")
+    (+ x 88) (+ y 34) (symbol-name name) foreground 14 "600")
    (complementary-themes-palette-svg--text
-    (+ x 72) (+ y 52) color muted 12)))
+    (+ x 88) (+ y 62) color muted 15)))
 
 (defun complementary-themes-palette-svg--role-band
     (x y width role background foreground)
@@ -85,23 +85,23 @@ SURFACE, BORDER, FOREGROUND, and MUTED supply the card colors."
 BACKGROUND and FOREGROUND demonstrate the intended color pair."
   (concat
    (complementary-themes-palette-svg--rect
-    x y width 55 background nil 7)
+    x y width 64 background nil 8)
    (complementary-themes-palette-svg--text
-    (+ x 14) (+ y 34) role foreground 14 "600")
+    (+ x 16) (+ y 40) role foreground 17 "600")
    (complementary-themes-palette-svg--text
-    (+ x width -14) (+ y 34)
-    (format "%s / %s" background foreground) foreground 12 "400" "end")))
+    (+ x width -16) (+ y 40)
+    (format "%s / %s" background foreground) foreground 15 "400" "end")))
 
 (defun complementary-themes-palette-svg--line-role
     (x y width role color foreground)
   "Return a compact line-role sample at X, Y with WIDTH.
 ROLE names COLOR and FOREGROUND colors the label text."
   (concat
-   (complementary-themes-palette-svg--rect x y width 6 color nil 3)
+   (complementary-themes-palette-svg--rect x y width 8 color nil 4)
    (complementary-themes-palette-svg--text
-    x (+ y 25) role foreground 11 "600")
+    x (+ y 31) role foreground 14 "600")
    (complementary-themes-palette-svg--text
-    x (+ y 42) color foreground 11)))
+    x (+ y 54) color foreground 14)))
 
 (defun complementary-themes-palette-svg--accent-card
     (x y name palette surface border foreground muted)
@@ -119,23 +119,23 @@ SURFACE, BORDER, FOREGROUND, and MUTED supply neutral presentation colors."
         (distant (plist-get palette :distant-foreground)))
     (concat
      (complementary-themes-palette-svg--rect
-      x y 424 350 surface border 14 1)
+      x y 724 366 surface border 16 1)
      (complementary-themes-palette-svg--text
-      (+ x 18) (+ y 33) (symbol-name name) text 20 "700")
+      (+ x 20) (+ y 40) (symbol-name name) text 25 "700")
      (complementary-themes-palette-svg--text
-      (+ x 406) (+ y 32) (format "text  %s" text) text 13 "600" "end")
+      (+ x 704) (+ y 39) (format "text  %s" text) text 16 "600" "end")
      (complementary-themes-palette-svg--role-band
-      (+ x 16) (+ y 52) 392 "strong / on-strong" strong on-strong)
+      (+ x 16) (+ y 62) 692 "strong / on-strong" strong on-strong)
      (complementary-themes-palette-svg--role-band
-      (+ x 16) (+ y 115) 392 "medium / on-medium" medium on-medium)
+      (+ x 16) (+ y 136) 692 "medium / on-medium" medium on-medium)
      (complementary-themes-palette-svg--role-band
-      (+ x 16) (+ y 178) 392 "subtle / on-subtle" subtle on-subtle)
+      (+ x 16) (+ y 210) 692 "subtle / on-subtle" subtle on-subtle)
      (complementary-themes-palette-svg--line-role
-      (+ x 16) (+ y 255) 114 "border" accent-border foreground)
+      (+ x 16) (+ y 292) 210 "border" accent-border foreground)
      (complementary-themes-palette-svg--line-role
-      (+ x 146) (+ y 255) 114 "focus" focus foreground)
+      (+ x 257) (+ y 292) 210 "focus" focus foreground)
      (complementary-themes-palette-svg--line-role
-      (+ x 276) (+ y 255) 132 "distant" distant muted))))
+      (+ x 498) (+ y 292) 210 "distant" distant muted))))
 
 (defun complementary-themes-palette-svg--palette-document (variant)
   "Return the complete palette SVG for VARIANT, either `light' or `dark'."
@@ -164,37 +164,37 @@ SURFACE, BORDER, FOREGROUND, and MUTED supply neutral presentation colors."
                 (symbol-name variant))
         background))
       (insert (complementary-themes-palette-svg--text
-               64 76 (format "COMPLEMENTARY %s" (upcase name))
-               foreground 34 "700"))
+               64 80 (format "COMPLEMENTARY %s" (upcase name))
+               foreground 40 "700"))
       (insert (complementary-themes-palette-svg--text
-               64 110 "12 accents · 10 semantic roles each · 8-bit sRGB"
-               muted 16))
+               64 120 "12 accents · 10 semantic roles · 5 accent tones each"
+               muted 18))
       (insert (complementary-themes-palette-svg--text
-               64 158 "NEUTRAL PALETTE" foreground 15 "700"))
+               64 166 "NEUTRAL PALETTE" foreground 18 "700"))
       (cl-loop for (token . color) in neutral
                for index from 0
-               for column = (% index 6)
-               for row = (/ index 6)
+               for column = (% index 4)
+               for row = (/ index 4)
                do (insert
                    (complementary-themes-palette-svg--neutral-card
-                    (+ 64 (* column 221)) (+ 180 (* row 84)) token color
+                    (+ 64 (* column 368)) (+ 188 (* row 94)) token color
                     surface border foreground muted)))
       (insert (complementary-themes-palette-svg--text
-               64 456 "ACCENT PALETTES" foreground 15 "700"))
+               64 680 "ACCENT PALETTES" foreground 18 "700"))
       (cl-loop for entry in palettes
                for accent = (car entry)
                for palette = (cdr entry)
                for index from 0
-               for column = (% index 3)
-               for row = (/ index 3)
+               for column = (% index 2)
+               for row = (/ index 2)
                do (insert
                    (complementary-themes-palette-svg--accent-card
-                    (+ 64 (* column 444)) (+ 480 (* row 370)) accent palette
+                    (+ 64 (* column 748)) (+ 704 (* row 388)) accent palette
                     surface border foreground muted)))
       (insert (complementary-themes-palette-svg--text
-               64 2010
+               64 3078
                "Generated from lisp/complementary-light-palette.el and complementary-dark-palette.el"
-               muted 13))
+               muted 15))
       (insert "</svg>\n")
       (buffer-string))))
 
@@ -202,15 +202,15 @@ SURFACE, BORDER, FOREGROUND, and MUTED supply neutral presentation colors."
     (x y width name palette foreground)
   "Return one palette stack at X, Y with WIDTH.
 NAME and PALETTE identify the accent; FOREGROUND colors its label."
-  (let ((band-height 22))
+  (let ((band-height 30))
     (concat
      (complementary-themes-palette-svg--text
-      (+ x (/ width 2)) y (symbol-name name) foreground 13 "700" "middle")
+      (+ x (/ width 2)) y (symbol-name name) foreground 17 "700" "middle")
      (cl-loop for role in '(:text :strong :medium :subtle)
               for index from 0
               concat
               (complementary-themes-palette-svg--rect
-               x (+ y 12 (* index band-height)) width band-height
+               x (+ y 16 (* index band-height)) width band-height
                (plist-get palette role) nil
                (cond ((= index 0) 6)
                      ((= index 3) 6)
@@ -225,13 +225,13 @@ FOREGROUND provide neutral presentation colors."
         (right (cdr (assq right-name palettes))))
     (concat
      (complementary-themes-palette-svg--rect
-      x y 208 154 surface border 12 1)
+      x y 476 200 surface border 14 1)
      (complementary-themes-palette-svg--pair-stack
-      (+ x 18) (+ y 31) 76 left-name left foreground)
+      (+ x 18) (+ y 38) 180 left-name left foreground)
      (complementary-themes-palette-svg--text
-      (+ x 104) (+ y 88) "+" foreground 18 "700" "middle")
+      (+ x 238) (+ y 112) "+" foreground 26 "700" "middle")
      (complementary-themes-palette-svg--pair-stack
-      (+ x 114) (+ y 31) 76 right-name right foreground))))
+      (+ x 278) (+ y 38) 180 right-name right foreground))))
 
 (defun complementary-themes-palette-svg--pair-section
     (y variant neutral palettes pairs)
@@ -244,16 +244,18 @@ NEUTRAL and PALETTES provide colors, while PAIRS lists the six pairings."
         (muted (alist-get 'foreground-faint neutral)))
     (concat
      (complementary-themes-palette-svg--rect
-      40 y 1360 244 background border 16 1)
+      40 y 1520 500 background border 18 1)
      (complementary-themes-palette-svg--text
-      64 (+ y 40) (upcase (symbol-name variant)) foreground 18 "700")
+      64 (+ y 42) (upcase (symbol-name variant)) foreground 22 "700")
      (complementary-themes-palette-svg--text
-      1336 (+ y 39) "text · strong · medium · subtle" muted 13 "400" "end")
+      1536 (+ y 42) "text · strong · medium · subtle" muted 16 "400" "end")
      (cl-loop for (left . right) in pairs
               for index from 0
+              for column = (% index 3)
+              for row = (/ index 3)
               concat
               (complementary-themes-palette-svg--pair-card
-               (+ 64 (* index 218)) (+ y 64) left right palettes
+               (+ 64 (* column 496)) (+ y 64 (* row 216)) left right palettes
                surface border foreground)))))
 
 (defun complementary-themes-palette-svg--pair-document ()
@@ -263,26 +265,26 @@ NEUTRAL and PALETTES provide colors, while PAIRS lists the six pairings."
     (with-temp-buffer
       (insert
        (complementary-themes-palette-svg--header
-        1440 700 "Complementary accent pairs"
+        1600 1220 "Complementary accent pairs"
         (concat "The six symmetric, UI-adjusted automatic accent pairings,"
                 " shown with text, strong, medium, and subtle roles in both themes.")
         "#f7f7f5"))
       (insert (complementary-themes-palette-svg--text
-               64 70 "AUTOMATIC ACCENT PAIRS" "#404040" 32 "700"))
+               64 74 "AUTOMATIC ACCENT PAIRS" "#404040" 38 "700"))
       (insert (complementary-themes-palette-svg--text
-               64 103 "Six symmetric UI-adjusted pairings · secondary = auto"
-               "#686868" 16))
+               64 112 "Six symmetric UI-adjusted pairings · secondary = auto"
+               "#686868" 18))
       (insert
        (complementary-themes-palette-svg--pair-section
-        132 'light complementary-light-neutral-palette
+        140 'light complementary-light-neutral-palette
         complementary-light-palettes pairs))
       (insert
        (complementary-themes-palette-svg--pair-section
-        396 'dark complementary-dark-neutral-palette
+        660 'dark complementary-dark-neutral-palette
         complementary-dark-palettes pairs))
       (insert (complementary-themes-palette-svg--text
-               64 675 "Pairs are symmetric: either color may be primary."
-               "#686868" 13))
+               64 1195 "Pairs are symmetric: either color may be primary."
+               "#686868" 15))
       (insert "</svg>\n")
       (buffer-string))))
 

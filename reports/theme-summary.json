@@ -35,10 +35,10 @@
     }
   },
   "terminal_text_contrast_minimum": 4.5,
-  "minimum_measured_contrast": 2.5000369343503723,
+  "minimum_measured_contrast": 2.500965848907387,
   "minimum_measured_contrast_by_theme": {
-    "complementary-light": 2.5000369343503723,
-    "complementary-dark": 3.2500683894710627
+    "complementary-light": 2.500965848907387,
+    "complementary-dark": 3.2517465098319462
   },
   "color_vision_policy": "diagnostic-only",
   "color_vision_record_count": 20460,
@@ -63,5 +63,5 @@
   "minimum_simulated_pair_delta_e_2000": 0.0,
   "minimum_cvd_pair_delta_e_2000": 0.0,
   "minimum_grayscale_pair_delta_e_2000": 0.0,
-  "generated_at": "2026-08-02T09:33:12+0900"
+  "generated_at": "2026-08-02T10:20:05+0900"
 }

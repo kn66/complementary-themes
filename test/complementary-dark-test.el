@@ -42,6 +42,23 @@
   (should (= (length complementary-light-color-names)
              (length complementary-dark-palettes))))
 
+(ert-deftest complementary-dark-palettes-share-semantic-tones ()
+  (should (= 9 (length (delete-dups
+                        (mapcar #'cdr complementary-dark-neutral-palette)))))
+  (dolist (entry complementary-dark-palettes)
+    (let ((palette (cdr entry)))
+      (should (= 6 (length
+                    (delete-dups
+                     (cl-loop for (_ value) on palette by #'cddr
+                              collect value)))))
+      (should (equal (plist-get palette :on-strong)
+                     (alist-get 'cursor complementary-dark-neutral-palette)))
+      (dolist (token '(:on-medium :on-subtle :distant-foreground))
+        (should (equal (plist-get palette token)
+                       (plist-get palette :text))))
+      (should (equal (plist-get palette :focus)
+                     (plist-get palette :border))))))
+
 (ert-deftest complementary-dark-all-palette-contrast-pairs-pass ()
   (dolist (primary complementary-light-color-names)
     (dolist (secondary complementary-light-color-names)

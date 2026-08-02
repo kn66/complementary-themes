@@ -14,98 +14,76 @@
 (require 'complementary-light-palette)
 
 (defconst complementary-dark-neutral-palette
-  '((background . "#171717")
-    (surface . "#171717")
-    (surface-raised . "#232323")
-    (surface-sunken . "#1d1d1d")
-    (foreground . "#b0b0b0")
-    (foreground-secondary . "#929292")
-    (foreground-muted . "#b0b0b0")
-    (foreground-faint . "#888888")
-    (comment-foreground . "#888888")
-    (border . "#696969")
-    (border-strong . "#6d6d6d")
-    (divider . "#696969")
-    (selection-neutral . "#30302f")
-    (inactive-background . "#171717")
-    (inactive-foreground . "#8f8f8f")
-    (cursor . "#ffffff")
-    (distant-foreground . "#b0b0b0"))
+  (let ((base "#171717")
+        (raised "#232323")
+        (sunken "#1d1d1d")
+        (text "#b0b0b0")
+        (secondary "#929292")
+        (faint "#888888")
+        (edge "#6d6d6d")
+        (selection "#30302f")
+        (cursor "#ffffff"))
+    `((background . ,base)
+      (surface . ,base)
+      (surface-raised . ,raised)
+      (surface-sunken . ,sunken)
+      (foreground . ,text)
+      (foreground-secondary . ,secondary)
+      (foreground-muted . ,text)
+      (foreground-faint . ,faint)
+      (comment-foreground . ,faint)
+      (border . ,edge)
+      (border-strong . ,edge)
+      (divider . ,edge)
+      (selection-neutral . ,selection)
+      (inactive-background . ,base)
+      (inactive-foreground . ,secondary)
+      (cursor . ,cursor)
+      (distant-foreground . ,text)))
   "Neutral colors used by `complementary-dark'.")
 
+(defun complementary-dark--make-accent-palette
+    (text strong medium subtle border)
+  "Return a dark accent palette from its five accent-specific tones.
+TEXT is reused on dark accent surfaces and for distant text.  BORDER also
+supplies focus indicators.  Text on STRONG uses the neutral cursor color."
+  (list :text text
+        :strong strong
+        :on-strong (alist-get 'cursor complementary-dark-neutral-palette)
+        :medium medium
+        :on-medium text
+        :subtle subtle
+        :on-subtle text
+        :border border
+        :focus border
+        :distant-foreground text))
+
 (defconst complementary-dark-palettes
-  '((red
-     :text "#dba0aa" :strong "#9b3649" :on-strong "#e8d7da"
-     :medium "#642934" :on-medium "#daa0aa"
-     :subtle "#442228" :on-subtle "#cf8793"
-     :border "#aa495b" :focus "#9d5260"
-     :distant-foreground "#d2a3ab")
-    (orange
-     :text "#dea378" :strong "#7d4f2c" :on-strong "#e5d9cf"
-     :medium "#523621" :on-medium "#dea376"
-     :subtle "#39291c" :on-subtle "#d58a52"
-     :border "#8d5f3c" :focus "#856246"
-     :distant-foreground "#d0a789")
-    (yellow
-     :text "#cbad4b" :strong "#685824" :on-strong "#e0dbc8"
-     :medium "#453c1c" :on-medium "#cbad4b"
-     :subtle "#322c18" :on-subtle "#b4993f"
-     :border "#796834" :focus "#75693e"
-     :distant-foreground "#c2ae70")
-    (green
-     :text "#61c46d" :strong "#24662c" :on-strong "#c8e1cb"
-     :medium "#1c4521" :on-medium "#61c46d"
-     :subtle "#18321b" :on-subtle "#57ae61"
-     :border "#34773c" :focus "#3d7544"
-     :distant-foreground "#7bbf83")
-    (teal
-     :text "#3bc3b5" :strong "#23635d" :on-strong "#c8e0dd"
-     :medium "#1b433f" :on-medium "#3bc3b5"
-     :subtle "#18302e" :on-subtle "#2faca0"
-     :border "#33736c" :focus "#3b726c"
-     :distant-foreground "#55c1b6")
-    (cyan
-     :text "#3bbfd9" :strong "#26616c" :on-strong "#cbdee1"
-     :medium "#1d4148" :on-medium "#3bbed7"
-     :subtle "#1a2f34" :on-subtle "#31a9c0"
-     :border "#36717c" :focus "#407079"
-     :distant-foreground "#63bbcc")
-    (blue
-     :text "#84b5e0" :strong "#2f5d86" :on-strong "#d3dde6"
-     :medium "#243e57" :on-medium "#82b4e0"
-     :subtle "#1e2e3c" :on-subtle "#63a1d8"
-     :border "#3f6d95" :focus "#496c8c"
-     :distant-foreground "#8fb3d2")
-    (indigo
-     :text "#a4aedc" :strong "#3e51af" :on-strong "#d6dae8"
-     :medium "#2d386e" :on-medium "#a3addc"
-     :subtle "#242a49" :on-subtle "#8d98ce"
-     :border "#5162bb" :focus "#5765a6"
-     :distant-foreground "#a5add4")
-    (purple
-     :text "#c2a4dc" :strong "#773ca9" :on-strong "#e0d7e8"
-     :medium "#4e2c6c" :on-medium "#c1a3dc"
-     :subtle "#372448" :on-subtle "#b08dce"
-     :border "#874eb8" :focus "#8157a4"
-     :distant-foreground "#bea5d4")
-    (magenta
-     :text "#d99ec7" :strong "#943476" :on-strong "#e8d6e2"
-     :medium "#60274f" :on-medium "#d99cc6"
-     :subtle "#422138" :on-subtle "#cb85b4"
-     :border "#a54687" :focus "#995082"
-     :distant-foreground "#d1a0c2")
-    (rose
-     :text "#daa0b5" :strong "#983659" :on-strong "#e8d6dc"
-     :medium "#63283d" :on-medium "#da9eb4"
-     :subtle "#44212e" :on-subtle "#cc87a0"
-     :border "#a9486b" :focus "#9b526c"
-     :distant-foreground "#d2a2b3")
-    (amber
-     :text "#d7a945" :strong "#6d5626" :on-strong "#e1dac9"
-     :medium "#483b1d" :on-medium "#d6a945"
-     :subtle "#332b19" :on-subtle "#be953a"
-     :border "#7c6635" :focus "#78673f"
-     :distant-foreground "#c8ad70"))
+  (list
+   (cons 'red (complementary-dark--make-accent-palette
+               "#dba0aa" "#9b3649" "#642934" "#442228" "#aa495b"))
+   (cons 'orange (complementary-dark--make-accent-palette
+                  "#dea378" "#7d4f2c" "#523621" "#39291c" "#8d5f3c"))
+   (cons 'yellow (complementary-dark--make-accent-palette
+                  "#cbad4b" "#685824" "#453c1c" "#322c18" "#796834"))
+   (cons 'green (complementary-dark--make-accent-palette
+                 "#61c46d" "#24662c" "#1c4521" "#18321b" "#34773c"))
+   (cons 'teal (complementary-dark--make-accent-palette
+                "#3bc3b5" "#23635d" "#1b433f" "#18302e" "#33736c"))
+   (cons 'cyan (complementary-dark--make-accent-palette
+                "#3bbfd9" "#26616c" "#1d4148" "#1a2f34" "#36717c"))
+   (cons 'blue (complementary-dark--make-accent-palette
+                "#84b5e0" "#2f5d86" "#243e57" "#1e2e3c" "#3f6d95"))
+   (cons 'indigo (complementary-dark--make-accent-palette
+                  "#a4aedc" "#3e51af" "#2d386e" "#242a49" "#5162bb"))
+   (cons 'purple (complementary-dark--make-accent-palette
+                  "#c2a4dc" "#773ca9" "#4e2c6c" "#372448" "#874eb8"))
+   (cons 'magenta (complementary-dark--make-accent-palette
+                   "#d99ec7" "#943476" "#60274f" "#422138" "#a54687"))
+   (cons 'rose (complementary-dark--make-accent-palette
+                "#daa0b5" "#983659" "#63283d" "#44212e" "#a9486b"))
+   (cons 'amber (complementary-dark--make-accent-palette
+                 "#d7a945" "#6d5626" "#483b1d" "#332b19" "#7c6635")))
   "Contrast-checked accent palettes for a dark background.")
 
 (defun complementary-dark--restore-contrast-requirement (pair)
