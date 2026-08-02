@@ -9,33 +9,103 @@ The secondary accent in these screenshots is selected from the theme's fixed ~au
 
 ** Light theme
 
-| Red + cyan | Orange + blue |
-| [[file:01_light-red.png]] | [[file:01_light-orange.png]] |
-| Yellow + purple | Green + magenta |
-| [[file:01_light-yellow.png]] | [[file:01_light-green.png]] |
-| Teal + rose | Cyan + red |
-| [[file:01_light-teal.png]] | [[file:01_light-cyan.png]] |
-| Blue + orange | Indigo + amber |
-| [[file:01_light-blue.png]] | [[file:01_light-indigo.png]] |
-| Purple + yellow | Magenta + green |
-| [[file:01_light-purple.png]] | [[file:01_light-magenta.png]] |
-| Rose + teal | Amber + indigo |
-| [[file:01_light-rose.png]] | [[file:01_light-amber.png]] |
+*** Red + cyan
+
+[[file:01_light-red.png]]
+
+*** Orange + blue
+
+[[file:01_light-orange.png]]
+
+*** Yellow + purple
+
+[[file:01_light-yellow.png]]
+
+*** Green + magenta
+
+[[file:01_light-green.png]]
+
+*** Teal + rose
+
+[[file:01_light-teal.png]]
+
+*** Cyan + red
+
+[[file:01_light-cyan.png]]
+
+*** Blue + orange
+
+[[file:01_light-blue.png]]
+
+*** Indigo + amber
+
+[[file:01_light-indigo.png]]
+
+*** Purple + yellow
+
+[[file:01_light-purple.png]]
+
+*** Magenta + green
+
+[[file:01_light-magenta.png]]
+
+*** Rose + teal
+
+[[file:01_light-rose.png]]
+
+*** Amber + indigo
+
+[[file:01_light-amber.png]]
 
 ** Dark theme
 
-| Red + cyan | Orange + blue |
-| [[file:01_dark-red.png]] | [[file:01_dark-orange.png]] |
-| Yellow + purple | Green + magenta |
-| [[file:01_dark-yellow.png]] | [[file:01_dark-green.png]] |
-| Teal + rose | Cyan + red |
-| [[file:01_dark-teal.png]] | [[file:01_dark-cyan.png]] |
-| Blue + orange | Indigo + amber |
-| [[file:01_dark-blue.png]] | [[file:01_dark-indigo.png]] |
-| Purple + yellow | Magenta + green |
-| [[file:01_dark-purple.png]] | [[file:01_dark-magenta.png]] |
-| Rose + teal | Amber + indigo |
-| [[file:01_dark-rose.png]] | [[file:01_dark-amber.png]] |
+*** Red + cyan
+
+[[file:01_dark-red.png]]
+
+*** Orange + blue
+
+[[file:01_dark-orange.png]]
+
+*** Yellow + purple
+
+[[file:01_dark-yellow.png]]
+
+*** Green + magenta
+
+[[file:01_dark-green.png]]
+
+*** Teal + rose
+
+[[file:01_dark-teal.png]]
+
+*** Cyan + red
+
+[[file:01_dark-cyan.png]]
+
+*** Blue + orange
+
+[[file:01_dark-blue.png]]
+
+*** Indigo + amber
+
+[[file:01_dark-indigo.png]]
+
+*** Purple + yellow
+
+[[file:01_dark-purple.png]]
+
+*** Magenta + green
+
+[[file:01_dark-magenta.png]]
+
+*** Rose + teal
+
+[[file:01_dark-rose.png]]
+
+*** Amber + indigo
+
+[[file:01_dark-amber.png]]
 
 * Explicit accent pairs
 
@@ -43,10 +113,20 @@ These examples override the automatic secondary accent.
 
 ** Light theme
 
-| Yellow + red | Blue + green |
-| [[file:02_light-yellow-red.png]] | [[file:02_light-blue-green.png]] |
+*** Yellow + red
+
+[[file:02_light-yellow-red.png]]
+
+*** Blue + green
+
+[[file:02_light-blue-green.png]]
 
 ** Dark theme
 
-| Yellow + red | Blue + green |
-| [[file:02_dark-yellow-red.png]] | [[file:02_dark-blue-green.png]] |
+*** Yellow + red
+
+[[file:02_dark-yellow-red.png]]
+
+*** Blue + green
+
+[[file:02_dark-blue-green.png]]
