@@ -18,32 +18,34 @@
   "Registered accent names accepted by the theme.")
 
 (defconst complementary-light-neutral-palette
-  (let ((base "#ffffff")
-        (raised "#f4f4f1")
-        (sunken "#ececea")
-        (text "#626262")
-        (faint "#6f6f6e")
-        (comment "#888888")
-        (edge "#8e8e8d")
-        (strong-edge "#828281")
+  (let ((base "#f7f7fb")
+        (raised "#ffffff")
+        (sunken "#eeeef5")
+        (text "#595959")
+        (muted "#626262")
+        (faint "#6a6a70")
+        (comment "#71717a")
+        (edge "#878894")
+        (strong-edge "#81828e")
+        (selection "#e7e8f1")
         (cursor "#000000"))
     `((background . ,base)
       (surface . ,base)
       (surface-raised . ,raised)
       (surface-sunken . ,sunken)
       (foreground . ,text)
-      (foreground-secondary . ,text)
-      (foreground-muted . ,text)
+      (foreground-secondary . ,muted)
+      (foreground-muted . ,muted)
       (foreground-faint . ,faint)
       (comment-foreground . ,comment)
       (border . ,edge)
       (border-strong . ,strong-edge)
       (divider . ,edge)
-      (selection-neutral . ,sunken)
+      (selection-neutral . ,selection)
       (inactive-background . ,sunken)
-      (inactive-foreground . ,text)
+      (inactive-foreground . ,muted)
       (cursor . ,cursor)
-      (distant-foreground . ,text)))
+      (distant-foreground . ,muted)))
   "Neutral colors shared by every accent selection.")
 
 (defun complementary-light--make-accent-palette
@@ -65,30 +67,30 @@ supplies focus indicators.  Text on STRONG uses the neutral base color."
 (defconst complementary-light-palettes
   (list
    (cons 'red (complementary-light--make-accent-palette
-               "#c26f7f" "#b66878" "#ffe7eb" "#fdf6f7" "#d3929e"))
+               "#dc2626" "#ef4444" "#ffe2e2" "#fef2f2" "#e13b3b"))
    (cons 'orange (complementary-light--make-accent-palette
-                  "#b27c56" "#a47553" "#ffe9d8" "#fdf7f3" "#c79b79"))
+                  "#c2410c" "#ea580c" "#ffedd5" "#fff7ed" "#df530b"))
    (cons 'yellow (complementary-light--make-accent-palette
-                  "#988750" "#8e7e4c" "#ffeda3" "#fbf8ec" "#b2a374"))
+                  "#ad7500" "#b67900" "#fef9c3" "#fefce8" "#b97c00"))
    (cons 'green (complementary-light--make-accent-palette
-                 "#619367" "#5a8a61" "#b0ffbd" "#f3faf4" "#84ae89"))
+                 "#15803d" "#159945" "#dcfce7" "#f0fdf4" "#168f45"))
    (cons 'teal (complementary-light--make-accent-palette
-                "#48948e" "#468a84" "#99fff1" "#f2faf8" "#70afa9"))
+                "#0f766e" "#0d9488" "#ccfbf1" "#f0fdfa" "#168b82"))
    (cons 'cyan (complementary-light--make-accent-palette
-                "#4a92a1" "#478896" "#c5f5ff" "#f3f9fa" "#72adb9"))
+                "#0e7490" "#0891b2" "#cffafe" "#ecfeff" "#1489a5"))
    (cons 'blue (complementary-light--make-accent-palette
-                "#598cbc" "#5483af" "#deefff" "#f4f9fc" "#7ea8cf"))
+                "#2563eb" "#3b82f6" "#dceaff" "#eff6ff" "#3278ee"))
    (cons 'indigo (complementary-light--make-accent-palette
-                  "#7a85bc" "#737caf" "#e8ecff" "#f7f8fd" "#99a1ce"))
+                  "#4f46e5" "#6366f1" "#e2e9ff" "#eef2ff" "#5c5be9"))
    (cons 'purple (complementary-light--make-accent-palette
-                  "#9c7ab8" "#9172ac" "#f4e9ff" "#faf7fc" "#b599cc"))
+                  "#9333ea" "#a855f7" "#f3e8ff" "#faf5ff" "#a04bea"))
    (cons 'magenta (complementary-light--make-accent-palette
-                   "#b0759e" "#a46e93" "#ffe6f6" "#fcf6fa" "#c595b6"))
+                   "#c026d3" "#d13de7" "#fae8ff" "#fdf4ff" "#cf3cde"))
    (cons 'rose (complementary-light--make-accent-palette
-                "#b8738d" "#ab6d83" "#ffe7ef" "#fdf6f8" "#cc94a8"))
+                "#e11d48" "#f43f5e" "#ffe4e6" "#fff1f2" "#ec3657"))
    (cons 'amber (complementary-light--make-accent-palette
-                 "#9f844d" "#947c4b" "#ffecbc" "#fbf8ef" "#b7a16f")))
-  "Contrast-checked accent palettes for a light background.")
+                 "#b45309" "#cb6e05" "#fef3c7" "#fffbeb" "#cf7105")))
+  "Perceptual-first vivid accent palettes for a light background.")
 
 (defconst complementary-light-accent-pairs
   '((yellow . purple) (purple . yellow)
@@ -129,15 +131,17 @@ supplies focus indicators.  Text on STRONG uses the neutral base color."
   "Theme design target for neutral non-text contrast, including a safety margin.")
 
 (defconst complementary-light-accent-text-contrast-target 3.0
-  "Low-emphasis contrast target for primary and secondary accent text.")
+  "Emergency legibility floor for primary and secondary accent text.
+Accent colors are selected for perceptual vividness rather than calibrated to
+this value; the floor only rejects combinations that become unreadable.")
 
-(defconst complementary-light-accent-non-text-contrast-target 2.5
-  "Low-emphasis target for primary and secondary non-text colors.")
+(defconst complementary-light-accent-non-text-contrast-target 3.0
+  "Emergency visibility floor for primary and secondary non-text colors.")
 
-(defconst complementary-light-comment-text-contrast-target 3.5
-  "Minimum contrast target for low-emphasis light-theme comments.")
+(defconst complementary-light-comment-text-contrast-target 4.5
+  "Minimum contrast target for light-theme comments.")
 
-(defconst complementary-light-comment-text-contrast-maximum 4.0
+(defconst complementary-light-comment-text-contrast-maximum 5.0
   "Maximum contrast for comments against the light base background.
 This upper bound preserves a visible hierarchy between comments and body text.")
 

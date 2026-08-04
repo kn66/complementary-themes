@@ -19,11 +19,11 @@
   "truecolor_contrast_targets": {
     "complementary-light": {
       "neutral_text": 5.0,
-      "comment_text_minimum": 3.5,
-      "comment_text_maximum": 4.0,
+      "comment_text_minimum": 4.5,
+      "comment_text_maximum": 5.0,
       "accent_text": 3.0,
       "neutral_non_text": 3.25,
-      "accent_non_text": 2.5
+      "accent_non_text": 3.0
     },
     "complementary-dark": {
       "neutral_text": 5.0,
@@ -35,18 +35,18 @@
     }
   },
   "terminal_text_contrast_minimum": 4.5,
-  "minimum_measured_contrast": 2.500965848907387,
+  "minimum_measured_contrast": 3.0821581956311683,
   "minimum_measured_contrast_by_theme": {
-    "complementary-light": 2.500965848907387,
-    "complementary-dark": 3.2517465098319462
+    "complementary-light": 3.0821581956311683,
+    "complementary-dark": 3.3334038308349014
   },
   "color_vision_policy": "diagnostic-only",
   "color_vision_record_count": 20460,
   "color_vision_reported_worst_case_record_count": 2640,
-  "color_vision_preset_minimum_delta_e_2000": 5.834587337808262,
+  "color_vision_preset_minimum_delta_e_2000": 9.781275768704944,
   "effective_face_contrast_record_count": 2342,
-  "effective_face_review_candidate_count": 540,
-  "effective_face_raw_below_text_minimum_count": 669,
+  "effective_face_review_candidate_count": 380,
+  "effective_face_raw_below_text_minimum_count": 503,
   "effective_face_role_counts": {
     "normal-text": 2158,
     "non-text-indicator": 16,
@@ -63,5 +63,5 @@
   "minimum_simulated_pair_delta_e_2000": 0.0,
   "minimum_cvd_pair_delta_e_2000": 0.0,
   "minimum_grayscale_pair_delta_e_2000": 0.0,
-  "generated_at": "2026-08-02T22:24:51+0900"
+  "generated_at": "2026-08-04T22:38:36+0900"
 }

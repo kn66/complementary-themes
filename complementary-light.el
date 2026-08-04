@@ -70,7 +70,7 @@ When this value is `auto', use the registered paired accent for
           (const purple) (const magenta) (const rose) (const amber))
   :group 'complementary-light)
 
-(defconst complementary-light-color-vision-preset '(yellow . blue)
+(defconst complementary-light-color-vision-preset '(yellow . cyan)
   "Primary and secondary pair chosen for robust CVD separation.
 The generated color-vision report records the ranking and worst case.  Color
 is never the theme's sole state cue, so this remains a preference rather than

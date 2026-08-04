@@ -94,6 +94,18 @@
                      (lambda (rule)
                        (eq (plist-get (cdr rule) :status) 'themed))
                      complementary-light-face-rules))))
+    (dolist (face '(font-lock-comment-face))
+      (let ((record
+             (cl-find-if
+              (lambda (candidate)
+                (and (equal (cdr (assq 'theme candidate))
+                            "complementary-light")
+                     (equal (cdr (assq 'face candidate))
+                            (symbol-name face))))
+              records)))
+        (should record)
+        (should (= (cdr (assq 'required record))
+                   complementary-light-comment-text-contrast-target))))
     (dolist (record records)
       (unless (equal (cdr (assq 'role record)) "contextual-cursor")
         (should (eq (cdr (assq 'passed record)) t))))))

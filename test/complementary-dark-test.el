@@ -43,8 +43,8 @@
              (length complementary-dark-palettes))))
 
 (ert-deftest complementary-dark-palettes-share-semantic-tones ()
-  (should (= 9 (length (delete-dups
-                        (mapcar #'cdr complementary-dark-neutral-palette)))))
+  (should (= 10 (length (delete-dups
+                         (mapcar #'cdr complementary-dark-neutral-palette)))))
   (dolist (entry complementary-dark-palettes)
     (let ((palette (cdr entry)))
       (should (= 6 (length
@@ -59,7 +59,24 @@
       (should (equal (plist-get palette :focus)
                      (plist-get palette :border))))))
 
-(ert-deftest complementary-dark-medium-surfaces-match-light-saturation-policy ()
+(ert-deftest complementary-dark-body-text-outranks-muted-and-accent-text ()
+  (let* ((background (alist-get 'background complementary-dark-neutral-palette))
+         (foreground (alist-get 'foreground complementary-dark-neutral-palette))
+         (foreground-ratio
+          (complementary-light-contrast-ratio foreground background)))
+    (dolist (token '(foreground-muted distant-foreground))
+      (should
+       (> foreground-ratio
+          (complementary-light-contrast-ratio
+           (alist-get token complementary-dark-neutral-palette)
+           background))))
+    (dolist (entry complementary-dark-palettes)
+      (should
+       (> foreground-ratio
+          (complementary-light-contrast-ratio
+           (plist-get (cdr entry) :text) background))))))
+
+(ert-deftest complementary-dark-medium-surfaces-remain-chromatic-by-polarity ()
   (dolist (name complementary-light-color-names)
     (let ((light-channels
            (complementary-light--hex-rgb
@@ -67,10 +84,18 @@
           (dark-channels
            (complementary-light--hex-rgb
             (plist-get (complementary-dark-palette name) :medium))))
-      ;; At these polarity-specific lightnesses, full HSL saturation means
-      ;; touching white in the light palette and black in the dark palette.
-      (should (= 255 (apply #'max light-channels)))
-      (should (= 0 (apply #'min dark-channels))))))
+      (dolist (channels (list light-channels dark-channels))
+        (let ((hsl
+               (apply #'color-rgb-to-hsl
+                      (mapcar (lambda (channel) (/ channel 255.0))
+                              channels))))
+          (should (>= (nth 1 hsl) 0.65))))
+      (should (> (complementary-light-relative-luminance
+                  (plist-get (complementary-light-palette name) :medium))
+                 0.75))
+      (should (< (complementary-light-relative-luminance
+                  (plist-get (complementary-dark-palette name) :medium))
+                 0.15)))))
 
 (ert-deftest complementary-dark-all-palette-contrast-pairs-pass ()
   (dolist (primary complementary-light-color-names)

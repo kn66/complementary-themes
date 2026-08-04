@@ -8,8 +8,8 @@
              (length complementary-light-palettes))))
 
 (ert-deftest complementary-light-palettes-share-semantic-tones ()
-  (should (= 9 (length (delete-dups
-                        (mapcar #'cdr complementary-light-neutral-palette)))))
+  (should (= 11 (length (delete-dups
+                         (mapcar #'cdr complementary-light-neutral-palette)))))
   (dolist (entry complementary-light-palettes)
     (let ((palette (cdr entry)))
       (should (= 6 (length
@@ -24,15 +24,56 @@
       (should (equal (plist-get palette :focus)
                      (plist-get palette :border))))))
 
-(ert-deftest complementary-light-accent-contrast-is-softer-than-neutral ()
+(ert-deftest complementary-light-body-text-retains-hierarchy-over-accents ()
+  (let* ((background
+          (alist-get 'background complementary-light-neutral-palette))
+         (foreground
+          (alist-get 'foreground complementary-light-neutral-palette))
+         (foreground-ratio
+          (complementary-light-contrast-ratio foreground background)))
+    (dolist (token '(foreground-secondary foreground-muted
+                     inactive-foreground distant-foreground))
+      (should
+       (> foreground-ratio
+          (complementary-light-contrast-ratio
+           (alist-get token complementary-light-neutral-palette)
+           background))))
+    (dolist (entry complementary-light-palettes)
+      (should
+       (> foreground-ratio
+          (complementary-light-contrast-ratio
+           (plist-get (cdr entry) :text) background))))))
+
+(ert-deftest complementary-light-accents-use-emergency-safety-floors ()
   (should (< complementary-light-accent-text-contrast-target
              complementary-light-wcag-text-contrast))
-  (should (< complementary-light-accent-non-text-contrast-target
+  (should (= complementary-light-accent-text-contrast-target 3.0))
+  (should (= complementary-light-accent-non-text-contrast-target
              complementary-light-wcag-non-text-contrast))
-  (should (< complementary-light-accent-text-contrast-target
-             complementary-light-text-contrast-target))
   (should (< complementary-light-accent-non-text-contrast-target
              complementary-light-non-text-contrast-target)))
+
+(ert-deftest complementary-light-accents-prioritize-chroma-over-uniform-ratios ()
+  (let ((background
+         (alist-get 'background complementary-light-neutral-palette))
+        ratios)
+    (dolist (entry complementary-light-palettes)
+      (let ((palette (cdr entry)))
+        (push (complementary-light-contrast-ratio
+               (plist-get palette :text) background)
+              ratios)
+        (dolist (token '(:text :strong :medium :subtle :border))
+          (let* ((channels
+                  (complementary-light--hex-rgb
+                   (plist-get palette token)))
+                 (hsl
+                  (apply #'color-rgb-to-hsl
+                         (mapcar (lambda (channel) (/ channel 255.0))
+                                 channels))))
+            (should (>= (nth 1 hsl) 0.65))))))
+    ;; The palette keeps useful hue-specific lightness instead of equalizing
+    ;; every accent to a narrow contrast band.
+    (should (> (- (apply #'max ratios) (apply #'min ratios)) 2.0))))
 
 (ert-deftest complementary-light-comment-contrast-is-visibly-subordinate ()
   (let* ((background (complementary-light-token 'background 'yellow 'purple))

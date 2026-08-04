@@ -634,6 +634,8 @@ its declared surface set instead of treating the glyph beneath it as text."
                 (dolist (rule complementary-light-face-rules)
                   (when (eq (plist-get (cdr rule) :status) 'themed)
                     (let* ((face (car rule))
+                           (foreground-token
+                            (plist-get (cdr rule) :foreground))
                            (role
                             (complementary-light-report--effective-face-role
                              face))
@@ -647,7 +649,12 @@ its declared surface set instead of treating the glyph beneath it as text."
                                   (car colors) (cadr colors))))
                            (required
                             (pcase role
-                              ('text text-target)
+                              ('text
+                               (if (and (eq theme 'complementary-light)
+                                        (eq foreground-token
+                                            'comment-foreground))
+                                   complementary-light-comment-text-contrast-target
+                                 text-target))
                               ('non-text non-text-target)
                               (_ nil)))
                            (key (list theme face))

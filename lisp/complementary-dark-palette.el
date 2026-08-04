@@ -14,14 +14,15 @@
 (require 'complementary-light-palette)
 
 (defconst complementary-dark-neutral-palette
-  (let ((base "#171717")
-        (raised "#232323")
-        (sunken "#1d1d1d")
-        (text "#b0b0b0")
+  (let ((base "#13141a")
+        (raised "#1d1f29")
+        (sunken "#0f1016")
+        (text "#bcbcbc")
+        (muted "#b0b0b0")
         (secondary "#929292")
         (faint "#888888")
         (edge "#6d6d6d")
-        (selection "#30302f")
+        (selection "#292b36")
         (cursor "#ffffff"))
     `((background . ,base)
       (surface . ,base)
@@ -29,7 +30,7 @@
       (surface-sunken . ,sunken)
       (foreground . ,text)
       (foreground-secondary . ,secondary)
-      (foreground-muted . ,text)
+      (foreground-muted . ,muted)
       (foreground-faint . ,faint)
       (comment-foreground . ,faint)
       (border . ,edge)
@@ -39,7 +40,7 @@
       (inactive-background . ,base)
       (inactive-foreground . ,secondary)
       (cursor . ,cursor)
-      (distant-foreground . ,text)))
+      (distant-foreground . ,muted)))
   "Neutral colors used by `complementary-dark'.")
 
 (defun complementary-dark--make-accent-palette
@@ -91,12 +92,14 @@ supplies focus indicators.  Text on STRONG uses the neutral cursor color."
   (pcase-let ((`(,foreground ,background ,required) pair))
     (list foreground background
           (cond
-           ((= required complementary-light-accent-text-contrast-target)
-            complementary-light-text-contrast-target)
-           ((= required complementary-light-comment-text-contrast-target)
-            complementary-light-text-contrast-target)
-           ((= required complementary-light-accent-non-text-contrast-target)
+           ((memq foreground
+                  '(primary-state secondary-state
+                    primary-border secondary-border
+                    primary-focus secondary-focus))
             complementary-light-non-text-contrast-target)
+           ((or (= required complementary-light-accent-text-contrast-target)
+                (= required complementary-light-comment-text-contrast-target))
+            complementary-light-text-contrast-target)
            (t required)))))
 
 (defconst complementary-dark-contrast-pairs
