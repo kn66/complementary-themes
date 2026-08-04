@@ -154,13 +154,13 @@ The theme defines no independent non-color state grammar. Error, warning, succes
 | Focus | Primary | Unchanged except for theme-owned colors |
 | Secondary focus | Secondary | Unchanged except for theme-owned colors |
 
-The face generator extracts ~:family~, ~:foundry~, ~:width~, ~:height~, ~:weight~, ~:slant~, ~:underline~, ~:overline~, ~:strike-through~, ~:box~, ~:inverse-video~, ~:extend~, and ~:inherit~ from the recorded ~defface~ specs for each display condition, then merges those attributes with theme-owned colors. Compound underline and box values preserve their style and line width while only embedded line colors may be replaced by palette tokens. ~complementary-light-non-color-attribute-allowlist~ is deliberately empty.
+The face generator extracts ~:family~, ~:foundry~, ~:width~, ~:height~, ~:weight~, ~:slant~, ~:underline~, ~:overline~, ~:strike-through~, ~:box~, ~:inverse-video~, ~:extend~, and ~:inherit~ from the recorded ~defface~ specs for each display condition, then merges those attributes with theme-owned colors. Legacy ~:bold~ and ~:italic~ declarations used by bundled libraries such as Gnus are normalized to their canonical weight and slant attributes. Compound underline and box values preserve their style and line width while only embedded line colors may be replaced by palette tokens. ~complementary-light-non-color-attribute-allowlist~ is deliberately empty.
 
 ERT compares both direct and inheritance-resolved effective attributes before and after applying the theme under the same ~emacs -Q~ display environment. Dedicated diff tests load ~diff-mode~ first and require exact equality for all protected direct and effective attributes. For compound line attributes, the general test normalizes only the embedded color while comparing the remaining structure. Any non-color difference fails the test. GUI and TTY snapshots are not treated as interchangeable expected values.
 
 The active mode line uses the theme foreground on a raised neutral surface so colored status faces remain visible. ~mode-line-buffer-id~ deliberately does not set a foreground; it preserves the original bold weight while inheriting the appropriate active or inactive mode-line foreground.
 
-Ediff, Message, ERC, and EWW certificate faces with independent built-in colors are mapped to the same checked semantic tokens. Their original extension, weight, slant, underline, box, and inheritance behavior remains unchanged.
+Ediff, Message, Gnus, ERC, and EWW certificate faces with independent built-in colors are mapped to the same checked semantic tokens. Their original extension, weight, slant, underline, box, and inheritance behavior remains unchanged.
 
 * Meaning of complete face coverage
 
@@ -176,7 +176,7 @@ Complete coverage does not mean assigning colors to every face. It means recordi
 - ~excluded~: excluded for a documented reason
 - ~unavailable~: exists in another supported Emacs version but not the current environment
 
-The reviewed Emacs 30.2/GNU/Linux baseline is [[file:inventory/emacs-30.el][emacs-30.el]], while [[file:inventory/current-generated.el][current-generated.el]] contains the most recent generated inventory. The current baseline contains 1,171 faces: 179 ~themed~, 523 ~inherit~, 12 ~alias~, 418 ~preserve~, 39 ~external-semantic~, 0 ~excluded~, and 0 unclassified. The 179 themed faces are maintained as searchable, face-specific declarations rather than being painted by a single blanket rule. The expanded mappings include independently colored Org tables, drawers, columns, agenda and habit states, Isearch groups, Pulse, Smerge, ERC current nick, Elisp shorthands, and Newsticker secondary text.
+The reviewed Emacs 30.2/GNU/Linux baseline is [[file:inventory/emacs-30.el][emacs-30.el]], while [[file:inventory/current-generated.el][current-generated.el]] contains the most recent generated inventory. The current baseline contains 1,171 faces: 216 ~themed~, 518 ~inherit~, 12 ~alias~, 386 ~preserve~, 39 ~external-semantic~, 0 ~excluded~, and 0 unclassified. The 216 themed faces are maintained as searchable, face-specific declarations rather than being painted by a single blanket rule. The expanded mappings include independently colored Org tables, drawers, columns, agenda and habit states, Isearch groups, Pulse, Smerge, Gnus group/summary/article/server views, ERC current nick, Elisp shorthands, and Newsticker secondary text.
 
 ** How the inventory is collected
 

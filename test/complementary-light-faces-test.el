@@ -216,6 +216,46 @@
           (should (eq (plist-get rule :background) (nth 2 check)))
         (should-not (plist-member rule :background))))))
 
+(ert-deftest complementary-light-gnus-uses-semantic-colors ()
+  ;; Every Gnus face that owns a color is themed.  `gnus-x-face' is the one
+  ;; exception because its black/white pair renders image data rather than UI
+  ;; semantics.
+  (dolist (entry (complementary-light--inventory-faces))
+    (let ((face (car entry))
+          (default-spec (plist-get (cdr entry) :default-spec)))
+      (when (and (string-prefix-p "gnus-" (symbol-name face))
+                 (not (eq face 'gnus-x-face))
+                 (or (complementary-light--tree-contains-symbol-p
+                      default-spec :foreground)
+                     (complementary-light--tree-contains-symbol-p
+                      default-spec :background)))
+        (should (eq (complementary-light-face-status face) 'themed)))))
+  (should (eq (complementary-light-face-status 'gnus-x-face) 'preserve))
+  (dolist (check '((gnus-group-mail-1-empty primary-text nil)
+                    (gnus-group-news-1-empty secondary-text nil)
+                    (gnus-header-subject primary-text nil)
+                    (gnus-header-from secondary-text nil)
+                    (gnus-cite-3 foreground-muted nil)
+                    (gnus-server-denied primary-text nil)
+                    (gnus-server-opened foreground nil)
+                    (gnus-summary-normal-read foreground-muted nil)
+                    (gnus-summary-normal-ticked primary-text nil)
+                    (gnus-summary-cancelled primary-on-strong primary-strong)
+                    (gnus-emphasis-highlight-words
+                     primary-on-state primary-state)))
+    (let ((rule (cdr (complementary-light-face-rule (nth 0 check)))))
+      (should (eq (plist-get rule :status) 'themed))
+      (should (eq (plist-get rule :foreground) (nth 1 check)))
+      (if (nth 2 check)
+          (should (eq (plist-get rule :background) (nth 2 check)))
+        (should-not (plist-member rule :background)))))
+  (dolist (check '((gnus-group-mail-1 gnus-group-mail-1-empty)
+                    (gnus-summary-high-read gnus-summary-normal-read)
+                    (gnus-summary-low-ticked gnus-summary-normal-ticked)))
+    (let ((rule (cdr (complementary-light-face-rule (car check)))))
+      (should (eq (plist-get rule :status) 'inherit))
+      (should (eq (plist-get rule :target) (cadr check))))))
+
 (ert-deftest complementary-light-bundled-background-states-use-safe-surfaces ()
   (dolist (check '((isearch-group-1 primary-on-state primary-state)
                     (isearch-group-2 secondary-on-state secondary-state)

@@ -89,5 +89,26 @@
       (when (custom-theme-enabled-p 'complementary-light)
         (disable-theme 'complementary-light)))))
 
+(ert-deftest complementary-light-preserves-gnus-non-color-attributes-exactly ()
+  (require 'gnus)
+  (require 'gnus-art)
+  (require 'gnus-cite)
+  (require 'gnus-srvr)
+  (let* ((faces '(gnus-cite-1 gnus-emphasis-highlight-words
+                  gnus-group-mail-1 gnus-group-mail-1-empty
+                  gnus-header-content gnus-header-subject
+                  gnus-server-cloud-host gnus-summary-cancelled
+                  gnus-summary-high-read gnus-summary-low-read
+                  gnus-summary-normal-read gnus-summary-selected))
+         (before (complementary-light-test--attribute-snapshot faces)))
+    (unwind-protect
+        (progn
+          (load-theme 'complementary-light t)
+          (should
+           (equal before
+                  (complementary-light-test--attribute-snapshot faces))))
+      (when (custom-theme-enabled-p 'complementary-light)
+        (disable-theme 'complementary-light)))))
+
 (provide 'complementary-light-attributes-test)
 ;;; complementary-light-attributes-test.el ends here

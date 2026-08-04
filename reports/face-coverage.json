@@ -4371,121 +4371,121 @@
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 131,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-10",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 221,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-11",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 231,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-2",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 141,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-3",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 151,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-4",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 161,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-secondary",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-5",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 171,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-6",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 181,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-7",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 191,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-8",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 201,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-secondary",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-9",
     "library": "gnus-cite",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-cite.el.gz",
     "line": 211,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-cite-attribution",
@@ -4525,11 +4525,11 @@
     "library": "gnus-art",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-art.el.gz",
     "line": 490,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "primary-on-state",
+    "background_token": "primary-state",
+    "reason": "json-null"
   },
   {
     "face": "gnus-emphasis-italic",
@@ -4613,11 +4613,11 @@
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 478,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-group-mail-2",
@@ -4635,11 +4635,11 @@
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 495,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-group-mail-3",
@@ -4657,11 +4657,11 @@
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 512,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-secondary",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-group-mail-low",
@@ -4679,11 +4679,11 @@
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 529,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-group-news-1",
@@ -4701,11 +4701,11 @@
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 356,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-group-news-2",
@@ -4723,11 +4723,11 @@
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 376,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-group-news-3",
@@ -4833,11 +4833,11 @@
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 461,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-header",
@@ -4855,132 +4855,132 @@
     "library": "gnus-art",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-art.el.gz",
     "line": 833,
-    "classification": "inherit",
-    "target": "gnus-header",
-    "foreground_token": "json-null",
+    "classification": "themed",
+    "target": "json-null",
+    "foreground_token": "foreground-secondary",
     "background_token": "json-null",
-    "reason": "Use the color behavior of the recorded defface inheritance chain."
+    "reason": "json-null"
   },
   {
     "face": "gnus-header-from",
     "library": "gnus-art",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-art.el.gz",
     "line": 778,
-    "classification": "inherit",
-    "target": "gnus-header",
-    "foreground_token": "json-null",
+    "classification": "themed",
+    "target": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Use the color behavior of the recorded defface inheritance chain."
+    "reason": "json-null"
   },
   {
     "face": "gnus-header-name",
     "library": "gnus-art",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-art.el.gz",
     "line": 820,
-    "classification": "inherit",
-    "target": "gnus-header",
-    "foreground_token": "json-null",
+    "classification": "themed",
+    "target": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Use the color behavior of the recorded defface inheritance chain."
+    "reason": "json-null"
   },
   {
     "face": "gnus-header-newsgroups",
     "library": "gnus-art",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-art.el.gz",
     "line": 805,
-    "classification": "inherit",
-    "target": "gnus-header",
-    "foreground_token": "json-null",
+    "classification": "themed",
+    "target": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Use the color behavior of the recorded defface inheritance chain."
+    "reason": "json-null"
   },
   {
     "face": "gnus-header-subject",
     "library": "gnus-art",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-art.el.gz",
     "line": 792,
-    "classification": "inherit",
-    "target": "gnus-header",
-    "foreground_token": "json-null",
+    "classification": "themed",
+    "target": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Use the color behavior of the recorded defface inheritance chain."
+    "reason": "json-null"
   },
   {
     "face": "gnus-server-agent",
     "library": "gnus-srvr",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-srvr.el.gz",
     "line": 184,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-server-closed",
     "library": "gnus-srvr",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-srvr.el.gz",
     "line": 212,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-server-cloud",
     "library": "gnus-srvr",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-srvr.el.gz",
     "line": 191,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-server-cloud-host",
     "library": "gnus-srvr",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-srvr.el.gz",
     "line": 198,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-server-denied",
     "library": "gnus-srvr",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-srvr.el.gz",
     "line": 220,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-server-offline",
     "library": "gnus-srvr",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-srvr.el.gz",
     "line": 227,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-server-opened",
     "library": "gnus-srvr",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus-srvr.el.gz",
     "line": 205,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-signature",
@@ -4998,22 +4998,22 @@
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 702,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-summary-cancelled",
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 552,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
-    "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "foreground_token": "primary-on-strong",
+    "background_token": "primary-strong",
+    "reason": "json-null"
   },
   {
     "face": "gnus-summary-high-ancient",
@@ -5130,44 +5130,44 @@
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 581,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-faint",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-summary-normal-read",
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 639,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "foreground-muted",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-summary-normal-ticked",
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 559,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "primary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-summary-normal-undownloaded",
     "library": "gnus",
     "source_file": "/usr/share/emacs/30.2/lisp/gnus/gnus.el.gz",
     "line": 603,
-    "classification": "preserve",
+    "classification": "themed",
     "target": "json-null",
-    "foreground_token": "json-null",
+    "foreground_token": "secondary-text",
     "background_token": "json-null",
-    "reason": "Retain its recorded defface colors and attributes; this face has no theme-owned two-accent role."
+    "reason": "json-null"
   },
   {
     "face": "gnus-summary-normal-unread",

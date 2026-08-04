@@ -5,14 +5,14 @@
   "display_color_cells": 0,
   "face_count": 1171,
   "classifications": {
-    "themed": 179,
-    "inherit": 523,
+    "themed": 216,
+    "inherit": 518,
     "alias": 12,
-    "preserve": 418,
+    "preserve": 386,
     "external-semantic": 39,
     "excluded": 0
   },
-  "registered_face_specs": 179,
+  "registered_face_specs": 216,
   "theme_count": 2,
   "accent_count": 12,
   "symmetric_pair_count": 6,
@@ -45,8 +45,8 @@
   "color_vision_reported_worst_case_record_count": 2640,
   "color_vision_preset_minimum_delta_e_2000": 9.781275768704944,
   "effective_face_contrast_record_count": 2342,
-  "effective_face_review_candidate_count": 380,
-  "effective_face_raw_below_text_minimum_count": 503,
+  "effective_face_review_candidate_count": 350,
+  "effective_face_raw_below_text_minimum_count": 473,
   "effective_face_role_counts": {
     "normal-text": 2158,
     "non-text-indicator": 16,
@@ -63,5 +63,5 @@
   "minimum_simulated_pair_delta_e_2000": 0.0,
   "minimum_cvd_pair_delta_e_2000": 0.0,
   "minimum_grayscale_pair_delta_e_2000": 0.0,
-  "generated_at": "2026-08-04T22:38:36+0900"
+  "generated_at": "2026-08-05T07:33:05+0900"
 }

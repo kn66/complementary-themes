@@ -336,6 +336,52 @@ distinct active background from remaining readable.")
     (message-header-subject :status themed :foreground primary-text)
     (message-header-to :status themed :foreground secondary-text)
     (message-header-xheader :status themed :foreground primary-text)
+
+    ;; Gnus group, summary, article, citation, and server buffers.  Faces that
+    ;; add only weight, slant, underline, or inheritance remain governed by
+    ;; their original defface and pick up these colors through inheritance.
+    (gnus-cite-1 :status themed :foreground primary-text)
+    (gnus-cite-2 :status themed :foreground secondary-text)
+    (gnus-cite-3 :status themed :foreground foreground-muted)
+    (gnus-cite-4 :status themed :foreground foreground-secondary)
+    (gnus-cite-5 :status themed :foreground primary-text)
+    (gnus-cite-6 :status themed :foreground secondary-text)
+    (gnus-cite-7 :status themed :foreground foreground-muted)
+    (gnus-cite-8 :status themed :foreground foreground-secondary)
+    (gnus-cite-9 :status themed :foreground primary-text)
+    (gnus-cite-10 :status themed :foreground secondary-text)
+    (gnus-cite-11 :status themed :foreground foreground-muted)
+    (gnus-emphasis-highlight-words :status themed
+                                   :foreground primary-on-state
+                                   :background primary-state)
+    (gnus-group-mail-1-empty :status themed :foreground primary-text)
+    (gnus-group-mail-2-empty :status themed :foreground secondary-text)
+    (gnus-group-mail-3-empty :status themed :foreground foreground-secondary)
+    (gnus-group-mail-low-empty :status themed :foreground foreground-muted)
+    (gnus-group-news-1-empty :status themed :foreground secondary-text)
+    (gnus-group-news-2-empty :status themed :foreground primary-text)
+    (gnus-group-news-low-empty :status themed :foreground foreground-muted)
+    (gnus-header-content :status themed :foreground foreground-secondary)
+    (gnus-header-from :status themed :foreground secondary-text)
+    (gnus-header-name :status themed :foreground foreground-muted)
+    (gnus-header-newsgroups :status themed :foreground secondary-text)
+    (gnus-header-subject :status themed :foreground primary-text)
+    (gnus-server-agent :status themed :foreground secondary-text)
+    (gnus-server-closed :status themed :foreground foreground-muted)
+    (gnus-server-cloud :status themed :foreground secondary-text)
+    (gnus-server-cloud-host :status themed :foreground secondary-text)
+    (gnus-server-denied :status themed :foreground primary-text)
+    (gnus-server-offline :status themed :foreground secondary-text)
+    (gnus-server-opened :status themed :foreground foreground)
+    (gnus-splash :status themed :foreground foreground-muted)
+    (gnus-summary-cancelled :status themed
+                            :foreground primary-on-strong
+                            :background primary-strong)
+    (gnus-summary-normal-ancient :status themed :foreground foreground-faint)
+    (gnus-summary-normal-read :status themed :foreground foreground-muted)
+    (gnus-summary-normal-ticked :status themed :foreground primary-text)
+    (gnus-summary-normal-undownloaded :status themed
+                                      :foreground secondary-text)
     (erc-direct-msg-face :status themed :foreground primary-text)
     (erc-current-nick-face :status themed :foreground secondary-text)
     (erc-error-face :status themed :foreground primary-text)
@@ -633,14 +679,24 @@ REPLACEMENT is a registered palette value."
   "Copy protected non-color keys from face ATTRIBUTES.
 Replace only embedded line colors with LINE-COLOR, preserving style and width."
   (let (result)
-    (dolist (attribute complementary-light-non-color-attributes result)
+    (dolist (attribute complementary-light-non-color-attributes)
       (when (plist-member attributes attribute)
         (setq result (append result
                              (list attribute
                                    (complementary-light--sanitize-line-color
                                     attribute
                                     (plist-get attributes attribute)
-                                    line-color))))))))
+                                    line-color))))))
+    ;; Older bundled libraries, notably Gnus and Message, still use the
+    ;; compatibility attributes accepted by `defface'.  Store their canonical
+    ;; forms in theme specs so enabling a theme cannot discard the style.
+    (when (and (not (plist-member attributes :weight))
+               (eq (plist-get attributes :bold) t))
+      (setq result (append result '(:weight bold))))
+    (when (and (not (plist-member attributes :slant))
+               (eq (plist-get attributes :italic) t))
+      (setq result (append result '(:slant italic))))
+    result))
 
 (defun complementary-light--merge-plists (base override)
   "Return BASE with keys from OVERRIDE added or replaced."
